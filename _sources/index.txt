@@ -15,18 +15,26 @@ Introduction to Cloud Computing with Cloudmesh
 A short video giving a brief overview about this Web site and Cloudmesh 
 is available at |video-cm-intro|.
 
+
 .. toctree::
-   :maxdepth: 3
-   :glob:
+   :caption: Overview
 
    preface
    about
    contact
    resources
 
+.. toctree::
+   :caption: Classes
+   :maxdepth: 2   
+   
    class/index
-
    projects/index
+
+
+.. toctree::
+   :caption: Cloudmesh (Old)
+   :maxdepth: 2   
    
    accounts/index
    cloudmesh/index
@@ -37,17 +45,27 @@ is available at |video-cm-intro|.
    paas/index
    hpc/index
 
+.. toctree::
+   :caption: FutureSystems
+   :maxdepth: 2   
+   
    hardware/index
 
+.. toctree::
+   :caption: Contributing
+   :maxdepth: 2   
+   
    devops/index
-
    ipython/index
    rst
    management/index
    contribute/index
 
-   archived
-   
+.. toctree::
+   :caption: Appendix
+   :maxdepth: 2   
+
+   archived   
    todo
 
 .. comment::
