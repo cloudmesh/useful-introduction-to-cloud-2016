@@ -1,0 +1,7 @@
+digraph example {
+
+    a [label="a", URL="http://mycloudmesh.org/learning", target="_blank"];
+
+    a->b;
+
+}

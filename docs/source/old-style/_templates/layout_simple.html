@@ -1,0 +1,15 @@
+{% extends "!layout.html" %}
+
+{# Custom CSS overrides #}
+{% set bootswatch_css_custom = ['_static/my-styles.css'] %}
+
+{% block header %}
+{{ super() }}
+
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+
+{% endblock %}
+
+
+

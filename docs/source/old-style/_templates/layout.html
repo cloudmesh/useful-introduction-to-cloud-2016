@@ -1,0 +1,112 @@
+{% extends "!layout.html" %}
+
+{# Custom CSS overrides #}
+{% set bootswatch_css_custom = ['_static/my-styles.css'] %}
+
+{% block header %}
+{{ super() }}
+
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+
+{% if pagename in ["index"] %}
+
+
+              <div class="row">
+                <div class="col-lg-12"
+		     style="-webkit-font-smoothing: none; border:solid 1px #2d2d2d;  text-align:center; background:#575757; padding:100px 50px 100px 50px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;
+background: #005545; /* Old browsers */
+background: -moz-linear-gradient(left, #005545 0%, #280a59 74%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#005545), color-stop(74%,#280a59)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left, #005545 0%,#280a59 74%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left, #005545 0%,#280a59 74%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left, #005545 0%,#280a59 74%); /* IE10+ */
+background: linear-gradient(to right, #005545 0%,#280a59 74%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005545', endColorstr='#280a59',GradientType=1 ); /* IE6-9 */
+		  ">
+
+
+		  <!-- <br/>
+		  <br/> -->
+		  <center style="color:white">
+		     <h1>
+		       <table>
+		       <tbody>
+             	       <tr>
+			 <td>
+			   <i class="fa fa-graduation-cap fa-2x"></i><br>
+			   <i class="fa fa-cloud fa-2x"></i>
+			 </td>
+			 <td>
+			   Introduction to Cloud Computing
+			 </td>
+		       </tr>
+		       </tbody>
+		       </table>
+   		   </h1>
+		  </center>
+		  <!-- <br/> -->
+                </div>
+<a href="https://github.com/cloudmesh/introduction_to_cloud_computing.git"
+     class="visible-desktop hidden-xs"><img
+    id="gh-banner"
+    style="position: absolute; top: 50px; right: 0; border: 0;"
+    src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"
+    alt="Fork me on GitHub"></a>
+  <script>
+    // Adjust banner height.
+    $(function () {
+      var navHeight = $(".navbar .container").css("height");
+      $("#gh-banner").css("top", navHeight);
+    });
+  </script>
+
+		</div>
+	
+{% endif %}
+{% endblock %}
+
+
+
+{% block footer %}
+<footer style="background-color:black;color:whilte;">
+
+<div class="container">
+<br/>
+<div class="row">
+     <div class="col-sm-3  ">
+     </div>	 
+     <div class="col-sm-3  ">
+     <h4 class="nav-header" style="color:white;">Cloudmesh</h4>
+     <ul>       
+       <li> <a href="{{ pathto("_index_notebooks") }}"> IPython Notebooks </a> </li>       
+       <li> <a href="http://cloudmesh.github.io/cloudmesh/"> Manual </a> </li>
+       <li> <a href="https://github.com/cloudmesh/cloudmesh"> Code </a> </li>       
+       <li> <a href="http://cloudmesh.github.io"> Other Packages </a> </li>       
+     </ul>
+     <div style="color:white;">&copy; 2014 myCloudmesh.org</div>     
+   </div>
+
+   <div class="col-sm-3" style="font-size:small">
+
+      <h4 class="nav-header" style="color:white;"> Site Contents</h4>
+
+      <ul class="nav nav-list">
+	<li> <a href="toc.html"> Table of Contents </a> </li>	
+	{{ toctree(maxdepth=1, collapse=False) }}
+      </ul>
+    </div>
+
+     
+    <div class="col-sm-3 ">
+       
+       <h4 class="nav-header" style="color:white;"> Page Contents</h4>
+
+
+       {% include "localtoc.html"%}
+    </div>
+ </div>
+<br/>
+</div>
+</footer>
+{% endblock %}

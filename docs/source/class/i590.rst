@@ -1,0 +1,392 @@
+Fall 2014 - Big Data Applications and Analytics (``Info I590``)
+======================================================================
+
+* Fall 2014
+* Big Data Applications and Analytics
+* https://bigdatacoursefall2014.appspot.com/course
+* Community Group:
+  https://plus.google.com/communities/117322030211467950209
+
+Video Syllabus
+----------------------------------------------------------------------
+
+.. graphviz::
+
+      digraph foo {
+	   node [shape=record];
+
+	   a [label="Part A | Account Application ",
+	       URL="http://www.youtube.com/watch?v=CwHFaluDgzc", 
+	       target="_blank"];
+
+	   a1 [label="Part A.1 | Account Application ",
+	       URL="http://www.youtube.com/watch?v=c7mjKI8mJws", 
+	       target="_blank"];
+
+	   a2 [label="Part A.2 | OpenID Upload ",
+	       URL="http://www.youtube.com/watch?v=rZzpCYWDEpI", 
+	       target="_blank"];
+
+	   a3 [label="Part A.3 | SSHkey Upload ",
+	       URL="http://www.youtube.com/watch?v=4wjVwQbOlSU", 
+	       target="_blank"];
+
+	   a4 [label="Part A.4 | Project Join Request",
+	       URL="http://www.youtube.com/watch?v=5xQiPBwt58s", 
+	       target="_blank"];
+
+	   b [label="Part B | Introduction to Cloudmesh ",
+	       URL="http://www.youtube.com/watch?v=njHHjRMb7V8", 
+	       target="_blank"];
+
+	   c [label="Part C | Overview of Cloudmesh Learning Web Site",
+	       URL="http://www.youtube.com/watch?v=uGIPmiJ0cxg", 
+	       target="_blank"];
+
+	   d1 [label="Part D.1 | Install Cloudmesh on a Desktop",
+	       URL="http://www.youtube.com/watch?v=lGiJifD0VgU", 
+	       target="_blank"];
+
+	   d2 [label="Part D.2 | Install Cloudmesh on a VM",
+	       URL="http://www.youtube.com/watch?v=rcecpgm-47g", 
+	       target="_blank"];
+
+	   e  [label="Part E | The Cloudmesh Web Interface",
+	       URL="http://www.youtube.com/watch?v=l_P4G85rysA", 
+	       target="_blank"];
+
+	   f  [label="Part F | The Cloudmesh IPython Learning Server",
+	       URL="http://www.youtube.com/watch?v=1dn_av-zC00", 
+	       target="_blank"];
+
+	   g  [label="Part G | The Cloudmesh Command Shell interface",
+	       URL="http://www.youtube.com/watch?v=hdq-t-ggkXA", 
+	       target="_blank"];
+
+	   h  [label="Part H | The Cloudmesh Command Shell API",
+	       URL="http://www.youtube.com/watch?v=mF33LYqC30c", 
+	       target="_blank"];
+
+	   i  [label="Part I | The Cloudmesh Python API",
+	       URL="http://www.youtube.com/watch?v=xOL_-Sfh9MA", 
+	       target="_blank"];
+
+           class [label="Class"];
+           subgraph accounts {
+	       a1 -> a2 -> a3 -> a4 
+           }
+
+	   a -> a1 [lhead=accounts];
+	   a4 -> b [ltail=accounts];
+	   class -> a -> b -> c ;
+	   c -> d1;
+	   c -> d2 -> f;
+	   d1 -> e -> f -> g -> h -> i;
+      }
+
+
+
+Account Application for FutureSystems
+----------------------------------------------------------------------
+
+.. list-table::
+   :widths: 15 5 15 65
+   :header-rows: 1
+
+   * - Video
+     - Length
+     - Titles of the Lessons
+     - Description of the Lessons
+   * - |video-fs-account|
+     - 16:33 min
+     - Alternative 1: Create a portal account in FutureSystems for
+       class projects.
+     - This lesson explains you how to create a portal account which
+       is the first step in getting access to FutureSystems. You can
+       also view the following videos from FutureGrid as they still
+       apply.  For written materials, see section
+       :ref:`s-account-create-account`. and
+       :ref:`s-screencast-accounts` They are listed in Alternative 2.
+   * - |video-portal-account| |video-portal-openid|
+       |video-portal-sshkey| |video-portal-join-proj|
+     - 5:10 min, 1:35 min, 2:39 min, 1:28 min
+     - Alternative 2: Create a portal account in FutureSystems for
+       class projects with more details
+     - This lesson explains you how to create a portal account which
+       is the first step in getting access to FutureSystems.  See
+       Section :ref:`s-account-create-account` and
+       :ref:`s-screencast-accounts`.
+
+If you attend a class the above video clips are probably sufficient. If you
+like to know more, please see the videos at
+:ref:`s-screencast-accounts`
+
+.. |video-portal-account| replace:: |video-image| :youtube:`c7mjKI8mJws`
+.. |video-portal-openid| replace:: |video-image| :youtube:`rZzpCYWDEpI`
+.. |video-portal-sshkey| replace:: |video-image| :youtube:`4wjVwQbOlSU`
+.. |video-portal-join-proj| replace:: |video-image| :youtube:`5xQiPBwt58s`
+.. |video-fs-account| replace:: |video-image| :youtube:`CwHFaluDgzc`
+
+Exercises
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Create a portal account on FutureSystems.
+#. Identify an interesting project that you can conduct on
+   FutureSystems Cloud, HPC, or Grid resources.
+#. Apply for a FutureSystems project or join a project.
+   See section :ref:`s-account-join-project`.
+#. Read up on what a ssh key is.
+   See section :ref:`s-using-ssh`.
+#. Upload a ssh key.
+   Do this via https://portal.futuresystems.org/my/ssh-keys
+#. Register your OpenID in the portal (for example if you use google).
+#. Upload a 220x220 pixel portrait of yours to the portal.
+   Do this via https://portal.futuresystems.org/my/edit
+#. Make sure you have uploaded a small Bio.
+   Do this via https://portal.futuresystems.org/my/Contact
+
+Cloudmesh Introduction
+----------------------------------------------------------------------
+
+.. list-table::
+   :widths: 15 5 15 65
+   :header-rows: 1
+
+   * - Video
+     - Length
+     - Titles of the Lessons
+     - Description of the Lessons
+   * - |video-fs-gentle|
+     - 28:42 min
+     - A Gentle Introduction to Cloudmesh
+     - This lesson introduces you to cloudmesh. It provides you with
+       an overview, the motivation for cloudmesh and some
+       functionality requirements that motivated the architecture.
+       The lesson also includes pointers to future development of cloudmesh.
+   * - |video-fs-learning|
+     - 17:54 min
+     - An Overview about the Cloudmesh Learning Web Pages
+     - This lesson gives a short overview about the web site on which
+       cloudmesh is hosted. It also talks a bit about the architecture.
+      
+.. |video-fs-gentle| replace:: |video-image| :youtube:`njHHjRMb7V8`
+.. |video-fs-learning| replace:: |video-image| :youtube:`uGIPmiJ0cxg`
+
+Excersises
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. What is bare metal provisioning?
+#. Is there a difference between the terms raining and provisioning?
+#. Identify the different usage of the term provisioning in the
+   community. Give various concrete definitions used in the
+   community. With links.
+#. What is a hypervisor?
+#. What is IaaS, PaaS, BMaaS?
+#. What are prominent IaaS frameworks.
+#. What are Software tools you use to conduct Big Data Analysis?
+#. If you like to become a contributor to Cloudmesh, contact
+   laszewski@gmail.com.
+
+
+Cloudmesh Setup 
+----------------------------------------------------------------------
+
+.. list-table::
+   :widths: 15 5 15 65
+   :header-rows: 1
+
+   * - Video
+     - Length
+     - Titles of the Lessons
+     - Description of the Lessons
+   * - |video-cm-install|
+     - 17:15 min
+     - Alternative 1: Setup Cloudmesh on a local desktop or laptop.
+     - This lesson explains you how to setup cloudmesh on a local
+       desktop, it will require you to install certain programs on
+       your system. If you do not want to do that, you can use
+       Alternative 2. See Section :ref:`s-cloudmesh-quickstart` for
+       more details.
+   * - |video-cm-openstack-setup|
+     - 32:18 min
+     - Alternative 2: Setup Cloudmesh on a virtual machine.
+     - This lesson explains you how to setup cloudmesh on a virtual
+       machine in the IU cloud. In contrast to Alternative 1 no
+       software needs to be installed on your computer. The video also
+       contains a short introduction to the Web interface. See Section
+       :ref:`s-cloudmesh-vm-quickstart` for more details.
+
+
+.. |video-image| image:: /images/glyphicons_402_youtube.png 
+.. |video-cm-install| replace:: |video-image| :youtube:`lGiJifD0VgU`
+.. |video-cm-openstack-setup| replace:: |video-image| :youtube:`rcecpgm-47g`
+
+Exercises
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Choose one of the deployment methods below. 
+
+#. Install Cloudmesh on your computer (only if you like to use it on
+   your own machine and are aware that certain programs need to be
+   installed). See Alternative 1.
+#. Install Cloudmesh on a virtual machine. See Alternative 2
+
+Cloudmesh Web Interface
+----------------------------------------------------------------------
+
+.. list-table::
+   :widths: 15 5 15 65
+   :header-rows: 1
+
+   * - Video
+     - Length
+     - Titles of the Lessons
+     - Description of the Lessons
+   * - |video-cm-gui|
+     - 15:30 min
+     - The Cloudmesh Web Interface
+     - A lesson on how to use the Cloudmesh Web Interface to manage
+       resources on a Cloud. See Section :ref:`s_screenshots` for more
+       details.
+
+
+Exercises
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Register a cloud (india).
+#. Refresh images, flavors and servers
+#. Start and delete a vm on india
+#. Refresh servers
+
+Note that some features of Cloudmesh have not been activated or may not
+yet work. Cloudmesh is an evolving project and changes are expected.
+
+
+.. |video-cm-gui| replace:: |video-image| :youtube:`l_P4G85rysA`
+
+
+Cloudmesh IPython Learning Server
+----------------------------------------------------------------------
+
+.. list-table::
+   :widths: 15 5 15 65
+   :header-rows: 1
+
+   * - Video
+     - Length
+     - Titles of the Lessons
+     - Description of the Lessons
+   * - |video-cm-ipython-learning|
+     - 15:30 min
+     - The Cloudmesh IPython Lerning Server
+     - A lesson on how to IPython for directly executing the notebooks
+       contained on on the Cloudmesh learning Web pages.
+
+
+Exercises
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Start the IPython server
+#. Print the version in IPython (locate the hello notebook)
+#. Find additinal notebooks and play with them.
+
+.. |video-cm-ipython-learning| replace:: |video-image| :youtube:`1dn_av-zC00`
+
+
+Cloudmesh Command Shell Interface
+----------------------------------------------------------------------
+
+.. list-table::
+   :widths: 15 5 15 65
+   :header-rows: 1
+
+   * - Video
+     - Length
+     - Titles of the Lessons
+     - Description of the Lessons
+   * - |video-cm-shell|
+     - 11:58 min
+     - The Cloudmesh Command Shell Interface
+     - This video we will be introducing you to the cloudmesh
+       command shell and demonstrate to you that it is very easy to start
+       virtual machines and access them via a command terminal. The
+       shell provides scripting or the execution of single files. It is
+       fully integrated in a database framework leveraging mongodb.
+
+
+Exercises
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Start and delete a virtual machine by using Cloudmesh Command Shell Interface
+
+.. |video-cm-shell| replace:: |video-image| :youtube:`hdq-t-ggkXA`
+
+Cloudmesh Command Shell API
+----------------------------------------------------------------------
+
+.. list-table::
+   :widths: 15 5 15 65
+   :header-rows: 1
+
+   * - Video
+     - Length
+     - Titles of the Lessons
+     - Description of the Lessons
+   * - |video-cm-shell-api|
+     - 9:44 min
+     - The Cloudmesh Command Shell API
+     - In this video we will be introducing you to the cloudmesh
+       command python API and demonstrate to you that it is very easy to start
+       virtual machines and access them via ssh. However python
+       programmer will want to use the Python API. Neverteless this
+       isnterface is nice for quick prototyping. 
+
+
+
+Exercises
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Start and delete a virtual machine by using Cloudmesh Command Shell API
+
+.. |video-cm-shell-api| replace:: |video-image| :youtube:`mF33LYqC30c`
+
+
+Cloudmesh Command Python API
+----------------------------------------------------------------------
+
+.. list-table::
+   :widths: 15 5 15 65
+   :header-rows: 1
+
+   * - Video
+     - Length
+     - Titles of the Lessons
+     - Description
+   * - |video-cm-python-api|
+     - 14:23 min
+     - The Cloudmesh Command Python API
+     - In this video we will be introducing you to the cloudmesh
+       python API and demonstrate to you that it is very easy to start
+       virtual machines and access them via ssh. We will be using the
+       keys you registered earlier and introduce you to the
+       defaults. This makes it possible to start a VM with only two
+       parameters. We will also teach you how to create public ips
+       and assign them to the vm.
+
+
+Exercises
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Start and delete a virtual machine by using Cloudmesh Python API
+
+..  |video-cm-python-api| replace:: |video-image| :youtube:`xOL_-Sfh9MA`
+
+
+
+.. comment:
+
+   |image-test|
+
+   .. |image-test| image:: /../images/graphviz/g.svg
+      :width: 10%
+
+
