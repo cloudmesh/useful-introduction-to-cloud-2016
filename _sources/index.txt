@@ -22,7 +22,6 @@ is available at |video-cm-intro|.
    preface
    about
    contact
-   resources
 
 .. toctree::
    :caption: Classes
@@ -30,7 +29,7 @@ is available at |video-cm-intro|.
    
    class/index
    projects/index
-
+   resources
 
 .. toctree::
    :caption: Cloudmesh (Old)
