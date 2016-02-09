@@ -32,6 +32,12 @@ is available at |video-cm-intro|.
    resources
 
 .. toctree::
+   :caption: Cloudmesh Client (Current)
+   :maxdepth: 2   
+
+   cloudmesh_client
+   
+.. toctree::
    :caption: Cloudmesh (Old)
    :maxdepth: 2   
    
