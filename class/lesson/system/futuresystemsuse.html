@@ -1,0 +1,548 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Use of FutureSystems &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../index.html"/>
+        <link rel="up" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="../../bdossp_sp15/index.html"/>
+        <link rel="next" title="Overview and Introduction" href="../linux/overview.html"/>
+        <link rel="prev" title="Overview and Introduction" href="overview.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#notice">Notice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#office-hours">Office Hours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#contact">Contact</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#weekly-plan">Weekly Plan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#support">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#meeting">Meeting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#collaboration-tools">Collaboration Tools</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../bdossp_sp15/index.html#futuresystems-access">FutureSystems Access</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../hands_on_fg465.html">Getting Started with Hands-on Access</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview.html">Overview and Introduction</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Use of FutureSystems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lab-account-applications">Lab - Account Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#linux-basics">Linux Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#basics-of-openstack">Basics of OpenStack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#basics-of-cloudmesh">Basics of Cloudmesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#advanced-cloudmesh">Advanced Cloudmesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#it-operations-automation-and-orchestration">IT Operations - Automation and Orchestration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#virtual-clusters">Virtual Clusters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#other-technologies">Other Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#future">Future</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#to-be-organized-into-the-above">To be Organized into the above</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
+      
+    <li>Use of FutureSystems</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/class/lesson/system/futuresystemsuse.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="use-of-futuresystems">
+<h1>Use of FutureSystems<a class="headerlink" href="#use-of-futuresystems" title="Permalink to this headline">¶</a></h1>
+<div class="sidebar">
+<p class="first sidebar-title">Page Contents</p>
+<div class="contents local last topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#overview" id="id4">Overview</a></li>
+<li><a class="reference internal" href="#getting-an-account" id="id5">Getting an Account</a></li>
+<li><a class="reference internal" href="#join-a-project" id="id6">Join a Project</a></li>
+<li><a class="reference internal" href="#remote-login" id="id7">Remote Login</a><ul>
+<li><a class="reference internal" href="#linux-and-osx" id="id8">Linux and OSX</a></li>
+<li><a class="reference internal" href="#windows" id="id9">Windows</a></li>
+<li><a class="reference internal" href="#useful-ssh-commands" id="id10">Useful SSH commands</a><ul>
+<li><a class="reference internal" href="#change-the-password" id="id11">Change the password</a></li>
+<li><a class="reference internal" href="#change-the-comment" id="id12">Change the comment</a></li>
+<li><a class="reference internal" href="#show-fingerprint" id="id13">Show fingerprint</a></li>
+<li><a class="reference internal" href="#delete-a-known-host" id="id14">Delete a known host</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ssh" id="id15">SSH</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="overview">
+<h2><a class="toc-backref" href="#id4">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This section describes using SSH on and with FutureSystems.</p>
+<p>There are two ways SSH is used:</p>
+<ul class="simple">
+<li>providing access to FutureSystems resources</li>
+<li>once logged into FutureSystems, get access to OpenStack images and
+running instances.</li>
+</ul>
+<p>Since all assignments and lessons will be done on FutureSystems, it is
+important that you can log on. Whether you are starting from Windows,
+Mac OS X, or Linux, only a few steps are needed.</p>
+<p>Once you can log into <code class="docutils literal"><span class="pre">india.futuresystems.org</span></code>, SSH keys are used
+to manage access to OpenStack. At this point your computer is just a
+client to access FutureSystems resources. All commands are executed on
+FutureSystems.</p>
+<p>The steps, describes below, are:</p>
+<ul class="simple">
+<li>get and account with FutureSystems (portal)</li>
+<li>join a project (portal)</li>
+<li>upload SSH public key (computer -&gt; portal)</li>
+<li>log into FutureSystems (computer -&gt; <code class="docutils literal"><span class="pre">india</span></code>)</li>
+<li>manage keys for OpenStack (<code class="docutils literal"><span class="pre">india</span></code> -&gt; VM)</li>
+</ul>
+</div>
+<div class="section" id="getting-an-account">
+<h2><a class="toc-backref" href="#id5">Getting an Account</a><a class="headerlink" href="#getting-an-account" title="Permalink to this headline">¶</a></h2>
+<p>In order to use FutureSystems you will need to get an account.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Make sure you have cookies enabled or you will not be able to log
+in to your account.</p>
+</div>
+<ol class="arabic simple">
+<li>Navigate to <a class="reference external" href="https://portal.futuresystems.org/">FutureSystems.org</a>.</li>
+<li>Click on <code class="docutils literal"><span class="pre">Register</span></code> at the top near the search bar</li>
+<li>Fill out the information. Asterisk-denoted (<code class="docutils literal"><span class="pre">*</span></code>) fields are required.</li>
+<li>Please be patient after clicking the <a href="#id1"><span class="problematic" id="id2">``</span></a>Create new account` button.
+It may take one or two business day for the account to be approved.</li>
+<li>Once your account is approved you will receive an email.</li>
+</ol>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">At this point you will not be able to use any
+FutureSystems resources.  You will need to join a project and
+enable remote login to do so.  Only when the status is all green in
+the <code class="docutils literal"><span class="pre">My</span> <span class="pre">FutureGrid</span> <span class="pre">HPC</span> <span class="pre">account</span> <span class="pre">status</span></code> of your <a class="reference external" href="https://portal.futuresystems.org/my/fg-account">portal account</a>
+information will you have access to resources.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Please see Section <a class="reference internal" href="../../../accounts/accounts.html#s-screencast-accounts"><span>Creating FutureSystems Accounts and Projects</span></a> for
+additional details.</p>
+</div>
+</div>
+<div class="section" id="join-a-project">
+<h2><a class="toc-backref" href="#id6">Join a Project</a><a class="headerlink" href="#join-a-project" title="Permalink to this headline">¶</a></h2>
+<p>Now that you have a FutureSystems account you will need to join a
+project.</p>
+<ol class="arabic simple">
+<li>Navigate to <a class="reference external" href="https://portal.futuresystems.org/">FutureSystems.org</a> and log into your account.</li>
+<li>Click on the appropriate project name</li>
+<li>Click on the <code class="docutils literal"><span class="pre">Join</span> <span class="pre">the</span> <span class="pre">project</span></code> link on the right hand side.</li>
+<li>Upon approval you will receive an email.</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Please see <a class="reference internal" href="../../../accounts/details.html#s-account-join-project"><span>Join a Project</span></a> for further details.</p>
+</div>
+</div>
+<div class="section" id="remote-login">
+<h2><a class="toc-backref" href="#id7">Remote Login</a><a class="headerlink" href="#remote-login" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">All coursework will be done on your FutureSystems account on
+<code class="docutils literal"><span class="pre">india</span></code>. You will to use PuTTY to access <code class="docutils literal"><span class="pre">india</span></code> and then you
+can follow along with the other instructions.</p>
+</div>
+<p>In order to login into your account on FutureSystems you will need:</p>
+<ul class="simple">
+<li>an account on FutureSystems (see above)</li>
+<li>an SSH client</li>
+</ul>
+<div class="section" id="linux-and-osx">
+<h3><a class="toc-backref" href="#id8">Linux and OSX</a><a class="headerlink" href="#linux-and-osx" title="Permalink to this headline">¶</a></h3>
+<p>We assume that Linux users are familiar on how to start a terminal. On
+Mac OS X open a terminal via <cite>Applications &#8211;&gt; Utilities &#8211;&gt; Terminal</cite>. Alternatively you can search for the term &#8220;terminal&#8221; in the
+spotlight search and locate the terminal application and click on it.</p>
+<p>To proceed you will need to know your FutureSystems Portalname and
+Project ID.</p>
+<p>For this example we assume you have set the shell variable PORTALNAME
+to your FutureSystems portal username. This can be done as
+follwows. Let us assume your portal name is <cite>albert</cite>. Than you can set
+it with:</p>
+<div class="highlight-python"><div class="highlight"><pre>export PORTALNAME=albert
+</pre></div>
+</div>
+<p>We also assume that you have a project id that you set to:</p>
+<div class="highlight-python"><div class="highlight"><pre>export PROJECTID=fg101
+</pre></div>
+</div>
+<p>if it is the number 101. Once you have set up your portal name you can
+log in via:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh $PORTALNAME@india.futuresystems.org
+</pre></div>
+</div>
+<p>Naturally, you could also directly place your portal name into the
+command. Thus if your portalname would be albert, you could do
+alternatively to the above command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh $PORTALNAME@india.futuresystems.org
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Please see Section <a class="reference internal" href="../../../accounts/ssh.html#s-using-ssh"><span>Using SSH Keys</span></a> for details on
+configuring and using an SSH client.</p>
+</div>
+</div>
+<div class="section" id="windows">
+<h3><a class="toc-backref" href="#id9">Windows</a><a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
+<p>In order to SSH into your FutureSystems account using Windows, you
+will need to install PuTTY and PuTTYgen from the <a class="reference external" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">PuTTY project page</a></p>
+<p>Generate an key using PuTTYgen:</p>
+<ol class="arabic simple">
+<li>open the application <code class="docutils literal"><span class="pre">puttygen.exe</span></code></li>
+<li>press &#8220;Generate&#8221;</li>
+<li>enter a desired passphrase (make sure they match!)</li>
+<li>save the private and public keys</li>
+<li>copy the displayed public key</li>
+</ol>
+<p>You can now upload your public key to the FutureSystems portal.</p>
+<p>To connect, open <code class="docutils literal"><span class="pre">putty.exe</span></code> and go to <cite>Connection &#8212;&gt; SSH &#8212;&gt;
+Auth</cite> on the left and browse to add the private key.  Then go to the
+<cite>Session</cite> category and enter <code class="docutils literal"><span class="pre">india.futuresystems.org</span></code> for the Host
+Name and click &#8220;Open&#8221;.  This will launch a terminal and allow you to
+connect using the passphrase specified in <code class="docutils literal"><span class="pre">puttygen.exe</span></code>.</p>
+</div>
+<div class="section" id="useful-ssh-commands">
+<h3><a class="toc-backref" href="#id10">Useful SSH commands</a><a class="headerlink" href="#useful-ssh-commands" title="Permalink to this headline">¶</a></h3>
+<p>The following is a short list of useful SSH commands.</p>
+<div class="section" id="change-the-password">
+<h4><a class="toc-backref" href="#id11">Change the password</a><a class="headerlink" href="#change-the-password" title="Permalink to this headline">¶</a></h4>
+<p>You can change the password for the key by using the  the <code class="docutils literal"><span class="pre">-p</span></code> flag.
+For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh-keygen -p
+</pre></div>
+</div>
+</div>
+<div class="section" id="change-the-comment">
+<h4><a class="toc-backref" href="#id12">Change the comment</a><a class="headerlink" href="#change-the-comment" title="Permalink to this headline">¶</a></h4>
+<p>You can change the comment of an key by modifying the public key file.
+For example, Ada Lovelace wishes to replace an uninformative comment
+with her email address.
+She would execute the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cat ~/.ssh/id_rsa.pub
+ssh-rsa  AAAAB3N.... this is not informative
+$ nano ~/.ssh/id_rsa.pub
+$ cat ~/.ssh/id_rsa.pub
+ssh-rsa  AAAAB3N.... lovelace@gmail.com
+</pre></div>
+</div>
+</div>
+<div class="section" id="show-fingerprint">
+<h4><a class="toc-backref" href="#id13">Show fingerprint</a><a class="headerlink" href="#show-fingerprint" title="Permalink to this headline">¶</a></h4>
+<p>The fingerprint of a key can be used to authenticate the validity of
+the key.  For example, if Ada were to share his public key with Albert
+Einstein, she would transmit the key.  Albert could then compute the
+fingerprint and ensure that it matches.  To do so, Albert would save
+the key to <code class="docutils literal"><span class="pre">~/.ssh/$PORTALNAME-key</span></code> and execute:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh-keygen -l -f ~/.ssh/$PORTALNAME-key.pub
+2048 6c:52:54:20:b9:85:04:d4:30:46:48:c7:c4:bc:fe:c7  lovelace@gmail.com (RSA)
+</pre></div>
+</div>
+<p>FutureSystems, for instance, uses fingerprints to identify keys once
+they have been uploaded.  You may see this fingerprint on the
+<a class="reference external" href="https://portal.futuresystems.org/my/ssh-keys">FutureSystems portal</a>.</p>
+</div>
+<div class="section" id="delete-a-known-host">
+<h4><a class="toc-backref" href="#id14">Delete a known host</a><a class="headerlink" href="#delete-a-known-host" title="Permalink to this headline">¶</a></h4>
+<p>Whenever you log into a new machine via SSH, the host key of the
+destination machine is added to <code class="docutils literal"><span class="pre">~/.ssh/known_hosts</span></code>.
+The next time you try to log in this key will be checked.
+If it has changed you will need to remove the entry before attempting
+to log back in.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The host key may change if the machine undergoes a major upgrade or
+change.
+Another reason may be that a third party is performing a
+<a class="reference external" href="http://en.wikipedia.org/wiki/Man-in-the-middle_attack">man-in-the-middle attack</a>.</p>
+</div>
+<p>To remove a key for <code class="docutils literal"><span class="pre">india.futuresystems.org</span></code> from <code class="docutils literal"><span class="pre">~/.ssh/known_hosts</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh-keygen -R india.futuresystems.org
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ssh">
+<h3><a class="toc-backref" href="#id15">SSH</a><a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h3>
+<p>Secure Shell, or SSH, is a protocol for securely connecting to a Shell
+on a remote computer.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">See Section <a class="reference internal" href="../linux/shell.html#s-shell-lesson"><span>Shell</span></a> for more details on what a shell
+is and how to use it.</p>
+</div>
+<p>This security is accomplished by encrypting the data that is sent
+between the two endpoints.  In order for this communication to be
+considered &#8220;safe&#8221;, the machines need to identify each other.  The
+identity is usually accomplished through the use of a <strong>key</strong> file,
+which usually comes in pairs: a <strong>public</strong> key and a <strong>private</strong> key.
+This is usually called a <strong>key pair</strong>.  On Mac OS X and Linux a key
+pair can be created using the <code class="docutils literal"><span class="pre">ssh-keygen</span></code> command. You can test this out by opening a terminal and entering the following:</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ ssh-keygen -f ~/test_identity
+</pre></div>
+</div>
+<p>What this does is actually create two file:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">~/test_identity</span></code></li>
+<li><code class="docutils literal"><span class="pre">~/test_identity.pub</span></code></li>
+</ul>
+<p>The second file, ending in <code class="docutils literal"><span class="pre">.pub</span></code>, is the public key and needs to be
+shared with the machines you wish to access.  In the case of
+FutureSystems, you add the public key to your <a class="reference external" href="https://portal.futuresystems.org/my/ssh-keys">SSH Keys</a>.  In the case of
+GitHub (see Section <a class="reference internal" href="../git.html#s-lesson-git"><span>Using Git and GitHub for collaboration</span></a>) you add it to your account.</p>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p><strong>Never</strong> share the private key with anyone.  This is used to
+identify you and can be used to completely regenerate the public
+key. Try it for yourself with:</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ ssh-keygen -y -f ~/test_identity
+</pre></div>
+</div>
+<p class="last">and compare the output with <code class="docutils literal"><span class="pre">~/test_identity.pub</span></code></p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>A good practice for managing SSH keys is to create a key pair on
+each machine you use and to add a comment indicating your contact
+information and the machine this key belongs to.:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh-keygen -C &#39;host:relativity contact:albert@gmail.com&#39;
+</pre></div>
+</div>
+<p>In the above the comment is specified with the <code class="docutils literal"><span class="pre">-C</span></code> flag and the
+body of the comment is within the single quotes.</p>
+<p>The contact information is useful when sharing the key with others
+as it helps them understand who you are.</p>
+<p class="last">The host information is useful for you if you have multiple
+machines.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="lab-account-applications">
+<span id="lab-futuresystems-access"></span><h1>Lab - Account Applications<a class="headerlink" href="#lab-account-applications" title="Permalink to this headline">¶</a></h1>
+<p>For this exercise, you need to log into your FutureSystems account.
+On Windows, use the PuTTY program.
+On Mac OS X use the Terminal application.</p>
+<p>Execute the following commands:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">whoami</span></code></li>
+<li><code class="docutils literal"><span class="pre">uname</span> <span class="pre">-a</span></code></li>
+<li><code class="docutils literal"><span class="pre">pwd</span></code></li>
+</ul>
+<p>Post the result (copy and paste the ASCII text of what you see in the
+screen to the homework system.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../linux/overview.html" class="btn btn-neutral float-right" title="Overview and Introduction" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="overview.html" class="btn btn-neutral" title="Overview and Introduction" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

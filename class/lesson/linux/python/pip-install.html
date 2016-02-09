@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Virtual Environments &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Virtual Environments</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/class/lesson/linux/python/pip-install.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>Often you may need functionality that is not present in Python&#8217;s standard library.
+In this case you have two option:</p>
+<ul class="simple">
+<li>implement the features yourself</li>
+<li>use a third-party library that has the desired features.</li>
+</ul>
+<p>Often you can find a previous implementation of what you need.
+Since this is a common situation, there is a service supporting it:
+the <a class="reference external" href="https://pypi.python.org/pypi">Python Package Index</a> (or PyPi for short).</p>
+<p>Our task here is to install the <a href="#id1"><span class="problematic" id="id2">`autopep8`_</span></a> tool from PyPi.
+This will allow us to illustrate the use if virtual environments using
+the <code class="docutils literal"><span class="pre">virtualenv</span></code> command, and installing and uninstalling PyPi
+packages using <code class="docutils literal"><span class="pre">pip</span></code>.</p>
+<div class="section" id="virtual-environments">
+<h1>Virtual Environments<a class="headerlink" href="#virtual-environments" title="Permalink to this headline">¶</a></h1>
+<p>Often when you use shared computing resources, such as
+<code class="docutils literal"><span class="pre">india.futuresystems.org</span></code> you will not have permission to install
+applications in the default global location.</p>
+<p>Let&#8217;s see where <code class="docutils literal"><span class="pre">grep</span></code> is located:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ which grep
+/bin/grep
+</pre></div>
+</div>
+<p>It seems that there are many programs installed in <code class="docutils literal"><span class="pre">/bin</span></code> such as
+<code class="docutils literal"><span class="pre">mkdir</span></code> and <code class="docutils literal"><span class="pre">pwd</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls /bin
+alsacard    dbus-cleanup-sockets  env             hostname         mailx          pwd
+alsaunmute  dbus-daemon           ex              igawk            mkdir          raw
+...
+</pre></div>
+</div>
+<p>If we wished to add a new program it seems like putting it in <code class="docutils literal"><span class="pre">/bin</span></code> is the place to start.
+Let&#8217;s create an empty file <code class="docutils literal"><span class="pre">/bin/hello-$PORTALNAME</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ touch /bin/hello-$(whoami)
+touch: cannot touch `/bin/hello-albert&#39;: Permission denied
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Recall that $PORTALNAME is your username on FutureSystems, which can
+also be obtained using the <code class="docutils literal"><span class="pre">whoami</span></code> shell command.</p>
+</div>
+<p>It seems that this is not possible.  Since <code class="docutils literal"><span class="pre">india</span></code> is a shared
+resources not all users should be allowed to make changes that could
+affect everyone else.  Only a small number of users, the
+administrators, have the ability to globally modify the system.</p>
+<p>We can still create our program in our home directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ touch ~/hello-$(whoami)
+</pre></div>
+</div>
+<p>but this becomes cumbersome very quickly if we have a large number of
+programs to install.  Additionally, it is not a good idea to modify
+the global environment of one&#8217;s computing system as this can lead to
+instability and bizarre errors.</p>
+<p>A virtual environment is a way of encapsulating and automating the
+creation and use of a computing environment that is consistent and
+self-contained.</p>
+<p>The tool we use with Python to accomplish this is called <code class="docutils literal"><span class="pre">virtualenv</span></code>.</p>
+<p>Let&#8217;s try it out. Start by cleaning up our test earlier and going
+into the home directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ rm ~/hello-$(whoami)
+$ cd ~
+</pre></div>
+</div>
+<p>Now lets create a virtual env:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ virtualenv ENV
+PYTHONHOME is set.  You *must* activate the virtualenv before using it
+New python executable in ENV/bin/python
+Installing setuptools............done.
+Installing pip...............done.
+</pre></div>
+</div>
+<p>When using <code class="docutils literal"><span class="pre">virtualenv</span></code> you pass the directory where you which to
+create the virtual environment, in this case <code class="docutils literal"><span class="pre">ENV</span></code> in the current
+(home) directory.  We are then told that we must activate the virtual
+environment before using it and that the python program, setuptools,
+and pip are installed.</p>
+<p>Let&#8217;s see what we have:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls ENV/bin
+activate  activate.csh  activate.fish  activate_this.py  easy_install
+easy_install-2.7  pip  pip-2.7  python  python2  python2.7
+</pre></div>
+</div>
+<p>It seems that there are several programs installed.  Let&#8217;s see where
+our current <code class="docutils literal"><span class="pre">python</span></code> is and what happens after activating this
+environment:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ which python
+/N/soft/python/2.7/bin/python
+$ source ENV/bin/activate
+(ENV) $ which python
+~/ENV/bin/python
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">As virtualenv stated, you <strong>must</strong> activate the virtual environment
+before it can be used.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Notice how the shell prompt changed upon activation.</p>
+</div>
+</div>
+<div class="section" id="fixing-bad-code">
+<h1>Fixing Bad Code<a class="headerlink" href="#fixing-bad-code" title="Permalink to this headline">¶</a></h1>
+<p>Let&#8217;s now look at another important tool for Python development: the
+Python Package Index, or PyPI for short.  PyPI provides a large set of
+third-party python packages.  If you want to do something in python,
+first check pypi, as odd are someone already ran into the problem and
+created a package solving it.</p>
+<p>I&#8217;m going to demonstrate creating a user python environment,
+installing a couple packages from pypi, and use them to examine some
+code.</p>
+<p>First, get the bad code like so:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ wget --no-check-certificate http://git.io/pXqb -O bad_code_example.py
+</pre></div>
+</div>
+<p>Let&#8217;s examine the code:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nano bad_code_example.py
+</pre></div>
+</div>
+<p>As you can see, this is very dense and hard to read.  Cleaning it up
+by hand would be a time-consuming and error-prone process.  Luckily,
+this is a common problem so there exist a couple packages to help in
+this situation.</p>
+</div>
+<div class="section" id="using-pip-to-install-packages">
+<h1>Using <code class="docutils literal"><span class="pre">pip</span></code> to install packages<a class="headerlink" href="#using-pip-to-install-packages" title="Permalink to this headline">¶</a></h1>
+<p>In order to install package from PyPI, use the <code class="docutils literal"><span class="pre">pip</span></code> command.
+We can search for PyPI for packages:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pip search --trusted-host pypi.python.org autopep8 pylint
+</pre></div>
+</div>
+<p>It appears that the top two results are what we want so install them:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pip install --trusted-host pypi.python.org autopep8 pylint
+</pre></div>
+</div>
+<p>This will cause <code class="docutils literal"><span class="pre">pip</span></code> to download the packages from PyPI, extract
+them, check their dependencies and install those as needed, then
+install the requested packages.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can skip &#8216;&#8211;trusted-host pypi.python.org&#8217; option if you have a
+patch on urllib3 on Python 2.7.9.</p>
+</div>
+</div>
+<div class="section" id="using-autopep8">
+<h1>Using <code class="docutils literal"><span class="pre">autopep8</span></code><a class="headerlink" href="#using-autopep8" title="Permalink to this headline">¶</a></h1>
+<p>We can now run the bad code through autopep8 to fix formatting
+problems:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ autopep8 bad_code_example.py &gt;code_example_autopep8.py
+</pre></div>
+</div>
+<p>Let&#8217;s look at the result.
+This is considerably better than before.
+It is easy to tell what the example1 and example2 functions are doing.</p>
+<p>It is a good idea to develop a habit of using <code class="docutils literal"><span class="pre">autopep8</span></code> in your
+python-development workflow.  For instance: use <code class="docutils literal"><span class="pre">autopep8</span></code> to check
+a file, and if it passes, make any changes in place using the <code class="docutils literal"><span class="pre">-i</span></code>
+flag:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ autopep8 file.py    # check output to see of passes
+$ autopep8 -i file.py # update in place
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

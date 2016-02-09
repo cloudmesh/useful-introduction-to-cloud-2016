@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Adding new Commands via a Python Package &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Adding new Commands via a Python Package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/cloudmesh/cm/cmd3.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="adding-new-commands-via-a-python-package">
+<h1>Adding new Commands via a Python Package<a class="headerlink" href="#adding-new-commands-via-a-python-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="exercise-i">
+<h2>Exercise I<a class="headerlink" href="#exercise-i" title="Permalink to this headline">¶</a></h2>
+<p>(cm.1) This assignment will teach you how to add new commands to
+cloudmesh while using the <cite>cm-generate-command</cite>. First read the
+documentation and watch the video for an example to add a simple
+command. After you successfully installed it, find a python package
+that you like and can be installed with pip. Develop a new command
+that has the following options (additional parameters may be used if
+necessary). We use here the name your_command as a placeholder find a
+better name for it:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm your_command deploy ...
+
+    deploys the python package
+
+cm your_command start ...
+
+    if the package has some services start them now
+
+ cm your_command stop ...
+
+     if the package has some services stop them
+
+ cm your_command run ...
+
+     runs some useful command against the services
+</pre></div>
+</div>
+<p>Alternatively, if you can not locate a good package, you can use
+shelve, while implementing the commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm shelve deploy
+cm shelve start --file=FILENAME     # filename of the shelve file
+cm shelve clear                                # removes the shelve file
+cm shelve set index data       # adds the data to the given index
+cm shelve delete index          # removes the data at the index
+cm shelve list                        # list the contents
+</pre></div>
+</div>
+<p>Provide an extensive documentation while using docopts.</p>
+<p>In a future task we will use what you have learned here to provide a
+cm command that deploys and manages an advanced PaaS onto a virtual
+cluster. For now we just do a simple version so you get familiar with
+the concepts. Examples for such a bigger deployments are:</p>
+<ul class="simple">
+<li>pig</li>
+<li>zookeeper</li>
+<li>hadoop (already provided by cm)</li>
+<li>harp</li>
+<li>apache</li>
+<li>drupal</li>
+<li>others</li>
+</ul>
+<p>You will sudo for many of them, thus india is not sufficient for the
+more advanced PaaS. These are supposed to be done on a virtual cluster
+while leveraging the <cite>cm cluster</cite> command.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

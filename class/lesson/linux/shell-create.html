@@ -1,0 +1,546 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Learning Objectives &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Learning Objectives</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/class/lesson/linux/shell-create.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="learning-objectives">
+<h1>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li>Create a directory hierarchy that matches a given diagram.</li>
+<li>Create files in that hierarchy using an editor or by copying and
+renaming existing files.</li>
+<li>Display the contents of a directory using the command line.</li>
+<li>Delete specified files and/or directories.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="creating-directories">
+<h1>Creating  Directories<a class="headerlink" href="#creating-directories" title="Permalink to this headline">¶</a></h1>
+<p>We now know how to explore files and directories, but how do we create
+them in the first place? Let&#8217;s go back to Nelle&#8217;s home directory,
+<code class="docutils literal"><span class="pre">/users/nelle</span></code>, and use <code class="docutils literal"><span class="pre">ls</span> <span class="pre">-F</span></code> to see what it contains:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pwd
+/users/nelle
+$ ls -F
+creatures/  molecules/           pizza.cfg
+data/       north-pacific-gyre/  solar.pdf
+Desktop/    notes.txt            writing/
+</pre></div>
+</div>
+<p>Let&#8217;s create a new directory called <code class="docutils literal"><span class="pre">thesis</span></code> using the command
+<code class="docutils literal"><span class="pre">mkdir</span> <span class="pre">thesis</span></code> (which has no output):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ mkdir thesis
+</pre></div>
+</div>
+<p>As you might (or might not) guess from its name, <code class="docutils literal"><span class="pre">mkdir</span></code> means &#8220;make
+directory&#8221;. Since <code class="docutils literal"><span class="pre">thesis</span></code> is a relative path (i.e., doesn&#8217;t have a
+leading slash), the new directory is created in the current working
+directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls -F
+creatures/  north-pacific-gyre/  thesis/
+data/       notes.txt            writing/
+Desktop/    pizza.cfg
+molecules/  solar.pdf
+</pre></div>
+</div>
+<p>However, there&#8217;s nothing in it yet:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls -F thesis
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-files">
+<h1>Creating Files<a class="headerlink" href="#creating-files" title="Permalink to this headline">¶</a></h1>
+<p>One of the simplest ways to create an empty file is via the <code class="docutils literal"><span class="pre">touch</span></code>
+command. Change the working directory to <code class="docutils literal"><span class="pre">thesis</span></code> using <code class="docutils literal"><span class="pre">cd</span></code>, then
+touch an empty file called <code class="docutils literal"><span class="pre">draft.txt</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cd thesis
+$ touch draft.txt
+</pre></div>
+</div>
+<p>If we check the directory contents now,:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls -F .
+draft.txt
+</pre></div>
+</div>
+<p>Let&#8217;s change our working directory to <code class="docutils literal"><span class="pre">thesis</span></code> using <code class="docutils literal"><span class="pre">cd</span></code>, then
+run a text editor called Nano to create a file called <code class="docutils literal"><span class="pre">draft.txt</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cd thesis
+$ nano draft.txt
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="docutils">
+<dt>Which Editor?</dt>
+<dd></dd>
+</dl>
+<p>A text editor is a program that edits plain text.
+Nano is one example of such a program, there are many more.</p>
+<p class="last">Editors will be covered in a later lesson: <a class="reference internal" href="editors.html"><em>Editing Files</em></a></p>
+</div>
+<p>Let&#8217;s type in a few lines of text, then use Control-O to write our
+data to disk:</p>
+<div class="figure" id="id1">
+<img alt="Nano in action" src="../../../_images/nano-screenshot.png" />
+<p class="caption"><span class="caption-text">Nano in action</span></p>
+</div>
+<p>Once our file is saved, we can use Control-X to quit the editor and
+return to the shell. (Unix documentation often uses the shorthand
+<code class="docutils literal"><span class="pre">^A</span></code> to mean &#8220;control-A&#8221;.) <code class="docutils literal"><span class="pre">nano</span></code> doesn&#8217;t leave any output on the
+screen after it exits, but <code class="docutils literal"><span class="pre">ls</span></code> now shows that we have created a
+file called <code class="docutils literal"><span class="pre">draft.txt</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls
+draft.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="removing-files">
+<h1>Removing Files<a class="headerlink" href="#removing-files" title="Permalink to this headline">¶</a></h1>
+<p>Let&#8217;s tidy up by running <code class="docutils literal"><span class="pre">rm</span> <span class="pre">draft.txt</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ rm draft.txt
+</pre></div>
+</div>
+<p>This command removes files (&#8220;rm&#8221; is short for &#8220;remove&#8221;). If we run
+<code class="docutils literal"><span class="pre">ls</span></code> again, its output is empty once more, which tells us that our
+file is gone:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls
+</pre></div>
+</div>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<dl class="last docutils">
+<dt>Deleting Is Forever</dt>
+<dd>The Unix shell doesn&#8217;t have a trash bin that we can recover
+deleted files from (though most graphical interfaces to Unix
+do). Instead, when we delete files, they are unhooked from the
+file system so that their storage space on disk can be
+recycled. Tools for finding and recovering deleted files do exist,
+but there&#8217;s no guarantee they&#8217;ll work in any particular situation,
+since the computer may recycle the file&#8217;s disk space right away.</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="removing-directories">
+<h1>Removing Directories<a class="headerlink" href="#removing-directories" title="Permalink to this headline">¶</a></h1>
+<p>Let&#8217;s re-create that file and then move up one directory to
+<code class="docutils literal"><span class="pre">/users/nelle</span></code> using <code class="docutils literal"><span class="pre">cd</span> <span class="pre">..</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pwd
+/users/nelle/thesis
+$ nano draft.txt
+$ ls
+draft.txt
+$ cd ..
+</pre></div>
+</div>
+<p>If we try to remove the entire <code class="docutils literal"><span class="pre">thesis</span></code> directory using <code class="docutils literal"><span class="pre">rm</span>
+<span class="pre">thesis</span></code>, we get an error message:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ rm thesis
+rm: cannot remove `thesis&#39;: Is a directory
+</pre></div>
+</div>
+<p>This happens because <code class="docutils literal"><span class="pre">rm</span></code> only works on files, not directories. The
+right command is <code class="docutils literal"><span class="pre">rmdir</span></code>, which is short for &#8220;remove directory&#8221;. It
+doesn&#8217;t work yet either, though, because the directory we&#8217;re trying to
+remove isn&#8217;t empty:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ rmdir thesis
+rmdir: failed to remove `thesis&#39;: Directory not empty
+</pre></div>
+</div>
+<p>This little safety feature can save you a lot of grief, particularly
+if you are a bad typist. To really get rid of <code class="docutils literal"><span class="pre">thesis</span></code> we must first
+delete the file <code class="docutils literal"><span class="pre">draft.txt</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ rm thesis/draft.txt
+</pre></div>
+</div>
+<p>The directory is now empty, so <code class="docutils literal"><span class="pre">rmdir</span></code> can delete it:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ rmdir thesis
+</pre></div>
+</div>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<dl class="last docutils">
+<dt>With Great Power Comes Great Responsibility</dt>
+<dd><p class="first">Removing the files in a directory just so that we can remove the
+directory quickly becomes tedious. Instead, we can use <code class="docutils literal"><span class="pre">rm</span></code> with
+the <code class="docutils literal"><span class="pre">-r</span></code> flag (which stands for &#8220;recursive&#8221;):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ rm -r thesis
+</pre></div>
+</div>
+<p class="last">This removes everything in the directory, then the directory
+itself.  If the directory contains sub-directories, <code class="docutils literal"><span class="pre">rm</span> <span class="pre">-r</span></code> does
+the same thing to them, and so on. It&#8217;s very handy, but can do a
+lot of damage if used without care.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="moving-files-and-directories">
+<h1>Moving Files and Directories<a class="headerlink" href="#moving-files-and-directories" title="Permalink to this headline">¶</a></h1>
+<p>Let&#8217;s create that directory and file one more time. (Note that this
+time we&#8217;re running <code class="docutils literal"><span class="pre">nano</span></code> with the path <code class="docutils literal"><span class="pre">thesis/draft.txt</span></code>, rather
+than going into the <code class="docutils literal"><span class="pre">thesis</span></code> directory and running <code class="docutils literal"><span class="pre">nano</span></code> on
+<code class="docutils literal"><span class="pre">draft.txt</span></code> there.):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pwd
+/users/nelle
+$ mkdir thesis
+$ nano thesis/draft.txt
+$ ls thesis
+draft.txt
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">draft.txt</span></code> isn&#8217;t a particularly informative name, so let&#8217;s change
+the file&#8217;s name using <code class="docutils literal"><span class="pre">mv</span></code>, which is short for &#8220;move&#8221;:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ mv thesis/draft.txt thesis/quotes.txt
+</pre></div>
+</div>
+<p>The first parameter tells <code class="docutils literal"><span class="pre">mv</span></code> what we&#8217;re &#8220;moving&#8221;, while the second
+is where it&#8217;s to go. In this case, we&#8217;re moving <code class="docutils literal"><span class="pre">thesis/draft.txt</span></code>
+to <code class="docutils literal"><span class="pre">thesis/quotes.txt</span></code>, which has the same effect as renaming the
+file.  Sure enough, <code class="docutils literal"><span class="pre">ls</span></code> shows us that <code class="docutils literal"><span class="pre">thesis</span></code> now contains one
+file called <code class="docutils literal"><span class="pre">quotes.txt</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls thesis
+quotes.txt
+</pre></div>
+</div>
+<p>Just for the sake of inconsistency, <code class="docutils literal"><span class="pre">mv</span></code> also works on directories
+&#8212; there is no separate <code class="docutils literal"><span class="pre">mvdir</span></code> command.</p>
+<p>Let&#8217;s move <code class="docutils literal"><span class="pre">quotes.txt</span></code> into the current working directory. We use
+<code class="docutils literal"><span class="pre">mv</span></code> once again, but this time we&#8217;ll just use the name of a
+directory as the second parameter to tell <code class="docutils literal"><span class="pre">mv</span></code> that we want to keep
+the filename, but put the file somewhere new. (This is why the command
+is called &#8220;move&#8221;.) In this case, the directory name we use is the
+special directory name <code class="docutils literal"><span class="pre">.</span></code> that we mentioned earlier.:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ mv thesis/quotes.txt .
+</pre></div>
+</div>
+<p>The effect is to move the file from the directory it was in to the
+current working directory. <code class="docutils literal"><span class="pre">ls</span></code> now shows us that <code class="docutils literal"><span class="pre">thesis</span></code> is
+empty:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls thesis
+</pre></div>
+</div>
+<p>Further, <code class="docutils literal"><span class="pre">ls</span></code> with a filename or directory name as a parameter only
+lists that file or directory. We can use this to see that
+<code class="docutils literal"><span class="pre">quotes.txt</span></code> is still in our current directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls quotes.txt
+quotes.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="copying-files">
+<h1>Copying Files<a class="headerlink" href="#copying-files" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal"><span class="pre">cp</span></code> command works very much like <code class="docutils literal"><span class="pre">mv</span></code>, except it copies a
+file instead of moving it. We can check that it did the right thing
+using <code class="docutils literal"><span class="pre">ls</span></code> with two paths as parameters &#8212; like most Unix commands,
+<code class="docutils literal"><span class="pre">ls</span></code> can be given thousands of paths at once:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cp quotes.txt thesis/quotations.txt
+$ ls quotes.txt thesis/quotations.txt
+quotes.txt   thesis/quotations.txt
+</pre></div>
+</div>
+<p>To prove that we made a copy, let&#8217;s delete the <code class="docutils literal"><span class="pre">quotes.txt</span></code> file in
+the current directory and then run that same <code class="docutils literal"><span class="pre">ls</span></code> again.:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ rm quotes.txt
+$ ls quotes.txt thesis/quotations.txt
+ls: cannot access quotes.txt: No such file or directory
+thesis/quotations.txt
+</pre></div>
+</div>
+<p>This time it tells us that it can&#8217;t find <code class="docutils literal"><span class="pre">quotes.txt</span></code> in the current
+directory, but it does find the copy in <code class="docutils literal"><span class="pre">thesis</span></code> that we didn&#8217;t
+delete.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Another Useful Abbreviation</dt>
+<dd>The shell interprets the character <code class="docutils literal"><span class="pre">~</span></code> (tilde) at the start of a
+path to mean &#8220;the current user&#8217;s home directory&#8221;. For example, if
+Nelle&#8217;s home directory is <code class="docutils literal"><span class="pre">/home/nelle</span></code>, then <code class="docutils literal"><span class="pre">~/data</span></code> is
+equivalent to <code class="docutils literal"><span class="pre">/home/nelle/data</span></code>. This only works if it is the
+first character in the path: <code class="docutils literal"><span class="pre">here/there/~/elsewhere</span></code> is <em>not</em>
+<code class="docutils literal"><span class="pre">/home/nelle/elsewhere</span></code>.</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="renaming-files">
+<h2>Renaming files<a class="headerlink" href="#renaming-files" title="Permalink to this headline">¶</a></h2>
+<p>Suppose that you created a <code class="docutils literal"><span class="pre">.txt</span></code> file in your current directory
+to contain a list of the statistical tests you will need to do to
+analyze your data, and named it: <code class="docutils literal"><span class="pre">statstics.txt</span></code></p>
+<p>After creating and saving this file you realize you misspelled the
+filename! You want to correct the mistake, which of the following
+commands could you use to do so?</p>
+<ol class="arabic simple">
+<li><code class="docutils literal"><span class="pre">cp</span> <span class="pre">statstics.txt</span> <span class="pre">statistics.txt</span></code></li>
+<li><code class="docutils literal"><span class="pre">mv</span> <span class="pre">statstics.txt</span> <span class="pre">statistics.txt</span></code></li>
+<li><code class="docutils literal"><span class="pre">mv</span> <span class="pre">statstics.txt</span> <span class="pre">.</span></code></li>
+<li><code class="docutils literal"><span class="pre">cp</span> <span class="pre">statstics.txt</span> <span class="pre">.</span></code></li>
+</ol>
+</div>
+<div class="section" id="moving-and-copying">
+<h2>Moving and Copying<a class="headerlink" href="#moving-and-copying" title="Permalink to this headline">¶</a></h2>
+<p>What is the output of the closing <code class="docutils literal"><span class="pre">ls</span></code> command in the sequence
+shown below?</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pwd
+/home/jamie/data
+$ ls
+proteins.dat
+$ mkdir recombine
+$ mv proteins.dat recombine
+$ cp recombine/proteins.dat ../proteins-saved.dat
+$ ls
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><code class="docutils literal"><span class="pre">proteins-saved.dat</span> <span class="pre">recombine</span></code></li>
+<li><code class="docutils literal"><span class="pre">recombine</span></code></li>
+<li><code class="docutils literal"><span class="pre">proteins.dat</span> <span class="pre">recombine</span></code></li>
+<li><code class="docutils literal"><span class="pre">proteins-saved.dat</span></code></li>
+</ol>
+</div>
+<div class="section" id="listing-directories-and-files">
+<h2>Listing Directories and Files<a class="headerlink" href="#listing-directories-and-files" title="Permalink to this headline">¶</a></h2>
+<p>Suppose that:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls -F
+analyzed/  fructose.dat    raw/   sucrose.dat
+</pre></div>
+</div>
+<p>What command(s) could you run so that the commands below will
+produce the output shown?</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls
+analyzed/   raw/
+$ ls analyzed
+fructose.dat    sucrose.dat
+</pre></div>
+</div>
+</div>
+<div class="section" id="copy-with-multiple-filenames">
+<h2>Copy with Multiple Filenames<a class="headerlink" href="#copy-with-multiple-filenames" title="Permalink to this headline">¶</a></h2>
+<p>What does <code class="docutils literal"><span class="pre">cp</span></code> do when given several filenames and a directory
+name, as in:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ mkdir backup
+$ cp thesis/citations.txt thesis/quotations.txt backup
+</pre></div>
+</div>
+<p>What does <code class="docutils literal"><span class="pre">cp</span></code> do when given three or more filenames, as in:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls -F
+intro.txt    methods.txt    survey.txt
+$ cp intro.txt methods.txt survey.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="listing-recursively-and-by-time">
+<h2>Listing Recursively and By Time<a class="headerlink" href="#listing-recursively-and-by-time" title="Permalink to this headline">¶</a></h2>
+<p>The command <code class="docutils literal"><span class="pre">ls</span> <span class="pre">-R</span></code> lists the contents of directories recursively,
+i.e., lists their sub-directories, sub-sub-directories, and so on in
+alphabetical order at each level. The command <code class="docutils literal"><span class="pre">ls</span> <span class="pre">-t</span></code> lists things
+by time of last change, with most recently changed files or
+directories first. In what order does <code class="docutils literal"><span class="pre">ls</span> <span class="pre">-R</span> <span class="pre">-t</span></code> display things?</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

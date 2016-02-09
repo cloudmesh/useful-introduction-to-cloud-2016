@@ -1,0 +1,1304 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configuration with Yaml Files &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/>
+        <link rel="up" title="Cloudmesh Setup" href="index.html"/>
+        <link rel="next" title="Nosetests" href="nosetests.html"/>
+        <link rel="prev" title="Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing" href="setup_vagrant.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Cloudmesh Overview</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh Setup</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html">Quickstart on your desktop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html">Quickstart for an Openstack VM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_vagrant.html">Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Configuration with Yaml Files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#initialization">Initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cloud-activation-india-openstack">Cloud Activation - India Openstack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#format-of-the-cloudmesh-yaml-file">Format of the cloudmesh.yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration-file-rc-file">Configuration file (rc file)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-devstack-to-cloudmesh-yaml-tbd">Adding devstack to <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code> (TBD)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-dreamhost-to-cloudmesh-yaml">Adding dreamhost to <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#amazon-web-services">Amazon Web Services</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cloudmesh-server-yaml">cloudmesh-server.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cloudmesh-cluster-yaml">cloudmesh_cluster.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#other-yaml-files">Other Yaml files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#me-sample">Me Sample</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ec2-credentials-this-secition-is-outdated">EC2 Credentials (THIS SECITION IS OUTDATED)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nosetests.html">Nosetests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cm/index.html">Cloudmesh cm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/index.html">Cloudmesh API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/index.html">Cloudmesh Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gui/index.html">Cloudmesh GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Cloudmesh FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh</a> &raquo;</li>
+      
+          <li><a href="index.html">Cloudmesh Setup</a> &raquo;</li>
+      
+    <li>Configuration with Yaml Files</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/cloudmesh/setup/yaml.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configuration-with-yaml-files">
+<h1>Configuration with Yaml Files<a class="headerlink" href="#configuration-with-yaml-files" title="Permalink to this headline">¶</a></h1>
+<p>Cloudmesh comes with a set of convenient configuration files in the
+yaml format.  As the files are in yaml format, it is important that
+you make sure that prior to saving the file the indentation is
+correct and that all tabs are replaced with spaces.</p>
+<p>All cloudmesh configuration files are placed in the directory:</p>
+<div class="highlight-bash"><div class="highlight"><pre>~/.cloudmesh
+</pre></div>
+</div>
+<p>Users will only to worry about the file</p>
+<blockquote>
+<div>~/.cloudmesh/cloudmesh.yaml</div></blockquote>
+<p>Other yaml files interact with the backend system. In general it is
+sufficient to have just a cloudmesh.yaml file so you run cloudmesh in
+user mode.</p>
+<div class="section" id="initialization">
+<h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h2>
+<p>If you do not have a yaml file or a .cloudmesh directory, the best way
+to create it is by downloading the source code from cloudmesh and
+install it as discussed in the instalation section.</p>
+<p>The cloudmesh configuration files can than be created with the
+command:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ ./install new
+</pre></div>
+</div>
+<p>This will create a <cite>~/.cloudmesh</cite> directory with some basic yaml files
+that you will need to modify.</p>
+</div>
+<div class="section" id="cloud-activation-india-openstack">
+<h2>Cloud Activation - India Openstack<a class="headerlink" href="#cloud-activation-india-openstack" title="Permalink to this headline">¶</a></h2>
+<p>For FutureSystems we have additionally provided a script that automatically
+creates some yaml files from the installation. In future FutureSystems will
+provide directly a yaml for cloudmesh so that this step is unnecessary. Before
+you can execute this command you must make sure that you can log into india via
+ssh. Once you have verified this for example with:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ ssh $PORTALNAME@india.futuregrid.org hostname
+</pre></div>
+</div>
+<p>Now create the yaml file while fetching some information from the
+remote machines:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ cm-iu user fetch
+</pre></div>
+</div>
+<p>First it will ask you which username you have on FutureSystems. The name
+may be different from your current local machine name. Please enter
+your name when you see:</p>
+<div class="highlight-bash"><div class="highlight"><pre>Please enter your portal user id <span class="o">[</span>default: albert<span class="o">]</span>:
+</pre></div>
+</div>
+<p>After this you can update the yaml files with the data fetched from
+the india and sierra with the command:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ cm-iu user create
+</pre></div>
+</div>
+<p>The reason why we have separated the commands and not just created one
+command is to provide you with the ability to double check overwriting
+possibly an existing rc file.</p>
+<p>This will create for you in your $HOME/.cloudmesh directory:</p>
+<div class="highlight-bash"><div class="highlight"><pre>.cloudmesh/clouds/india/juno
+</pre></div>
+</div>
+<p>This command only works if you have access to the login node for the
+machine called india.</p>
+</div>
+<div class="section" id="format-of-the-cloudmesh-yaml-file">
+<h2>Format of the cloudmesh.yaml file<a class="headerlink" href="#format-of-the-cloudmesh-yaml-file" title="Permalink to this headline">¶</a></h2>
+<p>Next we will present selected details of the yaml format of the:</p>
+<div class="highlight-bash"><div class="highlight"><pre>cloudmesh.yaml
+</pre></div>
+</div>
+<p>file. It includes like:</p>
+<div class="highlight-bash"><div class="highlight"><pre>cloudmesh:
+  active:
+  - india
+  clouds:
+      india:
+          cm_heading: India OpenStack, Juno
+          cm_host: india.futuregrid.org
+          cm_label: ios_juno
+          cm_service_url_type: publicURL
+          cm_type: openstack
+          cm_type_version: juno
+          credentials:
+              OS_AUTH_URL: https://i5r.idp.iu.futuregrid.org:5000/v2.0
+              OS_CACERT: $HOME/.cloudmesh/india-juno-cacert.pem
+              OS_PASSWORD: PUT_YOUR OPENSTCK_PASSWORD_HERE look it
+              OS_TENANT_NAME: PUT_YOUR_PROJECTID_HERE
+              OS_USERNAME: PUT_YOUR_PROTALNAME_HERE
+              OS_VERSION: juno
+          default:
+              flavor: None
+</pre></div>
+</div>
+<p>The file begins with the keyword cloudmesh and has all further
+information indented under it. An active: attribute allows you to
+specify clouds that you would like to use. This enables you to select
+from a large list of predefined clouds that may be given to you as
+template in a cloudmesh.yaml file those clouds you like to actually
+use. In our initial example we provide you with just one active cloud
+called. Hence you see under active:</p>
+<div class="highlight-bash"><div class="highlight"><pre>active:
+- india
+</pre></div>
+</div>
+<p>If there are more than one cloud you would simply add the label of
+that cloud in the array. As we only have one cloud and activate in
+this examle only this cloud we only have:</p>
+<div class="highlight-bash"><div class="highlight"><pre>active:
+- india
+</pre></div>
+</div>
+<p>Next, we need to define several attributes for the active clouds. This
+must be done carefully and you need to possibly check with your
+cloudprovider for the information that is filled in as part of a
+credential section. As we need to identify a cloud we use the same
+identifier that we used in the active cloud. This identifier is rather
+arbitrary, but from experience we use on FutureGrid the nameing scheme
+machinename_cloudtype_cloudversion. But one can naturally chose any
+name that follows the yaml conventions. Pleas eonly use characters in
+[<a href="#id3"><span class="problematic" id="id4">A-Za-z0-9_</span></a>]. Do not us a minus sign but use an underscor instead in
+any attribute name to avoid issues.</p>
+<p>Cloudmesh uses a number of convenient attributes that are starting
+with &#8220;<a href="#id5"><span class="problematic" id="id6">cm_</span></a>&#8221;. These include</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">cm_heading:</th><td class="field-body"><p class="first">Specifies a heading for the cloud that is used in several user
+interfaces when refering to this cloud</p>
+<p>Example: Sierra OpenStack, Grizzly</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">cm_host:</th><td class="field-body"><p class="first">Specifies the hostname of the cloud that is used in some cases to
+connect to it.  In many cases this value is not needed.</p>
+<p>Example: sierra.futuregrid.org</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">cm_label:</th><td class="field-body"><p class="first">Specifies a simple very short abbreviation of the cloud that can be
+used with the commandline tools. Often it is inconvenient so specify
+for example sierra_openstack_grizzly. instead a user can specify an
+arbitrary label for that cloud such as sierra, or in our case we
+used sos.</p>
+<p>Example: sos</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">cm_type:</th><td class="field-body"><p class="first">The type of a cloud is very important as it will deterimine how we
+interact with it</p>
+<p>Example: openstack</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">cm_type_version:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first">Besides the type we can have also a number of versions that
+specifies how we interact with the cloud.</p>
+<p class="last">Example: havana</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="configuration-file-rc-file">
+<h2>Configuration file (rc file)<a class="headerlink" href="#configuration-file-rc-file" title="Permalink to this headline">¶</a></h2>
+<p>In most IaaS platforms, configuration files (in the form of an &#8220;rc
+file&#8221;) are provided as credentials. These credentials should be
+imported in cloudmesh.yaml.</p>
+</div>
+<div class="section" id="adding-devstack-to-cloudmesh-yaml-tbd">
+<h2>Adding devstack to <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code> (TBD)<a class="headerlink" href="#adding-devstack-to-cloudmesh-yaml-tbd" title="Permalink to this headline">¶</a></h2>
+<p>DevStack offers an easy method to try out Openstack on your machine or
+in a virtual machine (VM). <a class="reference external" href="http://devstack.org">DevStack</a> provides
+a setup guide and configuration here: <a class="reference external" href="http://devstack.org/configuration.html">Configuration</a>.</p>
+</div>
+<div class="section" id="adding-dreamhost-to-cloudmesh-yaml">
+<h2>Adding dreamhost to <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code><a class="headerlink" href="#adding-dreamhost-to-cloudmesh-yaml" title="Permalink to this headline">¶</a></h2>
+<p>Dreamhost provides an Openstack cloud that can be accessed through the
+dreamhost panel at:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://panel.dreamhost.com/index.cgi">https://panel.dreamhost.com/index.cgi</a></li>
+</ul>
+<p>The Horizon interface is located at</p>
+<ul class="simple">
+<li><a class="reference external" href="https://dashboard.dreamcompute.com">https://dashboard.dreamcompute.com</a></li>
+</ul>
+<p>If you are a customer of dreamhost, use your username and password
+that was send to you.</p>
+<p>To use cloudmesh, please add this username and password in the
+placeholder for dreamhost.</p>
+<div class="section" id="hp-cloud">
+<h3>HP Cloud<a class="headerlink" href="#hp-cloud" title="Permalink to this headline">¶</a></h3>
+<p>The cloud offered from HP is an Openstack cloud and contains the
+ability to conduct project and user based billing. As this cloud is
+Openstack it behaves much the same as the once defined on India and
+Sierra. There may be differences based on the version.</p>
+<p>HP provides an interface to their cloud through horizon. The
+documentation for it can be found at:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.hpcloud.com/hpcloudconsole">http://docs.hpcloud.com/hpcloudconsole</a></li>
+</ul>
+<p>To use the cloud you have to first create an account with HP, which
+will charge you real money for using their cloud. Make sure you
+understand what costs will be charged before you request thousands of
+virtual machines. Naturally this is valid for any other commercial
+cloud also. The console for the HP cloud is available at:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.hpcloud.com/console">http://www.hpcloud.com/console</a></li>
+</ul>
+<p>Which will bring you to their horizon interface:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://horizon.hpcloud.com">https://horizon.hpcloud.com</a></li>
+</ul>
+<p>You can add your username and password into the cloudmesh.yaml in the
+.cloudmesh directory. It is that simple. However, presently the data
+is stored in cleartext which we will change in future. Thus if your
+would like to run cloudmesh we currently recommend running it on your
+own local machine. Make sure that the access to the yaml file is
+properly secured.</p>
+<p>HP provides multiple regions and they can be easily configured in
+cloudmesh. We provide examples for two regions:</p>
+<div class="highlight-bash"><div class="highlight"><pre>hp:
+  cm_heading: HP Openstack
+  cm_label: hpos
+  cm_type: openstack
+  cm_type_version: grizzly
+  credentials:
+    OS_AUTH_URL: https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/
+    OS_CACERT: None
+    OS_PASSWORD: mypassword
+    OS_TENANT_NAME: mytenantname
+    OS_USERNAME: myusername
+    OS_REGION: az-1.region-a.geo-1
+  default:
+    flavor: standard.small
+    image: 142792
+hp_east:
+  cm_heading: HP Openstack
+  cm_label: hpeos
+  cm_type: openstack
+  cm_type_version: grizzly
+  credentials:
+    OS_AUTH_URL: https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0/
+    OS_CACERT: None
+    OS_PASSWORD: mypassword
+    OS_TENANT_NAME: mytenantname
+    OS_USERNAME: myusername
+    OS_REGION: region-b.geo-1
+  default:
+    flavor: standard.small
+    image: 142792
+</pre></div>
+</div>
+</div>
+<div class="section" id="azure">
+<h3>Azure<a class="headerlink" href="#azure" title="Permalink to this headline">¶</a></h3>
+<p>Microsoft Windows Azure offers security credentials per a valid
+subscription on a user account. Based on the subscription id,
+chargeable usage is going to be applied to your bill. To authenticate
+requests to Azure, you need to configure your credentials for
+Cloudmesh. The following step-by-step tutorial explains the
+configuration of Azure credentials on Cloudmesh.</p>
+<p>To connect Azure Virtual Machines to Cloudmesh, you need to provide
+Azure credentials to authenticate requrests in the yaml file. You can
+find the credentials in the</p>
+<ul class="simple">
+<li><a class="reference external" href="https://manage.windowsazure.com">Azure Management Portal</a></li>
+</ul>
+<p>which is a web interface to manage your account and Azure Virtual
+Machines.  Also, you can find credentials by downloading the
+subscription file (.publishsettings) here:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://go.microsoft.com/fwlink/?LinkId=254432">http://go.microsoft.com/fwlink/?LinkId=254432</a>.</li>
+</ul>
+<p>Once you download the file, you may need to import your subscription
+Id and valid X.509 certificate from the file with the help of the  Azure cross-platform
+command line interface. More information about the Azure CLI can be
+found in the Manual/article about the</p>
+<ul class="simple">
+<li><a class="reference external" href="http://azure.microsoft.com/en-us/documentation/articles/xplat-cli">Azure Cross-Platform Command-Line Interface</a>.</li>
+</ul>
+<p>The Azure credentials require that the X.509 certificate is placed in
+the <cite>.cloudmesh</cite> directory. The <em>subscriptionid</em> field should be filled
+with your Azure subscription id. The valid X.509 certificate file
+(.pem) must also be stored in the <cite>.cloudmesh</cite> directory. We store it
+under the name:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$HOME/.cloudmesh/azure_managementCertificate.pem
+</pre></div>
+</div>
+<p>Cloudmesh yaml file has an example invalid entry that you can change
+with your settings. It can be easily identified while looking for the
+keyword azure in the <cite>cloudmesh.yaml</cite> file.
+As Azure is a commercial service it is important that you properly
+secure the .cloudmesh directory and its yaml files.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Recommended files and directory permissions for Secured Cloudmesh
+To protect the yaml files against any access from other users, we recommend
+to use <cite>chmod</cite> command. Try <cite>chmod -R o+rwx,go-rwx ~/.cloudmesh</cite> to make
+any file in the <em>.cloudmesh</em> directory a private file to your user account.
+This way allows you have a full access to the files and the directory but
+not others.</p>
+</div>
+<div class="section" id="azure-quickstart">
+<h4>Azure Quickstart<a class="headerlink" href="#azure-quickstart" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="azure-account">
+<h5>Azure account<a class="headerlink" href="#azure-account" title="Permalink to this headline">¶</a></h5>
+<p>If you do not have an Azure account you can obtain one from Microsoft.
+Microsoft provides a free-trial for new account applicants. The
+Windows Azure site is located at</p>
+<ul class="simple">
+<li><a class="reference external" href="https://manage.windowsazure.com">https://manage.windowsazure.com</a></li>
+</ul>
+</div>
+<div class="section" id="download-credentials">
+<h5>Download credentials<a class="headerlink" href="#download-credentials" title="Permalink to this headline">¶</a></h5>
+<p>Form ther you can download the:</p>
+<div class="highlight-bash"><div class="highlight"><pre>.publishsettings
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-azure-cli">
+<h5>Install Azure CLI<a class="headerlink" href="#install-azure-cli" title="Permalink to this headline">¶</a></h5>
+<p>Next you will need to install the Azure CLI. This is documented at</p>
+<ul class="simple">
+<li><a class="reference external" href="http://azure.microsoft.com/en-us/documentation/articles/xplat-cli/">http://azure.microsoft.com/en-us/documentation/articles/xplat-cli/</a></li>
+</ul>
+<p>Here you find install instructions fror Linux but also a link to an
+OSX installer.</p>
+<p>Once the client is installed you can download the credentials</p>
+</div>
+<div class="section" id="import-credentials-via-azure-cli">
+<h5>Import Credentials via Azure CLI<a class="headerlink" href="#import-credentials-via-azure-cli" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash"><div class="highlight"><pre>$ azure account download
+$ azure account import &lt;.publishsettings file path&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="download-subscription-file-publishsettings">
+<h5>Download Subscription File (.publishsettings)<a class="headerlink" href="#download-subscription-file-publishsettings" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><a class="reference external" href="http://go.microsoft.com/fwlink/?LinkId=254432">http://go.microsoft.com/fwlink/?LinkId=254432</a></li>
+</ul>
+</div>
+<div class="section" id="place-x-509-certificate-on-cloudmesh">
+<h5>Place X.509 certificate on Cloudmesh<a class="headerlink" href="#place-x-509-certificate-on-cloudmesh" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash"><div class="highlight"><pre> $ cp -p ~/.azure/managementCertificate.pem ~/.cloudmesh/azure_managementCertificate.pem
+
+Only the owner with <span class="nb">read</span> and write permission e.g. -rw-------
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Recommended files and directory permissions for Secured Cloudmesh
+To protect the yaml files against any access from other users, we recommend
+to use <cite>chmod</cite> command. Try
+<cite>chmod o+rwx,go-rwx ~/azure_managementCertificate.pem</cite> to make the file a
+private file to your user account. This way allows you have a full access to
+the file but not others.</p>
+</div>
+</div>
+<div class="section" id="replace-subscription-id">
+<h5>Replace Subscription ID<a class="headerlink" href="#replace-subscription-id" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash"><div class="highlight"><pre>$ azure service cert list
+</pre></div>
+</div>
+<p>provides your subscription id that just imported from the .publishsettings file.</p>
+<p>Now, you are ready to use Azure Virtual Machines on Cloudmesh.</p>
+</div>
+<div class="section" id="test-azure-virtual-machine">
+<h5>Test Azure Virtual Machine<a class="headerlink" href="#test-azure-virtual-machine" title="Permalink to this headline">¶</a></h5>
+<p>TBD</p>
+</div>
+<div class="section" id="example-azure-cloudmesh-configuration">
+<h5>Example Azure cloudmesh configuration<a class="headerlink" href="#example-azure-cloudmesh-configuration" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash"><div class="highlight"><pre>azure:
+  cm_host: windowsazure.com
+  cm_label: waz
+  cm_type: azure
+  cm_type_version: null
+  credentials:
+    managementcertfile: $HOME/.cloudmesh/azure_managementCertificate.pem
+    servicecertfile: $HOME/.cloudmesh/azure_serviceCertificate.pfx
+    subscriptionid: 367367382-7687-6767-6767-6876dsa87ds
+    thumbprint: $HOME/.cloudmesh/azure_thumbprint
+  default:
+    flavor: ExtraSmall
+    image: b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu_DAILY_BUILD-saucy-13_10-amd64-server-20130930-en-us-30GB
+    location: East US
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="amazon-web-services">
+<h2>Amazon Web Services<a class="headerlink" href="#amazon-web-services" title="Permalink to this headline">¶</a></h2>
+<p>Amazon EC2 Cloud requires Secret Access Keys to use Amazon Web Services (AWS).
+To configure Amazon EC2 on Cloudmesh, you need to provide the Secret Access
+Keys of your account. Amazon allows only to download the credentials via their
+web page, you need to go to the <a class="reference external" href="http://console.aws.amazon.com/iam/home?#security_credential">Security Credentials</a> page to get the
+credentials. You may use your existing AWS account or create a new AWS account.
+The Access Key is a pair of Access Key ID and Secret Access Key and these
+values should be replaced with <em>EC2_ACCESS_KEY</em> and <em>EC2_SECRET_KEY</em> fields in
+the yaml file. Cloudmesh identifies <em>cm_type: aws</em> as Amazon Web Services in
+the yaml file, you update the <em>aws</em> section with your security credentials.
+Note that Amazon offers commercial services, the access key identification and
+the secret key should be kept in a safe place to avoid any unexpected usage
+from someone who you didn&#8217;t authorize.</p>
+<div class="highlight-bash"><div class="highlight"><pre>aws:
+  cm_host: aws.amazon.com
+  cm_label: aws
+  cm_type: aws
+  cm_type_version: null
+  credentials:
+    access_key_id: ABCDHJLKHLDKJHLDKJH
+    keyname: cloudmesh
+    privatekeyfile: $HOME/.cloudmesh/aws_pk.pem
+    secret_access_key: abcgfiuegfiuesgfudsgfgdskjgfkdjsg
+    userid: albert
+  default:
+    flavor: m1.small
+    image: ami-fbb2fc92
+    location: us-east-1
+</pre></div>
+</div>
+<div class="section" id="india">
+<h3>India<a class="headerlink" href="#india" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre>clouds:
+    india:
+        cm_heading: India OpenStack, Juno
+        cm_host: india.futuregrid.org
+        cm_label: ios_juno
+        cm_service_url_type: publicURL
+        cm_type: openstack
+        cm_type_version: juno
+        credentials:
+            OS_AUTH_URL: https://i5r.idp.iu.futuregrid.org:5000/v2.0
+            OS_CACERT: $HOME/.cloudmesh/india-juno-cacert.pem
+            OS_PASSWORD: PUT_YOUR OPENSTCK_PASSWORD_HERE look it
+            OS_TENANT_NAME: PUT_YOUR_PROJECTID_HERE
+            OS_USERNAME: PUT_YOUR_PROTALNAME_HERE
+            OS_VERSION: juno
+        default:
+            flavor: None
+</pre></div>
+</div>
+</div>
+<div class="section" id="alamo">
+<h3>Alamo<a class="headerlink" href="#alamo" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Alamos is no longer supported, it has been moved to chameleon cloud</p>
+</div>
+<p>Although Alamo on FG is an openstack grizzly cloud, it is not as
+sophisticated configured as the clouds on india and sierra. Instead is
+uses for horizon the username and password from the openstack portal,
+but does not expose its native cloud interfaces through the https
+protocol. Instead it only offers access with the limited EC2 cloud
+interfaces that are inferior in capabilities to the openstack
+interfaces. Here is an example:</p>
+<div class="highlight-bash"><div class="highlight"><pre>alamo:
+  cm_host: alamo.futuregrid.org
+  cm_label: alamo
+  cm_type: ec2
+  cm_type_version: null
+  credentials:
+    EC2_PRIVATE_KEY: $HOME/.cloudmesh/alamo/pk.pem
+    EC2_CERT: $HOME/.cloudmesh/alamo/cert.pem
+    NOVA_CERT: $HOME/.cloudmesh/alamo/cacert.pem
+    EUCALYPTUS_CERT: $HOME/.cloudmesh/alamo/cacert.pem
+    EC2_URL: https://openstack.futuregrid.tacc.utexas.edu:8773/services/Cloud
+    EC2_ACCESS_KEY: hfghfgejfhfdgjdhgjdhdgfjdhfgjhdg
+    EC2_SECRET_KEY: utiutiueteyuieywiuywiuweyriuweyu
+    keyname: cloudmesh
+    userid: albert
+  default:
+    flavor: m1.small
+    image: ami-fbb2fc92
+    location: us-east-1
+</pre></div>
+</div>
+</div>
+<div class="section" id="a-complete-example">
+<h3>A complete example<a class="headerlink" href="#a-complete-example" title="Permalink to this headline">¶</a></h3>
+<p>A more complete example of a cloudmesh.yaml file is available at</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://github.com/cloudmesh/cloudmesh/blob/master/etc/cloudmesh.yaml">https://github.com/cloudmesh/cloudmesh/blob/master/etc/cloudmesh.yaml</a></li>
+</ul>
+</div></blockquote>
+<p>Here you need to replace all varibles in brackets. However there is a
+more convenient way to do this with an additional yaml file that is
+called me.yaml</p>
+</div>
+</div>
+<div class="section" id="cloudmesh-server-yaml">
+<h2>cloudmesh-server.yaml<a class="headerlink" href="#cloudmesh-server-yaml" title="Permalink to this headline">¶</a></h2>
+<p>Cloudmesh contains also a configuration file which i used to interface
+with some server functionality. THis is only needed for some advanced
+concepts such as power and temperature management as wel as bare metal
+provisioning. As we at times modify the server yaml file and add new
+features we have added a meta attribute to the file to document the
+version and the type:</p>
+<div class="highlight-bash"><div class="highlight"><pre>meta:
+  yaml_version: 2.0
+  kind: server
+cloudmesh:
+  server:
+    ... all other text gis here ...
+</pre></div>
+</div>
+<p>In addition a file starts with the attributes cloudmesh and
+server. All other contents is indented under server.</p>
+<div class="section" id="debugging">
+<h3>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h3>
+<p>cloudmesh allows to set the debug level conveniently via the loglevel
+attribute. Furthermore, one can disable the use of the production
+environment (which disables the use of LDAP) while setting the
+production attribute to False:</p>
+<div class="highlight-bash"><div class="highlight"><pre>server:
+  loglevel: DEBUG
+  production: False
+</pre></div>
+</div>
+</div>
+<div class="section" id="web-ui">
+<h3>Web UI<a class="headerlink" href="#web-ui" title="Permalink to this headline">¶</a></h3>
+<p>Cloudmesh contains an optional Web UI interface that can be used to
+interface with various clouds similar to horizon. However in contrast
+to Horizopn it is not limited to OpenStack. It also provides access to
+temperature data and user interfaces to bare metal provisioning. These
+may be role based and not every user may be allowed to access
+them. Thus they may not see links in the user interface for them. Only
+priveleged users will.</p>
+<p>The userinterface can be configured as follows:</p>
+<div class="highlight-bash"><div class="highlight"><pre>webui:
+    host: 127.0.0.1
+    port: 5555
+    secret: development key
+    browser: True
+    page: <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>The host on which the server is placeed is either specified by ip or
+hostname. A port on which the ui is started needs to be specified. In
+addition a secret key has to be specified to enable some security
+settings. It is best to use a key that is very difficult to crack.</p>
+<p>If you set the browser variable to true, cloudmesh will automatically
+upon restart open a web page. The web page can be specified via the
+page attribute. If you specify &#8220;&#8221; it will go to the home page. This is
+useful if you like to develop cloudmesh and like to repeatedly open a
+particular page you work on.</p>
+</div>
+<div class="section" id="ldap-integration">
+<h3>LDAP Integration<a class="headerlink" href="#ldap-integration" title="Permalink to this headline">¶</a></h3>
+<p>Cloudmesh can be configured to read usernames from an LDAP server. On
+FutureGrid we use the server configured for our FG users. However you
+can certainly manage your own LDAP server. The configuration is done
+via a proxy server that allows you to execute ldap commands. This
+allows you to connect to the proxy server as other servers may not
+allow to access the LDAP server as it is behind a firewall. The dn
+location of the people and groups are also specifiable:</p>
+<div class="highlight-bash"><div class="highlight"><pre>ldap:
+    with_ldap: False
+    hostname: localhost
+    cert: $HOME/.cloudmesh/FGLdapCacert.pem
+    proxyhost: &lt;ip&gt;
+    proxyuser: &lt;username&gt;
+    proxyldap: proxy.&lt;yourdomain.org&gt;
+    personbase: <span class="s2">&quot;ou=People,dc=futuregrid,dc=org&quot;</span>
+    projectbase: <span class="s2">&quot;ou=Groups,dc=futuregrid,dc=org&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="clusters">
+<h3>Clusters<a class="headerlink" href="#clusters" title="Permalink to this headline">¶</a></h3>
+<p>To access the control network of the clusters you can specify a
+username and password for each cluster. This is done via the following
+configuration:</p>
+<div class="highlight-bash"><div class="highlight"><pre>clusters:
+    india:
+        bmc:
+            user: &lt;username&gt;
+            password: &lt;password&gt;
+            proxy:
+               ip: &lt;proxyip&gt;
+               user: &lt;proxyusername&gt;
+    echo:
+            user: &lt;username&gt;
+            password: &lt;password&gt;
+            proxy:
+               ip: &lt;proxyip&gt;
+               user: &lt;proxyusername&gt;
+    bravo:
+        pxe:
+            proxy:
+               ip: &lt;ip&gt;
+               user: &lt;username&gt;
+        bmc:
+            user: &lt;username&gt;
+            password: &lt;password&gt;
+            proxy:
+               ip: &lt;proxyip&gt;
+               user: &lt;proxyusername&gt;
+</pre></div>
+</div>
+<p>Note that you have te ability to specify a proxy machine in case the
+access to the control network is behind a firewall. Also it is
+possible to specify different usernames for access to pxe and bmc.</p>
+</div>
+<div class="section" id="roles">
+<h3>Roles<a class="headerlink" href="#roles" title="Permalink to this headline">¶</a></h3>
+<p>The portal framework can specify explicitly different roles and users
+and projects to restrict access to specific web pages. Some of the
+information such as active users and projects are fetsched frm the
+LDAP server for the role &#8220;user&#8221;.</p>
+<p>However, two specific roles can be explicitly set, such as the admin
+and rain roles. Here it is possible to add usernames or project
+numbers and the specified user in the projects or the explicitly
+specified users will have the given role. This allows a fine grained
+control of users and roles. Additional roles could be added and become
+useful for customized plugins to cloudmesh to expose features
+seclectively.</p>
+<p>todo:</p>
+<div class="highlight-bash"><div class="highlight"><pre>roles:
+    user:
+       users:
+       - active
+       projects:
+       - active
+    admin:
+       users:
+       - albert
+       projects:
+       - fg1000
+       - fg1001
+    rain:
+        users:
+        - albert
+        projects:
+        - fg1000
+</pre></div>
+</div>
+</div>
+<div class="section" id="keystone-server">
+<h3>Keystone server<a class="headerlink" href="#keystone-server" title="Permalink to this headline">¶</a></h3>
+<p>certain actions of a keystone server may not be executed by a regular
+user. in his case the server yaml file allows you to use an
+administrative account that can be configured under the keystone
+attribute:</p>
+<div class="highlight-bash"><div class="highlight"><pre>keystone:
+    sierra_openstack_grizzly:
+        OS_AUTH_URL : https://&lt;ipsdsc&gt;:35357/v2.0
+        OS_CACERT : $HOME/.cloudmesh/sierra-cacert.pem
+        OS_PASSWORD : &lt;password&gt;
+        OS_TENANT_NAME : &lt;tenant&gt;
+        OS_USERNAME : &lt;username&gt;
+    india_openstack_essex:
+        OS_AUTH_URL : http://&lt;ipindia&gt;:5000/v2.0
+        OS_PASSWORD : &lt;password&gt;
+        OS_TENANT_NAME : &lt;tenant&gt;
+        OS_USERNAME : &lt;username&gt;
+        OS_CACERT : None
+</pre></div>
+</div>
+<p>please note that the names of the clouds need to be the exact names
+used as in cloudmesh.yaml. The username and password can be obtained
+from the cloud administrator if allowed.</p>
+</div>
+<div class="section" id="mongo">
+<h3>Mongo<a class="headerlink" href="#mongo" title="Permalink to this headline">¶</a></h3>
+<p>currently we use mongo to save the state of cloudmesh. We have created
+an easy schem to separate information and we simply recommend to reuse
+the mongo section from the server yaml example file. Simply change the
+valeus for username, password, and key to values you like if you set
+it up on your local machine:</p>
+<div class="highlight-bash"><div class="highlight"><pre>mongo:
+    db: cloudmesh
+    host: localhost
+    port: 27017
+    path: $HOME/.cloudmesh/mongodb
+    username: &lt;username&gt;
+    password: &lt;password&gt;
+    collections:
+        inventory:
+            db: inventory
+        cloudmesh:
+            db: cloudmesh
+        profile:
+            db: cloudmesh
+        user:
+            db: user
+        metric:
+            db: metric
+        clouds:
+            db: clouds
+        pbs:
+            db: hpc
+        qstat:
+            db: hpc
+        qinfo:
+            db: hpc
+        pbsnodes:
+            db: hpc
+        launcher:
+            db: launcher
+        pagestatus:
+            db: defaults
+        password:
+            key: &lt;key&gt;
+            db: hallo
+        defaults:
+            db: defaults
+        experiment:
+            db: experiment
+        store:
+            db: store
+</pre></div>
+</div>
+</div>
+<div class="section" id="complete-example">
+<h3>Complete Example<a class="headerlink" href="#complete-example" title="Permalink to this headline">¶</a></h3>
+<p>An example cloudmesh_server.yaml file is located at</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/cloudmesh/cloudmesh/blob/master/etc/cloudmesh_server.yaml">https://github.com/cloudmesh/cloudmesh/blob/master/etc/cloudmesh_server.yaml</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="cloudmesh-cluster-yaml">
+<h2>cloudmesh_cluster.yaml<a class="headerlink" href="#cloudmesh-cluster-yaml" title="Permalink to this headline">¶</a></h2>
+<p>Cloudmesh has the ability to create automatically an inventory of
+large clusters based on some statically defined information. Because
+the cluster may be in offline mode this static definition is useful in
+order to also identif resources that may be offline or not reachable.</p>
+<p>The definition will be used to create for each resource a number of
+objects that can be used to easier access the resource or be used for
+starting services on the resource.</p>
+<p>We have created a simple program that creates a single yaml file for a
+resource form this information. However we also have a json
+representation that can be used in order not to depend on the file
+system and interface directly with the database. This is of advantage
+in a multi tenanted multi hosted environments in which provisioning of
+resources is executed by multiple users. It also allows more easily
+the dynamic management of resources that can be swapped in and out of
+the inventory.</p>
+<p>A typical cloudmesh_cluster.yaml file looks as follows:</p>
+<div class="highlight-bash"><div class="highlight"><pre>meta:
+  yaml_version: 1.2
+  kind: clusters
+cloudmesh:
+    inventory:
+        mycluster:
+            id: c<span class="o">[</span>001-016<span class="o">]</span>
+            nameserver: 123.123.1.1
+            publickeys:
+            - name: management
+              path: $HOME/.cloudmesh/id_rsa_management.pub
+            - name: storage
+              path: $HOME/.cloudmesh/id_rsa_storage.pub
+            network:
+            - name: eth0
+              type: internal
+              id: c<span class="o">[</span>001-016<span class="o">]</span>
+              label: c-internal<span class="o">[</span>001-016<span class="o">]</span>
+              range: 172.100.100.<span class="o">[</span>11-26<span class="o">]</span>
+              broadcast: 172.100.101.255
+              netmask: 255.255.252.0
+              bootproto: dhcp
+              onboot: yes
+            - name: eth1
+              type: public
+              id: c<span class="o">[</span>001-016<span class="o">]</span>
+              label: c-compuet<span class="o">[</span>001-016<span class="o">]</span>
+              range: 149.103.104.<span class="o">[</span>11-26<span class="o">]</span>
+              broadcast: 149.103.104.255
+              netmask: 255.255.255.0
+              gateway: 149.103.104.254
+              bootproto: static
+              onboot: yes
+            - name: ib0
+              type: infiniband
+              id: c<span class="o">[</span>001-016<span class="o">]</span>
+              label: c-ib<span class="o">[</span>001-016<span class="o">]</span>
+              range: 192.168.0.<span class="o">[</span>11-26<span class="o">]</span>
+              broadcast: 192.168.0.255
+              netmask: 255.255.255.0
+              bootproto: static
+              onboot: yes
+            - name: bmc
+              type: bmc
+              id: c<span class="o">[</span>001-016<span class="o">]</span>
+              label: bmc-c<span class="o">[</span>001-016<span class="o">]</span>
+              range: 192.168.105.<span class="o">[</span>11-26<span class="o">]</span>
+            - name: pxe
+              id: c<span class="o">[</span>001-016<span class="o">]</span>
+              label: c-pxe<span class="o">[</span>001-016<span class="o">]</span>
+              range: na<span class="o">[</span>001-016<span class="o">]</span>
+              type: pxe
+              pxe_prefix: /tftpboot/pxelinux.cfg
+</pre></div>
+</div>
+<div class="section" id="metadata">
+<h3>Metadata<a class="headerlink" href="#metadata" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="docutils">
+<dt>meta:</dt>
+<dd>yaml_version: 1.2
+kind: clusters</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="id1">
+<h3>Clusters<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="docutils">
+<dt>cloudmesh:</dt>
+<dd><dl class="first last docutils">
+<dt>inventory:</dt>
+<dd><dl class="first last docutils">
+<dt>mycluster1:</dt>
+<dd>...</dd>
+<dt>mycluster2:</dt>
+<dd>...</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="a-cluster">
+<h3>A Cluster<a class="headerlink" href="#a-cluster" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="docutils">
+<dt>mycluster:</dt>
+<dd><blockquote class="first">
+<div><p>id: c[001-016]
+nameserver: 123.123.1.1
+publickeys:
+- name: management</p>
+<blockquote>
+<div>path: $HOME/.cloudmesh/id_rsa_management.pub</div></blockquote>
+<ul class="simple">
+<li>name: storage
+path: $HOME/.cloudmesh/id_rsa_storage.pub</li>
+</ul>
+<p>network:
+- name: eth0</p>
+<blockquote>
+<div>...</div></blockquote>
+<ul>
+<li><dl class="first docutils">
+<dt>name: ib0</dt>
+<dd><p class="first last">...</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<ul class="last">
+<li><dl class="first docutils">
+<dt>name: bmc</dt>
+<dd><p class="first last">...</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="network">
+<h3>Network:<a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>network:
+- name: eth0</p>
+<blockquote>
+<div>type: internal
+id: c[001-016]
+label: c-internal[001-016]
+range: 172.100.100.[11-26]
+broadcast: 172.100.101.255
+netmask: 255.255.252.0
+bootproto: [dhcp, static]
+onboot: yes</div></blockquote>
+</div></blockquote>
+<dl class="docutils">
+<dt>type:</dt>
+<dd>internal, public, pxe, bmc</dd>
+<dt>id:</dt>
+<dd>TBD</dd>
+<dt>label:</dt>
+<dd>TBD</dd>
+<dt>range:</dt>
+<dd>TBD</dd>
+<dt>broadcast:</dt>
+<dd>TBD</dd>
+<dt>Bootprooto:</dt>
+<dd>TBD</dd>
+<dt>onboot:</dt>
+<dd>TBD</dd>
+</dl>
+<p>Special resources bmc and pxe</p>
+<p>bmc:</p>
+<div class="highlight-bash"><div class="highlight"><pre>- name: bmc
+  type: bmc
+  id: c<span class="o">[</span>001-016<span class="o">]</span>
+  label: bmc-c<span class="o">[</span>001-016<span class="o">]</span>
+  range: 192.168.105.<span class="o">[</span>11-26<span class="o">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>pxe::</dt>
+<dd><ul class="first last simple">
+<li>name: pxe
+id: c[001-016]
+label: c-pxe[001-016]
+range: na[001-016]
+type: pxe
+pxe_prefix: /tftpboot/pxelinux.cfg</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="other-yaml-files">
+<h2>Other Yaml files<a class="headerlink" href="#other-yaml-files" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/cloudmesh/cloudmesh/blob/master/etc/cloudmesh_celery.yaml">https://github.com/cloudmesh/cloudmesh/blob/master/etc/cloudmesh_celery.yaml</a></li>
+</ul>
+<p>Note the the ip addresses in this file are ficticious
+* <a class="reference external" href="https://github.com/cloudmesh/cloudmesh/blob/master/etc/cloudmesh_cluster.yaml">https://github.com/cloudmesh/cloudmesh/blob/master/etc/cloudmesh_cluster.yaml</a></p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/cloudmesh/cloudmesh/blob/master/etc/cloudmesh_launcher.yaml">https://github.com/cloudmesh/cloudmesh/blob/master/etc/cloudmesh_launcher.yaml</a></li>
+</ul>
+</div>
+<div class="section" id="me-sample">
+<h2>Me Sample<a class="headerlink" href="#me-sample" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/cloudmesh/cloudmesh/blob/master/etc/me-sample.yaml">https://github.com/cloudmesh/cloudmesh/blob/master/etc/me-sample.yaml</a></li>
+<li><a class="reference external" href="https://github.com/cloudmesh/cloudmesh/blob/master/etc/me.yaml">https://github.com/cloudmesh/cloudmesh/blob/master/etc/me.yaml</a></li>
+</ul>
+</div>
+<div class="section" id="ec2-credentials-this-secition-is-outdated">
+<h2>EC2 Credentials (THIS SECITION IS OUTDATED)<a class="headerlink" href="#ec2-credentials-this-secition-is-outdated" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Hotel and Alamo are no longer supported</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">*:</th><td class="field-body"><p class="first">With OpenStack Horizon, EC2 credentials can be downloaded.</p>
+<ul class="last simple">
+<li>login <a class="reference external" href="https://openstack.uc.futuregrid.org/dashboard/">OpenStack Havana on Hotel</a> or <a class="reference external" href="https://openstack.futuregrid.tacc.utexas.edu/horizon">OpenStack
+Folsom on Alamo</a></li>
+<li>Click &#8216;Access &amp; Security&#8217;</li>
+<li>Select &#8216;API Access&#8217; tab</li>
+<li>Click &#8216;Download EC2 Credentials&#8217; (which is a direct link here for
+<a class="reference external" href="http://openstack.uc.futuregrid.org/horizon/project/access_and_security/api_access/ec2/">Hotel</a>
+or <a class="reference external" href="http://openstack.futuregrid.tacc.utexas.edu/horizon/project/access_and_security/api_access/ec2/">Alamo</a>)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Next we specify the credentials of the cloud. We can obtain them
+typically from the cloud provider. The mechnism to obtain them may
+vary and you will need to look it up. Often you will have an rc file
+or a GUI that allows you to export the needed information. We have
+strived to keep the same attributes that are provided by the supported
+cloud providors. Hence typically no change is needed and you can just
+paste and copy the values. However, if your cloud needs certificates,
+they may have to be specially dealt with and placed in special
+directories. For cloudmesn we provide them as part of the install and
+ainclude them in the:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$HOME/.cloudmesh/
+</pre></div>
+</div>
+<p>directory. Naturally the attributes in credentials depend on the cloud
+type and are different between the different clouds. In our case we
+define the cloud on sierra which has the following credentials:</p>
+<div class="highlight-bash"><div class="highlight"><pre>credentials:
+  OS_AUTH_URL: https://s77r.idp.sdsc.futuregrid.org:5000/v2.0
+  OS_CACERT: $HOME/.cloudmesh/sierra-cacert.pem
+  OS_PASSWORD: YOURPASSWORDHERE
+  OS_TENANT_NAME: YOURPROJECTIDHERE
+  OS_USERNAME: albert
+  OS_VERSION: grizzly
+</pre></div>
+</div>
+<p>Only the last field OS_VERSION is not provided by the openstack rc
+file. We simply specify the version and must make sure it is the same
+as provided in cm_type_version. In future versions of cloudmesh we may
+remove this attribute and only work with cm_type_version, but it is
+very convenient to have the value also in credentials, so we left it
+there for now also. The rest of the attributes are regular attributes
+you find in the rc file. For Futuregrid Openstack clouds they will
+have the following meaning:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">OS_AUTH_URL:</th><td class="field-body"><p class="first">The endpount that is used to manage virtual machines</p>
+<p>Example: <a class="reference external" href="https://s77r.idp.sdsc.futuregrid.org:5000/v2.0">https://s77r.idp.sdsc.futuregrid.org:5000/v2.0</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">OS_CACERT:</th><td class="field-body"><p class="first">The location in which the certificate for the cloud is placed to
+interact with https in case your cloud is properly protected. In
+case it does not use https please inform yourself about the security
+consequences.</p>
+<p>Example: $HOME/.cloudmesh/sierra-cacert.pem</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">OS_PASSWORD:</th><td class="field-body"><p class="first">The password you use for this cloud</p>
+<p>Example: jhdjaTYWUIYBY</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">OS_TENANT_NAME:</th><td class="field-body"><p class="first">The fg project number. In case you have multiple projects, you need to define multiple clouds
+with multiple credentials that are distinguished by different tennant names.</p>
+<p>Example: fg1000</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">OS_USERNAME:</th><td class="field-body"><p class="first">Your futuregrid portal name.</p>
+<p>Example: albert</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">OS_VERSION:</th><td class="field-body"><p class="first">The version of openstack you use as described also by cm_type_version</p>
+<p class="last">Example: grizzly</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>As it is often the case that users have a default image or flavor and
+try to avoid remembering the values for them, such values can also be
+specified in the cloudmesh.yaml file. This comes especially handy in
+case of classes in which a teacher may provide the class with a custom
+image and give students hints for which flavor to use. Also users that
+deal with the instantiation of many VMs clearly benefit from this
+feature:</p>
+<div class="highlight-bash"><div class="highlight"><pre>default:
+  flavor: m1.tiny
+  image: 4199d988-0833-4497-a473-96fc456fac2f
+</pre></div>
+</div>
+<p>In our example above we have set the default to m1.tine for the falvor
+and one of our default images available on the cloud.</p>
+<p>The next sections show examples for several clouds with ficticious
+account information. Please replace it with your own.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="nosetests.html" class="btn btn-neutral float-right" title="Nosetests" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="setup_vagrant.html" class="btn btn-neutral" title="Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

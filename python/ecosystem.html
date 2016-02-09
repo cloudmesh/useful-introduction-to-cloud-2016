@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Ecosystem &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Ecosystem</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/python/ecosystem.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ecosystem">
+<h1>Ecosystem<a class="headerlink" href="#ecosystem" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="virtualenv">
+<h2>virtualenv<a class="headerlink" href="#virtualenv" title="Permalink to this headline">¶</a></h2>
+<p>Often you have your own computer and you do not like to change its
+environment to keep it in prestine condition. Python comes with mnay
+libraries that could for example conflict with libraries that you have
+installed. To avoid this it is bets to work in an isolated python
+environment while using virtualenv,. Documentation about it can be
+found at:</p>
+<div class="highlight-python"><div class="highlight"><pre>* http://virtualenv.readthedocs.org/
+</pre></div>
+</div>
+<p>The installation is simple once you have pip installed. If it is not
+installed you can say:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ easy_install pip
+</pre></div>
+</div>
+<p>After that you can install the virtual env with:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pip install virtualenv
+</pre></div>
+</div>
+<p>To setup an isolated environment for example in the directory ~/ENV
+please use:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ virtualenv ~/ENV
+</pre></div>
+</div>
+<p>To activate it you can use the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ source ~/ENV/bin/activate
+</pre></div>
+</div>
+<p>you can put this command n your bashrc or bash_profile command so you
+do not forget to activate it.</p>
+</div>
+<div class="section" id="pypi">
+<h2>pypi<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h2>
+<p>The Python Package Index is a large repository of software for the
+Python programming language containing a large number of packages
+[link]. The nice think about pipy is that many packages can be
+installed with the program &#8216;pip&#8217;.</p>
+<p>To do so you have to locate the &lt;package_name&gt; for example with the
+search function in pypi and say on the commandline:</p>
+<div class="highlight-python"><div class="highlight"><pre>pip install &lt;package_name&gt;
+</pre></div>
+</div>
+<p>where pagage_name is the string name of the package. an example would
+be the package called fabric which you can install with:</p>
+<div class="highlight-python"><div class="highlight"><pre>pip install fabric
+</pre></div>
+</div>
+<p>If all goes well the package will be installed.</p>
+</div>
+<div class="section" id="github">
+<h2>github<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
+<p>Github is a code repository that allows the development of code in a
+distributed fashion. There are many good tutorials about github.</p>
+<p>Some of them can be found on the github Web page. An interactive
+tutorial is for example available at</p>
+<ul class="simple">
+<li><a class="reference external" href="https://try.github.io/">https://try.github.io/</a></li>
+</ul>
+<p>A more extensive list of tutorials can be found at</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference external" href="https://help.github.com/articles/what-are-other-good-resources-for-learning-git-and-github">https://help.github.com/articles/what-are-other-good-resources-for-learning-git-and-github</a></p>
+<p>Important is that you always want to make sure that you want to use
+the git init command and add your Name and e-mail. Do it consistent in
+the machines you use, or your checkins in git (if you do them) do not
+show up in a consistant fashion as a single user. This is done with
+the following commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git config --global user.name &quot;John Doe&quot;
+$ git config --global user.email johndoe@example.com
+</pre></div>
+</div>
+<p>You can set also the editor with:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git config --global core.editor emacs
+</pre></div>
+</div>
+<p>More information about a first time setup is documented at:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ http://git-scm.com/book/en/Getting-Started-First-Time-Git-Setup
+</pre></div>
+</div>
+<p>To check your setup you can say:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git config --list
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="python-resources">
+<h1>Python resources<a class="headerlink" href="#python-resources" title="Permalink to this headline">¶</a></h1>
+<p>There is a rich set of resources related to python programming on the
+internet. Some resources that we found useful include:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://ivory.idyll.org/articles/advanced-swc/">http://ivory.idyll.org/articles/advanced-swc/</a></li>
+<li><a class="reference external" href="http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html">http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html</a></li>
+<li><a class="reference external" href="http://www.youtube.com/watch?v=0vJJlVBVTFg">http://www.youtube.com/watch?v=0vJJlVBVTFg</a></li>
+</ul>
+<p>The following have been found useful by previous students. However
+there may be much better resources out there.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.korokithakis.net/tutorials/python/">http://www.korokithakis.net/tutorials/python/</a></li>
+</ul>
+<p>and here is one that you can do on a web browser in case you have not
+installed python on your computer</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.afterhoursprogramming.com/tutorial/Python/Introduction/">http://www.afterhoursprogramming.com/tutorial/Python/Introduction/</a></li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

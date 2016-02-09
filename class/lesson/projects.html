@@ -1,0 +1,928 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Final Project Guidelines &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/>
+        <link rel="up" title="Lessons" href="../lessons.html"/>
+        <link rel="next" title="Calling Python from matlab" href="pyton_matlab.html"/>
+        <link rel="prev" title="Sample Projects" href="project_examples.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">Lessons</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ansible.html">Ansible</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible.html#tutorial-ansible-basic-commands">Tutorial: Ansible Basic commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_playbook.html">Ansible Playbooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docker.html">Docker Basics on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docker_cloudmesh.html">Deploying Cloudmesh using Docker on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html">FAQ (Under Preparation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="git.html">Using Git and GitHub for collaboration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="google.html">Google</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hands_on_fg465.html">Getting Started with Hands-on Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ipynb.html">Deploying IPython Notebook Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="list_of_dataset.html">List of Dataset (Under preparation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="list_of_tech.html">List of Technologies (Under Preparation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lpbs.html">Local PBS Queuing System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html">Environment Modules (modules) on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openmpi.html">Deploying Open MPI Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="preservation.html">Best Practices for Preservation of IaaS and Data in FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="project_examples.html">Sample Projects</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Final Project Guidelines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#important-dates">Important Dates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submission">Submission</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#team-coordination">Team Coordination</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#list-of-possible-projects">List of Possible Projects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#project-expectation-grade">Project Expectation (Grade)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#project-proposal">Project Proposal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oral-presentation-tbd">Oral Presentation (TBD)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#questions-support">Questions &amp; Support</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyton_matlab.html">Calling Python from matlab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="report.html">Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resource_use_restriction.html">Use of OpenStack Resources on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="restructuredtext.html">Restructured Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst2.html">Sphinx Quick Reference Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="shell-access.html">Shell Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="video.html"> (Video lectures) Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="../lessons.html">Lessons</a> &raquo;</li>
+      
+    <li>Final Project Guidelines</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/class/lesson/projects.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="final-project-guidelines">
+<h1>Final Project Guidelines<a class="headerlink" href="#final-project-guidelines" title="Permalink to this headline">¶</a></h1>
+<div class="sidebar">
+<p class="first sidebar-title">Page Contents</p>
+<div class="contents local last topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#important-dates" id="id8">Important Dates</a></li>
+<li><a class="reference internal" href="#submission" id="id9">Submission</a></li>
+<li><a class="reference internal" href="#team-coordination" id="id10">Team Coordination</a></li>
+<li><a class="reference internal" href="#list-of-possible-projects" id="id11">List of Possible Projects</a><ul>
+<li><a class="reference internal" href="#possible-projects-from-nist" id="id12">Possible Projects From NIST</a></li>
+<li><a class="reference internal" href="#projects-derived-from-benchmarking-sets" id="id13">Projects Derived from Benchmarking Sets</a></li>
+<li><a class="reference internal" href="#possible-projects-from-iu" id="id14">Possible Projects from IU</a><ul>
+<li><a class="reference internal" href="#report-style-projects" id="id15">Report Style Projects</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#projects-from-other-sources" id="id16">Projects from Other Sources</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#project-expectation-grade" id="id17">Project Expectation (Grade)</a><ul>
+<li><a class="reference internal" href="#details-on-software-based-projects" id="id18">Details on Software based Projects</a></li>
+<li><a class="reference internal" href="#details-on-report-style-projects" id="id19">Details on Report Style Projects</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#project-proposal" id="id20">Project Proposal</a><ul>
+<li><a class="reference internal" href="#sample-project-proposal" id="id21">Sample Project Proposal</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#oral-presentation-tbd" id="id22">Oral Presentation (TBD)</a></li>
+<li><a class="reference internal" href="#questions-support" id="id23">Questions &amp; Support</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="important-dates">
+<h2><a class="toc-backref" href="#id8">Important Dates</a><a class="headerlink" href="#important-dates" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Project Proposal: May 1st</li>
+<li>(Tentative) Oral Presentation: May 20, 21th during discussion sessions (each
+group has 5 minutes)</li>
+<li>Final report: May 31th</li>
+</ul>
+</div>
+<div class="section" id="submission">
+<h2><a class="toc-backref" href="#id9">Submission</a><a class="headerlink" href="#submission" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>IU Canvas: <a class="reference external" href="https://canvas.iu.edu">https://canvas.iu.edu</a></li>
+</ul>
+<p>If materials submitted to Github, please upload a statement as to this action
+on Canvas so we can link to Homework system.</p>
+</div>
+<div class="section" id="team-coordination">
+<h2><a class="toc-backref" href="#id10">Team Coordination</a><a class="headerlink" href="#team-coordination" title="Permalink to this headline">¶</a></h2>
+<p>Up to 3 members is recommended.</p>
+</div>
+<div class="section" id="list-of-possible-projects">
+<h2><a class="toc-backref" href="#id11">List of Possible Projects</a><a class="headerlink" href="#list-of-possible-projects" title="Permalink to this headline">¶</a></h2>
+<p>We have a few suggestions on possible projects from NIST, ICT, IU and others.
+See the following lists.</p>
+<div class="section" id="possible-projects-from-nist">
+<h3><a class="toc-backref" href="#id12">Possible Projects From NIST</a><a class="headerlink" href="#possible-projects-from-nist" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils" id="id1">
+<caption><span class="caption-text">Possible Projects From NIST* (<a class="reference external" href="http://bigdatawg.nist.gov/_uploadfiles/M0399_v2_8471652990.doc">http://bigdatawg.nist.gov/_uploadfiles/M0399_v2_8471652990.doc</a>)</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Title</th>
+<th class="head">Category</th>
+<th class="head">Data Sets</th>
+<th class="head">Technologies</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="../../projects/nist_project_fingerprint_matching.html#ref-class-project-fingerprint-matching"><span>Fingerprint Matching</span></a></td>
+<td>Batch Data Analytics</td>
+<td><ul class="first last simple">
+<li>NIST Special Database 27a (Free)</li>
+<li>NIST Special Database 14, 29, 30 (non-Free)</li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li>Apache Hadoop</li>
+<li>Spark</li>
+<li>HBase</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../projects/nist_project_human_and_face_detection.html#ref-class-project-human-and-face-detection"><span>Human and Face Detection from Video (simulated streaming data)</span></a></td>
+<td>Streaming Data Analytics</td>
+<td>OpenCV, INRIA Person Dataset</td>
+<td><ul class="first last simple">
+<li>Apache Hadoop</li>
+<li>Spark</li>
+<li>OpenCV</li>
+<li>Mahout</li>
+<li>MLlib</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../projects/nist_project_live_twitter.html#ref-class-project-live-twitter"><span>Live Twitter Analysis</span></a></td>
+<td>Streaming Data Analytics</td>
+<td>Live Twitter feed</td>
+<td><ul class="first last simple">
+<li>Apache Strom</li>
+<li>HBase</li>
+<li>Twitter&#8217;s Search and Streaming APIs,</li>
+<li>D3.js</li>
+<li>Tableau</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../projects/nist_project_healthcare.html#ref-class-project-healthcare"><span>Big data Analytics for Healthcare Data/Health informatics</span></a></td>
+<td>Batch Data Analytics</td>
+<td>Medicare Part-B in 2014</td>
+<td><ul class="first last simple">
+<li>Apache Hadoop</li>
+<li>Spark</li>
+<li>HBase</li>
+<li>Mahout</li>
+<li>Lucene/Solr</li>
+<li>MLlib</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../projects/nist_project_spatial_bigdata.html#ref-class-project-spatial-bigdata"><span>Spatial Big data/Spatial Statistics/Geographic Information Systems</span></a></td>
+<td>Batch Data Analytics</td>
+<td>Uber Ride Sharing GPS Data</td>
+<td><ul class="first last simple">
+<li>Apache Hadoop</li>
+<li>Spark</li>
+<li>GIS-tools</li>
+<li>Mahout</li>
+<li>MLlib</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../projects/nist_project_data_warehousing.html#ref-class-project-data-warehousing"><span>Data Warehousing and Data mining</span></a></td>
+<td>Batch Data Analytics</td>
+<td>2010 Census Data Products: United States</td>
+<td><ul class="first last simple">
+<li>Apache Hadoop</li>
+<li>Spark</li>
+<li>HBase</li>
+<li>MongoDB</li>
+<li>Hive</li>
+<li>Pig</li>
+<li>Mahout</li>
+<li>Lucene/Solr</li>
+<li>MLlib</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>*Reference URL of these projects:
+<a class="reference external" href="http://bigdatawg.nist.gov/_uploadfiles/M0399_v2_8471652990.doc">http://bigdatawg.nist.gov/_uploadfiles/M0399_v2_8471652990.doc</a></li>
+</ul>
+</div>
+<div class="section" id="projects-derived-from-benchmarking-sets">
+<h3><a class="toc-backref" href="#id13">Projects Derived from Benchmarking Sets</a><a class="headerlink" href="#projects-derived-from-benchmarking-sets" title="Permalink to this headline">¶</a></h3>
+<p>There are many benchmark sets such as BigDataBench, HiBench, Graph 500,
+BigBench, LinkBench, MineBench, BG Benchmark, Berkeley Big Data Benchmark,
+TPCx-HS, and CloudSuite. See
+<a class="reference external" href="http://dsc.soic.indiana.edu/publications/OgreFacetsv9.pdf">http://dsc.soic.indiana.edu/publications/OgreFacetsv9.pdf</a></p>
+<table border="1" class="docutils" id="id2">
+<caption><span class="caption-text">BigDataBench, ICT, Chinese Academy of Sciences**</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Title</th>
+<th class="head">Category</th>
+<th class="head">Data Sets</th>
+<th class="head">Technologies</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http://snap.stanford.edu/data/web-Movies.html">Amazon Movie Reviews</a></td>
+<td>Batch Data Analytics</td>
+<td><a class="reference external" href="http://snap.stanford.edu/data/movies.txt.gz">8 million reviews</a></td>
+<td><ul class="first last simple">
+<li>Hadoop</li>
+<li>Spark</li>
+<li>MPI</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://snap.stanford.edu/data/web-Google.html">Google web graph</a></td>
+<td>Batch Data Analytics</td>
+<td><a class="reference external" href="http://snap.stanford.edu/data/web-Google.txt.gz">Webgraph from Google, 2002</a></td>
+<td><ul class="first last simple">
+<li>Hadoop</li>
+<li>Spark</li>
+<li>MPI</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://snap.stanford.edu/data/egonets-Facebook.html">Facebook Social Network</a></td>
+<td>Batch Data Analytics</td>
+<td><a class="reference external" href="http://snap.stanford.edu/data/facebook.tar.gz">Facebook data</a></td>
+<td><ul class="first last simple">
+<li>Hadoop</li>
+<li>Spark</li>
+<li>MPI</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://ccl.cse.nd.edu/software/sand/">Genome sequence data</a></td>
+<td>Batch Data Analytics</td>
+<td><code class="docutils literal"><span class="pre">.cfa</span></code> sample data (unstructured text file)</td>
+<td>Work Queue (master/worker framework)</td>
+</tr>
+</tbody>
+</table>
+<p>You can find more examples in the following link.</p>
+<ul class="simple">
+<li>**Reference URL of these projects:
+<a class="reference external" href="http://prof.ict.ac.cn/BigDataBench/#Benchmarks">http://prof.ict.ac.cn/BigDataBench/#Benchmarks</a></li>
+</ul>
+<table border="1" class="docutils" id="id3">
+<caption><span class="caption-text">HiBench</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Title</th>
+<th class="head">Category</th>
+<th class="head">Data Sets</th>
+<th class="head">Technologies</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><dl class="first last docutils">
+<dt>Micro Benchmarks</dt>
+<dd><ul class="first last simple">
+<li>Sort</li>
+<li>WordCount</li>
+<li>TeraSort</li>
+<li>EnhancedDFSIO</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td>Batch Data Analytics</td>
+<td><a class="reference external" href="https://github.com/intel-hadoop/HiBench">https://github.com/intel-hadoop/HiBench</a></td>
+<td>Hadoop</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt>Web Search</dt>
+<dd><ul class="first last simple">
+<li>Nutch Indexing</li>
+<li>Page Rank</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td>Batch Data Analytics</td>
+<td><a class="reference external" href="https://github.com/intel-hadoop/HiBench">https://github.com/intel-hadoop/HiBench</a></td>
+<td>Mahout</td>
+</tr>
+<tr class="row-even"><td><dl class="first last docutils">
+<dt>Machine Learning</dt>
+<dd><ul class="first last simple">
+<li>Bayesian Classification</li>
+<li>K-means Clustering</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td>Batch Data Analytics</td>
+<td><a class="reference external" href="https://github.com/intel-hadoop/HiBench">https://github.com/intel-hadoop/HiBench</a></td>
+<td>Mahout</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt>OLAP Analytical Query</dt>
+<dd><ul class="first last simple">
+<li>Hive Join</li>
+<li>Hive Aggregation</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td>Batch Data Analytics</td>
+<td><a class="reference external" href="https://github.com/intel-hadoop/HiBench">https://github.com/intel-hadoop/HiBench</a></td>
+<td>Hive</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="id4">
+<caption><span class="caption-text">Other Benchmarking Sets</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Title</th>
+<th class="head">Category</th>
+<th class="head">Data Sets</th>
+<th class="head">Technologies</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Graph 500</td>
+<td>Batch Data Analytics</td>
+<td><a class="reference external" href="http://www.graph500.org/">http://www.graph500.org/</a></td>
+<td>MPI</td>
+</tr>
+<tr class="row-odd"><td>BigBench</td>
+<td>Batch Data Analytics</td>
+<td><a class="reference external" href="http://www.msrg.org/project/BigBench">http://www.msrg.org/project/BigBench</a></td>
+<td><ul class="first last simple">
+<li>MapReduce</li>
+<li>Hadoop</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>LinkBench</td>
+<td>Batch Data Analytics</td>
+<td><a class="reference external" href="https://github.com/facebook/linkbench">https://github.com/facebook/linkbench</a></td>
+<td><ul class="first last simple">
+<li>Java</li>
+<li>MySQL</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>BG Benchmark</td>
+<td>Batch Data Analytics</td>
+<td><a class="reference external" href="http://www.bgbenchmark.org/BG/overview.html">http://www.bgbenchmark.org/BG/overview.html</a></td>
+<td><ul class="first last simple">
+<li>MongoDB</li>
+<li>HBase</li>
+<li>VoltDB</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>Berkeley Big Data Benchmark</td>
+<td>Data Systems</td>
+<td><a class="reference external" href="https://amplab.cs.berkeley.edu/benchmark/#workload">https://amplab.cs.berkeley.edu/benchmark/#workload</a></td>
+<td><ul class="first last simple">
+<li>Redshift</li>
+<li>Hive</li>
+<li>SparkSQL</li>
+<li>Impala</li>
+<li>Stinger/Tez</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>TPCx-HS</td>
+<td>Data Systems</td>
+<td><a class="reference external" href="http://www.tpc.org/tpcx-hs/">http://www.tpc.org/tpcx-hs/</a></td>
+<td>Hadoop</td>
+</tr>
+<tr class="row-even"><td>CloudSuite</td>
+<td>Batch Data Analytics</td>
+<td><a class="reference external" href="http://parsa.epfl.ch/cloudsuite/downloads.html">http://parsa.epfl.ch/cloudsuite/downloads.html</a></td>
+<td>MapReduce</td>
+</tr>
+<tr class="row-odd"><td>MineBench</td>
+<td>Batch Data Analytics</td>
+<td><a class="reference external" href="http://cucis.ece.northwestern.edu/projects/DMS/MineBench.html">http://cucis.ece.northwestern.edu/projects/DMS/MineBench.html</a></td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="possible-projects-from-iu">
+<h3><a class="toc-backref" href="#id14">Possible Projects from IU</a><a class="headerlink" href="#possible-projects-from-iu" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils" id="id5">
+<caption><span class="caption-text">Possible Projects From IU</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Title</th>
+<th class="head">Category</th>
+<th class="head">Data Sets</th>
+<th class="head">Technologies</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="../../projects/project_bibliometric_namedisambiguity.html#project-namedisambugiuty"><span>Author Name Disambiguation for Bibliometric Data</span></a></td>
+<td>Batch Data Analytics</td>
+<td><a class="reference external" href="https://github.com/scienceimpact/bibliometric">https://github.com/scienceimpact/bibliometric</a></td>
+<td><ul class="first last simple">
+<li>graphdb</li>
+<li>neo4j</li>
+<li>Apache Giraph</li>
+<li>mongodb</li>
+<li>d3.js</li>
+<li>sql</li>
+<li>REST</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>Analysis of Census Data Category*</td>
+<td>Batch Data Analytics</td>
+<td><a class="reference external" href="http://www.census.gov/population/www/cen2010/glance/">http://www.census.gov/population/www/cen2010/glance/</a></td>
+<td><ul class="first last simple">
+<li>HBase</li>
+<li>Hadoop</li>
+<li>Mahout</li>
+<li>Spark/MLlib</li>
+<li>D3</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>*Take data from US Census (you can use GE data on location of light bulbs if
+you want!) such as <a class="reference external" href="http://www.census.gov/population/www/cen2010/glance/">http://www.census.gov/population/www/cen2010/glance/</a>
+Injest into Hbase.
+Build an analytics toolkit e.g. clustering people location with Hadoop/Mahout
+or Spark/MLlib Execute on a virtual cluster and visualize with D3.js.</li>
+</ul>
+<div class="section" id="report-style-projects">
+<h4><a class="toc-backref" href="#id15">Report Style Projects</a><a class="headerlink" href="#report-style-projects" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils" id="id6">
+<caption><span class="caption-text">Report Style Projects</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Title</th>
+<th class="head">Category</th>
+<th class="head">Data Sets</th>
+<th class="head">Technologies</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><dl class="first last docutils">
+<dt>Survey HPC-ABDS</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://bigdataopensourceprojects.soic.indiana.edu/#section3">http://bigdataopensourceprojects.soic.indiana.edu/#section3</a></li>
+</ul>
+</dd>
+</dl>
+</td>
+<td>Report style Project</td>
+<td>&nbsp;</td>
+<td>Several topics such as review level 17 (orchestration), Compare level 6 (DevOps) and level 15B (PaaS Frameworks) and level 17</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt><a class="reference internal" href="../../projects/project_docker.html#project-namedisambugiuty2"><span>A Paper on Container Technologies for BigData</span></a></dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="../../projects/project_survey_devops.html#project-namedisambugiuty3"><span>A Survey of DevOps Frameworks in support of Big Data</span></a></li>
+<li><a class="reference internal" href="../../projects/project_survey_paas.html#project-namedisambugiuty4"><span>A Survey of Online PaaS Frameworks and Clouds in support of Big Data</span></a></li>
+</ul>
+</dd>
+</dl>
+</td>
+<td>Report style Project</td>
+<td>&nbsp;</td>
+<td><ul class="first last simple">
+<li>Docker</li>
+<li>CoreOS</li>
+<li>Kubernetes</li>
+<li>Redhat Atomic</li>
+<li>Marathon</li>
+<li>Mesos</li>
+<li>Heroku</li>
+<li>CloudLab</li>
+<li>Chameleon Cloud</li>
+<li>AWS</li>
+<li>Azure</li>
+<li>HP Helion</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="projects-from-other-sources">
+<h3><a class="toc-backref" href="#id16">Projects from Other Sources</a><a class="headerlink" href="#projects-from-other-sources" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils" id="id7">
+<caption><span class="caption-text">Projects From Ohter Sources</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Title</th>
+<th class="head">Category</th>
+<th class="head">Data Sets</th>
+<th class="head">Technologies</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="../../projects/sample_project_airline_delays.html#ref-class-project-airline-delays"><span>Predicting Airline Delays with Hadoop</span></a></td>
+<td>Batch Data Analytics</td>
+<td>Airline delay dataset 2007, 2008</td>
+<td><ul class="first last simple">
+<li>Hadoop</li>
+<li>Apache Pig</li>
+<li>Python</li>
+<li>Pandas</li>
+<li>HDFS</li>
+<li>scikit-learn</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../projects/sample_project_barometric_pressure.html#ref-class-project-barometric-pressure"><span>Daily Variation of Barometric Pressure</span></a></td>
+<td>Data Processing Batch Data Analytics</td>
+<td>Quality Controlled Local Climatological Data</td>
+<td><ul class="first last simple">
+<li>IPython Notebook 2.0</li>
+<li>Pandas</li>
+<li>Numpy</li>
+<li>matplotlib</li>
+<li>d3.js</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../projects/sample_project_visualization.html#ref-class-project-visualization"><span>Data Visualization</span></a></td>
+<td>Big Data Visualization</td>
+<td>Project dataset from DonorsChoose.org</td>
+<td><ul class="first last simple">
+<li>D3.js</li>
+<li>DC.js</li>
+<li>Python</li>
+<li>MongoDB</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../projects/sample_project_lcs.html#ref-class-project-lcs"><span>MapReduce Implementation for Longest Common Substring Problem</span></a></td>
+<td>Batch Data Analytics</td>
+<td>Escherichia coli K-12</td>
+<td><ul class="first last simple">
+<li>Python</li>
+<li>Amazon</li>
+<li>MapReduce</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../projects/sample_project_gff.html#ref-class-project-gff"><span>MapReduce Implementation for GFF Parsing</span></a></td>
+<td>Batch Data Analytics</td>
+<td>&nbsp;</td>
+<td><ul class="first last simple">
+<li>Python</li>
+<li>Disco</li>
+<li>Amazon EC2</li>
+<li>MapReduce</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference internal" href="list_of_dataset.html#ref-class-lesson-list-dataset"><span>List of Possible Datasets</span></a></li>
+<li><a class="reference external" href="http://hpc-abds.org/kaleidoscope/">List of Possible Technologies</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="project-expectation-grade">
+<h2><a class="toc-backref" href="#id17">Project Expectation (Grade)</a><a class="headerlink" href="#project-expectation-grade" title="Permalink to this headline">¶</a></h2>
+<p>Projects are expected to software based and can receive full credit up to a
+grade of A+. Report style projects have a best possible grade of A-.</p>
+<div class="section" id="details-on-software-based-projects">
+<h3><a class="toc-backref" href="#id18">Details on Software based Projects</a><a class="headerlink" href="#details-on-software-based-projects" title="Permalink to this headline">¶</a></h3>
+<p>Code submissions should be made at Github including a <code class="docutils literal"><span class="pre">README</span></code> file.</p>
+<ul class="simple">
+<li>Source code on Github: <a class="reference external" href="https://github.com/futuresystems">https://github.com/futuresystems</a></li>
+<li>Written report on IU Canvas : 4-6 pages</li>
+</ul>
+<p><code class="docutils literal"><span class="pre">README</span></code> includes:</p>
+<ul class="simple">
+<li>Test instruction (if necessary)</li>
+<li>List of data source</li>
+<li>List of technologies used</li>
+</ul>
+</div>
+<div class="section" id="details-on-report-style-projects">
+<h3><a class="toc-backref" href="#id19">Details on Report Style Projects</a><a class="headerlink" href="#details-on-report-style-projects" title="Permalink to this headline">¶</a></h3>
+<p>Report should be at least 10 pages (individuals, 15 pages 2 person team, 20
+pages 3 person) long in Time Roman 11 point &#8211; spacing 1.1 in Microsoft Word.
+Figures can be included and proper citations must be included.
+<em>Use IU Canvas to submit your final report.</em>
+if materials submitted to github, please upload a statement as to this action
+on canvas so we can link to homework system.</p>
+<p>Use many examples given above to choose a project. You can follow one of these
+examples or choose your own.</p>
+</div>
+</div>
+<div class="section" id="project-proposal">
+<h2><a class="toc-backref" href="#id20">Project Proposal</a><a class="headerlink" href="#project-proposal" title="Permalink to this headline">¶</a></h2>
+<p>Please submit your project proposal to IU Canvas. The submission format is in a
+file (either txt, Adobe PDF, or MS word). A project proposal is typically 1-2
+pages long and should contain in the
+description section:</p>
+<ul class="simple">
+<li>the nature of the project and its context</li>
+<li>the technologies used</li>
+<li>any proprietary issues</li>
+<li>specific aims you intent to complete</li>
+<li>and a list of intended deliverables (atrifacts produced)</li>
+</ul>
+<div class="section" id="sample-project-proposal">
+<h3><a class="toc-backref" href="#id21">Sample Project Proposal</a><a class="headerlink" href="#sample-project-proposal" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>Title: This is my title
+
+Team: (YOU CAN HAVE UP TO 3 PEOPLE IN A TEAM, IF YOU WANT MORE, PLEASE
+BE SURE TO CONTACT US)
+
+        Fullname        e-mail  github username portalname
+
+Description:
+
+        Put here your description
+
+Artifacts:
+
+        Put here a list of artifacts that you will create (this can be
+        filled out at a later time
+
+        Examples are: A Survey Paper, a github repository link (with
+        everything being there, including this description),
+        screenshots, ...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="oral-presentation-tbd">
+<h2><a class="toc-backref" href="#id22">Oral Presentation (TBD)</a><a class="headerlink" href="#oral-presentation-tbd" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>A student will use Adobe Connect to give a presentation.</li>
+<li>5 minutes per team.</li>
+<li>Oral presentation can be replaced with a 1-2 page progress report(s) upon
+approval.</li>
+</ul>
+</div>
+<div class="section" id="questions-support">
+<h2><a class="toc-backref" href="#id23">Questions &amp; Support</a><a class="headerlink" href="#questions-support" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Course TA&#8217;s email: <a class="reference external" href="mailto:coursehelp&#37;&#52;&#48;futuresystems&#46;org">coursehelp<span>&#64;</span>futuresystems<span>&#46;</span>org</a></li>
+<li>Office Hours: Wednesday 7pm or Thursday 10am via <a class="reference external" href="https://connect.iu.edu/bdossp_sp15/">Adobe Connect</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyton_matlab.html" class="btn btn-neutral float-right" title="Calling Python from matlab" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="project_examples.html" class="btn btn-neutral" title="Sample Projects" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

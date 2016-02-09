@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Big data Analytics for Healthcare Data/Health informatics &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../index.html"/>
+        <link rel="up" title="Possible Projects" href="index.html"/>
+        <link rel="next" title="Human and Face Detection from Video (simulated streaming data)" href="nist_project_human_and_face_detection.html"/>
+        <link rel="prev" title="Fingerprint Matching" href="nist_project_fingerprint_matching.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Possible Projects</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="project_bibliometric_namedisambiguity.html">Author Name Disambiguation for Bibliometric Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_bigdata_containers.html">A Paper on Container Technologies for BigData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_cloudmesh.html">Cloudmesh Dirstributed Virtual Cluster Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_docker.html">Cloudmesh Docker Clusetr Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_survey_devops.html">A Survey of DevOps Frameworks in support of Big Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_survey_paas.html">A Survey of Online PaaS Frameworks and Clouds in support of Big Data</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#from-nist-big-data-public-working-group">From NIST Big Data Public Working Group</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="nist_project_data_warehousing.html">Data Warehousing and Data mining</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nist_project_fingerprint_matching.html">Fingerprint Matching</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Big data Analytics for Healthcare Data/Health informatics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#healthcare-use">Healthcare use</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#algorithms">Algorithms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dataset">Dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#possible-tools">Possible Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nist-big-data-pulbic-working-group-nbd-pwg">NIST Big Data Pulbic Working Group (NBD-PWG)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nist_project_human_and_face_detection.html">Human and Face Detection from Video (simulated streaming data)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nist_project_live_twitter.html">Live Twitter Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nist_project_spatial_bigdata.html">Spatial Big data/Spatial Statistics/Geographic Information Systems</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#links-that-may-inspire-projects">Links that may inspire projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#from-other-sources">From Other Sources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Possible Projects</a> &raquo;</li>
+      
+    <li>Big data Analytics for Healthcare Data/Health informatics</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/projects/nist_project_healthcare.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="big-data-analytics-for-healthcare-data-health-informatics">
+<span id="ref-class-project-healthcare"></span><h1>Big data Analytics for Healthcare Data/Health informatics<a class="headerlink" href="#big-data-analytics-for-healthcare-data-health-informatics" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Big data is defined as high-volume, high-velocity, and high-variety information
+assets that demand cost-effective, innovative forms of information processing
+for enhanced insight and decision-making. Healthcare data certainly fits the
+definition of big data.</p>
+<p>Large amount healthcare data is produced continually and store in different
+databases. With the wide adoption of electronic health records that has
+increased the amount of data available exponentially. Nevertheless, the
+healthcare providers has been slow to leverage the vast amount of data to
+improve heath care system or use data to improve efficiency to reduce overall
+cost of healthcare.</p>
+<p>Health care data has the potential to innovate the procedure of health care
+delivery in the US and inform healthcare providers about the most efficient and
+effective treatments. Value-based healthcare programs will provide incentives
+to both healthcare providers and insurers to explore new ways to leverage
+healthcare data to measure the quality and efficiency of care.</p>
+</div>
+<div class="section" id="healthcare-use">
+<h2>Healthcare use<a class="headerlink" href="#healthcare-use" title="Permalink to this headline">¶</a></h2>
+<p>It is estimated that in the US healthcare spending approximately, $75B to $265B
+is lost each year to healthcare fraud. [1]</p>
+<p>[1] White SE. Predictive modeling 101. How CMS’s newest fraud prevention tool
+works and what it means for providers. J AHIMA. 2011;82(9): 46–47.</p>
+<p>With the amount of healthcare fraud, the importance of identifying fraud and
+abuse in healthcare cannot be ignored; so healthcare providers must develop
+automated systems to identify fraud, waste and abuse to reduce its harmful
+impact on their business.</p>
+</div>
+<div class="section" id="algorithms">
+<h2>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h2>
+<p>Develop statistical analysis, visualization, and machine learning
+tools to statistically analyze and develop predictive models for healthcare
+payment data and possibly detect irregularities and prevent healthcare payment
+fraud.</p>
+</div>
+<div class="section" id="dataset">
+<h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
+<p>The Healthcare dataset:  Center for Medicare and Medicaid Services (CMS)
+(<a class="reference external" href="http://www.cms.gov">http://www.cms.gov</a>), released in the dataset into the public domain known as
+“Medicare Part-B in 2014”. The dataset includes a set of records documenting
+about transactions between over 900,000 medical providers and CMS.</p>
+</div>
+<div class="section" id="possible-tools">
+<h2>Possible Tools<a class="headerlink" href="#possible-tools" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Big Data:
+Apache Hadoop or Apache Spark, Apache HBase, Apache Mahout, apache
+Lucene/Solr, MLlib -Machine Learning Library for Apache Spark&#8217;s</li>
+<li>Visualization: D3 Visualization, Tableau visualization.</li>
+<li>Development: Java, Python, Scala and JavaScript, JQuery</li>
+</ul>
+</div>
+<div class="section" id="nist-big-data-pulbic-working-group-nbd-pwg">
+<h2>NIST Big Data Pulbic Working Group (NBD-PWG)<a class="headerlink" href="#nist-big-data-pulbic-working-group-nbd-pwg" title="Permalink to this headline">¶</a></h2>
+<p>This page is a copy of this document:
+<a class="reference external" href="http://bigdatawg.nist.gov/_uploadfiles/M0399_v1_6344899314.doc">http://bigdatawg.nist.gov/_uploadfiles/M0399_v1_6344899314.doc</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="nist_project_human_and_face_detection.html" class="btn btn-neutral float-right" title="Human and Face Detection from Video (simulated streaming data)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="nist_project_fingerprint_matching.html" class="btn btn-neutral" title="Fingerprint Matching" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>timestring.text2num &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/>
+        <link rel="up" title="timestring" href="../timestring.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../timestring.html">timestring</a> &raquo;</li>
+      
+    <li>timestring.text2num</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for timestring.text2num</h1><div class="highlight"><pre>
+<span class="c1"># https://github.com/ghewgill/text2num/blob/master/text2num.py</span>
+
+<span class="c1"># This library is a simple implementation of a function to convert textual</span>
+<span class="c1"># numbers written in English into their integer representations.</span>
+<span class="c1">#</span>
+<span class="c1"># This code is open source according to the MIT License as follows.</span>
+<span class="c1">#</span>
+<span class="c1"># Copyright (c) 2008 Greg Hewgill</span>
+<span class="c1">#</span>
+<span class="c1"># Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="c1"># of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="c1"># in the Software without restriction, including without limitation the rights</span>
+<span class="c1"># to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="c1"># copies of the Software, and to permit persons to whom the Software is</span>
+<span class="c1"># furnished to do so, subject to the following conditions:</span>
+<span class="c1">#</span>
+<span class="c1"># The above copyright notice and this permission notice shall be included in</span>
+<span class="c1"># all copies or substantial portions of the Software.</span>
+<span class="c1">#</span>
+<span class="c1"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="c1"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="c1"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="c1"># AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="c1"># LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="c1"># OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span class="c1"># THE SOFTWARE.</span>
+
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">Small</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;zero&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s1">&#39;one&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;three&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;four&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s1">&#39;five&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;six&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="s1">&#39;seven&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+    <span class="s1">&#39;eight&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="s1">&#39;nine&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+    <span class="s1">&#39;ten&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s1">&#39;eleven&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+    <span class="s1">&#39;twelve&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="s1">&#39;thirteen&#39;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+    <span class="s1">&#39;fourteen&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s1">&#39;fifteen&#39;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+    <span class="s1">&#39;sixteen&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+    <span class="s1">&#39;seventeen&#39;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+    <span class="s1">&#39;eighteen&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+    <span class="s1">&#39;nineteen&#39;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+    <span class="s1">&#39;twenty&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s1">&#39;thirty&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s1">&#39;forty&#39;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+    <span class="s1">&#39;fifty&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="s1">&#39;sixty&#39;</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
+    <span class="s1">&#39;seventy&#39;</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+    <span class="s1">&#39;eighty&#39;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+    <span class="s1">&#39;ninety&#39;</span><span class="p">:</span> <span class="mi">90</span>
+<span class="p">}</span>
+
+<span class="n">Magnitude</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;thousand&#39;</span><span class="p">:</span>     <span class="mi">1000</span><span class="p">,</span>
+    <span class="s1">&#39;million&#39;</span><span class="p">:</span>      <span class="mi">1000000</span><span class="p">,</span>
+    <span class="s1">&#39;billion&#39;</span><span class="p">:</span>      <span class="mi">1000000000</span><span class="p">,</span>
+    <span class="s1">&#39;trillion&#39;</span><span class="p">:</span>     <span class="mi">1000000000000</span><span class="p">,</span>
+    <span class="s1">&#39;quadrillion&#39;</span><span class="p">:</span>  <span class="mi">1000000000000000</span><span class="p">,</span>
+    <span class="s1">&#39;quintillion&#39;</span><span class="p">:</span>  <span class="mi">1000000000000000000</span><span class="p">,</span>
+    <span class="s1">&#39;sextillion&#39;</span><span class="p">:</span>   <span class="mi">1000000000000000000000</span><span class="p">,</span>
+    <span class="s1">&#39;septillion&#39;</span><span class="p">:</span>   <span class="mi">1000000000000000000000000</span><span class="p">,</span>
+    <span class="s1">&#39;octillion&#39;</span><span class="p">:</span>    <span class="mi">1000000000000000000000000000</span><span class="p">,</span>
+    <span class="s1">&#39;nonillion&#39;</span><span class="p">:</span>    <span class="mi">1000000000000000000000000000000</span><span class="p">,</span>
+    <span class="s1">&#39;decillion&#39;</span><span class="p">:</span>    <span class="mi">1000000000000000000000000000000000</span><span class="p">,</span>
+<span class="p">}</span>
+
+<div class="viewcode-block" id="NumberException"><a class="viewcode-back" href="../../modules/timestring/timestring.html#timestring.text2num.NumberException">[docs]</a><span class="k">class</span> <span class="nc">NumberException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="ne">Exception</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="text2num"><a class="viewcode-back" href="../../modules/timestring/timestring.html#timestring.text2num.text2num">[docs]</a><span class="k">def</span> <span class="nf">text2num</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">r&quot;[\s-]+&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">Small</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">g</span> <span class="o">+=</span> <span class="n">x</span>
+            <span class="k">elif</span> <span class="n">w</span> <span class="o">==</span> <span class="s2">&quot;hundred&quot;</span><span class="p">:</span>
+                <span class="n">g</span> <span class="o">*=</span> <span class="mi">100</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">x</span> <span class="o">=</span> <span class="n">Magnitude</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">n</span> <span class="o">+=</span> <span class="n">g</span> <span class="o">*</span> <span class="n">x</span>
+                    <span class="n">g</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">NumberException</span><span class="p">(</span><span class="s2">&quot;Unknown number: &quot;</span><span class="o">+</span><span class="n">w</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="n">g</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

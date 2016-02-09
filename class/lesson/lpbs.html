@@ -1,0 +1,497 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Local PBS Queuing System &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/>
+        <link rel="up" title="Lessons" href="../lessons.html"/>
+        <link rel="next" title="Environment Modules (modules) on FutureSystems" href="modules.html"/>
+        <link rel="prev" title="List of Technologies (Under Preparation)" href="list_of_tech.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">Lessons</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ansible.html">Ansible</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible.html#tutorial-ansible-basic-commands">Tutorial: Ansible Basic commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_playbook.html">Ansible Playbooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docker.html">Docker Basics on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docker_cloudmesh.html">Deploying Cloudmesh using Docker on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html">FAQ (Under Preparation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="git.html">Using Git and GitHub for collaboration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="google.html">Google</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hands_on_fg465.html">Getting Started with Hands-on Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ipynb.html">Deploying IPython Notebook Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="list_of_dataset.html">List of Dataset (Under preparation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="list_of_tech.html">List of Technologies (Under Preparation)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Local PBS Queuing System</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exercises">Exercises</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exercise-1">Exercise 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exercise-2">Exercise 2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exercise-3">Exercise 3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exercise-4">Exercise 4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exercise-5">Exercise 5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exercise-6">Exercise 6</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exercise-7">Exercise 7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#acknowledgment">Acknowledgment</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html">Environment Modules (modules) on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openmpi.html">Deploying Open MPI Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="preservation.html">Best Practices for Preservation of IaaS and Data in FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="project_examples.html">Sample Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html">Final Project Guidelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyton_matlab.html">Calling Python from matlab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="report.html">Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resource_use_restriction.html">Use of OpenStack Resources on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="restructuredtext.html">Restructured Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst2.html">Sphinx Quick Reference Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="shell-access.html">Shell Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="video.html"> (Video lectures) Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="../lessons.html">Lessons</a> &raquo;</li>
+      
+    <li>Local PBS Queuing System</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/class/lesson/lpbs.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="local-pbs-queuing-system">
+<h1>Local PBS Queuing System<a class="headerlink" href="#local-pbs-queuing-system" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes users may want to emulate the behavior of PBS on a local machine. This is useful to develop sophisticated job specifications or to emulate a queuing system as available on supercomputers. Often the installation of a full version of torque or other batch systems may be too much effort.</p>
+<p>A solution is to install LPBS available at</p>
+<p><a class="reference external" href="https://github.com/goerz/LPBS">https://github.com/goerz/LPBS</a></p>
+<p>Duration: 1 hour</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>LPBS is written in python and therefore can be installed easily with:</p>
+<div class="highlight-python"><div class="highlight"><pre>pip install LPBS
+</pre></div>
+</div>
+<p>After you install it you need to configure it and make sure you have a directory in which you place the temporary files and the configuration file. We assume that we use the directory <a href="#id1"><span class="problematic" id="id2">`</span></a>~/qsub&#8217;. Make sure you are not already using the qsub directory. To complete the setup do the following:</p>
+<blockquote>
+<div>mkdir -p ~/qsub/scratch</div></blockquote>
+<p>Edit the .bashrc file and add the line:</p>
+<div class="highlight-python"><div class="highlight"><pre>export LPBS_HOME=~/qsub
+</pre></div>
+</div>
+<p>Now place the following file in ~/qsub/lpbs.cfg:</p>
+<div class="highlight-python"><div class="highlight"><pre>[Server]
+
+# Full hostname of submission server (hostname.domain). Will be made available
+# to running job through the environment variable PBS_SERVER. Job IDs will end
+# in the server hostname
+
+hostname: localhost
+domain: local
+
+
+[Node]
+
+# Full hostname of the execution node (hostname.domain). Will be made available
+# to running job through the environment variable PBS_O_HOST. Since LPBS is
+# designed to execute jobs locally, the settings here should in general be
+# identical to those in the [Server] section
+
+hostname: localhost
+domain: local
+
+
+[LPBS]
+
+# Setting for job execution.
+# If &#39;username_in_jobid&#39; is enabled, the job IDs will have the form
+# &#39;seqnr.user.hostname.domain&#39; where &#39;user&#39; is the username of the user
+# submitting the job.
+# The file given in &#39;sequence_file&#39; is used for keeping track of the &#39;seqnr&#39;
+# appearing in the job ID.
+# The file given in &#39;logfile&#39; is used for logging all LPBS events. Both
+# &#39;sequence_file&#39; and &#39;logfile&#39; are relative to $LPBS_HOME.
+
+username_in_jobid: 0
+sequence_file: sequence
+logfile: lpbs.log
+
+
+[Scratch]
+
+# Settings for the scratch space provided to jobs. &#39;scratch_root&#39; defines a
+# location where jobs should write temporary data. If given as a relative path,
+# it is relative to $LPBS_HOME. Environment variables will be expanded at the
+# time of the job submission.
+# If the value of # &#39;create_jobid_folder&#39; is set to 1, a folder with the name of
+# the full job ID is created inside scratch_root. This folder is automatically
+# deleted when the job ends, unless &#39;keep_scratch&#39; is set to 1. If the job
+# failed, the scratch will not be deleted, unless &#39;delete_failed_scratch&#39; is set
+# to 1.
+
+scratch_root: $HOME/qsub/scratch
+create_jobid_folder: 1
+keep_scratch: 0
+delete_failed_scratch: 0
+
+
+[Notification]
+
+# Settings on how the user should be be notified about events such as the start
+# and end of a job. If sent_mail is set to 1, emails will be sent for
+# notifications depending on the value of the &#39;-m&#39; option to lqsub. If
+# &#39;send_growl&#39; is set to 1, Growl (http://growl.info) is used for notification
+# on MacOS X. Notifications via Growl do not take into account the &#39;-m&#39; options
+# during job submission.
+
+send_mail: 0
+send_growl: 0
+
+
+[Mail]
+
+# SMTP settings for email notifications. Notification emails will be sent from
+# the address given by the &#39;from&#39; option. The SMTP server given in &#39;smtp&#39; is
+# used for sending the emails, if &#39;authenticate&#39; is set to 1, authentication is
+# done with the given &#39;username&#39; and &#39;password&#39;. If &#39;tls&#39; is 1, TLS encryption
+# will be used.
+
+from: nobody@example.org
+smtp: smtp.example.com:587
+username: user
+password: secret
+authenticate: 0
+tls: 1
+
+
+[Growl]
+
+# Settings for Growl notifications. Notifications are sent to either localhost
+# or a remote host via the GNTP protocol. The &#39;hostname&#39; setting gives the
+# address and port of the Growl server, the given &#39;password&#39; is used for
+# authentication (note that if sending to localhost, no authentication is
+# necessary). If &#39;sticky&#39; is set to 1, the Growl notifications will be sticky.
+# It is possible to send notifications to more than one host. In this case, both
+# &#39;hostname&#39; and &#39;password&#39; should be a comma-separated list of values, with
+# each item corresponding to one host.
+
+hostname: localhost:23053
+password:
+sticky: 0
+
+
+[Log]
+
+# &#39;logfile&#39; gives the name of the central log file, relative to $LPBS_HOME.
+
+logfile: lpbs.log
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To avoid a little bug in the program you need to set in the cfg file <cite>create_jobid_folder: 1</cite></p>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>Now you can use the commands lqsub, lqstat, and lqdel.</p>
+<p>Thus this is now a different kind of virtual cluster ;-)</p>
+<p>A simple script is:</p>
+<div class="highlight-python"><div class="highlight"><pre>#PBS -N pbstest
+#PBS -j oe
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=00:00:10
+#PBS -l mem=10mb
+#PBS -o pbstest.out
+
+echo &quot;####################################################&quot;
+echo &quot;User: $PBS_O_LOGNAME&quot;
+echo &quot;Batch job started on $PBS_O_HOST&quot;
+echo &quot;PBS job id: $PBS_JOBID&quot;
+echo &quot;PBS job name: $PBS_JOBNAME&quot;
+echo &quot;PBS working directory: $PBS_O_WORKDIR&quot;
+echo &quot;Job started on&quot; `hostname` `date`
+echo &quot;Current directory:&quot; `pwd`
+echo &quot;PBS environment: $PBS_ENVIRONMENT&quot;
+echo &quot;####################################################&quot;
+
+echo &quot;####################################################&quot;
+echo &quot;Full Environment:&quot;
+printenv
+echo &quot;####################################################&quot;
+
+echo &quot;The Job is being executed on the following node:&quot;
+cat ${PBS_NODEFILE}
+echo &quot;##########################################################&quot;
+
+echo &quot;PUT YOUR COMMANDS TO BE EXECUTED HERE&quot;
+
+echo &quot;##########################################################&quot;
+echo &quot;Job Finished: &quot; `date`
+exit 0
+</pre></div>
+</div>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>We recommend that you use python 2.7.9, with virtualenv.</p>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="exercise-1">
+<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h2>
+<p>Install LPBS on a virtual machine on India</p>
+</div>
+<div class="section" id="exercise-2">
+<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h2>
+<p>Install LPBS on multiple virtual machines on India. Develop a program that lists all jobs on the VMs</p>
+</div>
+<div class="section" id="exercise-3">
+<h2>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h2>
+<p>Develop a python script that modifies the .bashrc file if $LPBS_HOME is not set in the environment.</p>
+</div>
+<div class="section" id="exercise-4">
+<h2>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h2>
+<p>Develop a python that conducts a full deployment of LPBS while using a single command-line. Use python docopts to pass the parameters. We expect the following to work:</p>
+<div class="highlight-python"><div class="highlight"><pre>lpbs_install [--dir=LPBS_HOME]
+</pre></div>
+</div>
+<p>if the &#8211;dir option is ommitted use ~/qsub as default. Install the configuration file that you find in this example. To uninstall we have a command:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">lpbs_install</span> <span class="o">--</span><span class="n">uninstall</span>
+</pre></div>
+</div>
+<p>This will delete the installation and the directory, as well as trying to remove the LPBS_HOME variable in .bashrc. If the later can not be found through an exception.</p>
+</div>
+<div class="section" id="exercise-5">
+<h2>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">¶</a></h2>
+<p>Use chef for deployment.</p>
+</div>
+<div class="section" id="exercise-6">
+<h2>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">¶</a></h2>
+<p>Use puppet for deployment.</p>
+</div>
+<div class="section" id="exercise-7">
+<h2>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">¶</a></h2>
+<p>Use ansible for deployment.</p>
+</div>
+<div class="section" id="acknowledgment">
+<h2>Acknowledgment<a class="headerlink" href="#acknowledgment" title="Permalink to this headline">¶</a></h2>
+<p>The configuration files and job script are modifications of the once found at <a class="reference external" href="https://github.com/goerz/LPBS">https://github.com/goerz/LPBS</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modules.html" class="btn btn-neutral float-right" title="Environment Modules (modules) on FutureSystems" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="list_of_tech.html" class="btn btn-neutral" title="List of Technologies (Under Preparation)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

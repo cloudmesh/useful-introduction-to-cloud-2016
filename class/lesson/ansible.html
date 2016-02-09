@@ -1,0 +1,458 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Ansible &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/>
+        <link rel="up" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="../bdossp_sp15/index.html"/>
+        <link rel="next" title="Ansible Playbooks" href="ansible_playbook.html"/>
+        <link rel="prev" title="Deploying IPython Notebook Cluster with Cloudmesh launcher" href="ipynb.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">Lessons</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">Ansible</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tutorial-ansible-basic-commands">Tutorial: Ansible Basic commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#explanation">Explanation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-ansible">Using Ansible</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#more-examples">More examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_playbook.html">Ansible Playbooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docker.html">Docker Basics on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docker_cloudmesh.html">Deploying Cloudmesh using Docker on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html">FAQ (Under Preparation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="git.html">Using Git and GitHub for collaboration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="google.html">Google</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hands_on_fg465.html">Getting Started with Hands-on Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ipynb.html">Deploying IPython Notebook Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="list_of_dataset.html">List of Dataset (Under preparation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="list_of_tech.html">List of Technologies (Under Preparation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lpbs.html">Local PBS Queuing System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html">Environment Modules (modules) on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openmpi.html">Deploying Open MPI Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="preservation.html">Best Practices for Preservation of IaaS and Data in FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="project_examples.html">Sample Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html">Final Project Guidelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyton_matlab.html">Calling Python from matlab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="report.html">Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resource_use_restriction.html">Use of OpenStack Resources on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="restructuredtext.html">Restructured Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst2.html">Sphinx Quick Reference Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="shell-access.html">Shell Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="video.html"> (Video lectures) Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
+      
+    <li>Ansible</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/class/lesson/ansible.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ansible">
+<h1>Ansible<a class="headerlink" href="#ansible" title="Permalink to this headline">¶</a></h1>
+<p>Ansible is an IT automation tool which deploys software and configures systems
+on multiple servers using SSH protocol. Python based Ansible stores information
+about deployment and configuration in a yaml format file, named Ansible
+Playbook. Tasks defined in the playbook allows you to have identical
+configurations and software across multiple machines in your infrastructure.
+This section, we introduce basic commands of <code class="docutils literal"><span class="pre">ansible</span></code> to introduce Ansible
+software on FutureSystems.  In the next section, we will explore advanced use
+of <code class="docutils literal"><span class="pre">ansible</span></code> on FutureSystems.</p>
+</div>
+<div class="section" id="tutorial-ansible-basic-commands">
+<h1>Tutorial: Ansible Basic commands<a class="headerlink" href="#tutorial-ansible-basic-commands" title="Permalink to this headline">¶</a></h1>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">approximate time 45 minutes</p>
+</div>
+<p>In this tutorial, we are going to learn basic commands of Ansible software.
+Keep in mind that <code class="docutils literal"><span class="pre">ansible</span></code> is a main program and <code class="docutils literal"><span class="pre">playbook</span></code> is a template
+that you would like to use. You may have several playbooks in your Ansible.</p>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<p>In order to continue, ensure you have loaded the appropriate modules
+and registered a key with openstack.
+The modules needed are:</p>
+<ul class="simple">
+<li>python</li>
+<li>openstack</li>
+</ul>
+<p>Additionally, you can manage virtual machines using the <a class="reference external" href="https://openstack-j.india.futuresystems.org/horizon/project/">openstack web portal</a>.
+The login credentials are:</p>
+<ul class="simple">
+<li>username: your FutureSystems portal id</li>
+<li>password: the value of <code class="docutils literal"><span class="pre">OS_PASSWORD</span></code> in <code class="docutils literal"><span class="pre">~/.cloudmesh/clouds/india/juno/openrc.sh</span></code></li>
+</ul>
+<p>Ansible has two types of servers: a control machine and a managed node.
+Typically, a single control machine executes tasks over the one or more nodes.</p>
+</div>
+<div class="section" id="control-machine">
+<h3>Control machine<a class="headerlink" href="#control-machine" title="Permalink to this headline">¶</a></h3>
+<p>We will use <code class="docutils literal"><span class="pre">india</span></code> as our control machine.
+Let&#8217;s install Ansible from via PyPI.</p>
+<p>I will create a seperate virtualenv for this:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ mkdir -p ~/venv/ansible
+$ virtualenv ~/venv/ansible
+$ source ~/venv/ansible/bin/activate
+</pre></div>
+</div>
+<p>Now install Ansible:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pip install --trusted-host pypi.python.org ansible
+</pre></div>
+</div>
+</div>
+<div class="section" id="managed-machines">
+<h3>Managed machines<a class="headerlink" href="#managed-machines" title="Permalink to this headline">¶</a></h3>
+<p>We need to launch some virtual machines.  Go to the <a class="reference external" href="https://openstack-j.india.futuresystems.org/horizon/project/">openstack web
+portal</a>. Make sure that the correct projectid is selected in the top
+left (just to the right of the &#8220;openstack&#8221; logo&#8221;). For example,
+<code class="docutils literal"><span class="pre">fg101</span></code> or <code class="docutils literal"><span class="pre">fg465</span></code>.  Go to <code class="docutils literal"><span class="pre">Compute</span> <span class="pre">---&gt;</span> <span class="pre">Instances</span> <span class="pre">---&gt;</span> <span class="pre">Launch</span>
+<span class="pre">Instance</span></code> to start the procedure for launching an instance. Make sure
+to provide an instance name and specify a keypair.</p>
+<p>Launch several instances, say three.  Once they launch, note down the
+IP addresses. We will need these later.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>As a sanity check, make sure you can ssh into these nodes from <code class="docutils literal"><span class="pre">india</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh ubuntu@$IP
+</pre></div>
+</div>
+<p class="last">where <code class="docutils literal"><span class="pre">$IP</span></code> is the IP address of the instance you noted down.</p>
+</div>
+</div>
+</div>
+<div class="section" id="explanation">
+<h2>Explanation<a class="headerlink" href="#explanation" title="Permalink to this headline">¶</a></h2>
+<p>Ansible works by executing <strong>modules</strong> on an <strong>inventory</strong> of
+machines.  Since many machines can be managed, this inventory is
+written to a file.  Within the inventory file, groups of machines can
+be named arbitrarily.  These names should have some meaning however:
+for example &#8220;production&#8221;, &#8220;development&#8221;, and &#8220;testing&#8221; may be
+appropriate names.</p>
+<p>The modules executed update the state of the machine. For instance,
+the <code class="docutils literal"><span class="pre">apt</span></code> module allows software to be installed. While the
+<code class="docutils literal"><span class="pre">shell</span></code> module exists and is a convenient way to execute shell
+commands on the managed nodes it is run every time. Other modules,
+like <code class="docutils literal"><span class="pre">apt</span></code>, allow ansible to be intelligent about changing state:
+only necessary modifications are done. For instance, of an application
+is already installed, there is not reason to reinstall.</p>
+<p>Since ansible requires ssh access from controller to managed nodes, it
+can be run as an unpriviledged user, rather than requiring
+administrative access on the controller.</p>
+<p>The <code class="docutils literal"><span class="pre">ansible.cfg</span></code> file can be used to override certain ansible
+configuration settings.</p>
+<p>Please see the <a class="reference external" href="http://docs.ansible.com/index.html">ansible documentation</a> for further details.</p>
+</div>
+<div class="section" id="using-ansible">
+<h2>Using Ansible<a class="headerlink" href="#using-ansible" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have some nodes we wish to manage, let us use ansible to
+control them.</p>
+<div class="section" id="inventory">
+<h3>Inventory<a class="headerlink" href="#inventory" title="Permalink to this headline">¶</a></h3>
+<p>First, we need our inventory of managed machines.
+Create an <code class="docutils literal"><span class="pre">inventory.txt</span></code> file with contents similar to the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>[ansible-test]
+10.39.1.1
+10.38.1.2
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Do not copy-and-paste this. Use the IP addresses of the machines
+you started earlier.</p>
+</div>
+</div>
+<div class="section" id="ansible-ssh-configuration">
+<h3>Ansible SSH Configuration<a class="headerlink" href="#ansible-ssh-configuration" title="Permalink to this headline">¶</a></h3>
+<p>We need to override some of ansible default ssh settings.
+Create a <code class="docutils literal"><span class="pre">ansible.cfg</span></code> file with the following contents:</p>
+<div class="highlight-python"><div class="highlight"><pre>[ssh_connection]
+ssh_args = -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+</pre></div>
+</div>
+<p>These options modify the behavior of ssh when connecting to the
+managed nodes. Disabling the <code class="docutils literal"><span class="pre">StrictHostKeyChecking</span></code> option prevents
+ssh from requiring that the node be present in you
+<code class="docutils literal"><span class="pre">~/.ssh/known_hosts</span></code> file. SSH will still update the file and so we
+override <code class="docutils literal"><span class="pre">UserKnownHostsFile</span></code>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>If you are using a different ssh key for authentication, such as
+one generated by OpenStack&#8217;s <code class="docutils literal"><span class="pre">nova</span> <span class="pre">keypair-add</span></code> command, you can
+specify the path to the private key in the <code class="docutils literal"><span class="pre">ansible.cfg</span></code> file by
+adding:</p>
+<div class="last highlight-python"><div class="highlight"><pre>-o IdentityFile=~/.ssh/$PORTALID-india-key
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="shell-module-hello-world">
+<h3>Shell module: Hello World<a class="headerlink" href="#shell-module-hello-world" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s try to run &#8216;echo Hello World&#8217; over the nodes.</p>
+<div class="highlight-python"><div class="highlight"><pre>ansible all -i inventory.txt -u ubuntu -c ssh -a &quot;echo Hello World&quot;
+</pre></div>
+</div>
+<p>An explanation of the flags:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">-i</span></code> specifies the inventory file</li>
+<li><code class="docutils literal"><span class="pre">-u</span></code> specifies the user on the managed machines</li>
+<li><code class="docutils literal"><span class="pre">-c</span></code> use ssh rather than paramiko so that our overrides in
+<code class="docutils literal"><span class="pre">ansible.cfg</span></code> take effect.</li>
+<li><code class="docutils literal"><span class="pre">-a</span></code> specifies the module arguments to run.</li>
+</ul>
+<p>You expect to see:</p>
+<div class="highlight-python"><div class="highlight"><pre>10.39.1.1 | success | rc=0 &gt;&gt;
+Hello World
+
+10.39.1.2 | success | rc=0 &gt;&gt;
+Hello World
+</pre></div>
+</div>
+</div>
+<div class="section" id="ping-module">
+<h3>Ping module<a class="headerlink" href="#ping-module" title="Permalink to this headline">¶</a></h3>
+<p>Run a simple command &#8220;ping&#8221;.</p>
+<div class="highlight-python"><div class="highlight"><pre>ansible all -i inventory.txt -u ubuntu -c ssh -m ping
+</pre></div>
+</div>
+<p>You expect to see:</p>
+<div class="highlight-python"><div class="highlight"><pre>10.39.1.1 | success &gt;&gt; {
+    &quot;changed&quot;: false,
+    &quot;ping&quot;: &quot;pong&quot;
+}
+
+10.39.1.2 | success &gt;&gt; {
+    &quot;changed&quot;: false,
+    &quot;ping&quot;: &quot;pong&quot;
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="more-examples">
+<h2>More examples<a class="headerlink" href="#more-examples" title="Permalink to this headline">¶</a></h2>
+<p>You can find more examples from here: <a class="reference external" href="https://github.com/ansible/ansible-examples">https://github.com/ansible/ansible-examples</a></p>
+</div>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<p>The main tutorial from Ansible is here: <a class="reference external" href="https://docs.ansible.com/installation/ubuntulinux/">https://docs.ansible.com/installation/ubuntulinux/</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ansible_playbook.html" class="btn btn-neutral float-right" title="Ansible Playbooks" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ipynb.html" class="btn btn-neutral" title="Deploying IPython Notebook Cluster with Cloudmesh launcher" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,281 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DevOps &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>DevOps</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/chef.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="devops">
+<h1>DevOps<a class="headerlink" href="#devops" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>combinaition of terms <em>Development</em> and <em>Operation</em></li>
+</ul>
+</div>
+<div class="section" id="vagrant">
+<h1>Vagrant<a class="headerlink" href="#vagrant" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="chef">
+<h1>Chef<a class="headerlink" href="#chef" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>go to <a class="reference external" href="http://learn.getchef.com/rhel/get-a-virtual-machine/">http://learn.getchef.com/rhel/get-a-virtual-machine/</a> and do the tutorial</li>
+<li>install <a class="reference external" href="http://docs.getchef.com/install_dk.html">http://docs.getchef.com/install_dk.html</a></li>
+<li>chef verify</li>
+</ul>
+<p>echo &#8216;eval &#8220;$(chef shell-init bash)&#8221;&#8217; &gt;&gt; ~/.bash_profile</p>
+<p>just client</p>
+<ul class="simple">
+<li>curl -L <a class="reference external" href="https://www.getchef.com/chef/install.sh">https://www.getchef.com/chef/install.sh</a> | sudo bash</li>
+</ul>
+</div>
+<div class="section" id="berkshelf">
+<h1>Berkshelf<a class="headerlink" href="#berkshelf" title="Permalink to this headline">¶</a></h1>
+<p>Berkshelf manages an applications cookbooks and its dependencies.  It
+allows to use chef recipies from others and reduce replication of the
+recipies while avoiding to duplicate them in your own repository or
+recipies. Berkshelf uses berkfiles to manage the recipies. If you have
+an existing cookbook, you can create a bersksfile in an existing
+directory containing the recipe with:</p>
+<div class="highlight-python"><div class="highlight"><pre>berks init .
+</pre></div>
+</div>
+<p>In case you like to start a new a new cookbook (lets assume the name
+is &lt;mycookbook&gt; can create on with:</p>
+<div class="highlight-python"><div class="highlight"><pre>berks create &lt;mycookbook&gt;
+</pre></div>
+</div>
+<p>Than you can specify the dependencies in the Berksfile such as:</p>
+<div class="highlight-python"><div class="highlight"><pre>source &quot;https://supermarket.getchef.com&quot;
+metadata
+cookbook &quot;git&quot;
+</pre></div>
+</div>
+<p>To install the cookbooks just say:</p>
+<div class="highlight-python"><div class="highlight"><pre>berks install
+</pre></div>
+</div>
+<p>The cookbooks will tahn be located in:</p>
+<div class="highlight-python"><div class="highlight"><pre>~/.berkshelf
+</pre></div>
+</div>
+<p>vagrant plugin install vagrant-berkshelf &#8211;plugin-version 2.0.1</p>
+</div>
+<div class="section" id="example">
+<h1>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python"><div class="highlight"><pre>mkdir cookbooks
+cd cookbooks
+chef generate cookbook cm_test
+tree
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>.
+└── cm_test
+    ├── Berksfile
+    ├── README.md
+    ├── chefignore
+    ├── metadata.rb
+    └── recipes
+        └── default.rb
+
+2 directories, 5 files
+</pre></div>
+</div>
+<p>renerate a template:</p>
+<div class="highlight-python"><div class="highlight"><pre>chef generate template cm_test index.html
+</pre></div>
+</div>
+<p>update default.rb</p>
+<p>chef-client &#8211;local-mode &#8211;runlist cm_test</p>
+<p>running scripts</p>
+<p><a class="reference external" href="https://docs.getchef.com/resource_script.html">https://docs.getchef.com/resource_script.html</a></p>
+<p>running python ;-)</p>
+<p><a class="reference external" href="https://docs.getchef.com/resource_python.html">https://docs.getchef.com/resource_python.html</a></p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

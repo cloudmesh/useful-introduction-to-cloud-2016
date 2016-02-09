@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using Cluster on Cloud IaaS Platform &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Using Cluster on Cloud IaaS Platform</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/class/vc_sp15/cm_launcher_description.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-cluster-on-cloud-iaas-platform">
+<h1>Using Cluster on Cloud IaaS Platform<a class="headerlink" href="#using-cluster-on-cloud-iaas-platform" title="Permalink to this headline">¶</a></h1>
+<p>Many cloud platforms such as OpenStack, Eucalyptus, AWS, etc. support a
+compute cluster on their virtualized environments with orchestration
+tools like Docker, Puppet or Chef. It typically, however, requires
+additional tasks to configure networks and support large number of
+clusters manually. Cloudmesh offers <code class="docutils literal"><span class="pre">launcher</span></code> command with OpenStack
+Heat and Chef recipes to provide automated and scalable clusters.</p>
+<div class="section" id="provisioning-virtual-machines-for-cluster">
+<h2>Provisioning Virtual Machines for Cluster<a class="headerlink" href="#provisioning-virtual-machines-for-cluster" title="Permalink to this headline">¶</a></h2>
+<p>To create a virtual machine(s) for a cluster, we use OpenStack Heat.
+Heat is the OpenStack Orchestration tool which creates compute
+environments with its template on OpenStack platform. The template
+contains information about cloud resources such as virtual machines,
+floating IP addresses, security groups, key-pairs, volumes, etc. With the
+OpenStack Heat Template, a master node and a worker node(s) can be
+configured differently with its settings for the cloud resources.</p>
+</div>
+<div class="section" id="communication-ssh-across-multiple-nodes">
+<h2>Communication (SSH) across multiple nodes<a class="headerlink" href="#communication-ssh-across-multiple-nodes" title="Permalink to this headline">¶</a></h2>
+<p>In a cluster environment, every node needs to communicate with each
+other. Cloudmesh Cluster automatically sets up for you by utilizing
+OpenStack Heat Template. We have added a ssh-copy-id like script inside
+of Cloudmesh cluster command and the newly generated ssh keypair is
+propagated through OpenStack Heat Template. get_param or get_file in
+the template allows to inject the keypair to each node of the cluster.
+We also update the system hosts files in each cluster node so that they
+can login each other with its own hostname i.e. hadoop1 or master. This
+is also done by OpenStack Heat Template. We placed an injection script
+in the last node of cluster so when the user_data is being executed,
+the last node propagates all the hostnames with their private IP
+addresses to /etc/hosts on the rest of nodes. This completes configuring
+ssh password-less connection across the cluster node(s).</p>
+</div>
+<div class="section" id="configuration-for-master-and-worker-node">
+<h2>Configuration for master and worker node<a class="headerlink" href="#configuration-for-master-and-worker-node" title="Permalink to this headline">¶</a></h2>
+<p>To setup a cluster with master and worker node(s), configuration and
+installation are different in the master and the worker node. Cloudmesh
+cluster allows you to provide a separated installation script with stdin
+or a file as a user script to run on the node. With this isolated user
+space for installing and configuring packages, you can easily setup a
+master and a worker node in Cloudmesh. If you need to install program a
+on a master node, for example, you can simply call
+<code class="docutils literal"><span class="pre">cluster</span> <span class="pre">write</span> <span class="pre">[cluster</span> <span class="pre">name]</span> <span class="pre">master</span></code> with
+<code class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">program</span> <span class="pre">a</span></code> on a ubuntu image. We treat that there is
+a single master and all worker node(s) are same.</p>
+</div>
+<div class="section" id="confirmation-of-the-cluster-installation">
+<h2>Confirmation of the cluster installation<a class="headerlink" href="#confirmation-of-the-cluster-installation" title="Permalink to this headline">¶</a></h2>
+<p>To ensure everything is properly installed and configured, Cloudmesh
+tries to check the installation with a few options. A Cloudmesh user can
+define what to expect as a result so <code class="docutils literal"><span class="pre">cm</span> <span class="pre">launcher</span></code> can
+understand whether it is successfully installed or not. Also, testing
+command or script can be executed to verify the installation with
+<code class="docutils literal"><span class="pre">cm</span> <span class="pre">launcher</span></code>. If there was error occurred, rollback would be
+performed.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

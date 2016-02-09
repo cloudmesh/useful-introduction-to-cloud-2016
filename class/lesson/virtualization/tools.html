@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Virtualization Tools &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../index.html"/>
+        <link rel="up" title="Spring 2015 - Big Data Applications to Clouds and HPC" href="../../vc_sp15/index.html"/>
+        <link rel="next" title="Fall 2014 - Big Data Applications and Analytics (Info I590)" href="../../i590.html"/>
+        <link rel="prev" title="Deployment Technologies (Under Preparation)" href="../deployment/index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../vc_sp15/overview.html">Cloud Computing on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../collaboration/index.html">Collaboration Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deployment/index.html">Deployment Technologies (Under Preparation)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Virtualization Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vagrant">Vagrant</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-is-vagrant">What is Vagrant?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-it-works">How it works</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#boxes">Boxes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#provisioners">Provisioners</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#providers">Providers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-get-it">How to get it</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a> &raquo;</li>
+      
+    <li>Virtualization Tools</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/class/lesson/virtualization/tools.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="virtualization-tools">
+<span id="ref-virtualization-tools"></span><h1>Virtualization Tools<a class="headerlink" href="#virtualization-tools" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="vagrant">
+<h1>Vagrant<a class="headerlink" href="#vagrant" title="Permalink to this headline">¶</a></h1>
+<div class="sidebar">
+<p class="first sidebar-title">Page Contents</p>
+<div class="contents local last topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#what-is-vagrant" id="id1">What is Vagrant?</a></li>
+<li><a class="reference internal" href="#how-it-works" id="id2">How it works</a></li>
+<li><a class="reference internal" href="#boxes" id="id3">Boxes</a></li>
+<li><a class="reference internal" href="#provisioners" id="id4">Provisioners</a></li>
+<li><a class="reference internal" href="#providers" id="id5">Providers</a></li>
+<li><a class="reference internal" href="#how-to-get-it" id="id6">How to get it</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="what-is-vagrant">
+<h2><a class="toc-backref" href="#id1">What is Vagrant?</a><a class="headerlink" href="#what-is-vagrant" title="Permalink to this headline">¶</a></h2>
+<p>Vagrant is an important tool for software development: it provides
+reproducible environments in which to develop, test, and run software.</p>
+</div>
+<div class="section" id="how-it-works">
+<h2><a class="toc-backref" href="#id2">How it works</a><a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
+<p>Vagrant uses a file call <code class="docutils literal"><span class="pre">Vagrantfile</span></code> in the local directory to
+control the installation and configuration of machines. Upon execution
+of the <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">up</span></code> command, Vagrant initializes a virtual machine
+based on the provided box, applies any specified provisioning, and
+configures SSH for access.</p>
+<p>As an example, consider the following <a class="reference external" href="https://github.com/cloudmesh/cloudmesh/blob/master/vagrant/Vagrantfile">Vagrantfile</a>
+which is part of the cloudmesh repository.</p>
+<div class="highlight-python"><div class="highlight"><pre># IMPORTANT
+#
+# In order for this configuration to properly work you need to set
+# environmental variables:
+#
+# - PORTALNAME: your username on FutureSystems
+# - PROJECTID: the project you are associated with
+##
+# Make sure that ssh-agent is running properly in order to access
+# futuresystems.
+# $ eval `ssh-agent`
+# $ ssh-add ~/.ssh/id_rsa
+# $ echo $SSH_AGENT_PID # check that this is set
+#
+# Example usage:
+# $ export PORTALNAME=albert
+# $ export PROJECTID=fg101
+# $ eval `ssh-agent`
+# $ ssh-add ~/.ssh/id_rsa
+# $ vagrant up
+
+PORTALNAME = ENV[&#39;PORTALNAME&#39;]
+PROJECTID  = ENV[&#39;PROJECTID&#39;]
+
+$script = &lt;&lt;SCRIPT
+
+set -o xtrace  # trace commands
+set -o errexit # stop if something fails
+
+# parameters for install, configure, start scripts
+export portalname=#{PORTALNAME}
+export projectid=#{PROJECTID}
+export venv=$HOME/ENV
+
+# install system deps and cloudmesh
+curl -s https://raw.githubusercontent.com/cloudmesh/get/master/cloudmesh/ubuntu/14.04.sh | bash
+
+# make sure to activate virtualenv
+source $venv/bin/activate
+
+# configure
+curl -s https://raw.githubusercontent.com/cloudmesh/get/master/cloudmesh/configure.sh | bash
+
+# start
+curl -s https://raw.githubusercontent.com/cloudmesh/get/master/cloudmesh/start.sh | bash
+
+# update bashrc
+echo &quot;&quot; &gt;&gt;~/.bashrc
+echo &quot;source $venv/bin/activate&quot; &gt;&gt;~/.bashrc
+
+SCRIPT
+
+VAGRANTFILE_API_VERSION = &quot;2&quot;
+
+Vagrant.configure(2) do |config|
+  config.vm.box = &quot;ubuntu/trusty64&quot;
+  config.vm.box_check_update = true
+  config.vm.network &quot;private_network&quot;, ip: &quot;192.168.33.10&quot;
+  config.vm.provision &quot;shell&quot;, privileged: false, inline: $script
+
+  # Forward ssh-agent so that `cm-iu fetch` will work without needing
+  # to copy the ssh keypair onto the VM
+  # In order for this to work you need to:
+  # $ eval `ssh-agent`
+  # $ ssh-add ~/.ssh_id
+  config.ssh.forward_agent = true;
+
+end
+</pre></div>
+</div>
+<p>Let us look at what it does.  Comments begin with the <code class="docutils literal"><span class="pre">#</span></code> symbol and
+are for documentation purposes only.  In this case, the instructions
+tell us the setup that needs to be done before running <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">up</span></code>.</p>
+<p>Next, the environmental variables <code class="docutils literal"><span class="pre">PORTALNAME</span></code> and <code class="docutils literal"><span class="pre">PROJECTID</span></code> are
+retrieved and injected into a provisioning shell script defined and
+stored in <code class="docutils literal"><span class="pre">$script</span></code>.</p>
+<p>The rest of the file is fairly straightforward:</p>
+<ul class="simple">
+<li>use the <code class="docutils literal"><span class="pre">ubuntu/trusty64</span></code> box as the base system to run</li>
+<li>we want to make sure that the most up-to-date box is used so we
+enable automatic update checks</li>
+<li>the machine should not be accessible from the network (though it
+does have network access) to we set the IP address in a private
+network.</li>
+<li>the provisioning shell script is specified and will run as an
+unpriviledged user</li>
+<li>finally, use the ssh-agent forwarding system. This way the ssh
+keypairs for futuresystems access do not need to be copied into from
+the host machine into the workstation.</li>
+</ul>
+<p>At this point running <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">up</span></code> will download the
+<code class="docutils literal"><span class="pre">ubuntu/trusty64</span></code> box if it is not already present, boot the
+machine, and execute the provisioning script. The user can then run
+<code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">ssh</span></code> to log into the machine and run any desired tests.</p>
+</div>
+<div class="section" id="boxes">
+<h2><a class="toc-backref" href="#id3">Boxes</a><a class="headerlink" href="#boxes" title="Permalink to this headline">¶</a></h2>
+<p>We have seen the use of the Ubuntu 14.04 (<code class="docutils literal"><span class="pre">ubuntu/trusty64</span></code>) box as
+a base image for Vagrant to use. Many other options for boxes are
+<a class="reference external" href="https://atlas.hashicorp.com/boxes/search?provider=virtualbox">publicly available</a>.</p>
+</div>
+<div class="section" id="provisioners">
+<h2><a class="toc-backref" href="#id4">Provisioners</a><a class="headerlink" href="#provisioners" title="Permalink to this headline">¶</a></h2>
+<p>Additionally, there are other options for provisioning the machines
+managed by Vagrant. In addition to shell, Ansible and many others are
+supported (see the <a class="reference external" href="https://docs.vagrantup.com/v2/provisioning/index.html">provisioning index</a>)</p>
+</div>
+<div class="section" id="providers">
+<h2><a class="toc-backref" href="#id5">Providers</a><a class="headerlink" href="#providers" title="Permalink to this headline">¶</a></h2>
+<p>By default, Vagrant uses VirtualBox to manage machines. Other options
+are available such as VMWare or Docker.  Additionally, the design of
+Vagrant&#8217;s software architecture allows plugins to be built to support
+alternative custom providers.  For instance, plugins for <a class="reference external" href="https://github.com/mitchellh/vagrant-aws">Amazon Web
+Services</a>, as well as
+<a class="reference external" href="https://github.com/cloudbau/vagrant-openstack-plugin">OpenStack</a>
+are available to install.</p>
+</div>
+<div class="section" id="how-to-get-it">
+<h2><a class="toc-backref" href="#id6">How to get it</a><a class="headerlink" href="#how-to-get-it" title="Permalink to this headline">¶</a></h2>
+<p>Visit <a class="reference external" href="https://docs.vagrantup.com/v2/installation/index.html">Installing Vagrant</a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../i590.html" class="btn btn-neutral float-right" title="Fall 2014 - Big Data Applications and Analytics (Info I590)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../deployment/index.html" class="btn btn-neutral" title="Deployment Technologies (Under Preparation)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

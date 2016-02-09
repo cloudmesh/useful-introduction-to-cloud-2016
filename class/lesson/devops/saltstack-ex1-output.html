@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Full Message of salt-call Execution &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Full Message of <code class="docutils literal"><span class="pre">salt-call</span></code> Execution</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/class/lesson/devops/saltstack-ex1-output.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="full-message-of-salt-call-execution">
+<span id="ref-class-lesson-devops-saltstack-ex1-output"></span><h1>Full Message of <code class="docutils literal"><span class="pre">salt-call</span></code> Execution<a class="headerlink" href="#full-message-of-salt-call-execution" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python"><div class="highlight"><pre>[INFO    ] Loading fresh modules for state activity
+[INFO    ] Fetching file from saltenv &#39;base&#39;, ** done ** &#39;top.sls&#39;
+[INFO    ] Creating module dir &#39;/var/cache/salt/minion/extmods/modules&#39;
+[INFO    ] Syncing modules for environment &#39;base&#39;
+[INFO    ] Loading cache from salt://_modules, for base)
+[INFO    ] Caching directory &#39;_modules/&#39; for environment &#39;base&#39;
+[INFO    ] Creating module dir &#39;/var/cache/salt/minion/extmods/states&#39;
+[INFO    ] Syncing states for environment &#39;base&#39;
+[INFO    ] Loading cache from salt://_states, for base)
+[INFO    ] Caching directory &#39;_states/&#39; for environment &#39;base&#39;
+[INFO    ] Creating module dir &#39;/var/cache/salt/minion/extmods/grains&#39;
+[INFO    ] Syncing grains for environment &#39;base&#39;
+[INFO    ] Loading cache from salt://_grains, for base)
+[INFO    ] Caching directory &#39;_grains/&#39; for environment &#39;base&#39;
+[INFO    ] Creating module dir &#39;/var/cache/salt/minion/extmods/renderers&#39;
+[INFO    ] Syncing renderers for environment &#39;base&#39;
+[INFO    ] Loading cache from salt://_renderers, for base)
+[INFO    ] Caching directory &#39;_renderers/&#39; for environment &#39;base&#39;
+[INFO    ] Creating module dir &#39;/var/cache/salt/minion/extmods/returners&#39;
+[INFO    ] Syncing returners for environment &#39;base&#39;
+[INFO    ] Loading cache from salt://_returners, for base)
+[INFO    ] Caching directory &#39;_returners/&#39; for environment &#39;base&#39;
+[INFO    ] Creating module dir &#39;/var/cache/salt/minion/extmods/outputters&#39;
+[INFO    ] Syncing outputters for environment &#39;base&#39;
+[INFO    ] Loading cache from salt://_outputters, for base)
+[INFO    ] Caching directory &#39;_outputters/&#39; for environment &#39;base&#39;
+[INFO    ] Creating module dir &#39;/var/cache/salt/minion/extmods/utils&#39;
+[INFO    ] Syncing utils for environment &#39;base&#39;
+[INFO    ] Loading cache from salt://_utils, for base)
+[INFO    ] Caching directory &#39;_utils/&#39; for environment &#39;base&#39;
+[INFO    ] Loading fresh modules for state activity
+[INFO    ] Fetching file from saltenv &#39;base&#39;, ** done ** &#39;webserver.sls&#39;
+[INFO    ] Running state [apache2] at time 18:40:25.136294
+[INFO    ] Executing state pkg.installed for apache2
+[INFO    ] Executing command [&#39;dpkg-query&#39;, &#39;--showformat&#39;, &#39;${Status} ${Package} ${Version} ${Architecture}\n&#39;, &#39;-W&#39;] in directory &#39;/home/ubuntu&#39;
+[INFO    ] Executing command &#39;apt-get -q update&#39; in directory &#39;/home/ubuntu&#39;
+[INFO    ] Executing command [&#39;apt-get&#39;, &#39;-q&#39;, &#39;-y&#39;, &#39;-o&#39;, &#39;DPkg::Options::=--force-confold&#39;, &#39;-o&#39;, &#39;DPkg::Options::=--force-confdef&#39;, &#39;install&#39;, &#39;apache2&#39;] in directory &#39;/home/ubuntu&#39;
+
+[INFO    ] Executing command [&#39;dpkg-query&#39;, &#39;--showformat&#39;, &#39;${Status} ${Package} ${Version} ${Architecture}\n&#39;, &#39;-W&#39;] in directory &#39;/home/ubuntu&#39;
+[INFO    ] Installed Packages:
+httpd changed from absent to 1
+libapr1 changed from absent to 1.5.0-1
+libaprutil1-ldap changed from absent to 1.5.3-1
+apache2-api-20120211 changed from absent to 1
+libaprutil1 changed from absent to 1.5.3-1
+apache2-data changed from absent to 2.4.7-1ubuntu4.4
+apache2 changed from absent to 2.4.7-1ubuntu4.4
+libaprutil1-dbd-sqlite3 changed from absent to 1.5.3-1
+httpd-cgi changed from absent to 1
+ssl-cert changed from absent to 1.0.33
+apache2-bin changed from absent to 2.4.7-1ubuntu4.4
+
+[INFO    ] Loading fresh modules for state activity
+[INFO    ] Completed state [apache2] at time 18:41:23.121157
+local:
+----------
+ID: apache2
+Function: pkg.installed
+Result: True
+Comment: The following packages were installed/updated: apache2.
+Started: 18:40:25.136294
+Duration: 57984.863 ms
+Changes:
+----------
+apache2:
+----------
+new:
+2.4.7-1ubuntu4.4
+old:
+
+apache2-api-20120211:
+----------
+new:
+1
+old:
+
+apache2-bin:
+----------
+new:
+2.4.7-1ubuntu4.4
+old:
+
+apache2-data:
+----------
+new:
+2.4.7-1ubuntu4.4
+old:
+
+httpd:
+----------
+new:
+1
+old:
+
+httpd-cgi:
+----------
+new:
+1
+old:
+
+libapr1:
+----------
+new:
+1.5.0-1
+old:
+
+libaprutil1:
+----------
+new:
+1.5.3-1
+old:
+
+libaprutil1-dbd-sqlite3:
+----------
+new:
+1.5.3-1
+old:
+
+libaprutil1-ldap:
+----------
+new:
+1.5.3-1
+old:
+
+ssl-cert:
+----------
+new:
+1.0.33
+old:
+
+
+Summary
+------------
+Succeeded: 1 (changed=1)
+Failed:    0
+------------
+Total states run:     1
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

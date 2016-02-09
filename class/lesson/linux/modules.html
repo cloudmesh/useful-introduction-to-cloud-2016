@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Software Modules &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../index.html"/>
+        <link rel="up" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="../../bdossp_sp15/index.html"/>
+        <link rel="next" title="Overview and Introduction to OpenStack" href="../iaas/overview_openstack.html"/>
+        <link rel="prev" title="Advanced SSH" href="advancedssh.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#notice">Notice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#office-hours">Office Hours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#contact">Contact</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#weekly-plan">Weekly Plan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#support">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#meeting">Meeting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#collaboration-tools">Collaboration Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#futuresystems-access">FutureSystems Access</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../bdossp_sp15/index.html#linux-basics">Linux Basics</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="overview.html">Overview and Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="shell.html">Shell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="editors.html">Editing Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python.html">Python Programming</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ipython.html">IPython</a></li>
+<li class="toctree-l4"><a class="reference internal" href="packagemanagement.html">Package Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advancedssh.html">Advanced SSH</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Software Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#basics-of-openstack">Basics of OpenStack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#basics-of-cloudmesh">Basics of Cloudmesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#advanced-cloudmesh">Advanced Cloudmesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#it-operations-automation-and-orchestration">IT Operations - Automation and Orchestration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#virtual-clusters">Virtual Clusters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#other-technologies">Other Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#future">Future</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#to-be-organized-into-the-above">To be Organized into the above</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
+      
+    <li>Software Modules</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/class/lesson/linux/modules.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="software-modules">
+<h1>Software Modules<a class="headerlink" href="#software-modules" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This lesson will introduce you using Softare Modules on FutureSystems</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Duration: 15 minutes</p>
+</div>
+</div>
+<div class="section" id="prerequisite">
+<h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
+<p>In order to conduct this lesson you should have knowledge of</p>
+<ul class="simple">
+<li>How to log into you FutureSystems account (see
+<a class="reference internal" href="../system/futuresystemsuse.html"><em>Use of FutureSystems</em></a>)</li>
+<li>Use of the Shell (see <a class="reference internal" href="shell.html"><em>Shell</em></a>)</li>
+<li>Some understanding of software installation on Linux (see for
+example <a class="reference internal" href="packagemanagement.html"><em>Package Management</em></a>)</li>
+</ul>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>If a software application is not present in a package manager like
+<code class="docutils literal"><span class="pre">yum</span></code>, <code class="docutils literal"><span class="pre">apt-get</span></code>, or <code class="docutils literal"><span class="pre">brew</span></code>, it may be installed manually.  In
+this case, the system administrators may install the application so
+that it is globally accessible (similar to the behavior of a package
+manager).</p>
+<p>In the case of specialized software however, a global installation may
+not be desirable in a multiuser system. This is an example of
+encapsulation: only individuals (or software) that need to know about
+a software should have that knowlege.</p>
+<p>To encapsulate a software installation there exists a software
+application called Modules. This allows a new software to be installed
+such that it is accessible only if needed.</p>
+<p>Let&#8217;s explore this on FutureSystems: start by logging into
+<code class="docutils literal"><span class="pre">india.futuresystems.org</span></code>. You will be at the shell prompt.</p>
+<p>Now, lets run the Ruby interactive interpreter. The command to do so
+is just <code class="docutils literal"><span class="pre">irb</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ irb
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Ruby is a programming language with some similarities to Python.</p>
+</div>
+<p>You should see output like the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>-bash: irb: command not found
+</pre></div>
+</div>
+<p>This means that Ruby is currently not available.
+To see if it is available to us we can use the <code class="docutils literal"><span class="pre">module</span></code> command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ module avail ruby
+---------- /opt/Modules/3.2.8/modulefiles/applications -----------
+ruby/1.9.3
+</pre></div>
+</div>
+<p>Now we know that Ruby is installed, but not currently available.  To
+load the appropriate environment to use Ruby we use the <code class="docutils literal"><span class="pre">module</span>
+<span class="pre">load</span></code> command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ module load ruby/1.9.3
+ruby version 1.9.3 loaded
+$ irb
+irb(main):001:0&gt;
+</pre></div>
+</div>
+<p>We are now at the Ruby prompt.
+Let enter a quick check to see Ruby in action:</p>
+<div class="highlight-python"><div class="highlight"><pre>irb(main):001:0&gt; 21*2
+=&gt; 42
+</pre></div>
+</div>
+<p>Since everything looks good so exit the interpreter using <code class="docutils literal"><span class="pre">exit</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>irb(main):001:0&gt; exit
+$
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>Some usefull Module commands are:</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">module</span> <span class="pre">avail</span></code> with no paramaters lists everything available</li>
+<li><code class="docutils literal"><span class="pre">module</span> <span class="pre">load</span></code> with one or more space-separated names (as shown
+my <code class="docutils literal"><span class="pre">module</span> <span class="pre">avail</span></code>) will load those modules</li>
+<li><code class="docutils literal"><span class="pre">module</span> <span class="pre">list</span></code> will list the currently loaded modules</li>
+<li><code class="docutils literal"><span class="pre">module</span> <span class="pre">unload</span></code> with one ore more names will unload any modules
+loaded by <code class="docutils literal"><span class="pre">module</span> <span class="pre">load</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">module</span> <span class="pre">whatis</span></code> followed by zero or more names will give some
+information about the individual modules.</li>
+<li><code class="docutils literal"><span class="pre">module</span> <span class="pre">switch</span> <span class="pre">old</span> <span class="pre">new</span></code> will replace the module named <code class="docutils literal"><span class="pre">old</span></code>
+with the one named <code class="docutils literal"><span class="pre">new</span></code>.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-i">
+<h3>Exercise I<a class="headerlink" href="#exercise-i" title="Permalink to this headline">¶</a></h3>
+<p>There are several python modules available. Take a look by running:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ module avail python
+</pre></div>
+</div>
+<p>Load the default one and get the version and where the command is located (using <code class="docutils literal"><span class="pre">which</span></code>):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ module load python
+$ python -V
+Python 2.7
+$ which python
+/N/soft/python/2.7/bin/python
+</pre></div>
+</div>
+<p>Now, for each of the python modules you saw in the output of <code class="docutils literal"><span class="pre">module</span> <span class="pre">avail</span> <span class="pre">python</span></code> above, do the following:</p>
+<ol class="arabic simple">
+<li>unload the current python module</li>
+<li>load the new one</li>
+<li>print the version using <code class="docutils literal"><span class="pre">python</span> <span class="pre">-V</span></code></li>
+<li>get the location using <code class="docutils literal"><span class="pre">which</span> <span class="pre">python</span></code></li>
+</ol>
+<p>You will be running something like the following, except replace
+<code class="docutils literal"><span class="pre">[redacted]</span></code> with the appropriate commands:</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ [redacted]
+$ [redacted]
+$ python -V
+2.7.2
+$ which python
+/N/soft/python/2.7.2/bin/python
+$ [redacted]
+$ [redacted]
+$ python -V
+[etc etc]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../iaas/overview_openstack.html" class="btn btn-neutral float-right" title="Overview and Introduction to OpenStack" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="advancedssh.html" class="btn btn-neutral" title="Advanced SSH" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

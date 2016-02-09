@@ -1,0 +1,639 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Deploying Hadoop Cluster on India OpenStack &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Deploying Hadoop Cluster on India OpenStack</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/class/vc_sp15/hadoop_cluster_manual.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="deploying-hadoop-cluster-on-india-openstack">
+<span id="ref-class-lesson-deploying-hadoop-cluster-manual"></span><h1>Deploying Hadoop Cluster on India OpenStack<a class="headerlink" href="#deploying-hadoop-cluster-on-india-openstack" title="Permalink to this headline">¶</a></h1>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Approximate time: 45 minutes</p>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Hadoop Cluster is specialized computational cluster especially for
+MapReduce data analysis applications.  On FutureSystems OpenStack,
+Hadoop Cluster is offered to deal with distributed software on the
+cloud.  The size of Hadoop Cluster can be easily adjustable to provide
+efficient throughput for the computation.</p>
+<div class="section" id="prerequisite">
+<h3>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h3>
+<p>This tutorial assumes you already have used OpenStack and know how to
+create multiple virtual machine images. To build a distributed Hadoop
+cluster, you will need at least two VMs for nodes, though more than
+two are welcome. Much of the functionality described here will be
+available via Cloudmesh, but this document explains how to perform
+these tasks manually, to help you better understand the requirements
+and process of building a cluster.</p>
+</div>
+<div class="section" id="important-fact">
+<h3>Important Fact<a class="headerlink" href="#important-fact" title="Permalink to this headline">¶</a></h3>
+<p>There are certain things to remember when Hadoop Cluster is started.</p>
+<blockquote>
+<div><ul class="simple">
+<li>The number of nodes</li>
+<li>The size of a flavor</li>
+<li>The limit of your account (quota)</li>
+</ul>
+</div></blockquote>
+<p>Please ensure that you create a Hadoop Cluster with a proper number of nodes, a
+size of a flavor and your quota.  Large flavor provides powerful a single node
+but consumes your quota quickly.  Additional cluster nodes may be needed if
+speed-up is possible to your data processing.</p>
+</div>
+</div>
+<div class="section" id="cluster-preparation">
+<h2>Cluster Preparation<a class="headerlink" href="#cluster-preparation" title="Permalink to this headline">¶</a></h2>
+<p>Prior to deploying Hadoop, your nodes must be able to communicate.
+This will require changes to the <cite>/etc/hosts</cite> configuration file, and
+creation and sharing of SSH keys among the nodes of the cluster.</p>
+<p>Add lines to the end of your <cite>/etc/hosts</cite> file, one line for each node
+in the cluster, listing the IP address, fully qualified host name, and
+an alias for the host to be used by Hadoop. Here is an example of an
+<cite>/etc/host</cite> file with six nodes added. Of course you will use the
+proper IP addresses and host names for your VMs. You can use the same
+hosts file for every node in your cluster:</p>
+<div class="highlight-python"><div class="highlight"><pre>127.0.0.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+
+# lines added for Hadoop cluster
+10.39.1.46 smccaula-101.novalocal hadoop1
+10.39.1.47 smccaula-102.novalocal hadoop2
+10.39.1.55 smccaula-103.novalocal hadoop3
+10.39.1.56 smccaula-104.novalocal hadoop4
+10.39.1.57 smccaula-105.novalocal hadoop5
+10.39.1.45 smccaula-106.novalocal hadoop6
+</pre></div>
+</div>
+<p>Your nodes will also SSH authentication to communicate. For each node,
+you will need to create a pair of SSH keys (as root). The following
+command will create a key pair in <cite>/root/.ssh</cite>:</p>
+<div class="highlight-python"><div class="highlight"><pre>ssh-keygen -t rsa -P &quot;&quot;
+</pre></div>
+</div>
+<p>You will need to append the public key created (default will be
+id_rsa.pub) to the authorized_keys file of each node. You can do this
+by downloading the keys from one host and uploading them to another,
+or by copying and pasting them from an editor program in your
+terminal. If copying and pasting, be sure all characters are copied.
+Given you have moved a public key to another host, you can append it
+to authorized_key as follows (again, this is as root and the files are
+in <cite>/root/.ssh</cite>):</p>
+<div class="highlight-python"><div class="highlight"><pre>cat hadoop2.pub &gt;&gt; /root/.ssh/authorized_keys
+</pre></div>
+</div>
+<p>Test this by verifying that you can SSH from node to node in either
+direction. From this point, implementing a multi-node cluster is very
+similar to building a single node pseudo-cluster. The main difference
+is that we will establish some division of labor among the nodes.
+There are three functions we need to fill:</p>
+<p>NameNode for the HDFS file system:</p>
+<ul class="simple">
+<li>Keeps track of all files and on which nodes they are stored</li>
+</ul>
+<p>ResourceManager for the YARN resource negotiator:</p>
+<ul class="simple">
+<li>Manages cluster resources and applications</li>
+</ul>
+<p>DataNode(s) for the HDFS file system</p>
+<ul class="simple">
+<li>Stores data files and makes them available to client applications</li>
+</ul>
+<div class="section" id="cm-cluster-create-a-convenient-way-to-create-a-cluster-of-vms">
+<h3>cm cluster create: a convenient way to create a cluster of VMs<a class="headerlink" href="#cm-cluster-create-a-convenient-way-to-create-a-cluster-of-vms" title="Permalink to this headline">¶</a></h3>
+<p>Cloudmesh provides a convenient way to create such a cluster of VMs
+(each of them can log into all others). Please follow the following
+steps:</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Make sure you update your Cloudmesh and the Cloudmesh server is running.
+Open a terminal, execute the following commands, modify the values of the
+options according to your own environment and needs. Also you may execute
+these in Cloudmesh CLI &#8216;cm&#8217;.</p>
+</div>
+<p>1 select cloud to work on, e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm cloud select india
+</pre></div>
+</div>
+<p>2 activate the cloud, e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm cloud on india
+</pre></div>
+</div>
+<p>3 set the default key to start VMs, e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm key default test-key
+</pre></div>
+</div>
+<p>4 set the start name of VMs, which is prefix and index, e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm label --prefix=test --id=1
+</pre></div>
+</div>
+<p>5 set image of VMs, e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm default image --name=futuregrid/ubuntu-14.04
+</pre></div>
+</div>
+<p>6 set flavor of VMs, e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm default flavor --name=m1.small
+</pre></div>
+</div>
+<p>Then you may start the cluster with command &#8216;cluster create&#8217; by providing the
+following values:</p>
+<p>&#8211;count: specify amount of VMs in the cluster</p>
+<p>&#8211;group: specify a group name of the cluster, make sure it&#8217;s UNIQUE</p>
+<p>&#8211;ln: login name for VMs, e.g. ubuntu
+e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm cluster create --count=3 --group=test --ln=ubuntu
+</pre></div>
+</div>
+<p>You may also provide cloud name, flavor or image in the command if you don&#8217;t
+want to pre-set them. e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm cluster create --count=3 --group=test0 --ln=ubuntu --cloud=india --flavor=m1.small --image=futuregrid/ubuntu-14.04
+</pre></div>
+</div>
+<p>to list the VMs you just created:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm vm list --refresh --group=test
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="deploying-hadoop">
+<h2>Deploying Hadoop<a class="headerlink" href="#deploying-hadoop" title="Permalink to this headline">¶</a></h2>
+<p>We will have to decide on the architecture of our cluster before
+proceeding. In practice, clusters can be tens of thousands of nodes,
+but our cluster will be a handful of nodes. For our example, we will
+combine all the management functions on one node, and make the rest
+datanodes.</p>
+<div class="section" id="chef-installation">
+<h3>Chef Installation<a class="headerlink" href="#chef-installation" title="Permalink to this headline">¶</a></h3>
+<p>We will use Chef to install the Hadoop software, and configure our
+nodes, calling different recipes for the manager and worker nodes. In
+addition to Hadoop, we will install Oracle Java, as that is Hadoop’s
+preferred version of Java. The Apt and Yum cookbooks are also
+downloaded as they are required by the Hadoop recipe. First we need to
+install Chef and download the required cookbooks from the Chef
+repository. As root, and in the /home/ubuntu directory, these commands
+will do that:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo su -
+apt-get update
+cd /home/ubuntu
+curl -L https://www.opscode.com/chef/install.sh | bash
+</pre></div>
+</div>
+</div>
+<div class="section" id="chef-configuration-and-cookbooks">
+<h3>Chef Configuration and Cookbooks<a class="headerlink" href="#chef-configuration-and-cookbooks" title="Permalink to this headline">¶</a></h3>
+<p>Install required cookbooks and setup configuration (.chef).</p>
+<div class="highlight-python"><div class="highlight"><pre>wget http://github.com/opscode/chef-repo/tarball/master
+tar -zxf master
+mv *-chef-repo* chef-repo
+rm master
+cd chef-repo/
+mkdir .chef
+echo &quot;cookbook_path [ &#39;/home/ubuntu/chef-repo/cookbooks&#39; ]&quot; &gt; .chef/knife.rb
+cd cookbooks
+knife cookbook site download java
+knife cookbook site download apt
+knife cookbook site download yum
+knife cookbook site download hadoop
+knife cookbook site download ohai
+knife cookbook site download sysctl
+tar -zxf java*
+tar -zxf apt*
+tar -zxf yum*
+tar -zxf hadoop*
+tar -zxf sysctl*
+tar -zxf ohai*
+rm *.tar.gz
+</pre></div>
+</div>
+</div>
+<div class="section" id="java-rb">
+<h3>java.rb<a class="headerlink" href="#java-rb" title="Permalink to this headline">¶</a></h3>
+<p>There are four files we will need to create to store our preferences.
+These will need slight customization based on your host names and your
+desired configuration. In <code class="docutils literal"><span class="pre">/home/ubuntu/chef-repo/roles</span></code> create
+<code class="docutils literal"><span class="pre">java.rb</span></code> for our Java preferences. We request Oracle Java version 6,
+and ask to have the <code class="docutils literal"><span class="pre">$JAVA_HOME</span></code> environment variable set
+automatically:</p>
+<div class="highlight-python"><div class="highlight"><pre>name &quot;java&quot;
+description &quot;Install Oracle Java&quot;
+default_attributes(
+  &quot;java&quot; =&gt; {
+    &quot;install_flavor&quot; =&gt; &quot;oracle&quot;,
+    &quot;jdk_version&quot; =&gt; &quot;6&quot;,
+    &quot;set_etc_environment&quot; =&gt; true,
+    &quot;oracle&quot; =&gt; {
+      &quot;accept_oracle_download_terms&quot; =&gt; true
+    }
+  }
+)
+run_list(
+  &quot;recipe[java]&quot;
+)
+</pre></div>
+</div>
+</div>
+<div class="section" id="hadoop-rb">
+<h3>hadoop.rb<a class="headerlink" href="#hadoop-rb" title="Permalink to this headline">¶</a></h3>
+<p>In <code class="docutils literal"><span class="pre">/home/ubuntu/chef-repo/roles</span></code> create <code class="docutils literal"><span class="pre">hadoop.rb</span></code> for our Hadoop
+preferences. These preferences will actually be the same whether we
+are installing a namenode or a datanode, we will just call a different
+recipe. Here we will pass the names of our HDFS and YARN manager
+nodes. In this example the manager node has an alias of hadoop1. If
+you named yours differently, change it here to match:</p>
+<div class="highlight-python"><div class="highlight"><pre>name &quot;hadoop&quot;
+description &quot;set Hadoop attributes&quot;
+default_attributes(
+  &quot;hadoop&quot; =&gt; {
+    &quot;distribution&quot; =&gt; &quot;bigtop&quot;,
+    &quot;core_site&quot; =&gt; {
+      &quot;fs.defaultFS&quot; =&gt; &quot;hdfs://hadoop1&quot;
+    },
+    &quot;yarn_site&quot; =&gt; {
+      &quot;yarn.resourcemanager.hostname&quot; =&gt; &quot;hadoop1&quot;
+    }
+  }
+)
+run_list(
+  &quot;recipe[hadoop]&quot;
+)
+</pre></div>
+</div>
+</div>
+<div class="section" id="solo-rb">
+<h3>solo.rb<a class="headerlink" href="#solo-rb" title="Permalink to this headline">¶</a></h3>
+<p>In <code class="docutils literal"><span class="pre">/home/ubuntu/chef-repo</span></code> create <code class="docutils literal"><span class="pre">solo.rb</span></code> to store locations and
+instructions for Chef to use:</p>
+<div class="highlight-python"><div class="highlight"><pre>file_cache_path &quot;/home/ubuntu/chef-solo&quot;
+cookbook_path &quot;/home/ubuntu/chef-repo/cookbooks&quot;
+role_path &quot;/home/ubuntu/chef-repo/roles&quot;
+verify_api_cert true
+</pre></div>
+</div>
+</div>
+<div class="section" id="solo-json">
+<h3>solo.json<a class="headerlink" href="#solo-json" title="Permalink to this headline">¶</a></h3>
+<p>Finally, in <code class="docutils literal"><span class="pre">/home/ubuntu/chef-repo</span></code> create <code class="docutils literal"><span class="pre">solo.json</span></code> for the specific
+instructions to Chef on what to install. This is the only file that
+will change between a manager and worker node installation. Both
+versions are shown below. Remember that you could configure
+differently, the HDFS namenode and YARN resourcemanager could be on
+different nodes, and the namenode and resourcemanager nodes could also
+be datanodes if desired. You may want to install and initialize your
+manager node prior to creating your worker node.</p>
+<p>For the manager node:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">&quot;run_list&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;role[java]&quot;</span><span class="p">,</span> <span class="s2">&quot;recipe[java]&quot;</span><span class="p">,</span> <span class="s2">&quot;role[hadoop]&quot;</span><span class="p">,</span> <span class="s2">&quot;recipe[hadoop::hadoop_hdfs_namenode]&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;recipe[hadoop::hadoop_yarn_nodemanager]&quot;</span><span class="p">,</span> <span class="s2">&quot;recipe[hadoop::hadoop_yarn_resourcemanager]&quot;</span> <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For the worker node:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">&quot;run_list&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;role[java]&quot;</span><span class="p">,</span> <span class="s2">&quot;recipe[java]&quot;</span><span class="p">,</span> <span class="s2">&quot;role[hadoop]&quot;</span><span class="p">,</span>  <span class="s2">&quot;recipe[hadoop::hadoop_hdfs_datanode]&quot;</span> <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Repeat the worker installation for as many nodes as are available. At
+this point your cluster is deployed and awaiting initialization.</p>
+</div>
+<div class="section" id="installation-using-chef-solo-chef-client-z">
+<h3>Installation using <code class="docutils literal"><span class="pre">chef-solo</span></code> (<code class="docutils literal"><span class="pre">chef-client</span> <span class="pre">-z</span></code>)<a class="headerlink" href="#installation-using-chef-solo-chef-client-z" title="Permalink to this headline">¶</a></h3>
+<p>You must run this command on a master(namenode) and a worker(datanode). If you
+have hadoop1, hadoop2, ... ,and hadoopX, SSH into all and run this command.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">chef</span><span class="o">-</span><span class="n">solo</span> <span class="o">-</span><span class="n">j</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span><span class="n">chef</span><span class="o">-</span><span class="n">repo</span><span class="o">/</span><span class="n">solo</span><span class="o">.</span><span class="n">json</span> <span class="o">-</span><span class="n">c</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span><span class="n">chef</span><span class="o">-</span><span class="n">repo</span><span class="o">/</span><span class="n">solo</span><span class="o">.</span><span class="n">rb</span>
+</pre></div>
+</div>
+<p>In a newer version of Chef</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">chef</span><span class="o">-</span><span class="n">client</span> <span class="o">-</span><span class="n">z</span> <span class="o">-</span><span class="n">j</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span><span class="n">chef</span><span class="o">-</span><span class="n">repo</span><span class="o">/</span><span class="n">solo</span><span class="o">.</span><span class="n">json</span> <span class="o">-</span><span class="n">c</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span><span class="n">chef</span><span class="o">-</span><span class="n">repo</span><span class="o">/</span><span class="n">solo</span><span class="o">.</span><span class="n">rb</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="initializing-and-testing">
+<h2>Initializing and Testing<a class="headerlink" href="#initializing-and-testing" title="Permalink to this headline">¶</a></h2>
+<p>On the namenode only, we will have to initialize the file system.
+First check the status of all services and stop any that are running.
+Don’t worry about services not installed on this node:</p>
+<div class="highlight-python"><div class="highlight"><pre>service hadoop-hdfs-namenode status
+service hadoop-hdfs-datanode status
+service hadoop-yarn-resourcemanager status
+service hadoop-yarn-nodemanager status
+</pre></div>
+</div>
+<p>To initialize the namenode, run:</p>
+<div class="highlight-python"><div class="highlight"><pre>/etc/init.d/hadoop-hdfs-namenode init
+</pre></div>
+</div>
+<div class="section" id="namenode-initialization-and-start">
+<h3>Namenode Initialization and Start<a class="headerlink" href="#namenode-initialization-and-start" title="Permalink to this headline">¶</a></h3>
+<p>Restart any services installed on the node. There is one more
+initialization step required on the namenode, to create a default
+directory structure:</p>
+<div class="highlight-python"><div class="highlight"><pre>service hadoop-hdfs-namenode start
+/usr/lib/hadoop/libexec/init-hdfs.sh
+</pre></div>
+</div>
+<p>The expected output looks liks so:</p>
+<div class="highlight-python"><div class="highlight"><pre>+ su -s /bin/bash hdfs -c &#39;/usr/bin/hadoop fs -mkdir /tmp&#39;
++ su -s /bin/bash hdfs -c &#39;/usr/bin/hadoop fs -chmod -R 1777 /tmp&#39;
+
+... (skip) ...
+
++ su -s /bin/bash hdfs -c &#39;/usr/bin/hadoop fs -put /usr/lib/hadoop-mapreduce/hadoop-distcp*.jar /user/oozie/share/lib/distcp&#39;
++ ls &#39;/usr/lib/pig/lib/*.jar&#39; &#39;/usr/lib/pig/*.jar&#39;
++ &#39;[&#39; &#39;&#39; = -u &#39;]&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="datanode-s-service-start">
+<h3>Datanode(s) Service Start<a class="headerlink" href="#datanode-s-service-start" title="Permalink to this headline">¶</a></h3>
+<p>Go to your datanode(s) and start:</p>
+<div class="highlight-python"><div class="highlight"><pre>service hadoop-hdfs-datanode start
+</pre></div>
+</div>
+<p>You may see the message like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>* Started Hadoop datanode (hadoop-hdfs-datanode):
+</pre></div>
+</div>
+<p>When these initialization steps are complete, and all the appropriate
+services are running on each node, the Hadoop cluster will be
+operational and ready to run jobs.</p>
+</div>
+</div>
+<div class="section" id="jps-java-virtual-machine-process-status-tool">
+<h2><code class="docutils literal"><span class="pre">jps</span></code> Java Virtual Machine Process Status Tool<a class="headerlink" href="#jps-java-virtual-machine-process-status-tool" title="Permalink to this headline">¶</a></h2>
+<p>Once you installed namenode and datanode(s), check process using <code class="docutils literal"><span class="pre">jps</span></code>
+command.</p>
+<p>On <strong>Namenode</strong>, you may see:</p>
+<div class="highlight-python"><div class="highlight"><pre>20937 ResourceManager
+15854 NodeManager
+22874 Jps
+20609 NameNode
+</pre></div>
+</div>
+<p>On <strong>Datanode</strong>, you may see:</p>
+<div class="highlight-python"><div class="highlight"><pre>4137 Jps
+4061 DataNode
+</pre></div>
+</div>
+</div>
+<div class="section" id="mapreduce-example-word-count">
+<h2>MapReduce Example: Word Count<a class="headerlink" href="#mapreduce-example-word-count" title="Permalink to this headline">¶</a></h2>
+<p>Once you installed a Hadoop cluster, you may want to run a program using the
+cluster.  One of the popular examples of Hadoop is a Word Count MapReduce
+program which counts how often words occur from the input text file. We have a
+separate page for this program here.</p>
+<p><a class="reference internal" href="../lesson/cluster/wordcount.html#ref-class-lesson-hadoop-word-count"><span>Word Count Program</span></a></p>
+</div>
+<div class="section" id="exercise">
+<span id="ref-class-lesson-deploying-hadoop-cluster-manual-exercise"></span><h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Try to run a simple job on your hadoop cluster (wordcount)</li>
+</ul>
+</div>
+<div class="section" id="faq">
+<h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><ol class="first upperalpha" start="17">
+<li>How do I delete a Hadoop Cluster on Cloudmesh?</li>
+</ol>
+</li>
+<li><ol class="first upperalpha">
+<li><code class="docutils literal"><span class="pre">cluster</span> <span class="pre">delete</span> <span class="pre">--group=[name]</span></code></li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="section" id="other-resource">
+<h2>Other resource<a class="headerlink" href="#other-resource" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://cloudmesh.github.io/introduction_to_cloud_computing/paas/hadoop.html">MyHadoop</a></li>
+</ul>
+</div>
+<div class="section" id="questions">
+<h2>Questions?<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Email: <a class="reference external" href="contact.html">Contact Us</a></li>
+</ul>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+</div>
+<div class="section" id="next-step">
+<h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
+<p>In the next page, we deploy a Sharded MongoDB cluster on FutureSystems using
+Cloudmesh.</p>
+<p><a class="reference external" href="mongodb_cluster.html">Next Tutorial&gt;&gt; Deploying MongoDB Sharded Cluster</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

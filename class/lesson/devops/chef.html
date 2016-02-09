@@ -1,0 +1,604 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chef &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../index.html"/>
+        <link rel="up" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="../../bdossp_sp15/index.html"/>
+        <link rel="next" title="OpenStack Heat" href="openstack_heat.html"/>
+        <link rel="prev" title="Puppet" href="puppet.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#notice">Notice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#office-hours">Office Hours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#contact">Contact</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#weekly-plan">Weekly Plan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#support">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#meeting">Meeting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#collaboration-tools">Collaboration Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#futuresystems-access">FutureSystems Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#linux-basics">Linux Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#basics-of-openstack">Basics of OpenStack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#basics-of-cloudmesh">Basics of Cloudmesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#advanced-cloudmesh">Advanced Cloudmesh</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../bdossp_sp15/index.html#it-operations-automation-and-orchestration">IT Operations - Automation and Orchestration</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="overview.html">DevOps (under preparation)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansible.html">Ansible</a></li>
+<li class="toctree-l4"><a class="reference internal" href="saltstack.html">SaltStack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="puppet.html">Puppet</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Chef</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openstack_heat.html">OpenStack Heat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="juju.html">Ubuntu Juju</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#virtual-clusters">Virtual Clusters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#other-technologies">Other Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#future">Future</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#to-be-organized-into-the-above">To be Organized into the above</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
+      
+    <li>Chef</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/class/lesson/devops/chef.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="chef">
+<span id="ref-class-lesson-devops-chef"></span><h1>Chef<a class="headerlink" href="#chef" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This lesson will introduce you to a very important topic to Chef, a
+configuration management tool written in Ruby and Erlang.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Duration: 1 hour</p>
+</div>
+</div>
+<div class="section" id="prerequisite">
+<h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
+<p>In order to conduct this lesson you should have knowledge of</p>
+<ul class="simple">
+<li><a class="reference external" href="../iaas/openstack.html">OpenStack for Beginners</a></li>
+</ul>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Chef is an open source infrastructure automation software that manages
+installation and configuration of your software with its Ruby code <code class="docutils literal"><span class="pre">Recipe</span></code>
+and <code class="docutils literal"><span class="pre">Cookbook</span></code>. <code class="docutils literal"><span class="pre">Recipe</span></code> is a description of how your servers should be set
+up with your software and <code class="docutils literal"><span class="pre">Cookbook</span></code> is a set of recipes. If you install a
+Apache web server or a MySQL database using Chef, you may download and use
+existing recipes from the Chef server (SuperMarket). You can also write your
+own recipes with your preference about configuration and installation. In most
+cases, a single recipe is not enough to configure and install software.  Chef
+provides a collection of related recipes named <code class="docutils literal"><span class="pre">Cookbook</span></code>, and you use
+Cookbooks to install software with relevant tools.</p>
+<p>This lesson gives you an introduction of Chef including the following topics:</p>
+<ul class="simple">
+<li>Installation of Chef</li>
+<li>Example I: Apache2 Installation</li>
+<li>Write a first recipe</li>
+</ul>
+</div>
+<div class="section" id="installation-chef">
+<h2>Installation Chef<a class="headerlink" href="#installation-chef" title="Permalink to this headline">¶</a></h2>
+<p>This lesson is based on FutureSystems which means you create a VM instance on
+India OpenStack and install Chef on top of it. If you prefer to use other
+virtual environments, we recommend to use Vagrant and VirtualBox.</p>
+<p>We assume you use a OpenStack instance on FutureSystems.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If don&#8217;t know how to launch a new instance? <a class="reference external" href="../iaas/openstack.html#launching-a-new-instance">See here</a></p>
+</div>
+<div class="section" id="root-access">
+<h3><code class="docutils literal"><span class="pre">root</span></code> Access<a class="headerlink" href="#root-access" title="Permalink to this headline">¶</a></h3>
+<p>We will install Chef and other software using <code class="docutils literal"><span class="pre">root</span></code> account. Using <code class="docutils literal"><span class="pre">root</span></code>
+account means that you have a permission to use entire system resources without
+any restriction. Since this lesson includes a couple of examples using Chef, we
+strongly recommend to use OpenStack VM instance on FutureSystems. DON&#8217;T try to
+install Chef on your local machine or on the <code class="docutils literal"><span class="pre">india.futuresystems.org</span></code> host.
+Use a benefit of VM instance which you can easily delete and re-create a new
+one.</p>
+<p>On a VM instance, simply run a switch user command:</p>
+<div class="highlight-python"><div class="highlight"><pre>ubuntu@chef:~$ sudo su -
+</pre></div>
+</div>
+<p>If you see <code class="docutils literal"><span class="pre">root</span></code> label, you are in <code class="docutils literal"><span class="pre">root</span></code> account on your machine:</p>
+<div class="highlight-python"><div class="highlight"><pre>root@chef:~#
+</pre></div>
+</div>
+</div>
+<div class="section" id="one-line-installation">
+<h3>One Line Installation<a class="headerlink" href="#one-line-installation" title="Permalink to this headline">¶</a></h3>
+<p>Opscode provides one-line installation script. We use it to simplify
+downloading and setting Chef.</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -L https://www.opscode.com/chef/install.sh | bash
+</pre></div>
+</div>
+</div>
+<div class="section" id="version-check">
+<h3>Version Check<a class="headerlink" href="#version-check" title="Permalink to this headline">¶</a></h3>
+<p>Now we expect to use <code class="docutils literal"><span class="pre">chef-client</span></code> command.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">chef</span><span class="o">-</span><span class="n">client</span> <span class="o">-</span><span class="n">v</span>
+</pre></div>
+</div>
+<p>The tested version of Chef is 12.0.3.</p>
+<p>You may have higher version of Chef. We use <code class="docutils literal"><span class="pre">chef-client</span> <span class="pre">--local-mode</span></code> or <code class="docutils literal"><span class="pre">chef-solo</span></code> which is a light version of a
+<code class="docutils literal"><span class="pre">chef-client</span></code> command that uses Cookbooks without communicating with Chef
+server. Chef has a few main components including <code class="docutils literal"><span class="pre">chef-client</span></code> and
+<code class="docutils literal"><span class="pre">chef-server</span></code>.  For more detail, see here: <a class="reference external" href="http://docs.chef.io/client/chef_overview.html#chef-components">Chef Components</a></p>
+</div>
+<div class="section" id="chef-development-kit-chefdk">
+<h3>Chef Development Kit (ChefDK)<a class="headerlink" href="#chef-development-kit-chefdk" title="Permalink to this headline">¶</a></h3>
+<p>To write a Cookbook and use other tools, we need Chef Development Kit.
+On Ubuntu 14.04 with <code class="docutils literal"><span class="pre">root</span></code> account, run:</p>
+<div class="highlight-python"><div class="highlight"><pre>wget https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.4.0-1_amd64.deb
+dpkg -i chef*.deb
+</pre></div>
+</div>
+<p>If you can&#8217;t download the package file, you probably have a newer version of ChefDK.
+Go and checkout the new release here: <a class="reference external" href="https://downloads.chef.io/chef-dk/ubuntu/">https://downloads.chef.io/chef-dk/ubuntu/</a></p>
+<p>The expected output is:</p>
+<div class="highlight-python"><div class="highlight"><pre>Selecting previously unselected package chefdk.
+(Reading database ... 67885 files and directories currently installed.)
+Preparing to unpack chefdk_0.4.0-1_amd64.deb ...
+Unpacking chefdk (0.4.0-1) ...
+Setting up chefdk (0.4.0-1) ...
+Thank you for installing Chef Development Kit!
+</pre></div>
+</div>
+</div>
+<div class="section" id="default-chef-repo-repository">
+<h3>Default <code class="docutils literal"><span class="pre">chef-repo</span></code> Repository<a class="headerlink" href="#default-chef-repo-repository" title="Permalink to this headline">¶</a></h3>
+<p>You start with a Chef Repository to manage cookbooks, roles, config files and other artifacts.
+We create a base Chef repository with the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>chef generate repo ~/chef-repo
+</pre></div>
+</div>
+<p>If this doesn&#8217;t work, you can try other commands to setup a base repository:</p>
+<div class="highlight-python"><div class="highlight"><pre>wget http://github.com/opscode/chef-repo/tarball/master
+tar -zxf master
+mv *chef-repo* ~/chef-repo
+rm master
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuration-for-knife">
+<h3>Configuration for Knife<a class="headerlink" href="#configuration-for-knife" title="Permalink to this headline">¶</a></h3>
+<p>knife is a command-line tool that provides an interface between a local
+chef-repo and the Chef server. knife helps users to manage Cookbooks and
+recipes We need to setup the .chef directory which is used to store validation
+key files and the knife.rb file.</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir ~/chef-repo/.chef
+echo &quot;cookbook_path [ &#39;$HOME/chef-repo/cookbooks&#39; ]&quot; &gt; ~/chef-repo/.chef/knife.rb
+</pre></div>
+</div>
+<p>Now, your cookbook directory is at <code class="docutils literal"><span class="pre">$HOME/chef-repo/cookbooks</span></code>. The default
+directory was <code class="docutils literal"><span class="pre">/var/chef/cookbooks/</span></code>.</p>
+</div>
+<div class="section" id="first-cookbook">
+<h3>First Cookbook<a class="headerlink" href="#first-cookbook" title="Permalink to this headline">¶</a></h3>
+<p>If you create a new cookbook, you need following instructions. We will start a
+Apache web server with a new cookbook named <code class="docutils literal"><span class="pre">first-cookbook</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>knife cookbook create first-cookbook
+</pre></div>
+</div>
+<p>You see:</p>
+<div class="highlight-python"><div class="highlight"><pre>** Creating cookbook first-cookbook in /root/chef-repo/cookbooks
+** Creating README for cookbook: first-cookbook
+** Creating CHANGELOG for cookbook: first-cookbook
+** Creating metadata for cookbook: first-cookbook
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="installation-of-apache-web-server">
+<h2>Installation of Apache Web Server<a class="headerlink" href="#installation-of-apache-web-server" title="Permalink to this headline">¶</a></h2>
+<p>We configure our <code class="docutils literal"><span class="pre">first-cookbook</span></code> with a Apache web server in this lesson. It
+includes:</p>
+<ul class="simple">
+<li>Download Apache2 Cookbook</li>
+<li>Update metadata.rb</li>
+<li>Update default.rb</li>
+<li>Use client.rb for <code class="docutils literal"><span class="pre">chef-client</span> <span class="pre">--local-mode</span></code></li>
+<li>Use web.json for <em>run_list</em></li>
+</ul>
+<div class="section" id="download-apache-cookbook">
+<h3>Download Apache Cookbook<a class="headerlink" href="#download-apache-cookbook" title="Permalink to this headline">¶</a></h3>
+<p>First, We need to download Apache2 and apt.</p>
+<div class="highlight-python"><div class="highlight"><pre>knife cookbook site download apache2
+knife cookbook site download apt
+</pre></div>
+</div>
+<p>You may see:</p>
+<div class="highlight-python"><div class="highlight"><pre>Downloading apache2 from the cookbooks site at version 3.0.1 to /root/chef-repo/apache2-3.0.1.tar.gz
+Cookbook saved: /root/chef-repo/apache2-3.0.1.tar.gz
+</pre></div>
+</div>
+<p>Uncompress the download file to your cookbooks:</p>
+<div class="highlight-python"><div class="highlight"><pre>tar xvzf apache2-3.0.1.tar.gz -C ~/chef-repo/cookbooks
+tar xvzf apt-2.7.0.tar.gz -C ~/chef-repo/cookbooks
+</pre></div>
+</div>
+<p><em>You may have different versions of Apache2 and apt Cookbooks. Please use your
+filename, if you have different one</em></p>
+</div>
+<div class="section" id="update-metadata-rb">
+<h3>Update <code class="docutils literal"><span class="pre">metadata.rb</span></code><a class="headerlink" href="#update-metadata-rb" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">metadata.rb</span></code> file contains information about cookbooks, we update this
+file to tell Chef about required items. We use a <code class="docutils literal"><span class="pre">depends</span></code> setting to tell
+required items in the cookbook.</p>
+<div class="highlight-python"><div class="highlight"><pre>echo  &#39;depends &quot;apache2&quot;&#39; &gt;&gt; ~/chef-repo/cookbooks/first-cookbook/metadata.rb
+</pre></div>
+</div>
+<p>For more information about <code class="docutils literal"><span class="pre">metadata.rb</span></code>:
+<a class="reference external" href="https://docs.chef.io/cookbook_repo.html#metadata-rb">https://docs.chef.io/cookbook_repo.html#metadata-rb</a></p>
+</div>
+<div class="section" id="update-default-rb">
+<h3>Update <code class="docutils literal"><span class="pre">default.rb</span></code><a class="headerlink" href="#update-default-rb" title="Permalink to this headline">¶</a></h3>
+<p>We include apache2 as a default recipe.</p>
+<ul>
+<li><p class="first">Open a <code class="docutils literal"><span class="pre">~/chef-repo/cookbooks/first-cookbook/recipes/default.rb</span></code> via nano or vi</p>
+<p>Add the following lines:</p>
+</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>include_recipe &quot;apache2&quot;
+
+apache_site &quot;default&quot; do
+  enable true
+end
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-of-client-rb">
+<h3>Use of <code class="docutils literal"><span class="pre">client.rb</span></code><a class="headerlink" href="#use-of-client-rb" title="Permalink to this headline">¶</a></h3>
+<p>A client.rb file is used to specify the configuration details for <code class="docutils literal"><span class="pre">chef-client</span></code>.
+Let&#8217;s create a new <code class="docutils literal"><span class="pre">client.rb</span></code> file.</p>
+<div class="highlight-python"><div class="highlight"><pre>echo -e &quot;file_cache_path \&quot;$HOME/chef-client\&quot;\ncookbook_path \&quot;$HOME/chef-repo/cookbooks\&quot;&quot; &gt; client.rb
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">client.rb</span></code> must look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>file_cache_path &quot;/root/chef-client&quot;
+cookbook_path &quot;/root/chef-repo/cookbooks&quot;
+</pre></div>
+</div>
+<p>For more information about <code class="docutils literal"><span class="pre">client.rb</span></code>, see here:
+<a class="reference external" href="https://docs.chef.io/config_rb_client.html">https://docs.chef.io/config_rb_client.html</a></p>
+</div>
+<div class="section" id="use-of-web-json">
+<h3>Use of <code class="docutils literal"><span class="pre">web.json</span></code><a class="headerlink" href="#use-of-web-json" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">web.json</span></code> will be used to load attributes from a JSON file.  We will use
+<code class="docutils literal"><span class="pre">-j</span></code> option in <code class="docutils literal"><span class="pre">chef-client</span></code> command to load this file.</p>
+<div class="highlight-python"><div class="highlight"><pre>echo -e &#39;{\n   &quot;run_list&quot;: [ &quot;recipe[apt]&quot;, &quot;recipe[phpapp]&quot; ]\n}&#39; &gt; web.json
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">web.json</span></code> must look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">&quot;run_list&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;recipe[apt]&quot;</span><span class="p">,</span> <span class="s2">&quot;recipe[phpapp]&quot;</span> <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="start-chef-client">
+<h2>Start <code class="docutils literal"><span class="pre">chef-client</span></code><a class="headerlink" href="#start-chef-client" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s start a Chef client in a local mode. We will use configurations that
+we&#8217;ve made in <code class="docutils literal"><span class="pre">client.rb</span></code> and <code class="docutils literal"><span class="pre">web.json</span></code>.</p>
+<div class="highlight-python"><div class="highlight"><pre>chef-client --local-mode -c client.rb -j web.json
+</pre></div>
+</div>
+</div>
+<div class="section" id="update-on-security-group">
+<h2>Update on Security Group<a class="headerlink" href="#update-on-security-group" title="Permalink to this headline">¶</a></h2>
+<p>If you are running on a VM instance, you need to have your HTTP port (80) open.
+Go back to <code class="docutils literal"><span class="pre">india.futuresystems.org</span></code>. You can&#8217;t update your security group of
+your VM instance on the VM instance.</p>
+<ul>
+<li><p class="first">Be on india.futuresystems.org:</p>
+<div class="highlight-python"><div class="highlight"><pre>[albert@i136 ~]$
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create a new Security Group for HTTP port</p>
+<div class="highlight-python"><div class="highlight"><pre>nova secgroup-create web HTTP-80
+(expected output)
++-----+------+-------------+
+| Id  | Name | Description |
++-----+------+-------------+
+| 1   | web  | HTTP-80     |
++-----+------+-------------+
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add a rule</p>
+</li>
+</ul>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre>nova secgroup-add-rule web tcp 80 80 0.0.0.0/0
+(expected output)
++-------------+-----------+---------+-----------+--------------+
+| IP Protocol | From Port | To Port | IP Range  | Source Group |
++-------------+-----------+---------+-----------+--------------+
+| tcp         | 80        | 80      | 0.0.0.0/0 |              |
++-------------+-----------+---------+-----------+--------------+
+</pre></div>
+</div>
+</div></blockquote>
+<ul>
+<li><p class="first">Apply a <code class="docutils literal"><span class="pre">web</span></code> group to your VM</p>
+<div class="highlight-python"><div class="highlight"><pre>nova add-secgroup [VM NAME] web
+</pre></div>
+</div>
+<p>I have <code class="docutils literal"><span class="pre">chef-albert</span></code> VM instance, so I ran</p>
+<div class="highlight-python"><div class="highlight"><pre>nova add-secgroup chef-albert web
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="floating-ip-address-allocation">
+<h2>Floating IP Address Allocation<a class="headerlink" href="#floating-ip-address-allocation" title="Permalink to this headline">¶</a></h2>
+<p>Since your VM may not have a public IP address, we assign one. This is also be
+done on <code class="docutils literal"><span class="pre">india.futuresystems.org</span></code></p>
+<ul>
+<li><p class="first">Be on India.futuresystems.org:</p>
+<div class="highlight-python"><div class="highlight"><pre>[albert@i136 ~]$
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create a new IP:</p>
+<div class="highlight-python"><div class="highlight"><pre>nova floating-ip-create ext-net
+(expected output)
++--------------------------------------+-----------------+-----------+----------+---------+
+| Id                                   | IP              | Server Id | Fixed IP | Pool    |
++--------------------------------------+-----------------+-----------+----------+---------+
+| 2342222f-bd0b-47b1-959f-bfce60488b90 | 149.333.222.111 | -         | -        | ext-net |
++--------------------------------------+-----------------+-----------+----------+---------+
+</pre></div>
+</div>
+</li>
+<li><p class="first">Assign the IP to your VM:</p>
+<div class="highlight-python"><div class="highlight"><pre>nova add-floating-ip [VM NAME] [IP ADDRESS]
+</pre></div>
+</div>
+<p>I have <code class="docutils literal"><span class="pre">chef-albert</span></code> VM instance, so I assign the IP:</p>
+<div class="highlight-python"><div class="highlight"><pre>nova add-floating-ip chef-albert 149.333.222.111
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="apache-server-running-by-chef">
+<h2>Apache Server running by Chef<a class="headerlink" href="#apache-server-running-by-chef" title="Permalink to this headline">¶</a></h2>
+<p>Now, we open a web browser and see Apache up and running.</p>
+<p><a class="reference external" href="http://[IP_ADDRESS">http://[IP_ADDRESS</a>]</p>
+<img alt="../../../_images/lesson_chef.png" src="../../../_images/lesson_chef.png" />
+</div>
+<div class="section" id="acknowledgement">
+<h2>Acknowledgement<a class="headerlink" href="#acknowledgement" title="Permalink to this headline">¶</a></h2>
+<p>This lesson is adapted from <a class="reference external" href="http://gettingstartedwithchef.com/first-steps-with-chef.html">Getting started with Chef</a></p>
+</div>
+<div class="section" id="exercises">
+<span id="ref-class-lesson-devops-chef-exercises"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-i">
+<h3>Exercise I<a class="headerlink" href="#exercise-i" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Try to install MySQL and PHP as well.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="openstack_heat.html" class="btn btn-neutral float-right" title="OpenStack Heat" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="puppet.html" class="btn btn-neutral" title="Puppet" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,423 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Word Count Map Reduce Application &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Word Count Map Reduce Application</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/class/lesson/cluster/wordcount.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="word-count-map-reduce-application">
+<span id="ref-class-lesson-hadoop-word-count"></span><h1>Word Count Map Reduce Application<a class="headerlink" href="#word-count-map-reduce-application" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Word Count program is a simple program that counts the number of occurrences of
+each word in a given input set (files).  Executing this program on a single
+node or on a cluster is a good example to get a flavor for how Hadoop works
+with MapReduce framework.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Duration: 1 hour</p>
+</div>
+</div>
+<div class="section" id="prerequisite">
+<h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
+<p>You must have a Hadoop installed machine up and running to execute Word Count.
+If you don&#8217;t have a hadoop installation, one of the following pages help you
+install and configure a Hadoop cluster on OpenStack FutureSystems.</p>
+<ul class="simple">
+<li><a class="reference internal" href="../../vc_sp15/hadoop_cluster_cm.html#ref-class-lesson-deploying-hadoop-cluster-with-cloudmesh"><span>Hadoop Cluster with Cludmesh</span></a></li>
+<li><a class="reference internal" href="../../vc_sp15/hadoop_cluster_manual.html#ref-class-lesson-deploying-hadoop-cluster-manual"><span>Hadoop Cluster Manual Installation with Chef</span></a></li>
+</ul>
+</div>
+<div class="section" id="word-count-v1-0">
+<h2>Word Count v1.0<a class="headerlink" href="#word-count-v1-0" title="Permalink to this headline">¶</a></h2>
+<p>If you run a Hadoop cluster, the following tutorial must take place in a master
+node (namenode). Also,  we assume that you run the tutorial commands on <code class="docutils literal"><span class="pre">root</span></code>.</p>
+<p>Understand the requirements:</p>
+<ul class="simple">
+<li>Write a program on <code class="docutils literal"><span class="pre">namenode</span></code></li>
+<li>Be on <code class="docutils literal"><span class="pre">root</span></code> account</li>
+<li>Have <code class="docutils literal"><span class="pre">hadoop</span></code> installed</li>
+<li>Have <code class="docutils literal"><span class="pre">namenode</span></code>, <code class="docutils literal"><span class="pre">yarn</span> <span class="pre">manager</span></code>, and <code class="docutils literal"><span class="pre">yarn</span> <span class="pre">resource</span> <span class="pre">manager</span></code> running</li>
+</ul>
+<div class="section" id="wordcount-java">
+<h3>WordCount.java<a class="headerlink" href="#wordcount-java" title="Permalink to this headline">¶</a></h3>
+<p>First, create a <code class="docutils literal"><span class="pre">WordCount.java</span></code> file to implement Map and Reduce functions.</p>
+<div class="highlight-python"><div class="highlight"><pre>import java.io.IOException;
+import java.util.StringTokenizer;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+
+public class WordCount {
+
+  public static class TokenizerMapper
+      extends Mapper&lt;Object, Text, Text, IntWritable&gt;{
+
+      private final static IntWritable one = new IntWritable(1);
+      private Text word = new Text();
+
+      public void map(Object key, Text value, Context context
+		      ) throws IOException, InterruptedException {
+	  StringTokenizer itr = new StringTokenizer(value.toString());
+	  while (itr.hasMoreTokens()) {
+	      word.set(itr.nextToken());
+	      context.write(word, one);
+	  }
+      }
+  }
+
+  public static class IntSumReducer
+      extends Reducer&lt;Text,IntWritable,Text,IntWritable&gt; {
+      private IntWritable result = new IntWritable();
+
+      public void reduce(Text key, Iterable&lt;IntWritable&gt; values,
+                       Context context
+			 ) throws IOException, InterruptedException {
+	  int sum = 0;
+	  for (IntWritable val : values) {
+	      sum += val.get();
+	  }
+	  result.set(sum);
+	  context.write(key, result);
+      }
+  }
+
+    public static void main(String[] args) throws Exception {
+	Configuration conf = new Configuration();
+	Job job = Job.getInstance(conf, &quot;word count&quot;);
+	job.setJarByClass(WordCount.class);
+	job.setMapperClass(TokenizerMapper.class);
+	job.setCombinerClass(IntSumReducer.class);
+	job.setReducerClass(IntSumReducer.class);
+	job.setOutputKeyClass(Text.class);
+	job.setOutputValueClass(IntWritable.class);
+	FileInputFormat.addInputPath(job, new Path(args[0]));
+	FileOutputFormat.setOutputPath(job, new Path(args[1]));
+	System.exit(job.waitForCompletion(true) ? 0 : 1);
+    }
+}
+</pre></div>
+</div>
+<p>Or, you can download the file.:</p>
+<div class="highlight-python"><div class="highlight"><pre>wget https://raw.githubusercontent.com/cloudmesh/introduction_to_cloud_computing/master/docs/source/class/lesson/cluster/WordCount.java
+</pre></div>
+</div>
+</div>
+<div class="section" id="environment-variables">
+<h3>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h3>
+<p>To compile the <code class="docutils literal"><span class="pre">WordCount.java</span></code>, environment variables need to be configured.
+There are <code class="docutils literal"><span class="pre">JAVA_HOME</span></code>, <code class="docutils literal"><span class="pre">PATH</span></code> and <code class="docutils literal"><span class="pre">HADOOP_CLASSPATH</span></code> to be set.</p>
+<p>You may have <code class="docutils literal"><span class="pre">JAVA_HOME</span></code> set like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>ubuntu@hadoop1:~$ echo $JAVA_HOME
+/usr/lib/jvm/java-6-oracle-amd64
+</pre></div>
+</div>
+<p>Then update <code class="docutils literal"><span class="pre">PATH</span></code> and <code class="docutils literal"><span class="pre">HADOOP_CLASSPATH</span></code>,:</p>
+<div class="highlight-python"><div class="highlight"><pre>export PATH=$JAVA_HOME/bin:$PATH
+export HADOOP_CLASSPATH=$JAVA_HOME/lib/tools.jar
+</pre></div>
+</div>
+</div>
+<div class="section" id="compile-and-package-wordcount-java">
+<h3>Compile and Package <code class="docutils literal"><span class="pre">WordCount.java</span></code><a class="headerlink" href="#compile-and-package-wordcount-java" title="Permalink to this headline">¶</a></h3>
+<p>Compile <code class="docutils literal"><span class="pre">WordCount.java</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>hadoop com.sun.tools.javac.Main WordCount.java
+</pre></div>
+</div>
+<p>Package <code class="docutils literal"><span class="pre">WordCount.class</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>jar cf word_count.jar WordCount*.class
+</pre></div>
+</div>
+</div>
+<div class="section" id="directories-in-hdfs">
+<h3>Directories in HDFS<a class="headerlink" href="#directories-in-hdfs" title="Permalink to this headline">¶</a></h3>
+<p>Input files and output files of the Word Count program will be stored in HDFS.</p>
+<p>Confirm that you have a base directory <code class="docutils literal"><span class="pre">/user/root</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>hdfs dfs -ls /user/root
+</pre></div>
+</div>
+<p>Create a directory <code class="docutils literal"><span class="pre">wordcount</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>hdfs dfs -mkdir /user/root/wordcount
+</pre></div>
+</div>
+<p>Create a input directory <code class="docutils literal"><span class="pre">input</span></code> where text files stay:</p>
+<div class="highlight-python"><div class="highlight"><pre>hdfs dfs -mkdir /user/root/wordcount/inputs
+</pre></div>
+</div>
+<p>Create sample text files and upload to HDFS:</p>
+<div class="highlight-python"><div class="highlight"><pre>echo &quot;Welcome Hadoop Enjoy Hadoop&quot; &gt; welcome.txt
+hdfs dfs -copyFromLocal welcome.txt /user/root/wordcount/inputs/
+echo &quot;Mapper and Reducer will be used Enjoy MayReduce&quot; &gt; welcome2.txt
+hdfs dfs -copyFromLocal welcome2.txt /user/root/wordcount/inputs/
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-wordcount">
+<h3>Run WordCount<a class="headerlink" href="#run-wordcount" title="Permalink to this headline">¶</a></h3>
+<p>It&#8217;s simple, just run this command:</p>
+<div class="highlight-python"><div class="highlight"><pre>hadoop jar word_count.jar WordCount /user/root/wordcount/inputs /user/root/wordcount/outputs-v1
+</pre></div>
+</div>
+<p>This command runs <code class="docutils literal"><span class="pre">WordCount</span></code> class from <code class="docutils literal"><span class="pre">word_count.jar</span></code> Jar file with the
+input directory <code class="docutils literal"><span class="pre">../inputs</span></code> and the output directory <code class="docutils literal"><span class="pre">../outputs-v1</span></code>.
+Output directory will be automatically created.</p>
+<p>The expected output looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>15/04/21 19:26:56 INFO Configuration.deprecation: session.id is deprecated. Instead, use dfs.metrics.session-id
+15/04/21 19:26:56 INFO jvm.JvmMetrics: Initializing JVM Metrics with processName=JobTracker, sessionId=
+15/04/21 19:26:57 WARN mapreduce.JobSubmitter: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+15/04/21 19:26:57 WARN mapreduce.JobSubmitter: No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+... (skip) ...
+15/04/21 19:30:54 INFO input.FileInputFormat: Total input paths to process : 2
+... (skip) ...
+15/04/21 19:30:57 INFO mapreduce.Job:  map 100% reduce 0%
+15/04/21 19:30:58 INFO mapred.LocalJobRunner: reduce task executor complete.
+15/04/21 19:30:58 INFO mapreduce.Job:  map 100% reduce 100%
+15/04/21 19:30:58 INFO mapreduce.Job: Job job_local1244998837_0001 completed successfully
+... (skip) ...
+File Input Format Counters
+Bytes Read=674582
+File Output Format Counters
+Bytes Written=196200
+</pre></div>
+</div>
+</div>
+<div class="section" id="result">
+<h3>Result<a class="headerlink" href="#result" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s see the result.
+<code class="docutils literal"><span class="pre">/user/root/wordcount/outputs-v1</span></code> contains result files including
+<code class="docutils literal"><span class="pre">part-r-00000</span></code> file.</p>
+<div class="highlight-python"><div class="highlight"><pre>hdfs dfs -cat /user/root/wordcount/outputs-v1/part-r-00000
+
+Enjoy        2
+Hadoop       2
+Mapper       1
+MayReduce    1
+Reducer      1
+Welcome      1
+and  1
+be   1
+used 1
+will 1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="word-count-v3-0-tbd">
+<h2>Word Count v3.0 (TBD)<a class="headerlink" href="#word-count-v3-0-tbd" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="acknowledgement">
+<h2>Acknowledgement<a class="headerlink" href="#acknowledgement" title="Permalink to this headline">¶</a></h2>
+<p>This tutorial is adopted from:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html#Example:_WordCount_v1.0">WordCount v1.0</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

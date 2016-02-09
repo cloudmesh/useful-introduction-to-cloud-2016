@@ -1,0 +1,818 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>OpenStack for Beginners &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../index.html"/>
+        <link rel="up" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="../../bdossp_sp15/index.html"/>
+        <link rel="next" title="OpenStack Juno" href="openstack_juno.html"/>
+        <link rel="prev" title="Overview and Introduction to OpenStack" href="overview_openstack.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#notice">Notice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#office-hours">Office Hours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#contact">Contact</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#weekly-plan">Weekly Plan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#support">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#meeting">Meeting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#collaboration-tools">Collaboration Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#futuresystems-access">FutureSystems Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#linux-basics">Linux Basics</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../bdossp_sp15/index.html#basics-of-openstack">Basics of OpenStack</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="overview_openstack.html">Overview and Introduction to OpenStack</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">OpenStack for Beginners</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openstack_juno.html">OpenStack Juno</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openstack_horizon.html">OpenStack Horizion Web Dashboard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_iaas.html">Other IaaS Cloud Platforms</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#basics-of-cloudmesh">Basics of Cloudmesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#advanced-cloudmesh">Advanced Cloudmesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#it-operations-automation-and-orchestration">IT Operations - Automation and Orchestration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#virtual-clusters">Virtual Clusters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#other-technologies">Other Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#future">Future</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#to-be-organized-into-the-above">To be Organized into the above</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
+      
+    <li>OpenStack for Beginners</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/class/lesson/iaas/openstack.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="openstack-for-beginners">
+<h1>OpenStack for Beginners<a class="headerlink" href="#openstack-for-beginners" title="Permalink to this headline">¶</a></h1>
+<div class="sidebar">
+<p class="first sidebar-title">Page Contents</p>
+<div class="contents local last topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#overview" id="id1">Overview</a></li>
+<li><a class="reference internal" href="#prerequisite" id="id2">Prerequisite</a></li>
+<li><a class="reference internal" href="#description" id="id3">Description</a></li>
+<li><a class="reference internal" href="#nova-compute" id="id4">Nova Compute</a><ul>
+<li><a class="reference internal" href="#adding-your-ssh-key" id="id5">Adding your SSH key</a></li>
+<li><a class="reference internal" href="#launching-a-new-instance" id="id6">Launching a New Instance</a></li>
+<li><a class="reference internal" href="#floating-ip-address" id="id7">Floating IP Address</a></li>
+<li><a class="reference internal" href="#access-to-vm-instance" id="id8">Access to VM Instance</a></li>
+<li><a class="reference internal" href="#deleting-vm-instance" id="id9">Deleting VM Instance</a></li>
+<li><a class="reference internal" href="#returning-floating-ip-address" id="id10">Returning Floating IP Address</a><ul>
+<li><a class="reference internal" href="#lab-openstack-launch-an-instance" id="id11">Lab - OpenStack - Launch an Instance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#glance-image-management" id="id12">Glance Image Management</a><ul>
+<li><a class="reference internal" href="#creating-a-new-image" id="id13">Creating a New Image</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#keystone-account-and-authenticaion" id="id14">Keystone Account and Authenticaion</a><ul>
+<li><a class="reference internal" href="#project-creation-tenant" id="id15">Project Creation (Tenant)</a></li>
+<li><a class="reference internal" href="#user-creation" id="id16">User Creation</a></li>
+<li><a class="reference internal" href="#list-of-users-or-projects" id="id17">List of Users or Projects</a></li>
+<li><a class="reference internal" href="#role-management" id="id18">Role management</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#swift-storage" id="id19">Swift Storage</a></li>
+<li><a class="reference internal" href="#neutron-network" id="id20">Neutron Network</a></li>
+<li><a class="reference internal" href="#exercises" id="id21">Exercises</a></li>
+<li><a class="reference internal" href="#next-step" id="id22">Next Step</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="overview">
+<h2><a class="toc-backref" href="#id1">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This lesson will introduce you to a very important topic to OpenStack core
+components.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Duration: 1 hour</p>
+</div>
+</div>
+<div class="section" id="prerequisite">
+<h2><a class="toc-backref" href="#id2">Prerequisite</a><a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
+<p>In order to conduct this lesson you should have knowledge of</p>
+<ul>
+<li><p class="first"><a class="reference external" href="overview_openstack.html">Overview OpenStack</a></p>
+</li>
+<li><p class="first">Create an ssh key by following <a class="reference internal" href="../../../accounts/ssh.html#s-ssh-generate"><span>Generate a SSH key</span></a></p>
+</li>
+<li><p class="first">Make sure to set the <code class="docutils literal"><span class="pre">PORTALNAME</span></code> appropriatly (<code class="docutils literal"><span class="pre">albert</span></code> is just an example):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ export PORTALNAME=albert
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="description">
+<h2><a class="toc-backref" href="#id3">Description</a><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>OpenStack is an open source cloud IaaS platform which provides compute,
+storage, and networking resources with service components.  We explore these
+components with a few examples in this lesson to have a taste of OpenStack
+cloud on FutureSystems.</p>
+<p>OpenStack consists of the following set of core components:</p>
+<p>Table 1. Core components of OpenStack</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="19%" />
+<col width="32%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Component</th>
+<th class="head">Project Name</th>
+<th class="head">Main task</th>
+<th class="head">Sample Command</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Compute</td>
+<td>Nova</td>
+<td>vm management</td>
+<td>nova boot</td>
+</tr>
+<tr class="row-odd"><td>Storage</td>
+<td>Swift</td>
+<td>Data warehouse</td>
+<td>swift post</td>
+</tr>
+<tr class="row-even"><td>Network</td>
+<td>Neutron</td>
+<td>Network management</td>
+<td>neutron net-create</td>
+</tr>
+<tr class="row-odd"><td>Account</td>
+<td>Keystone</td>
+<td>Identity/Authentication</td>
+<td>keystone tenant-create</td>
+</tr>
+<tr class="row-even"><td>Web Interface</td>
+<td>Horizon</td>
+<td>Web User Interface</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>There are many other important components in OpenStack, for example, OpenStack
+Heat provides automated deployment service with AWS CloudFormation template,
+and OpenStack Telemetry (previously Ceilometer) offers a billing service based
+on the measured data. Block Storage service named Cinter and virtual machine
+image service named Glance are also major components in OpenStack.</p>
+</div>
+<div class="section" id="nova-compute">
+<h2><a class="toc-backref" href="#id4">Nova Compute</a><a class="headerlink" href="#nova-compute" title="Permalink to this headline">¶</a></h2>
+<p>Nova Compute engine manages computing resources on OpenStack. It starts a
+virtual machine instance with a choice of a machine (i.e. small, medium, large,
+or cpu-intensive) and an image (i.e. Ubuntu, CentOS, etc.), and updates or
+terminates the instance.</p>
+<p>To have your own virtual machine (vm) instance on OpenStack cloud, you need to
+submit your request of a vm instance via a command line tool (Nova client) or
+on a dashboard Horizon.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference external" href="openstack_horizon.html">Using Horizon on OpenStack</a></p>
+</div>
+<p>Let&#8217;s explore a few examples to allocate vm instances. In FutureSystems, you
+need to be on the India login node.  (India is a hostname for OpenStack on
+FutureSystems)</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh india.futuresystems.org
+</pre></div>
+</div>
+<p>You should now load the <code class="docutils literal"><span class="pre">openstack</span></code> module to gain access to the
+necessary commands.:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ module load openstack
+</pre></div>
+</div>
+<p>Next, you need to set up your environment correctly to use some
+OpenStack commands. This has been configured for you so you just need
+to source the appropriate file:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ source ~/.cloudmesh/clouds/india/juno/openrc.sh
+</pre></div>
+</div>
+<div class="section" id="adding-your-ssh-key">
+<h3><a class="toc-backref" href="#id5">Adding your SSH key</a><a class="headerlink" href="#adding-your-ssh-key" title="Permalink to this headline">¶</a></h3>
+<p>Access to the machines we will start is authenticated using SSH.
+First, we need to tell openstack about our ssh key.
+This only needs to be done once for each public key you wish to register:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $PORTALNAME-key
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In order for this to work you <strong>must</strong> have an ssh key.  Please see
+the section <a class="reference internal" href="../../../accounts/ssh.html#s-ssh-generate"><span>Generate an SSH Key</span></a> to do so.</p>
+</div>
+<p>For instance, in order to log into an openstack virtual machine from india, make sure you created an SSH keypair <strong>on</strong> india first, then add it to nova.
+You can now see that your key is visible to OpenStack:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova keypair-list
+
++-----------------+-------------------------------------------------+
+| Name            | Fingerprint                                     |
++-----------------+-------------------------------------------------+
+| $PORTALNAME-key | 35:74:ee:be:14:4b:43:dd:ed:d8:cf:8e:de:13:ea:ce |
++---------------+---------------------------------------------------+
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>You can check that the key registered with OpenStack (as shown by
+<code class="docutils literal"><span class="pre">nova</span> <span class="pre">keypair-list</span></code>) is valid by comparing the fingerprint with
+that of your public key. Run the following to get your public key&#8217;s
+fingerprint:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh-keygen -lf ~/.ssh/id_rsa.pub
+</pre></div>
+</div>
+<p>The fingerprint is displayed as the colon-seperated two-digit
+hexadecimal values. Compare this with the fingerprint shown by:</p>
+<div class="last highlight-python"><div class="highlight"><pre>$ nova keypair-list
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="launching-a-new-instance">
+<h3><a class="toc-backref" href="#id6">Launching a New Instance</a><a class="headerlink" href="#launching-a-new-instance" title="Permalink to this headline">¶</a></h3>
+<p>Starting a new instance is simple. The following command starts a new
+instance named <em>$PORTALNAME-tutorial1</em> with a Ubuntu 14.04 base image.  The size
+of the machine will be <strong>small</strong>.</p>
+<p>Boot the instance using the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova boot --flavor m1.small --image futuresystems/ubuntu-14.04 --key_name $PORTALNAME-key $PORTALNAME-tutorial1
+</pre></div>
+</div>
+<p>Here are some explanations for the arguments.</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">boot</span></code> is a sub command to start a new server.</li>
+<li><code class="docutils literal"><span class="pre">--flavor</span></code> is a name for your machine size. <code class="docutils literal"><span class="pre">m1.small</span></code> typically
+has 1 vCPU and 2GB memories.</li>
+<li><code class="docutils literal"><span class="pre">--image</span></code> is a name for your base image. <code class="docutils literal"><span class="pre">nova</span> <span class="pre">image-list</span></code>
+displays all registered image.</li>
+<li><code class="docutils literal"><span class="pre">--key_name</span></code> is a key name to use for SSH connection. This key
+should be registered on Nova Compute. Try <code class="docutils literal"><span class="pre">nova</span> <span class="pre">keypair-list</span></code> to
+see registered keys.</li>
+<li><code class="docutils literal"><span class="pre">$PORTALNAME-tutorial1</span></code> is a name for your vm instance.</li>
+</ul>
+<p>Some useful <code class="docutils literal"><span class="pre">nova</span></code> subcommands are:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">list</span></code>: list active servers</li>
+<li><code class="docutils literal"><span class="pre">flavor-list</span></code>: list of available flavors</li>
+<li><code class="docutils literal"><span class="pre">host-list</span></code>: available hosts</li>
+<li><code class="docutils literal"><span class="pre">keypair-list</span></code>: keypairs for a user</li>
+</ul>
+<p>You can get more information by executing the <code class="docutils literal"><span class="pre">nova</span> <span class="pre">-h</span></code> command.</p>
+</div>
+<div class="section" id="floating-ip-address">
+<h3><a class="toc-backref" href="#id7">Floating IP Address</a><a class="headerlink" href="#floating-ip-address" title="Permalink to this headline">¶</a></h3>
+<p>If we want our machine to be accessible from outside the private
+network, we need to create a &#8220;floating IP address&#8221; and associate it
+with an instance.  Since floating ips come from some pool of available
+addresses, we can list the pools using the <code class="docutils literal"><span class="pre">floating-ip-pool-list</span></code>
+subcommand:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova floating-ip-pool-list
++---------+
+| name    |
++---------+
+| ext-net |
++---------+
+</pre></div>
+</div>
+<p>We then create an ip for our instance:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova floating-ip-create ext-net
++-----------------+-----------+----------+---------+
+| Ip              | Server Id | Fixed Ip | Pool    |
++-----------------+-----------+----------+---------+
+| 149.165.158.107 | -         | -        | ext-net |
++-----------------+-----------+----------+---------+
+</pre></div>
+</div>
+<p>Now that the ip has been created, associate it with our instance:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova floating-ip-associate
+usage: nova floating-ip-associate [--fixed-address &lt;fixed_address&gt;]
+                                  &lt;server&gt; &lt;address&gt;
+
+$ nova floating-ip-associate $PORTALNAME-tutorial1 149.165.158.107
+</pre></div>
+</div>
+</div>
+<div class="section" id="access-to-vm-instance">
+<h3><a class="toc-backref" href="#id8">Access to VM Instance</a><a class="headerlink" href="#access-to-vm-instance" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">We login to the VM instance we just created using SSH.:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh ubuntu@[IP ADDRESS]
+</pre></div>
+</div>
+</li>
+<li><p class="first">To find out the <code class="docutils literal"><span class="pre">[IP</span> <span class="pre">ADDRESS]</span></code>, use <code class="docutils literal"><span class="pre">nova</span> <span class="pre">list</span></code> command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova list
++--------------------------------------+-----------------------+--------+------------+-------------+--------------------------------------+
+| ID                                   | Name                  | Status | Task State | Power State | Networks                             |
++--------------------------------------+-----------------------+--------+------------+-------------+--------------------------------------+
+| 7ea44f58-ddd8-49b1-b655-4aa00b819d0c | $PORTALNAME-tutorial1 | ACTIVE | -          | Running     | int-net=10.23.2.182, 149.165.158.107 |
+...
+</pre></div>
+</div>
+</li>
+<li><p class="first">Use the internal IP address followed by <code class="docutils literal"><span class="pre">int-net=</span></code> in your VM instance. In
+this example we have <code class="docutils literal"><span class="pre">10.23.2.182</span></code>. You <strong>have to use your IP address</strong> to
+gain access. So now, we run:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh ubuntu@10.23.2.182
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>REPLACE</strong> the IP address <code class="docutils literal"><span class="pre">10.23.2.182</span></code> with one you have.</p>
+<p>You expect to see welcome message of your Ubuntu 14.04 VM instance.</p>
+<div class="highlight-python"><div class="highlight"><pre>Welcome to Ubuntu 14.04.2 LTS (GNU/Linux 3.13.0-46-generic x86_64)
+
+* Documentation:  https://help.ubuntu.com/
+
+System information as of Mon Apr  6 17:42:15 UTC 2015
+
+System load:  0.0               Processes:           69
+Usage of /:   5.2% of 19.65GB   Users logged in:     0
+Memory usage: 5%                IP address for eth0: 10.23.2.182
+Swap usage:   0%
+
+Graph this data and manage this system at:
+https://landscape.canonical.com/
+
+Get cloud support with Ubuntu Advantage Cloud Guest:
+http://www.ubuntu.com/business/services/cloud
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Mon Apr  6 17:42:15 2015 from 149.165.159.252
+ubuntu@$PORTALNAME-tutorial1:~$
+</pre></div>
+</div>
+<p>Now you are on the VM instance.</p>
+</div>
+<div class="section" id="deleting-vm-instance">
+<h3><a class="toc-backref" href="#id9">Deleting VM Instance</a><a class="headerlink" href="#deleting-vm-instance" title="Permalink to this headline">¶</a></h3>
+<p>You can delete your instance with:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova delete $PORTALNAME-tutorial1
+</pre></div>
+</div>
+</div>
+<div class="section" id="returning-floating-ip-address">
+<h3><a class="toc-backref" href="#id10">Returning Floating IP Address</a><a class="headerlink" href="#returning-floating-ip-address" title="Permalink to this headline">¶</a></h3>
+<p>If your instance is deleted, your floating ip address will become available,
+and nova floating-ip-list should show the output like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova floating-ip-list
++-----------------+-----------+----------+---------+
+| Ip              | Server Id | Fixed Ip | Pool    |
++-----------------+-----------+----------+---------+
+| 149.165.158.107 | -         | -        | ext-net |
++-----------------+-----------+----------+---------+
+</pre></div>
+</div>
+<p>To de-allocate the floating IP address:</p>
+<div class="highlight-python"><div class="highlight"><pre>$  nova floating-ip-delete 149.165.158.107
+</pre></div>
+</div>
+<div class="section" id="lab-openstack-launch-an-instance">
+<span id="lab-openstack-1"></span><h4><a class="toc-backref" href="#id11">Lab - OpenStack - Launch an Instance</a><a class="headerlink" href="#lab-openstack-launch-an-instance" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Launch a new medium instance with a CentOS image using a different
+key (call it <code class="docutils literal"><span class="pre">openstack-ex1-key</span></code>). Name the CentOS instance
+<code class="docutils literal"><span class="pre">$PORTALNAME-tutorial1-ex1</span></code> and make sure both instances are running using the
+<code class="docutils literal"><span class="pre">nova</span> <span class="pre">list</span></code> command.</li>
+<li>Allocate a floating ip address to the instance that you just launched.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="glance-image-management">
+<h2><a class="toc-backref" href="#id12">Glance Image Management</a><a class="headerlink" href="#glance-image-management" title="Permalink to this headline">¶</a></h2>
+<p>OpenStack Glance is a virtual machine (VM) image management tool which
+registers, manages, shares or deletes machine images. The registered VM image
+can be used to launch a compute instance from users if it is open to public.
+Typically various operating systems are provided as basic VM images and users
+can add a variation to the images for saving their work on a VM instance.
+The following sub commands tell what you can do:</p>
+<ul class="simple">
+<li>image-create: Create a new image</li>
+<li>image-delete: Delete specified image(s)</li>
+<li>image-download: Download a specific image</li>
+<li>image-list: List images you can access</li>
+<li>image-show: Describe a specific image</li>
+<li>image-update: Update a specific image</li>
+<li>member-create: Share a specific image with a tenant</li>
+<li>member-delete: Remove a shared image from a tenant</li>
+<li>member-list: Describe sharing permissions by image or tenant</li>
+<li>bash-completion: Prints all of the commands and options to stdout</li>
+</ul>
+<p>These commands are available in glance version 0.15.0.</p>
+<div class="section" id="creating-a-new-image">
+<h3><a class="toc-backref" href="#id13">Creating a New Image</a><a class="headerlink" href="#creating-a-new-image" title="Permalink to this headline">¶</a></h3>
+<p>The following command will register Ubuntu 14.04 image to OpenStack cloud. You
+can download cloud images from Ubuntu Cloud.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ glance image-create \
+--name $PROJECT/$PORTALNAME/myimages/ubuntu-14.04 \
+--disk-format qcow2 \
+--container-format bare \
+--file trusty-server-cloudimg-amd64-disk1.img
+</pre></div>
+</div>
+<p>If your image registered successfully, you will see ACTIVE status in the image-list command.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ glance image-list
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="keystone-account-and-authenticaion">
+<h2><a class="toc-backref" href="#id14">Keystone Account and Authenticaion</a><a class="headerlink" href="#keystone-account-and-authenticaion" title="Permalink to this headline">¶</a></h2>
+<p>OpenStack Keystone manages user accounts and provides authentication service
+using tokens. If you need to add a new user or a group, you may use keystone
+client tool to register. As a developer, you use Keystone for user
+authentication with tokens when you send a service request via OpenStack API.
+The token is a convinient method to deal with authenticaion instead of a pair
+of username and password. Let&#8217;s explore a few basic commands of OpenStack
+Keystone.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Keystone commands are only available to administrator</p>
+</div>
+<div class="section" id="project-creation-tenant">
+<h3><a class="toc-backref" href="#id15">Project Creation (Tenant)</a><a class="headerlink" href="#project-creation-tenant" title="Permalink to this headline">¶</a></h3>
+<p>OpenStack manages user accounts with a group. OpenStack represents a group as a
+<em>project</em> or a <em>tenant</em> interchangeably. Each user should participate in at
+least a single project, they can join multiple projects though. With a group of
+users, it is convenient to manage different settings across multiple groups.
+For example, you can set limits of 10 instances to project1 but project2 may
+have higher or smaller size of vm instances.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ keystone tenant-create --name=project1 --description=&quot;futuresystems project 1&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="user-creation">
+<h3><a class="toc-backref" href="#id16">User Creation</a><a class="headerlink" href="#user-creation" title="Permalink to this headline">¶</a></h3>
+<p>To create a new user, you need a tenant (project) id, if you provide a
+group-based cloud service.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ keystone user-create --name=albert \
+  --pass=*** \
+  --tenant_id=*** \
+  --email=albert@futuresystems.org
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-of-users-or-projects">
+<h3><a class="toc-backref" href="#id17">List of Users or Projects</a><a class="headerlink" href="#list-of-users-or-projects" title="Permalink to this headline">¶</a></h3>
+<p>Try <code class="docutils literal"><span class="pre">user-list</span></code> or <code class="docutils literal"><span class="pre">tenant-list</span></code> sub command to see a list of users or
+projects.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ keystone user-list
+
+or
+
+$ keystone tenant-list
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Try <code class="docutils literal"><span class="pre">keystone</span></code> command itself. The help message shows that available
+sub commands including tenant-create, user-create, user-list and
+tenant-list.</p>
+</div>
+</div>
+<div class="section" id="role-management">
+<h3><a class="toc-backref" href="#id18">Role management</a><a class="headerlink" href="#role-management" title="Permalink to this headline">¶</a></h3>
+<p>Project members need to have different privileges to control allocated
+resources to the project.  For example, <em>albert</em> needs an admin permission to
+terminate or update other user&#8217;s vm instances in a same project.  OpenStack
+Keystone has a role management with a pair of a user and a project.</p>
+<p>The following commands are useful to manage roles in a project:</p>
+<ul class="simple">
+<li>role-create: Create new role</li>
+<li>role-delete: Delete role</li>
+<li>role-get: Display role details</li>
+<li>user-role-add: Add role to user</li>
+<li>user-role-list: List roles granted to a user</li>
+<li>user-role-remove: Remove role from user</li>
+</ul>
+</div>
+</div>
+<div class="section" id="swift-storage">
+<h2><a class="toc-backref" href="#id19">Swift Storage</a><a class="headerlink" href="#swift-storage" title="Permalink to this headline">¶</a></h2>
+<p>Swift is an object storage service on OpenStack like Amazon Simple Storage
+Service (S3). If you are looking for a block storage, OpenStack Cinder is one
+for you.</p>
+<p>The following sub commands tell what you can do:</p>
+<ul class="simple">
+<li>delete: Delete a container or objects within a container</li>
+<li>download: Download objects from containers</li>
+<li>list: Lists the containers for the account or the objects for a container</li>
+<li>post: Updates meta information for the account, container, or object; creates
+containers if not present</li>
+<li>stat: Displays information for the account,
+container, or object</li>
+<li>upload: Uploads files or directories to the given container</li>
+<li>capabilities: List cluster capabilities</li>
+<li>tempurl: Create a temporary URL</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Swift Storage is not available on FutureSystems.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Not to decide Swift or Cinder? If you need a large disk space mounted
+on your VM instance, Cinder is useful.  If you need to get access of a
+file across multiple servers using API? Swift is the answer.</p>
+</div>
+</div>
+<div class="section" id="neutron-network">
+<h2><a class="toc-backref" href="#id20">Neutron Network</a><a class="headerlink" href="#neutron-network" title="Permalink to this headline">¶</a></h2>
+<p>Neutron is a OpenStack Networking service to manage NAT, firewall, etc. This
+type of tasks is for OpenStack cloud administrator. We briefly explore a few
+commands available on Neutron to understand basic services on OpenStack
+Networking.</p>
+<ul class="simple">
+<li>neutron net-list: List Current Neutron Networks</li>
+<li>neutron subnet-list: List Current Neutron Subnets</li>
+<li>neutron security-group-create &lt;SEC-GROUP-NAME&gt;: Create Neutron Security Group</li>
+<li>neutron security-group-rule-create &#8211;direction &lt;ingress OR egress&gt;
+&#8211;ethertype &lt;IPv4 or IPv6&gt; &#8211;protocol &lt;PROTOCOL&gt; &#8211;port-range-min
+&lt;PORT-NUMBER&gt; &#8211;port-range-max &lt;PORT-NUMBER&gt; &lt;SEC-GROUP-NAME&gt;: Add Rules to
+Neutron Security Group</li>
+<li>neutron floatingip-create &lt;NET-NAME&gt;: Create a Neutron Floating IP Pool
+- If you need N number of floating IP addresses, run this command N number of times:</li>
+<li>neutron port-create &lt;NET-NAME&gt; &#8211;fixed-ip ip_address=&lt;IP-ADDRESS&gt;: Create a
+Neutron Port with a Fixed IP Address</li>
+</ul>
+<p>Example 1. add a rule to the default Neutron Security Group to allow SSH access
+to instances:</p>
+<div class="highlight-python"><div class="highlight"><pre>neutron security-group-rule-create --direction ingress \
+--ethertype IPv4 --protocol tcp \
+--port-range-min 22 --port-range-max 22 default
+</pre></div>
+</div>
+<p>Example 2. add a rule to the default Neutron Security Group to allow ICMP
+communication to instances:</p>
+<div class="highlight-python"><div class="highlight"><pre>neutron security-group-rule-create --direction ingress \
+--ethertype IPv4 --protocol icmp default
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercises">
+<h2><a class="toc-backref" href="#id21">Exercises</a><a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Try to run Python CherryPy or Apache Web Server in your virtual server.
+It requires:</li>
+</ol>
+<ul class="simple">
+<li>VM instance creation</li>
+<li>CherryPY or HTTP Server installation using package manager (pip or apt-get)</li>
+<li>HTTP, HTTPs ports open using security groups</li>
+<li>Floating IP allocation</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Make sure to open ports 80 and 8080 in the openstack security group:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova secgroup-list-rules default
++-------------+-----------+---------+-----------+--------------+
+| IP Protocol | From Port | To Port | IP Range  | Source Group |
++-------------+-----------+---------+-----------+--------------+
+| tcp         | 8888      | 8888    | 0.0.0.0/0 |              |
+| tcp         | 22        | 22      | 0.0.0.0/0 |              |
+| icmp        | -1        | -1      | 0.0.0.0/0 |              |
+|             |           |         |           | default      |
+| tcp         | 8080      | 8080    | 0.0.0.0/0 |              |
+| tcp         | 80        | 80      | 0.0.0.0/0 |              |
+|             |           |         |           | default      |
+| tcp         | 5000      | 5000    | 0.0.0.0/0 |              |
++-------------+-----------+---------+-----------+--------------+
+</pre></div>
+</div>
+<p>If you do not see ports 80 and 8080 present, add them like so:</p>
+<div class="last highlight-python"><div class="highlight"><pre>$ nova secgroup-add-rule default tcp 80 80 0.0.0.0/0
+$ nova secgroup-add-rule default tcp 8080 8080 0.0.0.0/0
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Return your leased resources after your practice is completed. 1)
+Terminate your instance, 2) Deallocate IP address</p>
+</div>
+</div>
+<div class="section" id="next-step">
+<h2><a class="toc-backref" href="#id22">Next Step</a><a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
+<p>In the next page, we will learn how to start a virtual server using OpenStack
+Horizon.</p>
+<p><a class="reference external" href="openstack_horizon.html">OpenStack horizon</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="openstack_juno.html" class="btn btn-neutral float-right" title="OpenStack Juno" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="overview_openstack.html" class="btn btn-neutral" title="Overview and Introduction to OpenStack" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

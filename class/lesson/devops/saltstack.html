@@ -1,0 +1,754 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SaltStack &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../index.html"/>
+        <link rel="up" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="../../bdossp_sp15/index.html"/>
+        <link rel="next" title="Puppet" href="puppet.html"/>
+        <link rel="prev" title="Ansible" href="ansible.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#notice">Notice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#office-hours">Office Hours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#contact">Contact</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#weekly-plan">Weekly Plan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#support">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#meeting">Meeting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#collaboration-tools">Collaboration Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#futuresystems-access">FutureSystems Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#linux-basics">Linux Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#basics-of-openstack">Basics of OpenStack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#basics-of-cloudmesh">Basics of Cloudmesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#advanced-cloudmesh">Advanced Cloudmesh</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../bdossp_sp15/index.html#it-operations-automation-and-orchestration">IT Operations - Automation and Orchestration</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="overview.html">DevOps (under preparation)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansible.html">Ansible</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">SaltStack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="puppet.html">Puppet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="chef.html">Chef</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openstack_heat.html">OpenStack Heat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="juju.html">Ubuntu Juju</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#virtual-clusters">Virtual Clusters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#other-technologies">Other Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#future">Future</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#to-be-organized-into-the-above">To be Organized into the above</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
+      
+    <li>SaltStack</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/class/lesson/devops/saltstack.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="saltstack">
+<span id="ref-class-lesson-devops-saltstack"></span><h1>SaltStack<a class="headerlink" href="#saltstack" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This lesson will introduce you to a very important topic to Salt (or
+SaltStack), a configuration management system.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Duration: 1 hour and 30 minutes</p>
+</div>
+</div>
+<div class="section" id="prerequisite">
+<h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
+<p>In order to conduct this lesson you should have knowledge of</p>
+<ul class="simple">
+<li><a class="reference external" href="../shell-access.html">Shell Access</a></li>
+<li><a class="reference external" href="../linux/packagemanagement.html">Package Managers</a></li>
+</ul>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Salt or SaltStack is a open source software for managing configurations and
+execution application. It is written in Python and runs with ZeroMQ which is an
+asynchronous messaging library. Salt is similar to Puppet, Ansible and Chef.</p>
+<p>For more introduction to Salt, see here:
+<a class="reference external" href="http://docs.saltstack.com/en/latest/topics/index.html">http://docs.saltstack.com/en/latest/topics/index.html</a></p>
+</div>
+<div class="section" id="salt-installation">
+<h2>Salt Installation<a class="headerlink" href="#salt-installation" title="Permalink to this headline">¶</a></h2>
+<p>Salt can be installed by package management tools or a simple installation
+script. This lesson is based on FutureSystems which means you create a VM
+instance on India OpenStack and install Salt on top of it. We assume you use a
+OpenStack instance on FutureSystems.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If don&#8217;t know how to launch a new instance? <a class="reference external" href="../iaas/openstack.html#launching-a-new-instance">See here</a></p>
+</div>
+<div class="section" id="guideline-on-india-futuresystems">
+<h3>Guideline on India FutureSystems<a class="headerlink" href="#guideline-on-india-futuresystems" title="Permalink to this headline">¶</a></h3>
+<p>You <em>DON&#8217;T</em> install Salt on India. If you see the cursor like:</p>
+<div class="highlight-python"><div class="highlight"><pre>[albert@i136 ~]$
+</pre></div>
+</div>
+<p>You <em>should NOT</em> install any program.</p>
+<p>You have to log into <em>your VM instance</em> to install Puppet. <code class="docutils literal"><span class="pre">i136</span></code> is a India
+login node which is like a gateway.  You are supposed not to perform any tasks
+on India, especially if you require <code class="docutils literal"><span class="pre">root</span></code> privileges. Please create a VM
+instance on India OpenStack and SSH into your VM to run and install your
+software. You will have a full access of your virtual machine instance.</p>
+<div class="section" id="quick-instructions">
+<h4>Quick instructions<a class="headerlink" href="#quick-instructions" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p class="first">Launch a VM instance is:</p>
+<div class="highlight-python"><div class="highlight"><pre>nova boot --flavor m1.small --image futuresystems/ubuntu-14.04 --key_name $USER-key $USER-salt
+</pre></div>
+</div>
+</li>
+<li><p class="first">Once your VM instance is ready, try to login using SSH:</p>
+<div class="highlight-python"><div class="highlight"><pre>ssh ubuntu@[IP ADDRESS]
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="root-access">
+<h3><code class="docutils literal"><span class="pre">root</span></code> Access<a class="headerlink" href="#root-access" title="Permalink to this headline">¶</a></h3>
+<p>We will install Salt and other software using <code class="docutils literal"><span class="pre">root</span></code> account. Using <code class="docutils literal"><span class="pre">root</span></code>
+account means that you have a permission to use entire system resources without
+any restriction. Since this lesson includes a couple of examples using Salt, we
+recommend to use OpenStack VM instance on FutureSystems. DON&#8217;T try to
+install Puppet on your local machine or on the <code class="docutils literal"><span class="pre">india.futuresystems.org</span></code> host.
+Use a benefit of VM instance which you can easily delete and re-create a new
+one.</p>
+<p>On a VM instance, simply run a switch user command:</p>
+<div class="highlight-python"><div class="highlight"><pre>ubuntu@salt:~$ sudo su -
+</pre></div>
+</div>
+<p>If you see <code class="docutils literal"><span class="pre">root</span></code> label, you are in <code class="docutils literal"><span class="pre">root</span></code> account on your machine:</p>
+<div class="highlight-python"><div class="highlight"><pre>root@salt:~#
+</pre></div>
+</div>
+</div>
+<div class="section" id="update-hostname">
+<h3>Update Hostname<a class="headerlink" href="#update-hostname" title="Permalink to this headline">¶</a></h3>
+<p>If you see <code class="docutils literal"><span class="pre">sudo:</span> <span class="pre">unable</span> <span class="pre">to</span> <span class="pre">resolve</span> <span class="pre">host</span></code>, try to add hostname with the
+following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>echo -e &quot;\n127.0.1.1 $HOSTNAME&quot; &gt;&gt; /etc/hosts
+</pre></div>
+</div>
+</div>
+<div class="section" id="ubuntu">
+<h3>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h3>
+<p>First, add the salt repository.</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo add-apt-repository ppa:saltstack/salt
+sudo apt-get update
+</pre></div>
+</div>
+<p>Core components will be installed with the following commands. If you run Salt
+in a local mode, install <code class="docutils literal"><span class="pre">salt-minion</span></code> only.  The master, minion, or syndic
+will be installed.</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install salt-master
+sudo apt-get install salt-minion
+sudo apt-get install salt-syndic
+</pre></div>
+</div>
+<p>A few more components are also installed with the following commands.  The
+salt-cloud, salt-ssh, and salt-api will be installed.</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install salt-cloud
+sudo apt-get install salt-ssh
+sudo apt-get install salt-api
+</pre></div>
+</div>
+</div>
+<div class="section" id="one-line-installation-salt-minion">
+<h3>One-Line Installation Salt Minion<a class="headerlink" href="#one-line-installation-salt-minion" title="Permalink to this headline">¶</a></h3>
+<p>With a caution, one-line installation can be used to have a quick installation
+on various operating systems.</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo sh ins://bootstrap.saltstack.com | sudo sh -s -- git develop
+</pre></div>
+</div>
+<p>Or two lines will be used:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -L https://bootstrap.saltstack.com -o install_salt.sh
+sudo sh install_salt.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="sls-files">
+<h3>SLS Files<a class="headerlink" href="#sls-files" title="Permalink to this headline">¶</a></h3>
+<p>SaLt State file (SLS) is instructions of tasks in which a system should be in,
+and what applications should be installed and configured. SLS data is written
+in a simple format, YAML file with a <code class="docutils literal"><span class="pre">.sls</span></code> file extension. This is often
+called configuration management. We will create a few files to try a simple
+example of starting a Apache web server so that you can understand basic flows
+in the use case.</p>
+</div>
+<div class="section" id="salt-state-tree">
+<h3>Salt State Tree<a class="headerlink" href="#salt-state-tree" title="Permalink to this headline">¶</a></h3>
+<p>Salt state tree is a collection of SLS files that live under the directory
+specified in <code class="docutils literal"><span class="pre">file_roots</span></code>. We use a default directory <code class="docutils literal"><span class="pre">/srv/salt</span></code> to store
+sls files.</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo mkdir /srv/salt
+</pre></div>
+</div>
+</div>
+<div class="section" id="top-file">
+<h3>Top File<a class="headerlink" href="#top-file" title="Permalink to this headline">¶</a></h3>
+<p>The top file (<code class="docutils literal"><span class="pre">top.sls</span></code>) is to map what <strong>SLS modules</strong> get loaded onto what
+<strong>minions</strong> via the state system. For example <strong>apache sls module</strong> can be
+loaded to install and run on the target machine using <code class="docutils literal"><span class="pre">top.sls</span></code> file.  The
+top file creates a few general abstractions. First it maps what nodes should
+pull from which environments, next it defines which matches systems should draw
+from.</p>
+<ul>
+<li><p class="first">Create <code class="docutils literal"><span class="pre">top.sls</span></code> file for <code class="docutils literal"><span class="pre">webserver</span></code>:</p>
+<p>nano /srv/salt/top.sls</p>
+</li>
+</ul>
+<p>The <code class="docutils literal"><span class="pre">base</span></code> environment will be loaded. type the following three lines in the
+<code class="docutils literal"><span class="pre">top.sls</span></code> file:</p>
+<div class="highlight-python"><div class="highlight"><pre>base:
+  &#39;*&#39;:
+    - webserver
+</pre></div>
+</div>
+<ul>
+<li><p class="first">Create <code class="docutils literal"><span class="pre">webserver.sls</span></code> file to install Apache:</p>
+<p>nano /srv/salt/webserver.sls</p>
+</li>
+</ul>
+<p>The <code class="docutils literal"><span class="pre">webserver.sls</span></code> content include <code class="docutils literal"><span class="pre">apache2</span></code> package installation:</p>
+<div class="highlight-python"><div class="highlight"><pre>apache2:              # ID declaration
+  pkg:                # state declaration
+    - installed       # function declaration
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Use <strong>httpd</strong> for Fedora/RHEL, <strong>apache</strong> for others in the package
+name.</p>
+</div>
+</div>
+</div>
+<div class="section" id="salt-call">
+<h2>Salt Call<a class="headerlink" href="#salt-call" title="Permalink to this headline">¶</a></h2>
+<p>We use <code class="docutils literal"><span class="pre">salt-call</span></code> command to try our example of running a Apache web server.
+With <code class="docutils literal"><span class="pre">--local</span></code> option, we can simply run Salt wihtout communicating with a
+Salt master. The <code class="docutils literal"><span class="pre">--local</span></code> option indicates that <em>salt-minion</em> reads the
+state tree in a local file system and does not to connect to a Salt Master for
+instructions. Optionally you can you <code class="docutils literal"><span class="pre">-l</span></code> option for generating debug
+messages:</p>
+<div class="highlight-python"><div class="highlight"><pre>salt-call --local state.highstate
+</pre></div>
+</div>
+<p>It runs Salt in a local mode.</p>
+<p>The expected output messages look like so:</p>
+<div class="highlight-python"><div class="highlight"><pre>[INFO    ] Loading fresh modules for state activity
+[INFO    ] Fetching file from saltenv &#39;base&#39;, ** done ** &#39;top.sls&#39;
+[INFO    ] Creating module dir &#39;/var/cache/salt/minion/extmods/modules&#39;
+
+...(skip)...
+
+Summary
+------------
+Succeeded: 1 (changed=1)
+Failed:    0
+------------
+Total states run:     1
+</pre></div>
+</div>
+<p><a class="reference internal" href="saltstack-ex1-output.html#ref-class-lesson-devops-saltstack-ex1-output"><span>Full output message</span></a></p>
+<p>Now, you have Apache up and running.</p>
+<div class="section" id="test">
+<h3>Test<a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h3>
+<p>Check your Apache is running with <code class="docutils literal"><span class="pre">nc</span></code> command.</p>
+<div class="highlight-python"><div class="highlight"><pre>nc -v -z salt 80
+</pre></div>
+</div>
+<p>You have running Apache if you see the message like so:</p>
+<div class="highlight-python"><div class="highlight"><pre>Connection to salt 80 port [tcp/http] succeeded!
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-it-works">
+<h3>How It Works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h3>
+<p>The instructions we made are executed in the following order:</p>
+<ul class="simple">
+<li>The Salt minion reads the top.sls file and determines that it is a part of
+the group matched by * glob.</li>
+<li>It reads the webserver SLS and applies.</li>
+<li><code class="docutils literal"><span class="pre">webserver.sls</span></code> file will be loaded and finds the apache state, which
+installs the Apache package.</li>
+<li>The Salt minion now have Apache web server installed.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="master-and-minion">
+<h2>Master and Minion<a class="headerlink" href="#master-and-minion" title="Permalink to this headline">¶</a></h2>
+<p>In the previous example, we tested Salt Minion in a local mode without a master.
+Salt uses a client-server model to propagate configurations, so we will have an
+another example of Salt to run a master and a minion in a same machine. You can
+apply this master-minion example to your systems if you have multiple machines
+to manage.</p>
+<div class="section" id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
+<p>We already installed a Salt master and a minion in the earlier section, but
+here is a reminder of the installation.</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:saltstack/salt
+sudo apt-get update
+sudo apt-get install salt-master
+sudo apt-get install salt-minion
+service salt-master start
+service salt-minion start
+</pre></div>
+</div>
+<p>If you don&#8217;t have <code class="docutils literal"><span class="pre">salt-key</span></code> or <code class="docutils literal"><span class="pre">salt-master</span></code> command, you need to run
+these commands.</p>
+</div>
+<div class="section" id="list-of-registered-minions">
+<h3>List of Registered Minions<a class="headerlink" href="#list-of-registered-minions" title="Permalink to this headline">¶</a></h3>
+<p>The following command Lists all public keys registered on the master. Salt uses
+key-based authentication so the registered keys are important to communicate
+each other.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">salt</span><span class="o">-</span><span class="n">key</span> <span class="o">-</span><span class="n">L</span>
+</pre></div>
+</div>
+<p>Our test machine (hostname: salt) may generate outputs like so:</p>
+<div class="highlight-python"><div class="highlight"><pre>Accepted Keys:
+Unaccepted Keys:
+salt
+Rejected Keys:
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">Unaccepted</span> <span class="pre">Keys</span></code> means that there is no registered keys for the hosts,
+in this example, the <code class="docutils literal"><span class="pre">salt</span></code> host is not registered.  What we need to do is
+simply registering the host with the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>salt-key -a &#39;$HOSTNAME&#39;
+</pre></div>
+</div>
+<p>Use a different hostname if you have other name.</p>
+<p>Once you registered your host, list public keys again to confirm that it&#8217;s
+registered. The output looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>root@salt:~# salt-key -L
+Accepted Keys:
+salt
+Unaccepted Keys:
+Rejected Keys:
+</pre></div>
+</div>
+</div>
+<div class="section" id="nginx-installation-and-start">
+<h3>Nginx Installation and Start<a class="headerlink" href="#nginx-installation-and-start" title="Permalink to this headline">¶</a></h3>
+<p>Before we install and start Nginx web server, we may need to stop a Apache web
+server first which uses HTTP (80) port.</p>
+<div class="highlight-python"><div class="highlight"><pre>service apache2 stop
+</pre></div>
+</div>
+<p>The following commands install <code class="docutils literal"><span class="pre">nginx</span></code> web server and starts its service.</p>
+<div class="highlight-python"><div class="highlight"><pre>salt &#39;*&#39; pkg.install nginx
+</pre></div>
+</div>
+<p>The output looks like so:</p>
+<div class="highlight-python"><div class="highlight"><pre>salt:
+    ----------
+    nginx:
+         ----------
+         new:
+             1.4.6-1ubuntu3.2
+         old:
+             1
+</pre></div>
+</div>
+<p>The following command starts a <code class="docutils literal"><span class="pre">nginx</span></code> web server.</p>
+<div class="highlight-python"><div class="highlight"><pre>salt &#39;*&#39; service.start nginx
+</pre></div>
+</div>
+<p>The output looks like so:</p>
+<div class="highlight-python"><div class="highlight"><pre>salt:
+    True
+</pre></div>
+</div>
+<ul class="simple">
+<li>&#8216;*&#8217;: all hosts
+The ‘*’ refers to all minions whose key is accepted. In this example,
+<code class="docutils literal"><span class="pre">salt</span></code> in only minion targeted to install <code class="docutils literal"><span class="pre">nginx</span></code>.  The particular
+hostname can be speicified, e.g. <code class="docutils literal"><span class="pre">salt</span> <span class="pre">'salt'</span> <span class="pre">...</span></code>.</li>
+<li>pkg.install: Install a package, <code class="docutils literal"><span class="pre">refresh=True</span></code> option can be added to
+update the dpkg database.</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>Other Software Installation.</p>
+<p class="last">You may notice that software installation can be done with a name of
+the software.  For example, If you like to install <code class="docutils literal"><span class="pre">Mongo</span> <span class="pre">DB</span></code>, you
+can run <code class="docutils literal"><span class="pre">salt</span> <span class="pre">'*'</span> <span class="pre">pkg.install</span> <span class="pre">mongodb</span></code>. Other software are similar,
+you need to specify an exact name of the software.</p>
+</div>
+</div>
+</div>
+<div class="section" id="other-commands">
+<h2>Other Commands<a class="headerlink" href="#other-commands" title="Permalink to this headline">¶</a></h2>
+<p>In the previous example, we saw Salt can install and start a service but we
+didn&#8217;t try other commands.  Salt has many other commands to control remote
+systems in parallel. Let&#8217;s review a few commands.</p>
+<div class="section" id="ping">
+<h3>Ping<a class="headerlink" href="#ping" title="Permalink to this headline">¶</a></h3>
+<p>To check remote machines are alive, we can use <code class="docutils literal"><span class="pre">ping</span></code>.</p>
+<div class="highlight-python"><div class="highlight"><pre>root@salt:~# salt &#39;*&#39; test.ping
+salt:
+    True
+</pre></div>
+</div>
+</div>
+<div class="section" id="system-command">
+<h3>System Command<a class="headerlink" href="#system-command" title="Permalink to this headline">¶</a></h3>
+<p>If you have a system command to execute remotely, you can use <code class="docutils literal"><span class="pre">cmd.run</span></code>
+sub-command. Our test result looks like so:</p>
+<div class="highlight-python"><div class="highlight"><pre>root@salt:~# salt &#39;*&#39; cmd.run &#39;ifconfig&#39;
+salt:
+
+  eth0      Link encap:Ethernet  HWaddr fa:16:3e:6d:a1:40
+            inet addr:10.23.0.1  Bcast:10.23.3.255  Mask:255.255.252.0
+            inet6 addr: fe80::f816:3eff:fe6d:a140/64 Scope:Link
+            UP BROADCAST RUNNING MULTICAST  MTU:1400  Metric:1
+            RX packets:95868 errors:0 dropped:0 overruns:0 frame:0
+            TX packets:64074 errors:0 dropped:0 overruns:0 carrier:0
+            collisions:0 txqueuelen:1000
+            RX bytes:83533414 (83.5 MB)  TX bytes:7411580 (7.4 MB)
+
+  lo        Link encap:Local Loopback
+            inet addr:127.0.0.1  Mask:255.0.0.0
+            inet6 addr: ::1/128 Scope:Host
+            UP LOOPBACK RUNNING  MTU:65536  Metric:1
+            RX packets:4798 errors:0 dropped:0 overruns:0 frame:0
+            TX packets:4798 errors:0 dropped:0 overruns:0 carrier:0
+            collisions:0 txqueuelen:0
+            RX bytes:1541859 (1.5 MB)  TX bytes:1541859 (1.5 MB)
+</pre></div>
+</div>
+</div>
+<div class="section" id="sys-doc">
+<h3>sys.doc<a class="headerlink" href="#sys-doc" title="Permalink to this headline">¶</a></h3>
+<p>It returns all possible sub commands.</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>salt &#8216;*&#8217; sys.doc</dd>
+</dl>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">If you pipe to <code class="docutils literal"><span class="pre">more</span></code>, it is easier to read. Run <code class="docutils literal"><span class="pre">salt</span> <span class="pre">'*'</span>
+<span class="pre">sys.doc|more</span></code></p>
+</div>
+</div>
+</div>
+<div class="section" id="grains">
+<h2>Grains<a class="headerlink" href="#grains" title="Permalink to this headline">¶</a></h2>
+<p>One of the interesting features in Salt is Grains. It runs commands when the
+remote machines satisfy the conditions specified with <code class="docutils literal"><span class="pre">-G</span></code> option.  For
+example, if you like to view IP address on <em>Ubuntu</em> minions (remote machines),
+run salt like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>root@salt:~# salt -G &#39;os:Ubuntu&#39; grains.get ip_interfaces:eth0
+salt:
+    - 10.23.0.162
+</pre></div>
+</div>
+<p>The similar command is</p>
+<div class="highlight-python"><div class="highlight"><pre>salt &#39;*&#39; network.interfaces
+</pre></div>
+</div>
+<p>which displays network information of all remote minions. With <code class="docutils literal"><span class="pre">-G</span></code> option,
+you can apply commands on particular minions.</p>
+<ul>
+<li><p class="first">Available grains can be listed by using the <code class="docutils literal"><span class="pre">grains.ls</span></code> module:</p>
+<p>salt &#8216;*&#8217; grains.ls</p>
+</li>
+</ul>
+<p>The output looks like so:</p>
+<div class="highlight-python"><div class="highlight"><pre>salt:
+    - SSDs
+    - biosreleasedate
+    - biosversion
+    - cpu_flags
+    - cpu_model
+    - cpuarch
+    - domain
+    - fqdn
+    - fqdn_ip4
+    - fqdn_ip6
+    - gpus
+
+    ...(skip)...
+
+    - saltversioninfo
+    - serialnumber
+    - server_id
+    - shell
+    - virtual
+    - zmqversion
+</pre></div>
+</div>
+<ul>
+<li><p class="first">If you use &#8216;grains.items&#8217;, you will see the values in each grain:</p>
+<p>salt &#8216;*&#8217; grains.items</p>
+</li>
+</ul>
+<p>The output looks like so:</p>
+<div class="highlight-python"><div class="highlight"><pre>...(skip)...
+
+server_id:
+   1540459516
+shell:
+    /bin/sh
+virtual:
+    kvm
+zmqversion:
+    4.0.4
+</pre></div>
+</div>
+<p>For more information, see details here:
+<a class="reference external" href="http://docs.saltstack.com/en/latest/topics/targeting/grains.html">http://docs.saltstack.com/en/latest/topics/targeting/grains.html</a></p>
+</div>
+<div class="section" id="acknoledgement">
+<h2>Acknoledgement<a class="headerlink" href="#acknoledgement" title="Permalink to this headline">¶</a></h2>
+<p>This lesson is based on the Salt Documentation. Some reference web pages are:</p>
+<ul class="simple">
+<li>Quickstart:
+<a class="reference external" href="http://docs.saltstack.com/en/latest/topics/tutorials/quickstart.html">http://docs.saltstack.com/en/latest/topics/tutorials/quickstart.html</a></li>
+<li>Salt Bootstrap: <a class="reference external" href="https://github.com/saltstack/salt-bootstrap">https://github.com/saltstack/salt-bootstrap</a></li>
+<li>Standalone Minion:
+<a class="reference external" href="http://docs.saltstack.com/en/latest/topics/tutorials/standalone_minion.html">http://docs.saltstack.com/en/latest/topics/tutorials/standalone_minion.html</a></li>
+<li>Configuring Salt:
+<a class="reference external" href="http://docs.saltstack.com/en/latest/ref/configuration/index.html">http://docs.saltstack.com/en/latest/ref/configuration/index.html</a></li>
+</ul>
+</div>
+<div class="section" id="exercises">
+<span id="ref-class-lesson-devops-saltstack-exercises"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-i">
+<h3>Exercise I<a class="headerlink" href="#exercise-i" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Turn on the type script by <code class="docutils literal"><span class="pre">script</span> <span class="pre">salt_ex1_$USERNAME.txt</span></code>
+(Replace $USERNAME with your id)</li>
+<li>Install Python <code class="docutils literal"><span class="pre">virtualenv</span></code> using salt.</li>
+<li>Run <code class="docutils literal"><span class="pre">virtualenv</span> <span class="pre">--version</span></code>.</li>
+<li>Type <code class="docutils literal"><span class="pre">exit</span></code> to save the script.</li>
+<li>Submit <code class="docutils literal"><span class="pre">salt_ex1_$USERNAME.txt</span></code> file.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="next-step">
+<h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
+<p>In the next page, Puppet will be introduced.</p>
+<p><a class="reference internal" href="puppet.html#ref-class-lesson-devops-puppet"><span>Puppet</span></a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="puppet.html" class="btn btn-neutral float-right" title="Puppet" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ansible.html" class="btn btn-neutral" title="Ansible" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

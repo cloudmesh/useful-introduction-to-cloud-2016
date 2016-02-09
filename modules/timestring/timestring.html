@@ -1,0 +1,417 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>timestring package &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>timestring package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/modules/timestring/timestring.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="timestring-package">
+<h1>timestring package<a class="headerlink" href="#timestring-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-timestring.Date">
+<span id="timestring-date-module"></span><h2>timestring.Date module<a class="headerlink" href="#module-timestring.Date" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="timestring.Date.Date">
+<em class="property">class </em><code class="descclassname">timestring.Date.</code><code class="descname">Date</code><span class="sig-paren">(</span><em>date</em>, <em>offset=None</em>, <em>start_of_week=None</em>, <em>tz=None</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/timestring/Date.html#Date"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#timestring.Date.Date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="timestring.Date.Date.adjust">
+<code class="descname">adjust</code><span class="sig-paren">(</span><em>to</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/timestring/Date.html#Date.adjust"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#timestring.Date.Date.adjust" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adjusts the time from kwargs to timedelta
+<strong>Will change this object</strong></p>
+<p>return new copy of self</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="timestring.Date.Date.day">
+<code class="descname">day</code><a class="headerlink" href="#timestring.Date.Date.day" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="timestring.Date.Date.format">
+<code class="descname">format</code><span class="sig-paren">(</span><em>format_string='%x %X'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/timestring/Date.html#Date.format"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#timestring.Date.Date.format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="timestring.Date.Date.hour">
+<code class="descname">hour</code><a class="headerlink" href="#timestring.Date.Date.hour" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="timestring.Date.Date.minute">
+<code class="descname">minute</code><a class="headerlink" href="#timestring.Date.Date.minute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="timestring.Date.Date.month">
+<code class="descname">month</code><a class="headerlink" href="#timestring.Date.Date.month" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="timestring.Date.Date.replace">
+<code class="descname">replace</code><span class="sig-paren">(</span><em>**k</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/timestring/Date.html#Date.replace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#timestring.Date.Date.replace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Note returns a new Date obj</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="timestring.Date.Date.second">
+<code class="descname">second</code><a class="headerlink" href="#timestring.Date.Date.second" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="timestring.Date.Date.to_unixtime">
+<code class="descname">to_unixtime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/timestring/Date.html#Date.to_unixtime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#timestring.Date.Date.to_unixtime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="timestring.Date.Date.tz">
+<code class="descname">tz</code><a class="headerlink" href="#timestring.Date.Date.tz" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="timestring.Date.Date.weekday">
+<code class="descname">weekday</code><a class="headerlink" href="#timestring.Date.Date.weekday" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="timestring.Date.Date.year">
+<code class="descname">year</code><a class="headerlink" href="#timestring.Date.Date.year" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-timestring.Range">
+<span id="timestring-range-module"></span><h2>timestring.Range module<a class="headerlink" href="#module-timestring.Range" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="timestring.Range.Range">
+<em class="property">class </em><code class="descclassname">timestring.Range.</code><code class="descname">Range</code><span class="sig-paren">(</span><em>start</em>, <em>end=None</em>, <em>offset=None</em>, <em>start_of_week=0</em>, <em>tz=None</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/timestring/Range.html#Range"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#timestring.Range.Range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="timestring.Range.Range.adjust">
+<code class="descname">adjust</code><span class="sig-paren">(</span><em>to</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/timestring/Range.html#Range.adjust"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#timestring.Range.Range.adjust" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="timestring.Range.Range.cmp">
+<code class="descname">cmp</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/timestring/Range.html#Range.cmp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#timestring.Range.Range.cmp" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>Note: checks Range.start() only</em>
+Key: self = [], other = {}</p>
+<blockquote>
+<div><ul class="simple">
+<li>[   {&#8212;-]&#8212;-} =&gt; -1</li>
+<li>{&#8212;[&#8212;}  ] =&gt; 1</li>
+<li>[&#8212;]  {&#8212;} =&gt; -1</li>
+<li>[&#8212;] same as {&#8212;} =&gt; 0</li>
+<li>[&#8211;{-}&#8211;] =&gt; -1</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="timestring.Range.Range.cut">
+<code class="descname">cut</code><span class="sig-paren">(</span><em>by</em>, <em>from_start=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/timestring/Range.html#Range.cut"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#timestring.Range.Range.cut" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cuts this object from_start to the number requestd
+returns new instance</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="timestring.Range.Range.elapse">
+<code class="descname">elapse</code><a class="headerlink" href="#timestring.Range.Range.elapse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="timestring.Range.Range.end">
+<code class="descname">end</code><a class="headerlink" href="#timestring.Range.Range.end" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="timestring.Range.Range.format">
+<code class="descname">format</code><span class="sig-paren">(</span><em>format_string='%x %X'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/timestring/Range.html#Range.format"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#timestring.Range.Range.format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="timestring.Range.Range.next">
+<code class="descname">next</code><span class="sig-paren">(</span><em>times=1</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/timestring/Range.html#Range.next"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#timestring.Range.Range.next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a new instance of self
+times is not supported yet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timestring.Range.Range.prev">
+<code class="descname">prev</code><span class="sig-paren">(</span><em>times=1</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/timestring/Range.html#Range.prev"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#timestring.Range.Range.prev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a new instance of self
+times is not supported yet.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="timestring.Range.Range.start">
+<code class="descname">start</code><a class="headerlink" href="#timestring.Range.Range.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="timestring.Range.Range.tz">
+<code class="descname">tz</code><a class="headerlink" href="#timestring.Range.Range.tz" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-timestring.text2num">
+<span id="timestring-text2num-module"></span><h2>timestring.text2num module<a class="headerlink" href="#module-timestring.text2num" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="timestring.text2num.NumberException">
+<em class="property">exception </em><code class="descclassname">timestring.text2num.</code><code class="descname">NumberException</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/timestring/text2num.html#NumberException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#timestring.text2num.NumberException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="timestring.text2num.text2num">
+<code class="descclassname">timestring.text2num.</code><code class="descname">text2num</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/timestring/text2num.html#text2num"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#timestring.text2num.text2num" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-timestring.timestring_re">
+<span id="timestring-timestring-re-module"></span><h2>timestring.timestring_re module<a class="headerlink" href="#module-timestring.timestring_re" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-timestring">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-timestring" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="timestring.TimestringInvalid">
+<em class="property">exception </em><code class="descclassname">timestring.</code><code class="descname">TimestringInvalid</code><span class="sig-paren">(</span><em>reason</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/timestring.html#TimestringInvalid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#timestring.TimestringInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="timestring.findall">
+<code class="descclassname">timestring.</code><code class="descname">findall</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/timestring.html#findall"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#timestring.findall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find all the timestrings within a block of text.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">timestring</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;once upon a time, about 3 weeks ago, there was a boy whom was born on august 15th at 7:20 am. epic.&quot;</span><span class="p">)</span>
+<span class="go">[</span>
+<span class="go"> (&#39;3 weeks ago,&#39;, &lt;timestring.Date 2014-02-09 00:00:00 4483019280&gt;),</span>
+<span class="go"> (&#39;august 15th at 7:20 am&#39;, &lt;timestring.Date 2014-08-15 07:20:00 4483019344&gt;)</span>
+<span class="go">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="timestring.main">
+<code class="descclassname">timestring.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/timestring.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#timestring.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="timestring.now">
+<code class="descclassname">timestring.</code><code class="descname">now</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/timestring.html#now"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#timestring.now" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="timestring.parse">
+<code class="descclassname">timestring.</code><code class="descname">parse</code><span class="sig-paren">(</span><em>string</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/timestring.html#parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#timestring.parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

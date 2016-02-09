@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Predicting Airline Delays with Hadoop &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../index.html"/>
+        <link rel="up" title="Possible Projects" href="index.html"/>
+        <link rel="next" title="Daily Variation of Barometric Pressure" href="sample_project_barometric_pressure.html"/>
+        <link rel="prev" title="Other Links to Possible Projects" href="links_projects.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Possible Projects</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="project_bibliometric_namedisambiguity.html">Author Name Disambiguation for Bibliometric Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_bigdata_containers.html">A Paper on Container Technologies for BigData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_cloudmesh.html">Cloudmesh Dirstributed Virtual Cluster Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_docker.html">Cloudmesh Docker Clusetr Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_survey_devops.html">A Survey of DevOps Frameworks in support of Big Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_survey_paas.html">A Survey of Online PaaS Frameworks and Clouds in support of Big Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#from-nist-big-data-public-working-group">From NIST Big Data Public Working Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#links-that-may-inspire-projects">Links that may inspire projects</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#from-other-sources">From Other Sources</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">Predicting Airline Delays with Hadoop</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#project-idea">Project Idea</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#project-overview">Project Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dataset">Dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#technologies">Technologies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#source">Source</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="sample_project_barometric_pressure.html">Daily Variation of Barometric Pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample_project_gff.html">MapReduce Implementation for GFF Parsing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample_project_lcs.html">MapReduce Implementation for Longest Common Substring Problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample_project_visualization.html">Data Visualization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Possible Projects</a> &raquo;</li>
+      
+    <li>Predicting Airline Delays with Hadoop</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/projects/sample_project_airline_delays.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="predicting-airline-delays-with-hadoop">
+<span id="ref-class-project-airline-delays"></span><h1>Predicting Airline Delays with Hadoop<a class="headerlink" href="#predicting-airline-delays-with-hadoop" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="project-idea">
+<h2>Project Idea<a class="headerlink" href="#project-idea" title="Permalink to this headline">¶</a></h2>
+<p>One of the main goals is using machine learning algorithms to build predictive
+models with Python packages and data analysis programs. Training the original
+datasets is important to build models with its performance.  Finding a good
+combination of technologies and programming languages would be cruicial to make
+a successful project.</p>
+</div>
+<div class="section" id="project-overview">
+<h2>Project Overview<a class="headerlink" href="#project-overview" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Description: Every year approximately 20% of airline flights are delayed or
+cancelled, resulting in significant costs to both travellers and airlines.
+This project builds a supervised learning model that predicts airline delay
+from historial flight data and weather information.</li>
+</ul>
+<div class="figure" id="id1">
+<img alt="../_images/ml11.png" src="../_images/ml11.png" />
+<p class="caption"><span class="caption-text">Average delays by month</span></p>
+</div>
+<div class="figure" id="id2">
+<img alt="../_images/ml21.png" src="../_images/ml21.png" />
+<p class="caption"><span class="caption-text">Average delays during a day</span></p>
+</div>
+<div class="figure" id="id3">
+<img alt="../_images/ml31.png" src="../_images/ml31.png" />
+<p class="caption"><span class="caption-text">Top 15 airlines for flight delay (Chicago O&#8217;Hare airport)</span></p>
+</div>
+</div>
+<div class="section" id="dataset">
+<h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://stat-computing.org/dataexpo/2009/the-data.html">Airline delay dataset 2007, 2008</a></p>
+</div>
+<div class="section" id="technologies">
+<h2>Technologies<a class="headerlink" href="#technologies" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Hadoop</li>
+<li>Apache Pig</li>
+<li>Python</li>
+<li>Pandas</li>
+<li>HDFS</li>
+<li>scikit-learn</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="source">
+<h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://nbviewer.ipython.org/github/ofermend/IPython-notebooks/blob/master/blog-part-1.ipynb">http://nbviewer.ipython.org/github/ofermend/IPython-notebooks/blob/master/blog-part-1.ipynb</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sample_project_barometric_pressure.html" class="btn btn-neutral float-right" title="Daily Variation of Barometric Pressure" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="links_projects.html" class="btn btn-neutral" title="Other Links to Possible Projects" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

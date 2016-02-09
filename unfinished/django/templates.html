@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Example: Template &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Example: Template</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/unfinished/django/templates.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="example-template">
+<h1>Example: Template<a class="headerlink" href="#example-template" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This example demonstrates how to setup a template in django with a
+bootstrapped theme</p>
+<p>Create an app <code class="docutils literal"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">startapp</span> <span class="pre">exampleapp_name</span></code></p>
+<p>Then, In project do the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir templates
+mkdir static
+cd exampleproject
+texteditor settings.py
+</pre></div>
+</div>
+<p>In the <code class="docutils literal"><span class="pre">settings.py</span></code> file go to <code class="docutils literal"><span class="pre">TEMPLATE_DIRS</span> <span class="pre">()</span></code>,
+<code class="docutils literal"><span class="pre">TEMPLATE_LOADERS</span> <span class="pre">()</span></code>, <code class="docutils literal"><span class="pre">STATIC_ROOT</span></code>,
+and <code class="docutils literal"><span class="pre">TEMPLATE_CONTEXT_PROCESSORS``functions</span> <span class="pre">and</span> <span class="pre">write</span> <span class="pre">the</span> <span class="pre">path</span> <span class="pre">to</span> <span class="pre">the</span>
+<span class="pre">templates</span> <span class="pre">folder</span> <span class="pre">you</span> <span class="pre">just</span> <span class="pre">created</span> <span class="pre">and</span> <span class="pre">add</span> <span class="pre">these</span> <span class="pre">parameters</span> <span class="pre">to</span>
+<span class="pre">``TEMPLATE_LOADERS</span> <span class="pre">()</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">TEMPLATE_CONTEXT_PROCESSORS</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s1">&#39;django.contrib.auth.context_processors.auth&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;django.core.context_processors.debug&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;django.core.context_processors.i18n&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;django.core.context_processors.media&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;django.core.context_processors.static&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;django.core.context_processors.tz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;django.contrib.messages.context_processors.messages&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="o">..........</span>
+<span class="n">TEMPLATE_LOADERS</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s1">&#39;django.template.loaders.filesystem.Loader&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;django.template.loaders.app_directories.Loader&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="o">.........</span>
+<span class="n">TEMPLATE_DIRS</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s1">&#39;/home/django/examplesite/templates&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="o">..........</span>
+<span class="n">STATIC_URL</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s1">&#39;/static/&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="o">..........</span>
+<span class="n">STATIC_ROOT</span> <span class="o">=</span> <span class="s1">&#39;/home/django/example/static/&#39;</span>
+</pre></div>
+</div>
+<p>Now go to your newly created Template directory and create a file named <code class="docutils literal"><span class="pre">base.html</span></code>.
+In this file, copy and paste the html from your desired template from the
+<code class="docutils literal"><span class="pre">http://getbootstrap.com</span></code> website or your own created html</p>
+<p>1) View the source code of your chosen template and click on the link below
+<code class="docutils literal"><span class="pre">&lt;!</span> <span class="pre">--</span> <span class="pre">Bootstrap</span> <span class="pre">core.css</span> <span class="pre">--&gt;</span></code> and <code class="docutils literal"><span class="pre">&lt;!--</span> <span class="pre">Custom</span> <span class="pre">styles</span> <span class="pre">for</span> <span class="pre">this</span> <span class="pre">template</span> <span class="pre">--&gt;</span></code></p>
+<p>2) After clicking on both of these links - right-click on the page of the code
+and choose <code class="docutils literal"><span class="pre">save</span> <span class="pre">as</span></code> and save files to css folder in static directory</p>
+<p>Repeat Steps 1 and 2 with the link at the bottom of the source code (Below
+<code class="docutils literal"><span class="pre">&lt;!--</span> <span class="pre">Placed</span> <span class="pre">at</span> <span class="pre">the</span> <span class="pre">end</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">document</span> <span class="pre">so</span> <span class="pre">the</span> <span class="pre">pages</span> <span class="pre">load</span> <span class="pre">faster</span> <span class="pre">--&gt;</span></code>)
+and save in js folder in static directory.</p>
+<p>Now go back to the <code class="docutils literal"><span class="pre">base.html</span></code> file and create the section <code class="docutils literal"><span class="pre">{%</span> <span class="pre">block</span> <span class="pre">content</span> <span class="pre">%}</span></code>
+and <code class="docutils literal"><span class="pre">{%</span> <span class="pre">endblock</span> <span class="pre">%}</span></code> (for syntax go to www.djangobook.com/en/2.0/chapter04.html)</p>
+<p>In the templates directory, create another html file and in the file do the
+following:</p>
+<div class="highlight-python"><div class="highlight"><pre>{% extends &quot;base.html&quot; %}
+
+{% block content %} The template works! {% endblock %}
+</pre></div>
+</div>
+<p>Now go into your app and create your view:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+
+<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;your_html_file.html&#39;</span><span class="p">,)</span>
+</pre></div>
+</div>
+<p>Now go into your templates directory and go to your <code class="docutils literal"><span class="pre">base.html</span></code> file and add
+the paths to your created files in the static folder for both css and js. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;link href = &quot;/static/css/boostrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href = &quot;/static/css/specified_template_used.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+&lt;script src=&quot;/static/js/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/static/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+</pre></div>
+</div>
+<p>Now go into your project&#8217;s <code class="docutils literal"><span class="pre">urls.py</span></code> file and do the following:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">url</span><span class="p">(</span><span class="s1">r&#39;^index/&#39;</span><span class="p">,</span> <span class="s1">&#39;exampleapp_name.views.index&#39;</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;index&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then finally do a <code class="docutils literal"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">collectstatic</span></code> and type yes to the prompt
+and then run <code class="docutils literal"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span></code>.</p>
+</div>
+<div class="section" id="ready-made-example-used-css-and-js-files-from-django-admin-bootstrapped">
+<h2>Ready Made Example (used css and js files from django-admin-bootstrapped)<a class="headerlink" href="#ready-made-example-used-css-and-js-files-from-django-admin-bootstrapped" title="Permalink to this headline">¶</a></h2>
+<p>A ready made example for you is contained in the directory
+<code class="docutils literal"><span class="pre">management/django/templates1</span></code>. Please cd into the directory.</p>
+<p>In this directory you will also find a Makefile that you can use to
+execute the above steps. To start the server, you can say:</p>
+<div class="highlight-python"><div class="highlight"><pre>make start
+</pre></div>
+</div>
+<p>To view the web pages, say:</p>
+<div class="highlight-python"><div class="highlight"><pre>make view
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">After clicking on <a class="reference external" href="http://127.0.0.1.8000/">http://127.0.0.1.8000/</a>, go to <a class="reference external" href="http://127.0.0.1.8000/admin">http://127.0.0.1.8000/admin</a>
+then type ../index in the URL</p>
+</div>
+<p>In case you need to recreate the server please say:</p>
+<div class="highlight-python"><div class="highlight"><pre>make create
+</pre></div>
+</div>
+<p>To cleanup you say:</p>
+<div class="highlight-python"><div class="highlight"><pre>make clean
+</pre></div>
+</div>
+<p>To stop the server please say:</p>
+<div class="highlight-python"><div class="highlight"><pre>make stop
+</pre></div>
+</div>
+<p>The steps are implicitly included in the makefile</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">BUG THE MAGEFILE DOES NOT SHOW</p>
+</div>
+</div>
+<div class="section" id="tips">
+<h2>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Because this is not a django template, the steps are a bit different
+in the description but do not differ much. Instead of adding static
+to the <code class="docutils literal"><span class="pre">link</span> <span class="pre">ref</span></code> you just take it away so that it&#8217;s <code class="docutils literal"><span class="pre">css</span></code> or <code class="docutils literal"><span class="pre">js</span></code>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

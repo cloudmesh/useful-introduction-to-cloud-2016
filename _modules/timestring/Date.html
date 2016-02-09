@@ -1,0 +1,681 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>timestring.Date &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/>
+        <link rel="up" title="timestring" href="../timestring.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../timestring.html">timestring</a> &raquo;</li>
+      
+    <li>timestring.Date</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for timestring.Date</h1><div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">pytz</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">copy</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="kn">from</span> <span class="nn">timestring.text2num</span> <span class="kn">import</span> <span class="n">text2num</span>
+<span class="kn">from</span> <span class="nn">timestring</span> <span class="kn">import</span> <span class="n">TimestringInvalid</span>
+<span class="kn">from</span> <span class="nn">timestring.timestring_re</span> <span class="kn">import</span> <span class="n">TIMESTRING_RE</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">unicode</span>
+<span class="k">except</span> <span class="ne">NameError</span><span class="p">:</span>
+    <span class="nb">unicode</span> <span class="o">=</span> <span class="nb">str</span>
+    <span class="nb">long</span> <span class="o">=</span> <span class="nb">int</span>
+
+<span class="n">CLEAN_NUMBER</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">r&quot;[\D]&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Date"><a class="viewcode-back" href="../../modules/timestring/timestring.html#timestring.Date.Date">[docs]</a><span class="k">class</span> <span class="nc">Date</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">start_of_week</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">Date</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="c1"># The original request</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_original</span> <span class="o">=</span> <span class="n">date</span>
+        <span class="k">if</span> <span class="n">tz</span><span class="p">:</span>
+            <span class="n">tz</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tz</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">date</span> <span class="o">==</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="s1">&#39;infinity&#39;</span>
+
+        <span class="k">elif</span> <span class="n">date</span> <span class="o">==</span> <span class="s1">&#39;now&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">date</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">)</span> <span class="ow">and</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">r&quot;\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d+-\d{2}&quot;</span><span class="p">,</span> <span class="n">date</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">],</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S.</span><span class="si">%f</span><span class="s2">&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">date</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]))</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Determinal starting date.</span>
+            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">date</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">):</span>
+                <span class="sd">&quot;&quot;&quot;The date is a string and needs to be converted into a &lt;dict&gt; for processesing</span>
+<span class="sd">                &quot;&quot;&quot;</span>
+                <span class="n">_date</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="n">TIMESTRING_RE</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">_date</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+                <span class="k">if</span> <span class="n">res</span><span class="p">:</span>
+                    <span class="n">date</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Matches:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">date</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span><span class="p">]))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">TimestringInvalid</span><span class="p">(</span><span class="s1">&#39;Invalid date string &gt;&gt; </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">date</span><span class="p">)</span>
+
+                <span class="n">date</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span> <span class="k">else</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">date</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span><span class="p">)</span>
+                <span class="c1">#print(_date, dict(map(lambda a: (a, date.get(a)), filter(lambda a: date.get(a), date))))</span>
+
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="c1"># Initial date.</span>
+                <span class="n">new_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="o">*</span><span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">()[:</span><span class="mi">3</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">tz</span> <span class="ow">and</span> <span class="n">tz</span><span class="o">.</span><span class="n">zone</span> <span class="o">!=</span> <span class="s2">&quot;UTC&quot;</span><span class="p">:</span>
+                    <span class="c1">#</span>
+                    <span class="c1"># The purpose here is to adjust what day it is based on the timezeone</span>
+                    <span class="c1">#</span>
+                    <span class="n">ts</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+                    <span class="c1"># Daylight savings === second Sunday in March and reverts to standard time on the first Sunday in November</span>
+                    <span class="c1"># Monday is 0 and Sunday is 6.</span>
+                    <span class="c1"># 14 days - dst_start.weekday()</span>
+                    <span class="n">dst_start</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="mi">13</span> <span class="o">-</span> <span class="n">datetime</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">weekday</span><span class="p">())</span>
+                    <span class="n">dst_end</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="mi">6</span> <span class="o">-</span> <span class="n">datetime</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">weekday</span><span class="p">())</span>
+
+                    <span class="n">ts</span> <span class="o">=</span> <span class="n">ts</span> <span class="o">+</span> <span class="n">tz</span><span class="o">.</span><span class="n">utcoffset</span><span class="p">(</span><span class="n">new_date</span><span class="p">,</span> <span class="n">is_dst</span><span class="o">=</span><span class="p">(</span><span class="n">dst_start</span> <span class="o">&lt;</span> <span class="n">ts</span> <span class="o">&lt;</span> <span class="n">dst_end</span><span class="p">))</span>
+                    <span class="n">new_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">ts</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">ts</span><span class="o">.</span><span class="n">day</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;unixtime&#39;</span><span class="p">):</span>
+                    <span class="n">new_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;unixtime&#39;</span><span class="p">)))</span>
+
+                <span class="c1"># !number of (days|...) (ago)?</span>
+                <span class="k">elif</span> <span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;num&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;delta&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;delta_2&#39;</span><span class="p">)):</span>
+                    <span class="k">if</span> <span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;num&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;couple&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                        <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ago&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span> <span class="ow">or</span> <span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ref&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;last&#39;</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">text2num</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;num&#39;</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">)))</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ago&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ref&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;last&#39;</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+                    <span class="n">delta</span> <span class="o">=</span> <span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;delta&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;delta_2&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="n">delta</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">):</span>
+                        <span class="k">try</span><span class="p">:</span>
+                            <span class="n">new_date</span> <span class="o">=</span> <span class="n">new_date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="p">(</span><span class="n">new_date</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="n">i</span><span class="p">))</span>
+                        <span class="c1"># day is out of range for month</span>
+                        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                            <span class="n">new_date</span> <span class="o">=</span> <span class="n">new_date</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="p">(</span><span class="mi">365</span><span class="o">*</span><span class="n">i</span><span class="p">))</span>
+                    <span class="k">elif</span> <span class="n">delta</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">):</span>
+                        <span class="k">try</span><span class="p">:</span>
+                            <span class="n">new_date</span> <span class="o">=</span> <span class="n">new_date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="p">(</span><span class="n">new_date</span><span class="o">.</span><span class="n">month</span> <span class="o">-</span> <span class="n">i</span><span class="p">))</span>
+                        <span class="c1"># day is out of range for month</span>
+                        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                            <span class="n">new_date</span> <span class="o">=</span> <span class="n">new_date</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="o">*</span><span class="n">i</span><span class="p">))</span>
+
+                    <span class="k">elif</span> <span class="n">delta</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">):</span>
+                        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">                        This section is not working...</span>
+<span class="sd">                        Most likely need a generator that will take me to the right quater.</span>
+<span class="sd">                        &#39;&#39;&#39;</span>
+                        <span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">,</span> <span class="n">q3</span><span class="p">,</span> <span class="n">q4</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">new_date</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">datetime</span><span class="p">(</span><span class="n">new_date</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">datetime</span><span class="p">(</span><span class="n">new_date</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">datetime</span><span class="p">(</span><span class="n">new_date</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">q1</span> <span class="o">&lt;=</span> <span class="n">new_date</span> <span class="o">&lt;</span> <span class="n">q2</span><span class="p">:</span>
+                            <span class="c1"># We are in Q1</span>
+                            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                                <span class="n">new_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">new_date</span><span class="o">.</span><span class="n">year</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                            <span class="k">else</span><span class="p">:</span>
+                                <span class="n">new_date</span> <span class="o">=</span> <span class="n">q2</span>
+                        <span class="k">elif</span> <span class="n">q2</span> <span class="o">&lt;=</span> <span class="n">new_date</span> <span class="o">&lt;</span> <span class="n">q3</span><span class="p">:</span>
+                            <span class="c1"># We are in Q2</span>
+                            <span class="k">pass</span>
+                        <span class="k">elif</span> <span class="n">q3</span> <span class="o">&lt;=</span> <span class="n">new_date</span> <span class="o">&lt;</span> <span class="n">q4</span><span class="p">:</span>
+                            <span class="c1"># We are in Q3</span>
+                            <span class="k">pass</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="c1"># We are in Q4</span>
+                            <span class="k">pass</span>
+                        <span class="n">new_date</span> <span class="o">=</span> <span class="n">new_date</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="p">(</span><span class="mi">91</span><span class="o">*</span><span class="n">i</span><span class="p">))</span>
+
+                    <span class="k">elif</span> <span class="n">delta</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">):</span>
+                        <span class="n">new_date</span> <span class="o">=</span> <span class="n">new_date</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">7</span><span class="p">))</span>
+
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">new_date</span> <span class="o">=</span> <span class="n">new_date</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="o">**</span><span class="p">{(</span><span class="s1">&#39;days&#39;</span> <span class="k">if</span> <span class="n">delta</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;hours&#39;</span> <span class="k">if</span> <span class="n">delta</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;minutes&#39;</span> <span class="k">if</span> <span class="n">delta</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;seconds&#39;</span><span class="p">):</span> <span class="n">i</span><span class="p">})</span>
+
+                <span class="c1"># !dow</span>
+                <span class="k">if</span> <span class="p">[</span><span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;day&#39;</span><span class="p">,</span> <span class="s1">&#39;day_2&#39;</span><span class="p">,</span> <span class="s1">&#39;day_3&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)]:</span>
+                    <span class="n">dow</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;day&#39;</span><span class="p">,</span> <span class="s1">&#39;day_2&#39;</span><span class="p">,</span> <span class="s1">&#39;day_3&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)])</span>
+                    <span class="n">iso</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">monday</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">tuesday</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">wednesday</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">thursday</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">friday</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">saturday</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">sunday</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">mon</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">tue</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">tues</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">wed</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">wedn</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">thu</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">thur</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">fri</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sat</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">sun</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">dow</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">iso</span><span class="p">:</span>
+                        <span class="c1"># determin which direction</span>
+                        <span class="k">if</span> <span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ref&#39;</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;this&#39;</span><span class="p">,</span> <span class="s1">&#39;next&#39;</span><span class="p">):</span>
+                            <span class="n">days</span> <span class="o">=</span> <span class="n">iso</span> <span class="o">-</span> <span class="n">new_date</span><span class="o">.</span><span class="n">isoweekday</span><span class="p">()</span> <span class="o">-</span> <span class="p">(</span><span class="mi">7</span> <span class="k">if</span> <span class="n">iso</span> <span class="o">&gt;=</span> <span class="n">new_date</span><span class="o">.</span><span class="n">isoweekday</span><span class="p">()</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">days</span> <span class="o">=</span> <span class="n">iso</span> <span class="o">-</span> <span class="n">new_date</span><span class="o">.</span><span class="n">isoweekday</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="mi">7</span> <span class="k">if</span> <span class="n">iso</span> <span class="o">&lt;</span> <span class="n">new_date</span><span class="o">.</span><span class="n">isoweekday</span><span class="p">()</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+
+                        <span class="n">new_date</span> <span class="o">=</span> <span class="n">new_date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">days</span><span class="p">)</span>
+
+                    <span class="k">elif</span> <span class="n">dow</span> <span class="o">==</span> <span class="s1">&#39;yesterday&#39;</span><span class="p">:</span>
+                        <span class="n">new_date</span> <span class="o">=</span> <span class="n">new_date</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="n">dow</span> <span class="o">==</span> <span class="s1">&#39;tomorrow&#39;</span><span class="p">:</span>
+                        <span class="n">new_date</span> <span class="o">=</span> <span class="n">new_date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+                <span class="c1"># !year</span>
+                <span class="n">year</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">CLEAN_NUMBER</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">date</span><span class="p">[</span><span class="n">key</span><span class="p">]))</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;year_2&#39;</span><span class="p">,</span> <span class="s1">&#39;year_3&#39;</span><span class="p">,</span> <span class="s1">&#39;year_4&#39;</span><span class="p">,</span> <span class="s1">&#39;year_5&#39;</span><span class="p">,</span> <span class="s1">&#39;year_6&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)]</span>
+                <span class="k">if</span> <span class="n">year</span><span class="p">:</span>
+                    <span class="n">year</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">:</span>
+                        <span class="n">year</span> <span class="o">+=</span> <span class="mi">2000</span> <span class="k">if</span> <span class="n">year</span> <span class="o">&lt;=</span> <span class="mi">40</span> <span class="k">else</span> <span class="mi">1900</span>
+                    <span class="n">new_date</span> <span class="o">=</span> <span class="n">new_date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">year</span><span class="p">)</span>
+
+                <span class="c1"># !month</span>
+                <span class="n">month</span> <span class="o">=</span> <span class="p">[</span><span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="s1">&#39;month_1&#39;</span><span class="p">,</span> <span class="s1">&#39;month_2&#39;</span><span class="p">,</span> <span class="s1">&#39;month_3&#39;</span><span class="p">,</span> <span class="s1">&#39;month_4&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)]</span>
+                <span class="k">if</span> <span class="n">month</span><span class="p">:</span>
+                    <span class="n">new_date</span> <span class="o">=</span> <span class="n">new_date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                    <span class="n">new_date</span> <span class="o">=</span> <span class="n">new_date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">month</span><span class="p">))</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;^\d+$&#39;</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">month</span><span class="p">))</span> <span class="k">else</span> <span class="nb">dict</span><span class="p">(</span><span class="n">january</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">february</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">march</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">april</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">june</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">july</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">august</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">september</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">october</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">november</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">december</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">jan</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">feb</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">mar</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">apr</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">may</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">jun</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">jul</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">aug</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">sept</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="nb">oct</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">nov</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">month</span><span class="p">),</span>  <span class="n">new_date</span><span class="o">.</span><span class="n">month</span><span class="p">))</span>
+
+                <span class="c1"># !day</span>
+                <span class="n">day</span> <span class="o">=</span> <span class="p">[</span><span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;date_2&#39;</span><span class="p">,</span> <span class="s1">&#39;date_3&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)]</span>
+                <span class="k">if</span> <span class="n">day</span><span class="p">:</span>
+                    <span class="n">new_date</span> <span class="o">=</span> <span class="n">new_date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">day</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">day</span><span class="p">)))</span>
+
+                <span class="c1"># !daytime</span>
+                <span class="k">if</span> <span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;daytime&#39;</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">date</span><span class="p">[</span><span class="s1">&#39;daytime&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;this time&#39;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+                        <span class="n">new_date</span> <span class="o">=</span> <span class="n">new_date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="o">*</span><span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">()[:</span><span class="mi">5</span><span class="p">])</span><span class="o">.</span><span class="n">hour</span><span class="p">,</span>
+                                                    <span class="n">minute</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="o">*</span><span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">()[:</span><span class="mi">5</span><span class="p">])</span><span class="o">.</span><span class="n">minute</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">new_date</span> <span class="o">=</span> <span class="n">new_date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">morning</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">noon</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">afternoon</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">evening</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">night</span><span class="o">=</span><span class="mi">21</span><span class="p">,</span> <span class="n">nighttime</span><span class="o">=</span><span class="mi">21</span><span class="p">,</span> <span class="n">midnight</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;daytime&#39;</span><span class="p">),</span> <span class="mi">12</span><span class="p">))</span>
+                    <span class="c1"># No offset because the hour was set.</span>
+                    <span class="n">offset</span> <span class="o">=</span> <span class="bp">False</span>
+
+                <span class="c1"># !hour</span>
+                <span class="n">hour</span> <span class="o">=</span> <span class="p">[</span><span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;hour&#39;</span><span class="p">,</span> <span class="s1">&#39;hour_2&#39;</span><span class="p">,</span> <span class="s1">&#39;hour_3&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)]</span>
+                <span class="k">if</span> <span class="n">hour</span><span class="p">:</span>
+                    <span class="n">new_date</span> <span class="o">=</span> <span class="n">new_date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">hour</span><span class="p">)))</span>
+                    <span class="n">am</span> <span class="o">=</span> <span class="p">[</span><span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;am&#39;</span><span class="p">,</span> <span class="s1">&#39;am_1&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)]</span>
+                    <span class="k">if</span> <span class="n">am</span> <span class="ow">and</span> <span class="nb">max</span><span class="p">(</span><span class="n">am</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;pm&#39;</span><span class="p">):</span>
+                        <span class="n">h</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">hour</span><span class="p">))</span>
+                        <span class="k">if</span> <span class="n">h</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
+                            <span class="n">new_date</span> <span class="o">=</span> <span class="n">new_date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="n">h</span><span class="o">+</span><span class="mi">12</span><span class="p">)</span>
+                    <span class="c1"># No offset because the hour was set.</span>
+                    <span class="n">offset</span> <span class="o">=</span> <span class="bp">False</span>
+
+                    <span class="c1">#minute</span>
+                    <span class="n">minute</span> <span class="o">=</span> <span class="p">[</span><span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;minute&#39;</span><span class="p">,</span> <span class="s1">&#39;minute_2&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)]</span>
+                    <span class="k">if</span> <span class="n">minute</span><span class="p">:</span>
+                        <span class="n">new_date</span> <span class="o">=</span> <span class="n">new_date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">minute</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">minute</span><span class="p">)))</span>
+
+                    <span class="c1">#second</span>
+                    <span class="n">seconds</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;seconds&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">seconds</span><span class="p">:</span>
+                        <span class="n">new_date</span> <span class="o">=</span> <span class="n">new_date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">second</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">seconds</span><span class="p">))</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">new_date</span>
+
+            <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">date</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">long</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;^\d{10}$&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">date</span><span class="p">)):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">date</span><span class="p">))</span>
+
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">date</span>
+
+            <span class="k">elif</span> <span class="n">date</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Set to the current date Y, M, D, H0, M0, S0</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="o">*</span><span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">()[:</span><span class="mi">3</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="n">tz</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">tz</span><span class="p">)</span>
+
+            <span class="c1"># end if type(date) is types.DictType: and self.date.hour == 0:</span>
+            <span class="k">if</span> <span class="n">offset</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">offset</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="o">**</span><span class="n">offset</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;&lt;timestring.Date </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">year</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">!=</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">year</span>
+
+    <span class="nd">@year.setter</span>
+    <span class="k">def</span> <span class="nf">year</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">year</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">month</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">!=</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">month</span>
+
+    <span class="nd">@month.setter</span>
+    <span class="k">def</span> <span class="nf">month</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">month</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="n">month</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">day</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">!=</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">day</span>
+
+    <span class="nd">@day.setter</span>
+    <span class="k">def</span> <span class="nf">day</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">day</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">day</span><span class="o">=</span><span class="n">day</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">hour</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">!=</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">hour</span>
+
+    <span class="nd">@hour.setter</span>
+    <span class="k">def</span> <span class="nf">hour</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hour</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="n">hour</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">minute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">!=</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">minute</span>
+
+    <span class="nd">@minute.setter</span>
+    <span class="k">def</span> <span class="nf">minute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">minute</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">minute</span><span class="o">=</span><span class="n">minute</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">second</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">!=</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">second</span>
+
+    <span class="nd">@second.setter</span>
+    <span class="k">def</span> <span class="nf">second</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">second</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">second</span><span class="o">=</span><span class="n">second</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">weekday</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">!=</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">isoweekday</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">tz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">!=</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">tzinfo</span>
+
+    <span class="nd">@tz.setter</span>
+    <span class="k">def</span> <span class="nf">tz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tz</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">!=</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">tz</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="n">tz</span><span class="p">))</span>
+
+<div class="viewcode-block" id="Date.replace"><a class="viewcode-back" href="../../modules/timestring/timestring.html#timestring.Date.Date.replace">[docs]</a>    <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Note returns a new Date obj&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">!=</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Date</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="o">**</span><span class="n">k</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Date</span><span class="p">(</span><span class="s1">&#39;infinity&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Date.adjust"><a class="viewcode-back" href="../../modules/timestring/timestring.html#timestring.Date.Date.adjust">[docs]</a>    <span class="k">def</span> <span class="nf">adjust</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">to</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Adjusts the time from kwargs to timedelta</span>
+<span class="sd">        **Will change this object**</span>
+
+<span class="sd">        return new copy of self</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">new</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">to</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">):</span>
+            <span class="n">to</span> <span class="o">=</span> <span class="n">to</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">TIMESTRING_RE</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">to</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">res</span><span class="p">:</span>
+                <span class="n">rgroup</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">rgroup</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;delta&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">rgroup</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;delta_2&#39;</span><span class="p">)):</span>
+                    <span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">text2num</span><span class="p">(</span><span class="n">rgroup</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;num&#39;</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">)))</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">to</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
+                    <span class="n">delta</span> <span class="o">=</span> <span class="p">(</span><span class="n">rgroup</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;delta&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">rgroup</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;delta_2&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="n">delta</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">):</span>
+                        <span class="k">try</span><span class="p">:</span>
+                            <span class="n">new</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">new</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="p">(</span><span class="n">new</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">year</span> <span class="o">+</span> <span class="n">i</span><span class="p">))</span>
+                        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                            <span class="c1"># day is out of range for month</span>
+                            <span class="n">new</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">new</span><span class="o">.</span><span class="n">date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="p">(</span><span class="mi">365</span> <span class="o">*</span> <span class="n">i</span><span class="p">))</span>
+                    <span class="k">elif</span> <span class="n">delta</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">new</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">month</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">:</span>
+                            <span class="n">new</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">new</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="p">(</span><span class="n">i</span> <span class="o">/</span> <span class="mi">12</span><span class="p">)),</span>
+                                                        <span class="n">year</span><span class="o">=</span><span class="p">(</span><span class="n">new</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">year</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span> <span class="o">/</span> <span class="mi">12</span><span class="p">)))</span>
+                        <span class="k">elif</span> <span class="p">(</span><span class="n">new</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">month</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+                            <span class="n">new</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">new</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="p">(</span><span class="n">new</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">new</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">new</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="p">(</span><span class="n">new</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">month</span> <span class="o">+</span> <span class="n">i</span><span class="p">))</span>
+                    <span class="k">elif</span> <span class="n">delta</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">):</span>
+                        <span class="c1"># NP</span>
+                        <span class="k">pass</span>
+                    <span class="k">elif</span> <span class="n">delta</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">):</span>
+                        <span class="n">new</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">new</span><span class="o">.</span><span class="n">date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span> <span class="o">*</span> <span class="n">i</span><span class="p">))</span>
+                    <span class="k">elif</span> <span class="n">delta</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">):</span>
+                        <span class="n">new</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">new</span><span class="o">.</span><span class="n">date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">new</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">new</span><span class="o">.</span><span class="n">date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="o">**</span><span class="p">{(</span><span class="s1">&#39;days&#39;</span> <span class="k">if</span> <span class="n">delta</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;hours&#39;</span> <span class="k">if</span> <span class="n">delta</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;minutes&#39;</span> <span class="k">if</span> <span class="n">delta</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;seconds&#39;</span><span class="p">):</span> <span class="n">i</span><span class="p">})</span>
+                    <span class="k">return</span> <span class="n">new</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">new</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">new</span><span class="o">.</span><span class="n">date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">to</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">new</span>
+
+        <span class="k">raise</span> <span class="n">TimestringInvalid</span><span class="p">(</span><span class="s1">&#39;Invalid addition request&#39;</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">__nonzero__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">True</span>
+
+    <span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">to</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">adjust</span><span class="p">(</span><span class="n">to</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">to</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">to</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">):</span>
+            <span class="n">to</span> <span class="o">=</span> <span class="n">to</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">if</span> <span class="n">to</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">+</span><span class="n">to</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">to</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">long</span><span class="p">):</span>
+            <span class="n">to</span> <span class="o">=</span> <span class="n">to</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">adjust</span><span class="p">(</span><span class="n">to</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__format__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">!=</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%x</span><span class="s1"> </span><span class="si">%X</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;infinity&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns date in representation of `%x %X` ie `2013-02-17 00:00:00`&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Date</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">other</span><span class="o">.</span><span class="n">date</span> <span class="o">!=</span> <span class="s1">&#39;infinity&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="kn">from</span> <span class="nn">.Range</span> <span class="kn">import</span> <span class="n">Range</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Range</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="n">other</span><span class="o">.</span><span class="n">end</span> <span class="o">!=</span> <span class="s1">&#39;infinity&#39;</span>
+                <span class="k">return</span> <span class="n">other</span> <span class="o">!=</span> <span class="s1">&#39;infinity&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Date</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="bp">False</span>
+                <span class="k">elif</span> <span class="n">other</span><span class="o">.</span><span class="n">tz</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">tz</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">other</span><span class="o">.</span><span class="n">tz</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">date</span>
+                <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">tz</span> <span class="ow">and</span> <span class="n">other</span><span class="o">.</span><span class="n">tz</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tz</span><span class="p">)</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">date</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="kn">from</span> <span class="nn">.Range</span> <span class="kn">import</span> <span class="n">Range</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Range</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">end</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="bp">False</span>
+                    <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">end</span><span class="o">.</span><span class="n">tz</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">tz</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">other</span><span class="o">.</span><span class="n">end</span><span class="o">.</span><span class="n">tz</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">end</span><span class="o">.</span><span class="n">date</span>
+                    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">tz</span> <span class="ow">and</span> <span class="n">other</span><span class="o">.</span><span class="n">end</span><span class="o">.</span><span class="n">tz</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">end</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tz</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">end</span><span class="o">.</span><span class="n">date</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__gt__</span><span class="p">(</span><span class="n">Date</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tz</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+            <span class="c1"># infinity can never by less then a date</span>
+            <span class="k">return</span> <span class="bp">False</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Date</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">True</span>
+            <span class="k">elif</span> <span class="n">other</span><span class="o">.</span><span class="n">tz</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">tz</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">other</span><span class="o">.</span><span class="n">tz</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">date</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">tz</span> <span class="ow">and</span> <span class="n">other</span><span class="o">.</span><span class="n">tz</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tz</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">date</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">.Range</span> <span class="kn">import</span> <span class="n">Range</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Range</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">end</span><span class="o">.</span><span class="n">tz</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">tz</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">other</span><span class="o">.</span><span class="n">end</span><span class="o">.</span><span class="n">tz</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">end</span><span class="o">.</span><span class="n">date</span>
+                <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">tz</span> <span class="ow">and</span> <span class="n">other</span><span class="o">.</span><span class="n">end</span><span class="o">.</span><span class="n">tz</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">end</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tz</span><span class="p">)</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">end</span><span class="o">.</span><span class="n">date</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__lt__</span><span class="p">(</span><span class="n">Date</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tz</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">&gt;</span> <span class="n">other</span> <span class="ow">or</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span>
+
+    <span class="k">def</span> <span class="nf">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">&lt;</span> <span class="n">other</span> <span class="ow">or</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span>
+
+    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
+            <span class="n">other</span> <span class="o">=</span> <span class="n">Date</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Date</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="s1">&#39;infinity&#39;</span>
+
+            <span class="k">elif</span> <span class="n">other</span><span class="o">.</span><span class="n">tz</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">tz</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">other</span><span class="o">.</span><span class="n">tz</span><span class="p">)</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">date</span>
+
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">tz</span> <span class="ow">and</span> <span class="n">other</span><span class="o">.</span><span class="n">tz</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tz</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">date</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">.Range</span> <span class="kn">import</span> <span class="n">Range</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Range</span><span class="p">):</span>
+                <span class="k">return</span> <span class="bp">False</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__eq__</span><span class="p">(</span><span class="n">Date</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tz</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+        
+<div class="viewcode-block" id="Date.format"><a class="viewcode-back" href="../../modules/timestring/timestring.html#timestring.Date.Date.format">[docs]</a>    <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">format_string</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%x</span><span class="s1"> </span><span class="si">%X</span><span class="s1">&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">!=</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">format_string</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;infinity&#39;</span></div>
+
+<div class="viewcode-block" id="Date.to_unixtime"><a class="viewcode-back" href="../../modules/timestring/timestring.html#timestring.Date.Date.to_unixtime">[docs]</a>    <span class="k">def</span> <span class="nf">to_unixtime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">!=</span> <span class="s1">&#39;infinity&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">timetuple</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

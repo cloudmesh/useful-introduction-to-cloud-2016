@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to setup a Cloudmesh Image &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../index.html"/>
+        <link rel="up" title="Create Cloudmesh Development Image" href="index.html"/>
+        <link rel="next" title="Contribute to Cloudmesh" href="../contribute/index.html"/>
+        <link rel="prev" title="Create Cloudmesh Development Image" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Create Cloudmesh Development Image</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">How to setup a Cloudmesh Image</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#boot-a-vm-from-an-existing-image-using-nova-commands">Boot a VM from an existing image using nova commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-cloudmesh-on-the-new-vm">Setup Cloudmesh on the new VM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#preparation-of-the-vm">Preparation of the VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-cloudmesh">Install Cloudmesh</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#create-an-image-from-the-new-vm">Create an image from the new VM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-the-image">Test the image</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Create Cloudmesh Development Image</a> &raquo;</li>
+      
+    <li>How to setup a Cloudmesh Image</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/management/create_image.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-setup-a-cloudmesh-image">
+<h1>How to setup a Cloudmesh Image<a class="headerlink" href="#how-to-setup-a-cloudmesh-image" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The documentation talks about the steps to be followed to create
+a image with cloudmesh installed and boot a new VM from the
+cloudmesh image. The steps to be followed are:</p>
+<div class="last highlight-python"><div class="highlight"><pre>- Boot a VM from an existing image using nova commands
+- Setup Cloudmesh on the new VM
+- Create an image from the new VM
+- Test the image
+</pre></div>
+</div>
+</div>
+<div class="section" id="boot-a-vm-from-an-existing-image-using-nova-commands">
+<h2>Boot a VM from an existing image using nova commands<a class="headerlink" href="#boot-a-vm-from-an-existing-image-using-nova-commands" title="Permalink to this headline">¶</a></h2>
+<p>The steps to boot a VM from an existing image is available in the link:
+<a class="reference external" href="http://cloudmesh.github.io/introduction_to_cloud_computing/iaas/openstack.html">http://cloudmesh.github.io/introduction_to_cloud_computing/iaas/openstack.html</a>.
+Follow the steps until &#8220;List running images&#8221;.</p>
+<p>For the sake of convenience, the steps without description is listed below:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh username@india.futuresystems.org
+$ module load novaclient
+$ source ~/.futuregrid/openstack_havana/novarc
+$ nova flavor-list
+$ nova image-list
+$ nova keypair-add $USER-key &gt; ~/.ssh/$USER-key
+$ chmod 600 ~/.ssh/$USER-key
+$ nova keypair-list
+$ nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
+$ nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
+$ nova secgroup-list-rules default
+$ nova boot --flavor m1.large \
+            --image &quot;futuregrid/ubuntu-14.04&quot; \
+            --key_name $USER-key $USER-001
+$ nova list
+</pre></div>
+</div>
+<p>If everything worked fine, the output of the last command should be similar to:</p>
+<div class="highlight-python"><div class="highlight"><pre>+----------------------------------------+------------+--------+------------+-------------+--------------------+
+| ID                                     | Name       | Status | Task State | Power State | Networks           |
++----------------------------------------+------------+--------+------------+-------------+--------------------+
+| 0747fe47-f8b1-4fd9-8f51-ad694708e6b7   | &lt;USER&gt;-001 | ACTIVE | None       | Running     | private=10.39.1.16 |
++----------------------------------------+------------+--------+------------+-------------+--------------------+
+</pre></div>
+</div>
+</div>
+<div class="section" id="setup-cloudmesh-on-the-new-vm">
+<h2>Setup Cloudmesh on the new VM<a class="headerlink" href="#setup-cloudmesh-on-the-new-vm" title="Permalink to this headline">¶</a></h2>
+<p>Once the status becomes &#8216;ACTIVE&#8217;, log in to the VM using the IP address given in the &#8216;Networks&#8217; column:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh -l ubuntu -i ~/.ssh/$USER-key 10.39.1.16
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This IP address is a private IP address and can be reached only when you are logged in to the
+&#8216;India&#8217; machine.</p>
+</div>
+<div class="section" id="preparation-of-the-vm">
+<h3>Preparation of the VM<a class="headerlink" href="#preparation-of-the-vm" title="Permalink to this headline">¶</a></h3>
+<p>Update the operating system by executing the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ sudo apt-get update
+</pre></div>
+</div>
+<p>Install virtualenv and git by executing the following commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ sudo apt-get install python-virtualenv
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This might take a minute or two to install</p>
+</div>
+<p>Once you have installed virtualenv, execute the following command to create
+a virtual environment:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ virtualenv ~/ENV
+</pre></div>
+</div>
+<p>Activate the virtual environment by executing the followoing command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ source ~/ENV/bin/activate
+</pre></div>
+</div>
+<p>Execute the following command to permenantly put the source step into the bashrc file:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ echo &quot;source ~/ENV/bin/activate&quot; &gt;&gt; ~/.bashrc
+</pre></div>
+</div>
+<p>Install git by executing the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ sudo apt-get install git
+</pre></div>
+</div>
+<p>Download cloudmesh code from github by running the following commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cd ~
+$ git clone https://github.com/cloudmesh/cloudmesh.git
+</pre></div>
+</div>
+<p>The above steps would have created a directory called cloudmesh with the codeset. Execute the
+following commands to setup required packages:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cd cloudmesh
+</pre></div>
+</div>
+<p>The next step is to fix some IP addresses on India by execting the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ./bin/fix-india-routing.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-cloudmesh">
+<h3>Install Cloudmesh<a class="headerlink" href="#install-cloudmesh" title="Permalink to this headline">¶</a></h3>
+<p>Install the required packages by exectuing the following commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ sudo ./install system [Note: This step would take a while. So be patient]
+$ ./install requirements [Note: This will take a minute or two to complete]
+</pre></div>
+</div>
+<p>Create the yaml configuration files by executing the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ./install new
+</pre></div>
+</div>
+<p>Install the cloudmesh code into the virtual environment, by running the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ./install cloudmesh
+</pre></div>
+</div>
+<p>This step will install the cloudmesh related executable in &#8220;~/ENV/bin/&#8221; directory.</p>
+<p>Now we are at a point where we have the cloudmesh code installed successfully. After this there are
+certain steps which are specific to each user.</p>
+<p>So we stop here and snapshot the VM instance.</p>
+</div>
+</div>
+<div class="section" id="create-an-image-from-the-new-vm">
+<h2>Create an image from the new VM<a class="headerlink" href="#create-an-image-from-the-new-vm" title="Permalink to this headline">¶</a></h2>
+<p>Exit from the VM, by typing &#8220;exit&#8221; at the command prompt.</p>
+<p>To view the existing images, execute the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova image-list
+</pre></div>
+</div>
+<p>To snapshot the VM instance, execute the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova image-create $USER-001 futuregrid/cloudmesh-ubuntu-14.04
+</pre></div>
+</div>
+<p>When the image is being created, the Status will be set to &#8220;SAVING&#8221;. To check the status of the image creation execute the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova image-list
+</pre></div>
+</div>
+<p>You would see an output similar to:</p>
+<div class="highlight-python"><div class="highlight"><pre>+----------------------------------------+------------------------------------+--------+--------------------------------------+
+| ID                                     | Name                               | Status | Server                               |
++----------------------------------------+------------------------------------+--------+--------------------------------------+
+| 18c437e5-d65e-418f-a739-9604cef8ab33   | futuregrid/fedora-18               | ACTIVE |                                      |
+| 1a5fd55e-79b9-4dd5-ae9b-ea10ef3156e9   | futuregrid/ubuntu-14.04            | ACTIVE |                                      |
+| 592e74c1-6d7f-4518-8a9e-c37e2145d92a   | futuregrid/cloudmesh-ubuntu-14.04  | SAVING | d917ac67-1aeb-42de-a72f-90151ed177ed |
++----------------------------------------+------------------------------------+--------+--------------------------------------+
+</pre></div>
+</div>
+<p>Once the image has been created successfully, the status is changed to ACTIVE as shown below:</p>
+<div class="highlight-python"><div class="highlight"><pre>+----------------------------------------+------------------------------------+--------+--------------------------------------+
+| ID                                     | Name                               | Status | Server                               |
++----------------------------------------+------------------------------------+--------+--------------------------------------+
+| 18c437e5-d65e-418f-a739-9604cef8ab33   | futuregrid/fedora-18               | ACTIVE |                                      |
+| 1a5fd55e-79b9-4dd5-ae9b-ea10ef3156e9   | futuregrid/ubuntu-14.04            | ACTIVE |                                      |
+| 592e74c1-6d7f-4518-8a9e-c37e2145d92a   | futuregrid/cloudmesh-ubuntu-14.04  | ACTIVE | d917ac67-1aeb-42de-a72f-90151ed177ed |
++----------------------------------------+------------------------------------+--------+--------------------------------------+
+</pre></div>
+</div>
+<p>This snapshot image has now cloudmesh codeset installed.</p>
+</div>
+<div class="section" id="test-the-image">
+<h2>Test the image<a class="headerlink" href="#test-the-image" title="Permalink to this headline">¶</a></h2>
+<p>Once the cloudmesh image has been created, We will go ahead and create a new VM instance from this snapshot:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova boot --flavor m1.large \
+            --image &quot;futuregrid/cloudmesh-ubuntu-14.04&quot; \
+            --key_name $USER-key $USER-cloudmesh-001
+</pre></div>
+</div>
+<p>Check the status of the vm creation by executing the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova list
+</pre></div>
+</div>
+<p>You would see an output similar to:</p>
+<div class="highlight-python"><div class="highlight"><pre>+----------------------------------------+-----------------------+--------+------------+-------------+----------------------------------+
+| ID                                     | Name                  | Status | Task State | Power State | Networks                         |
++----------------------------------------+-----------------------+--------+------------+-------------+----------------------------------+
+| 0747fe47-f8b1-4fd9-8f51-ad694708e6b7   | &lt;USER&gt;-cloudmesh-001  | ACTIVE | None       | Running     | private=10.39.1.62               |
++----------------------------------------+-----------------------+--------+------------+-------------+----------------------------------+
+</pre></div>
+</div>
+<p>The IP generated by default would be a private IP and this IP is not accessible from external network. Follow the steps below to generate an
+external IP address which allows the VM to be accessible from external network:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova floating-ip-create
+$ export MYIP==`nova floating-ip-list | fgrep &quot;None&quot; | cut -d &#39;|&#39; -f2 | head -1`
+$ nova add-floating-ip $USER-cloudmesh-001 $MYIP
+</pre></div>
+</div>
+<p>Login to the VM by running the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh -l ubuntu -i $USER-key  $MYIP
+</pre></div>
+</div>
+<p>Once you are inside the VM, check if a cloudmesh directory is available by executing the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls ~/cloudmesh
+</pre></div>
+</div>
+<p>Update the user profile, name and project data in the cloudmesh.yaml file:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ vi ~/.cloudmesh.yaml
+</pre></div>
+</div>
+<p>An alternative way to do update the cloudmesh.yaml file is use the functionality provided by cloudmesh:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ export PORTALNAME=&lt;put your portal name here&gt;
+$ ssh-keygen -t rsa -C $PORTALNAME-ubuntu-vm-key
+</pre></div>
+</div>
+<p>Now add the key to the ssh agent:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ eval `ssh-agent -s`
+$ ssh-add
+</pre></div>
+</div>
+<p>The ssh key for the VM needs to be added to the FutureSystems portal account. Copy the ssh key from the file:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cat ~/.ssh/id_rsa.pub
+</pre></div>
+</div>
+<p>Now fetch the user information needed to access openstack from India by running the following commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cm-iu user fetch
+$ cm-iu user create
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When this command is run, it would ask for a portal username. Enter your FutureSystems portal name.</p>
+</div>
+<p>Make some changes to the India OpenStack configuration by executing the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ fab india.configure
+</pre></div>
+</div>
+<p>Create the cloudmesh database by executing the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ fab mongo.reset
+</pre></div>
+</div>
+<p>Start the cloudmesh services by executing the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ fab server.start
+</pre></div>
+</div>
+<p>Access Cloudmesh using the http link:</p>
+<div class="highlight-python"><div class="highlight"><pre>http://PUBLIC_IP_OF_THE_VM:5000
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>You can get the public ip of the VM by running the command:</p>
+<div class="last highlight-python"><div class="highlight"><pre>$ echo $MYIP
+</pre></div>
+</div>
+</div>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p>Once you are done with your work and you no longer need the VMs, you can delete them with the commands:</p>
+<div class="last highlight-python"><div class="highlight"><pre>$ nova delete $USER-cloudmesh-001
+$ nova delete $USER-001
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../contribute/index.html" class="btn btn-neutral float-right" title="Contribute to Cloudmesh" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Create Cloudmesh Development Image" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

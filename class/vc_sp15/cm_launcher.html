@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Command Shell Orchestration Tool (Launcher) &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Command Shell Orchestration Tool (Launcher)</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/class/vc_sp15/cm_launcher.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="command-shell-orchestration-tool-launcher">
+<h1>Command Shell Orchestration Tool (Launcher)<a class="headerlink" href="#command-shell-orchestration-tool-launcher" title="Permalink to this headline">¶</a></h1>
+<p>Launcher provides orchestration for creating ready-to-use cloud
+applications with Chef Cookbooks and shell scripts.</p>
+<div class="section" id="launcher-import-command">
+<h2>Launcher import command<a class="headerlink" href="#launcher-import-command" title="Permalink to this headline">¶</a></h2>
+<p>Launcher registers local cookbooks from the yaml file
+(cloudmesh_launcher.yaml)</p>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher import
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>launcher &#39;bigdata_mooc&#39; added.
+launcher &#39;slurm&#39; added.
+launcher &#39;hadoop&#39; added.
+launcher &#39;ganglia&#39; added.
+launcher &#39;nagios&#39; added.
+</pre></div>
+</div>
+</div>
+<div class="section" id="launcher-menu-command">
+<h2>Launcher menu command<a class="headerlink" href="#launcher-menu-command" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">menu</span></code> command provides available local cookbooks that are registered
+by <code class="docutils literal"><span class="pre">import</span></code>. These cookbooks represent Chef Cookbooks registered in
+Cloudmesh. You can choose one of the names to start <code class="docutils literal"><span class="pre">Launcher</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Registered Cookbooks can be found at:</p>
+</div>
+<p><a class="reference external" href="https://github.com/cloudmesh/chef">https://github.com/cloudmesh/chef</a></p>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher menu
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>+--------------+----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| launcher     | name                 | description                                                                                                                                                      |
++--------------+----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| bigdata_mooc | Big Data Class at IU | Deploys an Image for a class taught on Big Data.                                                                                                                 |
+|              |                      |                                                                                                                                                                  |
+| ganglia      | Ganglia              | Deploys a Ganglia service for the vms specified. The ganglia server will be the first node in the list.                                                          |
+|              |                      |                                                                                                                                                                  |
+| hadoop       | Hadoop               | Deploys a haddop cluster on the VMs specified                                                                                                                    |
+|              |                      |                                                                                                                                                                  |
+| nagios       | Nagios               | Deploys a Nagios service for the vms specified. The ganglia server will be the first node in the list.                                                           |
+|              |                      |                                                                                                                                                                  |
+| slurm        | Slurm Cluster        | Deploys a Slurm cluster. One of the Vms is the Master, while the others register with the master as worker nodes. The master will be the first node in the list. |
+|              |                      |                                                                                                                                                                  |
++--------------+----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+</pre></div>
+</div>
+</div>
+<div class="section" id="launcher-start-command">
+<h2>Launcher start command<a class="headerlink" href="#launcher-start-command" title="Permalink to this headline">¶</a></h2>
+<p>If you decide which cookbook you are going to use, you are ready to
+create a new <code class="docutils literal"><span class="pre">launcher</span></code> with the cookbook name. In this tutorial, we
+use <code class="docutils literal"><span class="pre">hadoop</span></code> as a desired cookbook.</p>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher start hadoop
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>* india
+Refreshing albert servers india -&gt;
+Refresh time: 0.219480037689
+Store time: 0.0358941555023
+</pre></div>
+</div>
+</div>
+<div class="section" id="launcher-list-command">
+<h2>Launcher list command<a class="headerlink" href="#launcher-list-command" title="Permalink to this headline">¶</a></h2>
+<p>If your launcher has been successfully created, you can see it in the
+list of running launchers with <code class="docutils literal"><span class="pre">list</span></code> command.</p>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher list
+</pre></div>
+</div>
+</div>
+<div class="section" id="launcher-stop-command">
+<h2>Launcher stop command<a class="headerlink" href="#launcher-stop-command" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">stop</span></code> command terminates your launcher.</p>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher stop [name]
+</pre></div>
+</div>
+</div>
+<div class="section" id="launcher-export-command">
+<h2>Launcher export command<a class="headerlink" href="#launcher-export-command" title="Permalink to this headline">¶</a></h2>
+<p>Your loaded cookbooks in the database can be exported to a yaml file
+with <code class="docutils literal"><span class="pre">export</span></code> command. For example, we can generate a
+<code class="docutils literal"><span class="pre">/tmp/cloudmesh_launcher.yaml</span></code> file by exporting a registered
+cookbooks in the database.</p>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher export /tmp/cloudmesh_launcher.yaml
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

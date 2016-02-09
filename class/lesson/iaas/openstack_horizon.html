@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>OpenStack Horizion Web Dashboard &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../index.html"/>
+        <link rel="up" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="../../bdossp_sp15/index.html"/>
+        <link rel="next" title="Other IaaS Cloud Platforms" href="other_iaas.html"/>
+        <link rel="prev" title="OpenStack Juno" href="openstack_juno.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#notice">Notice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#office-hours">Office Hours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#contact">Contact</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#weekly-plan">Weekly Plan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#support">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#meeting">Meeting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#collaboration-tools">Collaboration Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#futuresystems-access">FutureSystems Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#linux-basics">Linux Basics</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../bdossp_sp15/index.html#basics-of-openstack">Basics of OpenStack</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="overview_openstack.html">Overview and Introduction to OpenStack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openstack.html">OpenStack for Beginners</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openstack_juno.html">OpenStack Juno</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">OpenStack Horizion Web Dashboard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_iaas.html">Other IaaS Cloud Platforms</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#basics-of-cloudmesh">Basics of Cloudmesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#advanced-cloudmesh">Advanced Cloudmesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#it-operations-automation-and-orchestration">IT Operations - Automation and Orchestration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#virtual-clusters">Virtual Clusters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#other-technologies">Other Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#future">Future</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#to-be-organized-into-the-above">To be Organized into the above</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
+      
+    <li>OpenStack Horizion Web Dashboard</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/class/lesson/iaas/openstack_horizon.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="openstack-horizion-web-dashboard">
+<span id="openstack-horizion-lesson"></span><h1>OpenStack Horizion Web Dashboard<a class="headerlink" href="#openstack-horizion-web-dashboard" title="Permalink to this headline">¶</a></h1>
+<p>On FutureSystems, we have a web interface for OpenStack cloud management,
+OpenStack Horizon. It supports most functionality that you can use to manage
+cloud resources via commannd line tools such as Nova Compute CLI with graphical
+illustration.</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>OpenStack Horizon is a GUI for managing OpenStack cloud. It is mainly developed
+by a open source web application framework, Django and Python. Some of the
+JavasScript and CSS libraries are also included such as, jQuery, AngularJS, D3,
+Font-Awesome, Jasmine, Qunit, Rickshaw, etc.</p>
+</div>
+<div class="section" id="source-code-of-horizon-github">
+<h2>Source code of Horizon (GitHub)<a class="headerlink" href="#source-code-of-horizon-github" title="Permalink to this headline">¶</a></h2>
+<p>GitHub: <a class="reference external" href="https://github.com/openstack/horizon">https://github.com/openstack/horizon</a></p>
+</div>
+<div class="section" id="horizon-on-futuresystems">
+<h2>Horizon on FutureSystems<a class="headerlink" href="#horizon-on-futuresystems" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils" id="id1">
+<caption><span class="caption-text">Horizon endpoints</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="43%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Image</th>
+<th class="head">Version</th>
+<th class="head">Machine</th>
+<th class="head">Protocol</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/fg-horizon.png"><img alt="image-horizon" src="../../../_images/fg-horizon.png" style="width: 100px;" /></a></td>
+<td>Juno</td>
+<td><a class="reference external" href="https://openstack-j.india.futuresystems.org/horizon">India_OpenStack_Juno</a></td>
+<td>Native OpenStack</td>
+<td>GUI for OpenStack</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Open the following URL:
+<a class="reference external" href="https://openstack-j.india.futuresystems.org/horizon">India_OpenStack_Juno</a></li>
+<li>Use <code class="docutils literal"><span class="pre">OS_USERNAME</span></code> and <code class="docutils literal"><span class="pre">OS_PASSWORD</span></code> as a User Name and Password on Horizon.
+You can find your <code class="docutils literal"><span class="pre">OS_USERNAME</span></code> and <code class="docutils literal"><span class="pre">OS_PASSWORD</span></code> in the
+<code class="docutils literal"><span class="pre">~/.cloudmesh/clouds/india/juno/openrc.sh</span></code></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are using other versions of OpenStack on FutureSystems,
+try to find your identity file with the following pattern of the path.
+<code class="docutils literal"><span class="pre">$HOME/.cloudmesh/clouds/[cloud</span> <span class="pre">host]/[openstack</span> <span class="pre">version]/[openrc.sh</span> <span class="pre">or</span> <span class="pre">novarc.sh]</span></code></p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>$ cat ~/.cloudmesh/clouds/india/juno/openrc.sh
+export OS_USERNAME=albert
+export OS_PASSWORD=**********
+export OS_TENANT_NAME=fg465
+export OS_AUTH_URL=https://i5r.idp.iu.futuregrid.org:5000/v2.0
+export OS_CACERT=~/.cloudmesh/clouds/india/juno/cacert.pem
+</pre></div>
+</div>
+<ul class="simple">
+<li>Select a project that you would like to use at the project selection link at
+the top left-hand corder of the page next to the OpenStack title image.</li>
+<li>Choose a component that you would like to use among Compute, Network, or
+Orchestration.</li>
+</ul>
+</div>
+<div class="section" id="usage-summary">
+<h2>Usage Summary<a class="headerlink" href="#usage-summary" title="Permalink to this headline">¶</a></h2>
+<p>The Overview page in the Compute tab shows current usage of OpenStack cloud
+resources on your account.  You can also have a summary reports for a certain
+period to see resource utilization, for example, how many VM instances were
+being used, or how many IP addresses were allocated.</p>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="first docutils">
+<dt>Try other features on Horizon.</dt>
+<dd><ul class="first last simple">
+<li>See detailed information of your virtual server.</li>
+<li>Attach a floating ip address to your virtual server and confirm it is
+accessible.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">To find your password, find the <code class="docutils literal"><span class="pre">OS_PASSWORD</span></code> field in your openrc.sh.
+See the comment above for details.</p>
+</div>
+</div>
+<div class="section" id="next-step">
+<h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
+<p>In the next page, we explore other features of OpenStack.</p>
+<p><a class="reference external" href="/introduction_to_cloud_computing/iaas/index.html">Link here</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="other_iaas.html" class="btn btn-neutral float-right" title="Other IaaS Cloud Platforms" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="openstack_juno.html" class="btn btn-neutral" title="OpenStack Juno" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

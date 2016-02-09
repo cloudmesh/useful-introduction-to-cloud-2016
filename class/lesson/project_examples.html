@@ -1,0 +1,600 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sample Projects &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/>
+        <link rel="up" title="Lessons" href="../lessons.html"/>
+        <link rel="next" title="Final Project Guidelines" href="projects.html"/>
+        <link rel="prev" title="Best Practices for Preservation of IaaS and Data in FutureSystems" href="preservation.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">Lessons</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ansible.html">Ansible</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible.html#tutorial-ansible-basic-commands">Tutorial: Ansible Basic commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_playbook.html">Ansible Playbooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docker.html">Docker Basics on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docker_cloudmesh.html">Deploying Cloudmesh using Docker on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html">FAQ (Under Preparation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="git.html">Using Git and GitHub for collaboration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="google.html">Google</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hands_on_fg465.html">Getting Started with Hands-on Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ipynb.html">Deploying IPython Notebook Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="list_of_dataset.html">List of Dataset (Under preparation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="list_of_tech.html">List of Technologies (Under Preparation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lpbs.html">Local PBS Queuing System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html">Environment Modules (modules) on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openmpi.html">Deploying Open MPI Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="preservation.html">Best Practices for Preservation of IaaS and Data in FutureSystems</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Sample Projects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#notice">Notice</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#predicting-airline-delays-with-hadoop">Predicting Airline Delays with Hadoop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#daily-variation-of-barometric-pressure">Daily Variation of Barometric Pressure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-visualization">Data Visualization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mapreduce-implementation-for-longest-common-substring-problem">MapReduce Implementation for Longest Common Substring Problem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mapreduce-implementation-for-gff-parsing">MapReduce Implementation for GFF Parsing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html">Final Project Guidelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyton_matlab.html">Calling Python from matlab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="report.html">Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resource_use_restriction.html">Use of OpenStack Resources on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="restructuredtext.html">Restructured Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst2.html">Sphinx Quick Reference Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="shell-access.html">Shell Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="video.html"> (Video lectures) Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="../lessons.html">Lessons</a> &raquo;</li>
+      
+    <li>Sample Projects</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/class/lesson/project_examples.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sample-projects">
+<span id="ref-class-lesson-project-examples"></span><h1>Sample Projects<a class="headerlink" href="#sample-projects" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="notice">
+<h2>Notice<a class="headerlink" href="#notice" title="Permalink to this headline">¶</a></h2>
+<p>These sample projects are only for your reference to give you some idea of a
+final project.  We do not intend to limit your idea of projects. Instead, we
+recommend that you define a problem and find topics and technologies from your
+area of interest.  If you have other topics or concepts from the outside of the
+class, please contact us to discuss your project. It may help find project
+scope in practical.</p>
+</div>
+<div class="section" id="predicting-airline-delays-with-hadoop">
+<h2>Predicting Airline Delays with Hadoop<a class="headerlink" href="#predicting-airline-delays-with-hadoop" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="project-idea">
+<h3>Project Idea<a class="headerlink" href="#project-idea" title="Permalink to this headline">¶</a></h3>
+<p>One of the main goals is using machine learning algorithms to build predictive
+models with Python packages and data analysis programs. Training the original
+datasets is important to build models with its performance.  Finding a good
+combination of technologies and programming languages would be cruicial to make
+a successful project.</p>
+</div>
+<div class="section" id="project-overview">
+<h3>Project Overview<a class="headerlink" href="#project-overview" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Description: Every year approximately 20% of airline flights are delayed or
+cancelled, resulting in significant costs to both travellers and airlines.
+This project builds a supervised learning model that predicts airline delay
+from historial flight data and weather information.</p>
+</li>
+<li><p class="first">Dataset: <a class="reference external" href="http://stat-computing.org/dataexpo/2009/the-data.html">Airline delay dataset 2007, 2008</a></p>
+</li>
+<li><dl class="first docutils">
+<dt>Technologies:</dt>
+<dd><ul class="first last simple">
+<li>Hadoop</li>
+<li>Apache Pig</li>
+<li>Python</li>
+<li>Pandas</li>
+<li>HDFS</li>
+<li>scikit-learn</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="figure" id="id9">
+<img alt="../../_images/ml1.png" src="../../_images/ml1.png" />
+<p class="caption"><span class="caption-text">Average delays by month</span></p>
+</div>
+<div class="figure" id="id10">
+<img alt="../../_images/ml2.png" src="../../_images/ml2.png" />
+<p class="caption"><span class="caption-text">Average delays during a day</span></p>
+</div>
+<div class="figure" id="id11">
+<img alt="../../_images/ml3.png" src="../../_images/ml3.png" />
+<p class="caption"><span class="caption-text">Top 15 airlines for flight delay (Chicago O&#8217;Hare airport)</span></p>
+</div>
+<ul>
+<li><dl class="first docutils">
+<dt>Source:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://nbviewer.ipython.org/github/ofermend/IPython-notebooks/blob/master/blog-part-1.ipynb">http://nbviewer.ipython.org/github/ofermend/IPython-notebooks/blob/master/blog-part-1.ipynb</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="daily-variation-of-barometric-pressure">
+<h2>Daily Variation of Barometric Pressure<a class="headerlink" href="#daily-variation-of-barometric-pressure" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Project Idea<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>This type of projects gives you some experience of data processing.
+Rich Python modules i.e. Pandas, NumPy or Matplotlib allow you to import and
+manipulate dataset in order to provide results in a graphical format.</p>
+</div>
+<div class="section" id="id2">
+<h3>Project Overview<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Description: Daily variation of barometric pressure (maximum minus minimum
+for each day) in inches, for the past 12 months. For each of the hand-picked
+major cities, the 365 daily ranges for that city are histogrammed.</p>
+</li>
+<li><p class="first">Dataset: <a class="reference external" href="http://cdo.ncdc.noaa.gov/qclcd/QCLCD?prior=N">Quality Controlled Local Climatological Data</a></p>
+</li>
+<li><dl class="first docutils">
+<dt>Technologies:</dt>
+<dd><ul class="first last simple">
+<li>IPython Notebook 2.0 (Pandas, Numpy, matplotlib)</li>
+<li>d3.js</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="figure" id="id12">
+<img alt="../../_images/GeoSparkGrams.png" src="../../_images/GeoSparkGrams.png" />
+<p class="caption"><span class="caption-text">Figure 1. GeoSparkGrams of Daily Barometric Volatility*</span></p>
+</div>
+<ul>
+<li><dl class="first docutils">
+<dt>*Source:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://nbviewer.ipython.org/urls/gist.githubusercontent.com/michaelmalak/dd5495a605a8b951da43/raw/472b180b46d50726326eda2a4704f7ee0e94f539/GeoSparkGram.ipynb">http://nbviewer.ipython.org/urls/gist.githubusercontent.com/michaelmalak/dd5495a605a8b951da43/raw/472b180b46d50726326eda2a4704f7ee0e94f539/GeoSparkGram.ipynb</a></li>
+<li><a class="reference external" href="http://technicaltidbit.blogspot.com/2014/05/geosparkgrams-tiny-histograms-on-map.html">http://technicaltidbit.blogspot.com/2014/05/geosparkgrams-tiny-histograms-on-map.html</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="data-visualization">
+<h2>Data Visualization<a class="headerlink" href="#data-visualization" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>Project Idea<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>The main goal of this type of projects is visulaizing datasets stored in a
+database.  You may like to use relational databases (SQL based) but this
+example uses document based (JSON like, BSON) structure to store information
+and you gain some experience with document-oriented databases.</p>
+<p>You have open data based on CSV files. The tasks include
+creating a database and automating the loading of the latest open data CSV
+extracts from Amazon Storage (S3) into a database. With D3.js and DC.js
+visualization toolkits, you understand how to provide results in an interactive
+mode.</p>
+</div>
+<div class="section" id="id4">
+<h3>Project Overview<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Description: DonorsChoose.org is a US based nonprofit organization that
+allows individuals to donate money directly to public school classroom
+projects. Public school teachers post classroom project requests on the
+platform, and individuals have the option to donate money directly to fund
+these projects. The classroom projects range from pencils and books to
+computers and other expensive equipments for classrooms. In more than 10
+years of existence, this platform helped teachers in all US states to post
+more than 7700,000 classroom project requests and raise more than
+$280,000,000. DonorsChoose.org is making the platform data open and available
+for making discoveries and building applications. In this tutorial we will be
+using one of the available datasets for building an interactive data
+visualization that represents school donations broken down by different
+attributes.</p>
+</li>
+<li><p class="first">Dataset: <a class="reference external" href="https://s3.amazonaws.com/open_data/csv/opendata_projects.zip">Project dataset from DonorsChoose.org</a></p>
+</li>
+<li><dl class="first docutils">
+<dt>Technologies:</dt>
+<dd><ul class="first last simple">
+<li>D3.js</li>
+<li>DC.js</li>
+<li>Python</li>
+<li>MongoDB</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="figure" id="id13">
+<img alt="../../_images/viz_demo.gif" src="../../_images/viz_demo.gif" />
+<p class="caption"><span class="caption-text">Figure 2. Interactive Data Visualization for donorschoose.org**</span></p>
+</div>
+<ul>
+<li><dl class="first docutils">
+<dt>**Source:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://adilmoujahid.com/posts/2015/01/interactive-data-visualization-d3-dc-python-mongodb/">http://adilmoujahid.com/posts/2015/01/interactive-data-visualization-d3-dc-python-mongodb/</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="mapreduce-implementation-for-longest-common-substring-problem">
+<h2>MapReduce Implementation for Longest Common Substring Problem<a class="headerlink" href="#mapreduce-implementation-for-longest-common-substring-problem" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>Project Idea<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>This type of projects focus on implementing parallel programming for solving a
+particular problem. One example here is using Python programming language to
+use map() and reduce() functions to find the longest repeating string in the
+E-coli K-12 Genome on Amazon Cloud. The main goals are 1) implementing Python
+map() and reduce() functions to find LCS (longest common substring), and 2)
+running hem on Amazon Cloud. The real challenges are 1) defining a problem, 2)
+finding an algorithm to solve the problem, and 3) implementing your idea or
+algorithm in Python. Using commercial cloud, e.g. Amazon, Azure or Google is to
+have some experience with the cloud services to utilize computing resources
+available.</p>
+</div>
+<div class="section" id="id6">
+<h3>Project Overview<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Description: This project aims to measure similarity of genome sequences.
+MapReduce has benefits for generic comparison compared to other algorithms in
+terms of computation speed.</p>
+<p>Quoted from the book Cormen, Leiserson, Rivest and Stein’s
+classic reference, “Introduction to Algorithms” (CLRS for short). The longest
+common subsequence problem as follows:</p>
+<p>In biological applications, we often want to compare the DNA of two (or more)
+different organisms. […] For example, the DNA of one organism may be S1 =
+ACCGGTCGAGTGCGCGGAAGCCGGCCGAA while the DNA of another organism may be S2 =
+GTCGTTCGGAATGCCGTTGCTCTGTAAA. One goal of comparing two strands of DNA is to
+determine how “similar” the two strands are, as some measure of how cosely
+related the two organisms are.</p>
+</li>
+<li><p class="first">Dataset: <a class="reference external" href="http://www.genome.wisc.edu/pub/sequence/U00096.2.fas">Escherichia coli K-12</a></p>
+</li>
+<li><dl class="first docutils">
+<dt>Technologies:</dt>
+<dd><ul class="first last simple">
+<li>Python</li>
+<li>Amazon</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Source:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://wordaligned.org/articles/longest-common-subsequence">http://wordaligned.org/articles/longest-common-subsequence</a></li>
+<li><a class="reference external" href="http://donniedemuth.s3.amazonaws.com/bioinf_with_python_and_hadoop.pdf">http://donniedemuth.s3.amazonaws.com/bioinf_with_python_and_hadoop.pdf</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Tips: You can use Python MapReduce frameworks such as:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://discoproject.org/">Disco</a></li>
+<li><a class="reference external" href="https://code.google.com/p/octopy/">octo.py</a></li>
+<li><a class="reference external" href="https://github.com/michaelfairley/mincemeatpy">mincemeat.py</a></li>
+<li><a class="reference external" href="https://pythonhosted.org/mrjob/">mrjob</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="mapreduce-implementation-for-gff-parsing">
+<h2>MapReduce Implementation for GFF Parsing<a class="headerlink" href="#mapreduce-implementation-for-gff-parsing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>Project Idea<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>This is similar to the example of the Longest Common Substring Problem. The
+main goals of this project are to define a problem and to implement solutions
+in Python with known frameworks and tools.</p>
+</div>
+<div class="section" id="id8">
+<h3>Project Overview<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Description: Generic feature format (GFF) is a nice plain text file format
+for storing annotations on biological sequences, and would be very useful
+tied in with the BioSQL relational database. GFF parsing is a little tricker
+to fit into the Biopython SeqIO system than other sequence file formats.
+Formats like GenBank or UniProt contain a sequence and its features combined
+into a single record. This allows parsers to iterate over files one at a
+time, returning generic sequence objects from each record. This scales with
+large files so your memory and processor worries are bounded by the most
+complicated record in the file.</p>
+</li>
+<li><p class="first">Map Function:</p>
+<dl class="docutils">
+<dt>def _gff_line_map(line, params):</dt>
+<dd><p class="first">strand_map = {&#8216;+&#8217; : 1, &#8216;-&#8216; : -1, &#8216;?&#8217; : None, None: None}
+line = line.strip()
+if line[0] != &#8220;#&#8221;:</p>
+<blockquote class="last">
+<div><p>parts = line.split(&#8216;t&#8217;)
+should_do = True
+if params.limit_info:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>for limit_name, limit_values in params.limit_info.items():</dt>
+<dd><dl class="first last docutils">
+<dt>cur_id = tuple([parts[i] for i in</dt>
+<dd><p class="first last">params.filter_info[limit_name]])</p>
+</dd>
+<dt>if cur_id not in limit_values:</dt>
+<dd><p class="first last">should_do = False
+break</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</dd>
+</dl>
+</li>
+<li><p class="first">Reduce Function:</p>
+<dl class="docutils">
+<dt>def _gff_line_reduce(map_results, out, params):</dt>
+<dd><p class="first">final_items = dict()
+for gff_type, final_val in map_results:</p>
+<blockquote>
+<div><p>send_val = (simplejson.loads(final_val) if params.jsonify else
+final_val)
+try:</p>
+<blockquote>
+<div><p>final_items[gff_type].append(send_val)</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>except KeyError:</dt>
+<dd><p class="first last">final_items[gff_type] = [send_val]</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="last docutils">
+<dt>for key, vals in final_items.items():</dt>
+<dd><p class="first last">out.add(key, (simplejson.dumps(vals) if params.jsonify else vals))</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><p class="first">Dataset: N/A</p>
+</li>
+<li><dl class="first docutils">
+<dt>Techonologies:</dt>
+<dd><ul class="first last simple">
+<li>Python</li>
+<li>Disco</li>
+<li>Amazon EC2</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Source: <a class="reference external" href="http://bcb.io/2009/03/22/mapreduce-implementation-of-gff-parsing-for-biopython/">http://bcb.io/2009/03/22/mapreduce-implementation-of-gff-parsing-for-biopython/</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="projects.html" class="btn btn-neutral float-right" title="Final Project Guidelines" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="preservation.html" class="btn btn-neutral" title="Best Practices for Preservation of IaaS and Data in FutureSystems" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

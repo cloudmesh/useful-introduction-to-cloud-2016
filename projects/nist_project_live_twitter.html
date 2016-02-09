@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Live Twitter Analysis &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../index.html"/>
+        <link rel="up" title="Possible Projects" href="index.html"/>
+        <link rel="next" title="Spatial Big data/Spatial Statistics/Geographic Information Systems" href="nist_project_spatial_bigdata.html"/>
+        <link rel="prev" title="Human and Face Detection from Video (simulated streaming data)" href="nist_project_human_and_face_detection.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Possible Projects</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="project_bibliometric_namedisambiguity.html">Author Name Disambiguation for Bibliometric Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_bigdata_containers.html">A Paper on Container Technologies for BigData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_cloudmesh.html">Cloudmesh Dirstributed Virtual Cluster Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_docker.html">Cloudmesh Docker Clusetr Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_survey_devops.html">A Survey of DevOps Frameworks in support of Big Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_survey_paas.html">A Survey of Online PaaS Frameworks and Clouds in support of Big Data</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#from-nist-big-data-public-working-group">From NIST Big Data Public Working Group</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="nist_project_data_warehousing.html">Data Warehousing and Data mining</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nist_project_fingerprint_matching.html">Fingerprint Matching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nist_project_healthcare.html">Big data Analytics for Healthcare Data/Health informatics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nist_project_human_and_face_detection.html">Human and Face Detection from Video (simulated streaming data)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Live Twitter Analysis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#algorithms">Algorithms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#datasets">Datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#possible-tools">Possible Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nist-big-data-pulbic-working-group-nbd-pwg">NIST Big Data Pulbic Working Group (NBD-PWG)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nist_project_spatial_bigdata.html">Spatial Big data/Spatial Statistics/Geographic Information Systems</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#links-that-may-inspire-projects">Links that may inspire projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#from-other-sources">From Other Sources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Possible Projects</a> &raquo;</li>
+      
+    <li>Live Twitter Analysis</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/projects/nist_project_live_twitter.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="live-twitter-analysis">
+<span id="ref-class-project-live-twitter"></span><h1>Live Twitter Analysis<a class="headerlink" href="#live-twitter-analysis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Social media for many people has become integral part of their daily life.
+Social media metrics are now considered parts of altmetrics, which are
+non-traditional metrics proposed as an alternative to more traditional
+metrics.</div></blockquote>
+<p>Twitter is an online social networking service that enables users to send and
+read short 140-character messages called &#8220;tweets&#8221;. Registered users can post
+and read tweets, but general public can also read them. This is unlike
+Facebook, where social interactions are often private. Users access Twitter
+through the website interface, SMS, or mobile device app.</p>
+<p>We will develop a program(s) for live Twitter Analysis based on using Twitter&#8217;s
+Search and Streaming APIs for sentiment analysis and visualization of results
+(Figure 1).  We will also analyze and visualize NIST Twitter network.  We can
+track and statistically analysis the NIST mentions, followers, retweets,
+compare it to other National labs, and many more things. The analysis could
+help NIST, measure and improve our effectiveness in engaging public about our
+work and our outreach effort on Twitter.</p>
+<div class="figure" id="id1">
+<img alt="../_images/nist_project_twitter.png" src="../_images/nist_project_twitter.png" />
+<p class="caption"><span class="caption-text">Figure 1. Show different Twitter visualizations</span></p>
+</div>
+<p>We could develop the application based on Apache Storm, a distributed
+computation framework, which adds reliable real-time data processing
+capabilities to Apache Hadoop. It is fast, scalable, reliable and can be
+programmed using a variety of programming languages (Python, Java, Scala). Its
+architecture consists of three primary node sets: Nimbus nodes, Zookeeper
+nodes, and Supervisor nodes.</p>
+</div>
+<div class="section" id="algorithms">
+<h2>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Sentiment Analysis:</li>
+</ul>
+<p>Sentiment analysis or opinion mining refers to the use of natural language
+processing and text analysis to identify and extract subjective information in
+source materials. Normally speaking, sentiment analysis aims to determine the
+attitude of a speaker or a writer with respect to some topic or the overall
+contextual of a document(s).</p>
+<dl class="docutils">
+<dt>Examples of words used for Sentiment analysis:</dt>
+<dd>Positive: nice, awesome, cool, superb, etc.
+Negative: bad, uninspired, expensive, disappointed, recommend others to
+avoid, etc.</dd>
+</dl>
+</div>
+<div class="section" id="datasets">
+<h2>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">¶</a></h2>
+<p>Live Twitter feed</p>
+</div>
+<div class="section" id="possible-tools">
+<h2>Possible Tools<a class="headerlink" href="#possible-tools" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Big Data: Apache Strom, Apache HBase, Twitter&#8217;s Search and Streaming APIs,</li>
+<li>Visualization tools: D3 Visualization, Tableau visualization.</li>
+<li>Development tools:  Java, Python, Scala and JavaScript, JQuery</li>
+<li>Natural Language Processing Algorithms: Python Natural Language Toolkit
+(NLTK) and AlchemyAPI Service.</li>
+</ul>
+</div>
+<div class="section" id="nist-big-data-pulbic-working-group-nbd-pwg">
+<h2>NIST Big Data Pulbic Working Group (NBD-PWG)<a class="headerlink" href="#nist-big-data-pulbic-working-group-nbd-pwg" title="Permalink to this headline">¶</a></h2>
+<p>This page is a copy of this document:
+<a class="reference external" href="http://bigdatawg.nist.gov/_uploadfiles/M0399_v1_6344899314.doc">http://bigdatawg.nist.gov/_uploadfiles/M0399_v1_6344899314.doc</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="nist_project_spatial_bigdata.html" class="btn btn-neutral float-right" title="Spatial Big data/Spatial Statistics/Geographic Information Systems" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="nist_project_human_and_face_detection.html" class="btn btn-neutral" title="Human and Face Detection from Video (simulated streaming data)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

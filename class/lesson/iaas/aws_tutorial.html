@@ -1,0 +1,475 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Amazon Web Services (AWS) &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Amazon Web Services (AWS)</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/class/lesson/iaas/aws_tutorial.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="amazon-web-services-aws">
+<h1>Amazon Web Services (AWS)<a class="headerlink" href="#amazon-web-services-aws" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This lesson will introduce you to a very important topic to Amazon Web Services
+(AWS). Amazon Elastic Compute Cloud (EC2) provides Infrastructure as a Service
+(IaaS) and other services e.g. Simple Storage Service (S3) supports storing
+objects (files) on cloud environments, are working together to offer dominant
+cloud services compared to other competitors, e.g. Microsoft Azure, or Google
+Compute Engine. In this lesson, we focus on a simple tutorial of starting a
+Apache HTTP Server using Amazon EC2 virtual machine instances. We expect that
+readers gain basic knowledge of using Amazon Cloud and have some experience of
+building services on the cloud.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Duration: 30 minutes</p>
+</div>
+</div>
+<div class="section" id="prerequisite">
+<h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
+<p>In order to conduct this lesson you should have:</p>
+<ul class="simple">
+<li>Amazon Account</li>
+<li>SSH Client tool (e.g. putty, cygwin or terminal)</li>
+</ul>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>We will create a EC2 instance on Amazon cloud, and start a Apache Web Server on
+the Ubuntu 14.04 machine image. Our conditions are:</p>
+<ul>
+<li><p class="first">Ubuntu 14.04 LTS Server 64 bit (VM Image)</p>
+</li>
+<li><p class="first">t2.small Instance Type (1 vcpu + 2 gb memories)</p>
+</li>
+<li><p class="first">HTTP, HTTPS (80, 443) port opening using security groups</p>
+</li>
+<li><p class="first">SSH key pair authentication</p>
+</li>
+<li><p class="first">Use of package manager (i.e. apt-get) with switching to admin privileges</p>
+</li>
+<li><dl class="first docutils">
+<dt>Use Amazon Management Console (Web interface)</dt>
+<dd><ul class="first last simple">
+<li>We may have other lessons for using a ec2 command line tool.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>Amazon provides web management tool, AWS Management console to use AWS cloud
+services. We will use this web interface to create a VM instance.</p>
+<div class="section" id="aws-management-console">
+<h3>AWS Management Console<a class="headerlink" href="#aws-management-console" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><dl class="first docutils">
+<dt>Sign in Amazon Web Services (AWS)</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://aws.amazon.com">http://aws.amazon.com</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Sign up, if you don&#8217;t have an account</dt>
+<dd><ul class="first last simple">
+<li>Free trial is available for using t2.micro instances (1 vCPU + 1 GB
+Memories)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Find EC2 in AWS Management Console</dt>
+<dd><ul class="first last simple">
+<li>EC2 is Amazon Compute Engine. We create a VM instance in the EC2 page.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="preparing-vm-instance">
+<h3>Preparing VM Instance<a class="headerlink" href="#preparing-vm-instance" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><dl class="first docutils">
+<dt>Select VM base image</dt>
+<dd><ul class="first last simple">
+<li>Find Ubuntu 14.04 LTS Server 64Bit from Quick Start.</li>
+<li>There are about 40,000 VM images available in Community AMIs.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Choose an Instance Type</dt>
+<dd><ul class="first last simple">
+<li>select t2.small or other preferred size of VM instance</li>
+<li>OpenStack Flavor and Azure Size have similar format for the size of VM
+instances.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Skip to 6. Configure Security Group</dt>
+<dd><ul class="first last simple">
+<li>Add a rule for HTTP and HTTPs</li>
+<li>SSH (22) port is default</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Click &#8216;Review and Launch&#8217;</dt>
+<dd><ul class="first last simple">
+<li>This is a last step before we choose SSH key pair.</li>
+<li>Confirm your VM image, size and rules in the security group.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="ssh-key-pair">
+<h3>SSH Key Pair<a class="headerlink" href="#ssh-key-pair" title="Permalink to this headline">¶</a></h3>
+<p>Amazon EC2 uses SSH key pair to get access of your VM instance.</p>
+<p>You have a few options. You can create a new key for your new VM instance or
+use a existing key.</p>
+<p>If you create a new key, carefully store your private key file.</p>
+</div>
+<div class="section" id="launch-a-instance-and-ip-address">
+<h3>Launch a Instance and IP Address<a class="headerlink" href="#launch-a-instance-and-ip-address" title="Permalink to this headline">¶</a></h3>
+<p>Once you successfully launched your instance, it will be available in a few
+seconds.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Find a IP Adddress or hostname</dt>
+<dd><ul class="first last simple">
+<li>We need destination address to ssh into the server. You can find IP address
+or hostname in the Instances page.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="ssh-into-vm-instance">
+<h3>SSH into VM Instance<a class="headerlink" href="#ssh-into-vm-instance" title="Permalink to this headline">¶</a></h3>
+<p>Use your ssh client tool to login to the virtual server.</p>
+<ul>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">ubuntu</span></code> as a user name</dt>
+<dd><ul class="first last simple">
+<li>We used Ubuntu 14.04 VM image which has a default username <code class="docutils literal"><span class="pre">ubuntu</span></code>.
+Once we logged into the VM instance, we can switch to other users e.g.
+<code class="docutils literal"><span class="pre">root</span></code> or create a new user.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>SSH private key</dt>
+<dd><ul class="first last simple">
+<li>Make sure you are SSH&#8217;ing to the VM instance with your SSH key pair.
+Otherwise, your login won&#8217;t be accepted from the virtual server.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="install-and-run-apache-web-server">
+<h3>Install and Run Apache Web Server<a class="headerlink" href="#install-and-run-apache-web-server" title="Permalink to this headline">¶</a></h3>
+<p>We assume that you know how to use some basic linux commands.
+We will use the following commands 1) sudo, 2) su, 3) apt-get, and 4) service,
+to install and run Apache HTTP server.</p>
+<ul>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span></code></dt>
+<dd><ul class="first last simple">
+<li>This command updates a list of Linux package repositories.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">apache2</span></code></dt>
+<dd><ul class="first last simple">
+<li>We install Apache HTTP version 2 using package manager <code class="docutils literal"><span class="pre">apt-get</span></code>.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">restart</span></code> (optional)</dt>
+<dd><ul class="first last simple">
+<li>If you made a change on HTTP server, you may need to restart.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">su</span> <span class="pre">-</span></code> (optional)</dt>
+<dd><ul class="first last simple">
+<li>If you switch a user to <code class="docutils literal"><span class="pre">root</span></code> with this command, you won&#8217;t need to issue
+<code class="docutils literal"><span class="pre">sudo</span></code> command every time when you need admin privileges.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="check-it-works-page-on-the-web">
+<h3>Check <code class="docutils literal"><span class="pre">It</span> <span class="pre">Works!</span></code> Page on the Web<a class="headerlink" href="#check-it-works-page-on-the-web" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><dl class="first docutils">
+<dt>Open a web browser and type the IP address or hostname of your VM instance.</dt>
+<dd><ul class="first last simple">
+<li>If you see <code class="docutils literal"><span class="pre">It</span> <span class="pre">Works!</span></code> page, you have now working Apache Web Server on
+Amazon EC2.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="terminate-your-instance-important">
+<h3>Terminate your Instance <em>IMPORTANT</em><a class="headerlink" href="#terminate-your-instance-important" title="Permalink to this headline">¶</a></h3>
+<p>If you completed your jobs on Amazon cloud, you need to shutdown your instances
+and return the lease.  There is <code class="docutils literal"><span class="pre">terminate</span> <span class="pre">instance</span></code> command or menu. Amazon
+has hour-basis charging system, if you do not terminate your system, you will
+receive a charge of using cloud services e.g. EC2, S3, or CloudWatch.</p>
+</div>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Start a web server using CherryPy or other Python software using ec2
+command-line client tool.</p>
+<blockquote>
+<div><ul class="simple">
+<li>tip1: you may need to install python packages, e.g. pip or virtualenv.</li>
+<li>tip2: you may need to install and configure ec2 client tool.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><dl class="first docutils">
+<dt>Save your data on S3 or Block Storage</dt>
+<dd><ul class="first last simple">
+<li>You expect to understand how to use S3 or block storage service.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="next-step">
+<h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
+<p>In the next page, starting a Flask web server on Microsoft Azure will be
+addressed.</p>
+<p><a class="reference external" href="azure_tutorial.html">Microsoft Azure</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

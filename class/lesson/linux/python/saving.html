@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>&lt;no title&gt; &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/class/lesson/linux/python/saving.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>You can save your programs to files which the interpreter can then
+execute.
+This has the benefit of allowing you to track changes made to your programs and sharing them with other people.</p>
+<p>Start by opening a new file <code class="docutils literal"><span class="pre">hello.py</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nano hello.py
+</pre></div>
+</div>
+<p>Now enter write a simple program and save:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s2">&quot;Hello world!&quot;</span>
+</pre></div>
+</div>
+<p>As a check, make sure the file contains the expected contents:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cat hello.py
+print &quot;Hello world!&quot;
+</pre></div>
+</div>
+<p>To execute your program pass the file as a parameter to the <code class="docutils literal"><span class="pre">python</span></code>
+command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python hello.py
+Hello world!
+</pre></div>
+</div>
+<p>Congratulations, you have written a Python <strong>module</strong>.
+Files in which Python directives are stored are called <strong>module</strong>s</p>
+<p>You can make this programs more interesting as well.  Let&#8217;s write a
+program that asks the user to enter a number, <em>n</em>, and prints out the
+<em>n</em>-th number in the <a class="reference external" href="http://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci sequence</a>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nano print_fibs.py
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the nth fibonacci number</span>
+
+<span class="sd">    The nth fibonacci number is defined as follows:</span>
+<span class="sd">    Fn = Fn-1 + Fn-2</span>
+<span class="sd">    F2 = 1</span>
+<span class="sd">    F1 = 1</span>
+<span class="sd">    F0 = 0</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">print</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can now run this like so:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python print_fibs.py 5
+8
+</pre></div>
+</div>
+<p>Let break this down a bit.
+The first part:</p>
+<div class="highlight-python"><div class="highlight"><pre>python print_fibs.py 5
+</pre></div>
+</div>
+<p>can be translated to say:</p>
+<blockquote>
+<div>The Python interpreter <code class="docutils literal"><span class="pre">python</span></code> should run the <code class="docutils literal"><span class="pre">print_fibs.py</span></code>
+program and pass it the parameter <code class="docutils literal"><span class="pre">5</span></code>.</div></blockquote>
+<p>The interpreter then looks at the <code class="docutils literal"><span class="pre">print_fibs.py</span></code> file and begins to
+execute it.
+The first line it encounters is:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">sys</span>
+</pre></div>
+</div>
+<p>This line consists of the <code class="docutils literal"><span class="pre">import</span></code> keyword.
+Here <code class="docutils literal"><span class="pre">import</span></code> attempts to load the <code class="docutils literal"><span class="pre">sys</span></code> module, which has several useful items.</p>
+<p>Next the interpreter sees the <code class="docutils literal"><span class="pre">def</span></code> keyword.  The begins the
+definition of a function, called <code class="docutils literal"><span class="pre">fib</span></code> here.  Our <code class="docutils literal"><span class="pre">fib</span></code> function
+takes a single argument, named <code class="docutils literal"><span class="pre">n</span></code> within the function definition.</p>
+<p>Next we begin a multi-line string between the triple double-quotes.
+Python can take this string and create documentation from it.</p>
+<p>The <code class="docutils literal"><span class="pre">fib</span></code> function returns the <em>n</em>-th number in the <a class="reference external" href="http://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci sequence</a>.
+This sequence is mathematically defined as (where <em>n</em> is subscripted):</p>
+<p>This translates to Python as:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+  <span class="k">return</span> <span class="mi">0</span>
+<span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+  <span class="k">return</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next we have the block:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>if __name__ == &#39;__main__&#39;:
+</pre></div>
+</div>
+<p>If the interpreter is running this module then there will be a variable <code class="docutils literal"><span class="pre">__name__</span></code> whose value is <code class="docutils literal"><span class="pre">__main__</span></code>.
+This <strong>if statement</strong> checks for this condition and executes this block if the check passed.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>Try removing the <code class="docutils literal"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></code> block and run the
+program.
+How does it behave differently?
+What about if you replace with something like:</p>
+<div class="code python last highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">fib</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">fib</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The next line:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>does three different things.
+First it gets the value in the <code class="docutils literal"><span class="pre">sys.argv</span></code> array at index 1.
+This was the parameter <cite>5</cite> we originally passed to our program:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python print_fibs.py 5
+</pre></div>
+</div>
+<p>Substituting the parameter in, the line can be rewritten as:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;5&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We see that the <code class="docutils literal"><span class="pre">5</span></code> is represented as a string.
+However, we need to use integers for the <code class="docutils literal"><span class="pre">fib</span></code> function.
+We can use <code class="docutils literal"><span class="pre">int</span></code> to convert <code class="docutils literal"><span class="pre">&quot;5&quot;</span></code> to <code class="docutils literal"><span class="pre">5</span></code></p>
+<p>We now have:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p>which assigns the value <code class="docutils literal"><span class="pre">5</span></code> to the variable <code class="docutils literal"><span class="pre">n</span></code>.
+We can now call <code class="docutils literal"><span class="pre">fib(n)</span></code> and <code class="docutils literal"><span class="pre">print</span></code> the result.</p>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

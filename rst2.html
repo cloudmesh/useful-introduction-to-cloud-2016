@@ -1,0 +1,454 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sphinx Quick Reference Guide &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Sphinx Quick Reference Guide</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/rst2.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sphinx-quick-reference-guide">
+<span id="howto-sphinx-ref"></span><h1>Sphinx Quick Reference Guide<a class="headerlink" href="#sphinx-quick-reference-guide" title="Permalink to this headline">¶</a></h1>
+<p>This is a brief overview of Sphinx formatting that is easy to mixup,
+and it is provided here as a reminder. The official Sphinx website has
+an extensive guide on the uses and nuances of reStructured Text.</p>
+<p><a class="reference external" href="http://sphinx.pocoo.org/contents.html">Sphinx Official Webpage</a></p>
+<div class="section" id="section-headings">
+<h2>Section Headings<a class="headerlink" href="#section-headings" title="Permalink to this headline">¶</a></h2>
+<p>Headings in order of specificity such that each heading level may not
+contain a heading preceding it:</p>
+<div class="highlight-python"><div class="highlight"><pre>%%%%%%%%%%%%%%%%%%%%%%
+Master Doc Top Heading
+%%%%%%%%%%%%%%%%%%%%%%
+
+  -The percent signs should only be used in the contents.rst root document.
+
+###############
+Section Heading
+###############
+
+***************
+Chapter Heading
+***************
+
+Major Heading
+=============
+
+Minor Heading
+*************
+
+Major Subsection
+----------------
+
+Minor Subsection
+^^^^^^^^^^^^^^^^
+
+Paragraph
+&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="labels-and-references">
+<h2>Labels and References<a class="headerlink" href="#labels-and-references" title="Permalink to this headline">¶</a></h2>
+<p>You can use labels to cross-reference arbitrary locations in any document
+through :ref: and :doc: roles. For this to work, label names must be unique
+throughout the entire documentation. You can label a section with .. _label-name:
+(two periods, one space, one underscore, followed by the label name and a colon).
+If you place a label directly before a section title, you can reference to it
+with :ref:. The :ref: role would then generate a link to the section, the link
+title being the section title.</p>
+<p>There is also a way to directly link to documents, using the :doc: role; the
+document name can be specified in absolute or relative fashion.:</p>
+<div class="highlight-python"><div class="highlight"><pre>.. _label-name:
+
+#############
+Section Title
+#############
+
+Here is a reference to label-name: :ref:`label-name`
+Here is a direct document link: :doc:`file-name`
+</pre></div>
+</div>
+</div>
+<div class="section" id="text-formatting">
+<h2>Text Formatting<a class="headerlink" href="#text-formatting" title="Permalink to this headline">¶</a></h2>
+<p><em>Italic Text Here</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre>*Italic Text Here*
+</pre></div>
+</div>
+<p><strong>Bold Text Here</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>**Bold Text Here**
+</pre></div>
+</div>
+<p><cite>Italic Text Here, too.</cite>:</p>
+<div class="highlight-python"><div class="highlight"><pre>`Italic Text Here, too.`
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">Highlighted</span> <span class="pre">Text</span> <span class="pre">Here</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>``Highlighted Text Here``
+</pre></div>
+</div>
+<ul>
+<li><p class="first">Bullet List Item0</p>
+</li>
+<li><p class="first">Bullet List Item1</p>
+<blockquote>
+<div><ul class="simple">
+<li>Child Bullet0 (notice the extra lines + indent)</li>
+<li>Child Bullet1</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Bullet List Item2:</p>
+<div class="highlight-python"><div class="highlight"><pre>- Bullet List Item0
+- Bullet List Item1
+
+    - Child Bullet0 (notice the extra lines + indent)
+    - Child Bullet1
+
+- Bullet List Item2
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Bullet lists may use one of three bullet characters: &#8216;*&#8217;, &#8216;+&#8217;, or &#8216;-&#8216;.
+This documentation will use the &#8216;-&#8216; character for bullet lists.</p>
+<ol class="arabic">
+<li><p class="first">Numbered Item 0</p>
+</li>
+<li><p class="first">Numbered Item 1</p>
+</li>
+<li><p class="first">Numbered Item 2:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1">#. Numbered Item 0</span>
+<span class="c1">#. Numbered Item 1</span>
+<span class="c1">#. Numbered Item 2</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="figures-and-images">
+<h2>Figures and Images<a class="headerlink" href="#figures-and-images" title="Permalink to this headline">¶</a></h2>
+<p>An image may be placed into a page using:</p>
+<div class="highlight-python"><div class="highlight"><pre>.. image:: image-name.jpeg
+</pre></div>
+</div>
+<p>Similarly, a figure (a graphic with a caption) may be added:</p>
+<div class="highlight-python"><div class="highlight"><pre>.. figure:: fig1.png
+
+   Caption goes here.
+</pre></div>
+</div>
+</div>
+<div class="section" id="codeblocks-and-samples">
+<h2>Codeblocks and Samples<a class="headerlink" href="#codeblocks-and-samples" title="Permalink to this headline">¶</a></h2>
+<p>When you have example code that you want to display, simply precede the
+code lines with two colons and indent the code:</p>
+<div class="highlight-python"><div class="highlight"><pre>Review the following script::
+
+    Line 1
+    Line 2
+    Line 3
+</pre></div>
+</div>
+<p>Sphinx provides syntax highlighting through Pygments if it is installed.
+The default environment for sphinx is Python, so if you want to provide example
+code in another language, you can do so as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>.. code-block:: c
+
+   Some C code
+</pre></div>
+</div>
+<p>A piece of literal text, such as code can be displayed inline, as opposed to
+the codeblock style, using :samp: as shown below:</p>
+<div class="highlight-python"><div class="highlight"><pre>Use :samp:`print 1+{variable}` to ...
+</pre></div>
+</div>
+<p>The curly braces indicate a &#8220;variable part&#8221; of the text, and will be displayed
+differently than the other text.</p>
+</div>
+<div class="section" id="notes-and-warnings">
+<h2>Notes and Warnings<a class="headerlink" href="#notes-and-warnings" title="Permalink to this headline">¶</a></h2>
+<p>When there is important information that needs to be displayed to a user,
+you can use a note or a warning. A warning is recommended for information
+regarding security. Here is an example usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>.. note::
+
+   This is a note for the user.
+
+.. warning::
+
+   If you don&#39;t warn the user about security information, bad stuff can happen.
+</pre></div>
+</div>
+</div>
+<div class="section" id="downloads-and-files">
+<h2>Downloads and Files<a class="headerlink" href="#downloads-and-files" title="Permalink to this headline">¶</a></h2>
+<p>To link to a file within your source tree for downloading you can use
+the :download: role. All downloadable files are put into the _downloads
+subdirectory of the output directory. An example:</p>
+<div class="highlight-python"><div class="highlight"><pre>Please download :download:`this example script &lt;../example.py&gt;`.
+</pre></div>
+</div>
+<p>The example.py file will be copied to your output directory upon building.</p>
+<p>When you want to refer to a file or directory that is being discussed,
+use the :file: role. In the case of a variable file name
+(such as a version number), curly braces should surround the variable section:</p>
+<div class="highlight-python"><div class="highlight"><pre>The file is installed in :file:`/usr/lib/python2.{x}/site-packages` ...
+</pre></div>
+</div>
+</div>
+<div class="section" id="todo-items">
+<h2>TODO items<a class="headerlink" href="#todo-items" title="Permalink to this headline">¶</a></h2>
+<p>You can compile a list of todo items throughout all documentation using the
+todo directive:</p>
+<div class="highlight-python"><div class="highlight"><pre>.. todo::
+   This directive is useful to remember what needs to be done.
+</pre></div>
+</div>
+<p>When you want to display a list of all todo items, use the todolist directive:</p>
+<div class="highlight-python"><div class="highlight"><pre>.. todolist::
+   This directive is replaced by a list of all todo directives in the
+   whole documentation.
+</pre></div>
+</div>
+</div>
+<div class="section" id="autodoc">
+<h2>Autodoc<a class="headerlink" href="#autodoc" title="Permalink to this headline">¶</a></h2>
+<p>The sphinx extension <code class="docutils literal"><span class="pre">autodoc</span></code> provides a simple way to extract python
+docstrings from your objects and output them in a combined documentation.</p>
+<p>This is accomplished through the use of directives such as the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>.. automodule::
+.. autoclass::
+.. autoexception::
+</pre></div>
+</div>
+<p>All three of those directives will by default only insert the docstring of the object itself:</p>
+<div class="highlight-python"><div class="highlight"><pre>.. autoclass:: Noodle
+</pre></div>
+</div>
+<p>will produce source like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>.. class:: Noodle
+
+   Noodle&#39;s docstring
+</pre></div>
+</div>
+<p>You can mix automatic and non-automatic member documentation like so:</p>
+<div class="highlight-python"><div class="highlight"><pre>.. autoclass:: Noodle
+   :members: eat, slurp
+
+   .. method:: boil(time=10)
+
+      Boil the noodle *time* minutes.
+</pre></div>
+</div>
+<p>Also supported are the following directives:</p>
+<div class="highlight-python"><div class="highlight"><pre>.. autofunction::
+.. autodata::
+.. automethod::
+.. autoattribute::
+</pre></div>
+</div>
+<p>For module data members and class attributes, documentation can be done in two
+different styles. Either a special-formatted comment <em>before</em> the attribute
+definition, or in a docstring <em>after</em> the definition. This is shown below:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Docstring for class Foo.&quot;&quot;&quot;</span>
+
+    <span class="c1">#: Doc comment for attribute Foo.bar.</span>
+    <span class="n">bar</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="n">baz</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="sd">&quot;&quot;&quot;Docstring for attribute Foo.baz.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>For more information on autodoc usage, see the <a class="reference external" href="http://sphinx.pocoo.org/ext/autodoc.html?highlight=autodoc#sphinx.ext.autodoc">Sphinx autodoc page</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,380 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Deploying Hadoop Cluster with Cloudmesh launcher &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Deploying Hadoop Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/class/vc_sp15/hadoop_cluster_cm.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="deploying-hadoop-cluster-with-cloudmesh-launcher">
+<span id="ref-class-lesson-deploying-hadoop-cluster-with-cloudmesh"></span><h1>Deploying Hadoop Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code><a class="headerlink" href="#deploying-hadoop-cluster-with-cloudmesh-launcher" title="Permalink to this headline">¶</a></h1>
+<p>To support a compute cluster (e.g. Hadoop or Slurm) with applications,
+Cloudmesh provides a new command <code class="docutils literal"><span class="pre">launcher</span></code> to start, configure, manage or
+update compute nodes (VMs) with selected applications. <code class="docutils literal"><span class="pre">launcher</span></code> command
+applies default settings to configure clusters with applications so users can
+avoid hassles of building clusters.</p>
+<p>Table of Contents</p>
+<ul class="simple">
+<li><a class="reference external" href="#start-cluster">Start Cluster with launcher</a></li>
+<li><a class="reference external" href="#check-status-of-cluster">Check Status</a></li>
+<li><a class="reference external" href="#id1">Login to Cluster</a></li>
+<li><a class="reference external" href="#id2">Terminate Cluster</a></li>
+</ul>
+<p><a class="reference external" href="mongodb_cluster.html">Next Tutorial&gt;&gt; Deploying MongoDB Shard Cluster</a></p>
+<div class="section" id="tutorial-deploying-hadoop-cluster-with-cm-launcher">
+<h2>Tutorial: Deploying Hadoop Cluster with <code class="docutils literal"><span class="pre">cm</span> <span class="pre">launcher</span></code><a class="headerlink" href="#tutorial-deploying-hadoop-cluster-with-cm-launcher" title="Permalink to this headline">¶</a></h2>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">approximate time 30 minutes</p>
+</div>
+<p>In this tutorial, we are going to deploy a Hadoop cluster using Cloudmesh
+<code class="docutils literal"><span class="pre">launcher</span></code> command.</p>
+<div class="section" id="start-cluster">
+<h3>Start Cluster<a class="headerlink" href="#start-cluster" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">launcher</span> <span class="pre">start</span></code> command deploys a cluster with a selected application.</p>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher start hadoop
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-status-of-cluster">
+<h3>Check Status of Cluster<a class="headerlink" href="#check-status-of-cluster" title="Permalink to this headline">¶</a></h3>
+<p>Initializing a cluster requires some time for installing packages,
+configuring networks, etc.  While it is initiated, you can check the
+status of your cluster deployment.</p>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher list
+</pre></div>
+</div>
+<p>You expect the result similar to:</p>
+<div class="highlight-python"><div class="highlight"><pre>+--------------------------------------+-------------------------------+------------------------------------+--------------------+----------------------+----------+
+| launcher_id                          | stack_name                    | description                        | stack_status       | creation_time        | cm_cloud |
++--------------------------------------+-------------------------------+------------------------------------+--------------------+----------------------+----------+
+| 14ec7ceb-ce12-4b18-9c31-d398c6e76b78 | launcher-albert-hadoop-DB8JDK | Hadoop cluster with OpenStack Heat | CREATE_IN_PROGRESS | 2015-01-22T16:25:23Z | india    |
++--------------------------------------+-------------------------------+------------------------------------+--------------------+----------------------+----------+
+</pre></div>
+</div>
+<ul class="simple">
+<li>CREATE_IN_PROGRESS: cluster is not available because creating the
+cluster is in progress.</li>
+<li>CREATE_COMPLETE: cluster has been created and it is ready to use.</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h3>Login to Cluster<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>We use <code class="docutils literal"><span class="pre">cm</span> <span class="pre">vm</span> <span class="pre">login</span></code> command to ssh to one of the nodes in the
+cluster.  Issue <code class="docutils literal"><span class="pre">vm</span> <span class="pre">list</span></code> first to see the list of virtual
+instances.</p>
+<ul class="simple">
+<li>Checking a node name to login</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>cm vm list
+</pre></div>
+</div>
+<p>You expect the result similar to:</p>
+<pre class="literal-block">
++---------------------------+----------+----------------------------+----------+----------------------------+
+| name                      | status   | addresses                  | flavor   | image                      |
++===========================+==========+============================+==========+============================+
+| <strong>hadoop1</strong>                   | ACTIVE   | 10.39.1.48, 149.165.159.02 | m1.small | futuresystems/ubuntu-14.04 |
++---------------------------+----------+----------------------------+----------+----------------------------+
+| hadoop2                   | ACTIVE   | 10.39.1.52                 | m1.small | futuresystems/ubuntu-14.04 |
++---------------------------+----------+----------------------------+----------+----------------------------+
+| hadoop3                   | ACTIVE   | 10.39.1.51                 | m1.small | futuresystems/ubuntu-14.04 |
++---------------------------+----------+----------------------------+----------+----------------------------+
+| hadoop4                   | ACTIVE   | 10.39.1.53                 | m1.small | futuresystems/ubuntu-14.04 |
++---------------------------+----------+----------------------------+----------+----------------------------+
+| hadoop5                   | ACTIVE   | 10.39.1.54                 | m1.small | futuresystems/ubuntu-14.04 |
++---------------------------+----------+----------------------------+----------+----------------------------+
+| albert-server-54zmzloc5tp | ACTIVE   | 10.39.1.41, 149.165.159.01 | m1.small | cloudmesh/ipynb-n-java     |
++---------------------------+----------+----------------------------+----------+----------------------------+
+</pre>
+<p>We found that hadoop1 is a node to log in.</p>
+<ul class="simple">
+<li>SSH to a node</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>cm vm login [node name]
+</pre></div>
+</div>
+<p>In this example, we try to ssh to <code class="docutils literal"><span class="pre">hadoop1</span></code> with <code class="docutils literal"><span class="pre">ec2-user</span></code> user name.</p>
+<div class="highlight-python"><div class="highlight"><pre>cm vm login hadoop1 --ln=ec2-user
+</pre></div>
+</div>
+<p>You expect the result similar to:</p>
+<div class="highlight-python"><div class="highlight"><pre> Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.13.0-40-generic x86_64)
+
+  * Documentation:  https://help.ubuntu.com/
+
+    System information as of Thu Jan 22 19:28:05 UTC 2015
+
+    System load:  0.01              Processes:           72
+    Usage of /:   6.9% of 19.65GB   Users logged in:     0
+    Memory usage: 23%               IP address for eth0: 10.39.1.48
+    Swap usage:   0%
+
+    Graph this data and manage this system at:
+      https://landscape.canonical.com/
+
+    Get cloud support with Ubuntu Advantage Cloud Guest:
+      http://www.ubuntu.com/business/services/cloud
+
+
+$
+</pre></div>
+</div>
+<ul>
+<li><p class="first">Switch to <code class="docutils literal"><span class="pre">root</span></code> user</p>
+<p>You are expected to run hadoop commands as a root superuser.</p>
+</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>sudo su -
+</pre></div>
+</div>
+</div>
+<div class="section" id="mapreduce-example-word-count">
+<h3>MapReduce Example: Word Count<a class="headerlink" href="#mapreduce-example-word-count" title="Permalink to this headline">¶</a></h3>
+<p>Once you installed a Hadoop cluster, you may want to run a program using the
+cluster.  One of the popular examples of Hadoop is a Word Count MapReduce
+program which counts how often words occur from the input text file. We have a
+separate page for this program here.</p>
+<p><a class="reference internal" href="../lesson/cluster/wordcount.html#ref-class-lesson-hadoop-word-count"><span>Word Count Program</span></a></p>
+</div>
+<div class="section" id="id2">
+<h3>Terminate Cluster<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Once you completed your task on the cluster, you can terminate the cluster with
+<code class="docutils literal"><span class="pre">cm</span> <span class="pre">launcher</span> <span class="pre">stop</span> <span class="pre">[name]</span></code> command.</p>
+<ul class="simple">
+<li>Check a cluster name to stop</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher list
+</pre></div>
+</div>
+<p>You expect the result similar to:</p>
+<pre class="literal-block">
++--------------------------------------+-------------------------------+------------------------------------+-----------------+----------------------+----------+
+| launcher_id                          | stack_name                    | description                        | stack_status    | creation_time        | cm_cloud |
++--------------------------------------+-------------------------------+------------------------------------+-----------------+----------------------+----------+
+| 14ec7ceb-ce12-4b18-9c31-d398c6e76b78 | <strong>launcher-albert-hadoop-DB8JDK</strong> | Hadoop cluster with OpenStack Heat | CREATE_COMPLETE | 2015-01-22T16:25:23Z | india    |
++--------------------------------------+-------------------------------+------------------------------------+-----------------+----------------------+----------+
+</pre>
+<ul class="simple">
+<li>Terminate a cluster</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher stop [name]
+</pre></div>
+</div>
+<p>In this tutorial, we terminate <code class="docutils literal"><span class="pre">launcher-albert-hadoop-DB8JDK</span></code> like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher stop launcher-albert-hadoop-DB8JDK
+</pre></div>
+</div>
+<ul class="simple">
+<li>DELETE_IN_PROGRESS: shutting down instances is in progress.</li>
+<li>DELETE_COMPLETE: the lease of resources is ended, all resources are returned.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="next-step">
+<h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
+<p>In the next page, we deploy a Sharded MongoDB cluster on FutureSystems using
+Cloudmesh.</p>
+<p><a class="reference external" href="mongodb_cluster.html">Next Tutorial&gt;&gt; Deploying MongoDB Shard Cluster</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

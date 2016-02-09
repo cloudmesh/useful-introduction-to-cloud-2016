@@ -1,0 +1,533 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using Hadoop in FutureSystems &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../index.html"/>
+        <link rel="up" title="PaaS" href="index.html"/>
+        <link rel="next" title="Deploying a Hadoop Cluster on India OpenStack" href="hadoop-setup.html"/>
+        <link rel="prev" title="PaaS" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">PaaS</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Using Hadoop in FutureSystems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#running-hadoop-as-a-batch-job-using-myhadoop">Running Hadoop as a Batch Job using MyHadoop</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#myhadoop-on-futuresystems">myHadoop on FutureSystems</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hadoop-setup.html">Deploying a Hadoop Cluster on India OpenStack</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">PaaS</a> &raquo;</li>
+      
+    <li>Using Hadoop in FutureSystems</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/paas/hadoop.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-hadoop-in-futuresystems">
+<span id="s-hadoop"></span><h1>Using Hadoop in FutureSystems<a class="headerlink" href="#using-hadoop-in-futuresystems" title="Permalink to this headline">¶</a></h1>
+<div class="sidebar">
+<p class="first sidebar-title">Screencast</p>
+<p class="last">A screenncast of a subset of the information presented her is
+available at <a href="#id3"><span class="problematic" id="id4">|video-hadoop|</span></a>.</p>
+</div>
+<p>We have various platforms that support Hadoop on FutureSystems. MyHadoop
+is probably the easiest solution offered for you. It provides the
+advantage that it is integrated into the queuing system and allows
+hadoop jobs to be run as batch job. This is of especial interest for
+classes that may run quickly out of resources if every students wants
+to run their hadoop application at the same time.</p>
+<div class="section" id="running-hadoop-as-a-batch-job-using-myhadoop">
+<span id="s-myhadoop"></span><h2>Running Hadoop as a Batch Job using MyHadoop<a class="headerlink" href="#running-hadoop-as-a-batch-job-using-myhadoop" title="Permalink to this headline">¶</a></h2>
+<p>MapReduce is a programming model developed by Google. Their
+definition of MapReduce is as follows:  &#8220;MapReduce is a programming
+model and an associated implementation for processing and generating
+large data sets. Users specify a map function that processes a key/value
+pair to generate a set of intermediate key/value pairs, and a reduce
+function that merges all intermediate values associated with the same
+intermediate key.&#8221;  For more information about MapReduce, please see the
+Google paper <a class="reference external" href="http://labs.google.com/papers/mapreduce.html">here</a>.</p>
+<p>The <a class="reference external" href="http://hadoop.apache.org">Apache Hadoop Project</a> provides an
+open source implementation of MapReduce and HDFS (Hadoop Distributed
+File System).</p>
+<p>This tutorial illustrates how to run Apache Hadoop thru the batch
+systems on FutureSystems using the MyHadoop tool.</p>
+<div class="section" id="myhadoop-on-futuresystems">
+<h3>myHadoop on FutureSystems<a class="headerlink" href="#myhadoop-on-futuresystems" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://sourceforge.net/projects/myhadoop/">MyHadoop</a> is a set of
+scripts that configure and instantiate Hadoop as a batch job.</p>
+<p>myHadoop 0.20.2 is currently installed on Alamo, Hotel, India, and Sierra
+FutureSystems systems.</p>
+<div class="section" id="login-into-a-machine-tha-has-myhadoop-installed">
+<h4>Login into a machine tha has myHadoop installed<a class="headerlink" href="#login-into-a-machine-tha-has-myhadoop-installed" title="Permalink to this headline">¶</a></h4>
+<p>To run the example we need to firts log into a FutureSystems system that
+has myHadoop available.  In this tutorial, we are executing from the sierral machine:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh portalname@sierra.futuregrid.org
+</pre></div>
+</div>
+<p>Note that this also works on other FutureSystems machines such as india.</p>
+<p>This machine accepts SSH public key and One Time Password (OTP) logins
+only.  If you do not have a public key set up, you will be prompted
+for a password.  This is <em>not</em> your FutureSystems password, but the One
+Time Password generated from your OTP token.  Do not type your
+FutureSystems password, it will not work.  If you do not have a token or
+public key, you will not be able to login.  The portalname is your
+account name that allows you to log into the FutureSystems portal.</p>
+</div>
+<div class="section" id="load-the-needed-modules">
+<h4>Load the needed modules<a class="headerlink" href="#load-the-needed-modules" title="Permalink to this headline">¶</a></h4>
+<p>Next, we need to load the myHadoop module.  On some FutureSystems
+systems, you may also need to load the &#8220;torque&#8221; module as well if
+qstat is not already in your environment:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ module load myhadoop
+SUN Java JDK version 1.6.0 (x86_64 architecture) loaded
+Apache Hadoop Common version 0.20.203.0 loaded
+myHadoop version 0.2a loaded
+</pre></div>
+</div>
+<p>Before we can submit it we still need to load the module java as
+Haddop relies on java:</p>
+<div class="highlight-python"><div class="highlight"><pre>module add java
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-the-example">
+<h4>Run the Example<a class="headerlink" href="#run-the-example" title="Permalink to this headline">¶</a></h4>
+<p>To run the example we need to create a script to tell the queing
+system how to run it. We are providing the following script that you
+can store in a file pbs-example.sh.</p>
+<p>You can paste and copy it from here, or just copy it via:</p>
+<div class="highlight-python"><div class="highlight"><pre>cp $MY_HADOOP_HOME/pbs-example.sh .
+</pre></div>
+</div>
+<p>This script includes information about
+which queue hadoop should be run in. To find out more about the
+queuing system, please see the HPC services section. The pbs-example.sh
+script we use in this example looks as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>#!/bin/bash
+
+#PBS -q batch
+#PBS -N hadoop_job
+#PBS -l nodes=4:ppn=8
+#PBS -o hadoop_run.out
+#PBS -j oe
+#PBS -V
+
+module add java
+
+### Run the myHadoop environment script to set the appropriate variables
+#
+# Note: ensure that the variables are set correctly in bin/setenv.sh
+. /N/soft/myHadoop/bin/setenv.sh
+
+#### Set this to the directory where Hadoop configs should be generated
+# Don&#39;t change the name of this variable (HADOOP_CONF_DIR) as it is
+# required by Hadoop - all config files will be picked up from here
+#
+# Make sure that this is accessible to all nodes
+export HADOOP_CONF_DIR=&quot;${HOME}/myHadoop-config&quot;
+
+#### Set up the configuration
+# Make sure number of nodes is the same as what you have requested from PBS
+# usage: $MY_HADOOP_HOME/bin/pbs-configure.sh -h
+echo &quot;Set up the configurations for myHadoop&quot;
+# this is the non-persistent mode
+$MY_HADOOP_HOME/bin/pbs-configure.sh -n 4 -c $HADOOP_CONF_DIR
+# this is the persistent mode
+# $MY_HADOOP_HOME/bin/pbs-configure.sh -n 4 -c $HADOOP_CONF_DIR -p -d /oasis/cloudstor-group/HDFS
+echo
+
+#### Format HDFS, if this is the first time or not a persistent instance
+echo &quot;Format HDFS&quot;
+$HADOOP_HOME/bin/hadoop --config $HADOOP_CONF_DIR namenode -format
+echo
+
+#### Start the Hadoop cluster
+echo &quot;Start all Hadoop daemons&quot;
+$HADOOP_HOME/bin/start-all.sh
+#$HADOOP_HOME/bin/hadoop dfsadmin -safemode leave
+echo
+
+#### Run your jobs here
+echo &quot;Run some test Hadoop jobs&quot;
+$HADOOP_HOME/bin/hadoop --config $HADOOP_CONF_DIR dfs -mkdir Data
+$HADOOP_HOME/bin/hadoop --config $HADOOP_CONF_DIR dfs -copyFromLocal $MY_HADOOP_HOME/gutenberg Data
+$HADOOP_HOME/bin/hadoop --config $HADOOP_CONF_DIR dfs -ls Data/gutenberg
+$HADOOP_HOME/bin/hadoop --config $HADOOP_CONF_DIR jar $HADOOP_HOME/hadoop-0.20.2-examples.jar wordcount Data/gutenberg Outputs
+$HADOOP_HOME/bin/hadoop --config $HADOOP_CONF_DIR dfs -ls Outputs
+$HADOOP_HOME/bin/hadoop --config $HADOOP_CONF_DIR dfs -copyToLocal Outputs ${HOME}/Hadoop-Outputs
+echo
+
+#### Stop the Hadoop cluster
+echo &quot;Stop all Hadoop daemons&quot;
+$HADOOP_HOME/bin/stop-all.sh
+echo
+
+#### Clean up the working directories after job completion
+echo &quot;Clean up&quot;
+$MY_HADOOP_HOME/bin/pbs-cleanup.sh -n 4 -c $HADOOP_CONF_DIR
+echo
+</pre></div>
+</div>
+</div>
+<div class="section" id="details-of-the-script">
+<h4>Details of the Script<a class="headerlink" href="#details-of-the-script" title="Permalink to this headline">¶</a></h4>
+<p>Let us examine this script in more detail. In the example script, a temporary directory to store Hadoop
+configuration files is specified as ${HOME}/myHadoop-config:</p>
+<div class="highlight-python"><div class="highlight"><pre>#### Set this to the directory where Hadoop configs should be generated
+# Don&#39;t change the name of this variable (HADOOP_CONF_DIR) as it is
+# required by Hadoop - all config files will be picked up from here
+#
+# Make sure that this is accessible to all nodes
+export HADOOP_CONF_DIR=&quot;${HOME}/myHadoop-config&quot;
+</pre></div>
+</div>
+<p>The pbs-example.sh script runs the &#8220;wordcount&#8221; program from
+the hadoop-0.20.2-examples.jar.  There is sample text data from the
+<a class="reference external" href="http://www.gutenberg.org/">Project Gutenberg website</a> located a
+$MY_HADOOP_HOME/gutenberg:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls $MY_HADOOP_HOME/gutenberg
+1342.txt.utf8
+</pre></div>
+</div>
+<p>The following lines in the script create a data directory in HDFS. This directory is
+specified in $MY_HADOOP_HOME/bin/setenv.sh. To activate the
+environment, pleas execute:</p>
+<div class="highlight-python"><div class="highlight"><pre>source $MY_HADOOP_HOME/bin/setenv.sh
+</pre></div>
+</div>
+<p>The next lines in the script will copy over the gutenberg data, executes the Hadoop
+job, and then copies the output back your ${HOME}/Hadoop-Outputs
+directory.</p>
+<div class="highlight-python"><div class="highlight"><pre>#### Run your jobs here
+echo &quot;Run some test Hadoop jobs&quot;
+$HADOOP_HOME/bin/hadoop --config $HADOOP_CONF_DIR dfs -mkdir Data
+$HADOOP_HOME/bin/hadoop --config $HADOOP_CONF_DIR dfs -copyFromLocal $MY_HADOOP_HOME/gutenberg Data
+$HADOOP_HOME/bin/hadoop --config $HADOOP_CONF_DIR dfs -ls Data/gutenberg
+$HADOOP_HOME/bin/hadoop --config $HADOOP_CONF_DIR jar $HADOOP_HOME/hadoop-0.20.2-examples.jar wordcount Data/gutenberg Outputs
+$HADOOP_HOME/bin/hadoop --config $HADOOP_CONF_DIR dfs -ls Outputs
+$HADOOP_HOME/bin/hadoop --config $HADOOP_CONF_DIR dfs -copyToLocal Outputs ${HOME}/Hadoop-Outputs
+</pre></div>
+</div>
+</div>
+<div class="section" id="submission-of-the-hadoop-job">
+<h4>Submission of the Hadoop job<a class="headerlink" href="#submission-of-the-hadoop-job" title="Permalink to this headline">¶</a></h4>
+<p>Now submit the pbs-example.sh script to Hotel:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ qsub $MY_HADOOP_HOME/pbs-example.sh
+40256.svc.uc.futuregrid.org
+</pre></div>
+</div>
+<p>The job will take about 5 minutes to complete.  To monitor its
+status, type &#8216;qstat&#8217;.  The &#8220;R&#8221; means the job is running:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ qstat
+Job id                    Name             User            Time Use S Queue
+------------------------- ---------------- --------------- -------- - -----
+40256.svc                  hadoop_job       albert                0 R batch
+</pre></div>
+</div>
+<p>When it is done, the status of the job will be &#8220;C&#8221; meaning the job has
+completed (or it will no longer be displayed in qstat output).  You
+should see a new hadoop_run.out file and an &#8220;Hadoop-Outputs&#8221; directory</p>
+<div class="highlight-python"><div class="highlight"><pre>$ qstat
+Job id                    Name             User            Time Use S Queue
+------------------------- ---------------- --------------- -------- - -----
+40256.svc                  hadoop_job       albert         00:00:05 C batch
+$ ls
+Hadoop-Outputs hadoop_run.out
+</pre></div>
+</div>
+<p>View results of the word count operation:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ head Hadoop-Outputs/part-r-00000
+&quot;&#39;After    1
+&quot;&#39;My   1
+&quot;&#39;Tis  2
+&quot;A 12
+&quot;About 2
+&quot;Ah!   2
+&quot;Ah!&quot; 1
+&quot;Ah,   1
+&quot;All   2
+&quot;All!  1
+</pre></div>
+</div>
+<p>Now to run you own custom Hadoop job, make a copy of the
+$MY_HADOOP_HOME/pbs-example.sh script and modify the lines described
+in Step 7.</p>
+</div>
+<div class="section" id="persistent-mode">
+<h4>Persistent Mode<a class="headerlink" href="#persistent-mode" title="Permalink to this headline">¶</a></h4>
+<p>The above example copies input to local HDFS scratch space you specified
+in $MY_HADOOP_HOME/bin/setenv.sh, runs MapReduce, and copies output
+from HDFS back to your home directory.  This is called non-persistent
+mode and is good for small amounts of data.  Alternatively, you can run
+in persistent mode which is good if you have access to a parallel file
+system or have a large amount of data that will not fit in scratch
+space.  To enable persistent mode, follow the directions in
+pbs-example.sh.</p>
+</div>
+<div class="section" id="customizing-hadoop-settings">
+<h4>Customizing Hadoop Settings<a class="headerlink" href="#customizing-hadoop-settings" title="Permalink to this headline">¶</a></h4>
+<p>To modify any of the Hadoop settings
+like maximum_number_of_map_task, maximum_number_of_reduce_task,
+etc., make you own copy of myHadoop and customize the settings
+accordingly.  For example:</p>
+<ol class="arabic">
+<li><p class="first">Copy the $MY_HADOOP_HOME directory to your home directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cp -r $MY_HADOOP_HOME $HOME/myHadoop
+</pre></div>
+</div>
+</li>
+<li><p class="first">Then edit $HOME/myHadoop/pbs-example.sh and on line 16, replace it
+with:</p>
+<div class="highlight-python"><div class="highlight"><pre>. ${HOME}/myHadoop/bin/setenv.sh
+</pre></div>
+</div>
+</li>
+<li><p class="first">Similarly edit $HOME/myHadoop/bin/setenv.sh and on line 4, replace it
+with:</p>
+<div class="highlight-python"><div class="highlight"><pre>export MY_HADOOP_HOME=$HOME/myHadoop
+</pre></div>
+</div>
+</li>
+<li><p class="first">Customize the settings in the Hadoop files as needed in
+$HOME/myHadoop/etc</p>
+</li>
+<li><p class="first">Submit your copy of pbs-example.sh:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ qsub $HOME/myHadoop/pbs-example.sh
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="using-a-different-installation-of-hadoop">
+<h4>Using a Different Installation of Hadoop<a class="headerlink" href="#using-a-different-installation-of-hadoop" title="Permalink to this headline">¶</a></h4>
+<p>If you would like to use a different version of my Hadoop or have
+customized the Hadoop code in some way, you can specify a different
+installation of Hadoop by redefining the HADOOP_HOME variable after
+$MY_HADOOP_HOME/bin/setenv.sh is called within your own copy of
+pbs-example.sh:</p>
+<div class="highlight-python"><div class="highlight"><pre>### Run the myHadoop environment script to set the appropriate variables
+#
+# Note: ensure that the variables are set correctly in bin/setenv.sh
+. /opt/myHadoop/bin/setenv.sh
+export HADOOP_HOME=${HOME}/my-custom-hadoop
+</pre></div>
+</div>
+</div>
+<div class="section" id="references">
+<h4>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Much of this information is copied from <a class="reference external" href="https://portal.futuregrid.org/sites/default/files/myHadoop.pdf">The MyHadoop Installation Instructions</a></li>
+<li>A screenncast of a subset of the information presented her is
+available at <a href="#id5"><span class="problematic" id="id6">|video-hadoop|</span></a>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="hadoop-setup.html" class="btn btn-neutral float-right" title="Deploying a Hadoop Cluster on India OpenStack" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="PaaS" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

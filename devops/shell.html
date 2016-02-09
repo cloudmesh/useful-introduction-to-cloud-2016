@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Shell Scripts &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../index.html"/>
+        <link rel="up" title="DevOps" href="index.html"/>
+        <link rel="next" title="Configure" href="configure.html"/>
+        <link rel="prev" title="Makefile" href="makefile.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">DevOps</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="history.html">Historical and Functionality Perspective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="makefile.html">Makefile</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Shell Scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#exercises">Exercises:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configure.html">Configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rpm.html">Package Managers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">DevOps</a> &raquo;</li>
+      
+    <li>Shell Scripts</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/devops/shell.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="shell-scripts">
+<h1>Shell Scripts<a class="headerlink" href="#shell-scripts" title="Permalink to this headline">¶</a></h1>
+<p>Often shells are used to interact with computers n the
+command line. they provide convenient access to a number of commands
+and functionality that makes interactive experiments through a series
+of command possible. Shells are interpreters that provide a minimal
+environment to allow easy scripting of commands as part of schell
+scripts. Features that are of the used are aliasses, command
+definition, function, and clearly batch operations by listing commands
+sequentially in a shell script. Programming language features such as
+loops and conditions are also provided.</p>
+<p>As shell scripts are executed as part of the OS no further install is
+necessary to run them.</p>
+<p>However in contrast to modern programming languages and interpreters
+some functionality is missing. Also large amount of shell scripts
+become quite difficult to maintain due to the lack of more modern
+programming language features.</p>
+<p>Therefor it is today common to use perl and more important;y python
+for the development of large scale scripts.</p>
+<p>However, a large number of &#8220;tricks&#8221; and existing scripts makes shell
+scripts still a viable option for many developers. In addition it has
+the advantage that it will be immediately available after the install
+of the OS, thus it is of great help in case of managing distributed
+machines.</p>
+<p>Variants of shells exist that can execute the same command in parallel
+on multiple distributed machines which comes in handy for cluster
+management.</p>
+<div class="section" id="exercises">
+<h2>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Write a shell script that prints you username and lists the files
+in your home directory.</li>
+<li>Write a shell script that converts all jpg files to png. (If you
+copy the example form <a class="reference external" href="http://en.wikipedia.org/wiki/Shell_script">http://en.wikipedia.org/wiki/Shell_script</a>
+please make sure to walk through the example and understand in
+detail the syntax and the meaning of the program).</li>
+<li>Search in our page for the term &#8220;pdsh&#8221;</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="configure.html" class="btn btn-neutral float-right" title="Configure" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="makefile.html" class="btn btn-neutral" title="Makefile" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

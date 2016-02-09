@@ -1,0 +1,421 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Ubuntu Juju &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../index.html"/>
+        <link rel="up" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="../../bdossp_sp15/index.html"/>
+        <link rel="next" title="Overview Virtual Cluster (under preparation)" href="overview_vc.html"/>
+        <link rel="prev" title="OpenStack Heat" href="openstack_heat.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#notice">Notice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#office-hours">Office Hours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#contact">Contact</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#weekly-plan">Weekly Plan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#support">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#meeting">Meeting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#collaboration-tools">Collaboration Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#futuresystems-access">FutureSystems Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#linux-basics">Linux Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#basics-of-openstack">Basics of OpenStack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#basics-of-cloudmesh">Basics of Cloudmesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#advanced-cloudmesh">Advanced Cloudmesh</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../bdossp_sp15/index.html#it-operations-automation-and-orchestration">IT Operations - Automation and Orchestration</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="overview.html">DevOps (under preparation)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansible.html">Ansible</a></li>
+<li class="toctree-l4"><a class="reference internal" href="saltstack.html">SaltStack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="puppet.html">Puppet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="chef.html">Chef</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openstack_heat.html">OpenStack Heat</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Ubuntu Juju</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#virtual-clusters">Virtual Clusters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#other-technologies">Other Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#future">Future</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#to-be-organized-into-the-above">To be Organized into the above</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
+      
+    <li>Ubuntu Juju</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/class/lesson/devops/juju.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ubuntu-juju">
+<span id="ref-class-lesson-devops-juju"></span><h1>Ubuntu Juju<a class="headerlink" href="#ubuntu-juju" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This lesson will introduce you to a very important topic to Ubuntu Juju,
+an open-source service management tool.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Duration: 1 hour</p>
+</div>
+</div>
+<div class="section" id="prerequisite">
+<h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
+<p>In order to conduct this lesson you should have knowledge of</p>
+<ul class="simple">
+<li><a class="reference external" href="../shell-access.html">Shell Access</a></li>
+<li><a class="reference external" href="../linux/packagemanagement.html">Package Managers</a></li>
+</ul>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Ubuntu Juju is an open source configuration management tool to deploy
+and provision software on a virtualized environment.  MySQL, RabbitMQ,
+OpenStack, WordPress, Apache, MediaWiki, MongoDB, Hadoop, and many other
+software are available on the Juju&#8217;s official repository, Juju Charm Store.
+Juju Charm is a structured bundle of files with metadata, configuration data
+and hooks with some extra support files to provision cloud software.</p>
+<p>This lesson covers for:</p>
+<ul class="simple">
+<li>Juju installation on ubuntu (or windows)</li>
+<li>Juju Quick start</li>
+<li>Juju GUI</li>
+<li>Media Wiki or WordPress</li>
+<li>iptables for virtual networks</li>
+</ul>
+</div>
+<div class="section" id="juju-installation-on-futuresystems">
+<h2>Juju Installation on FutureSystems<a class="headerlink" href="#juju-installation-on-futuresystems" title="Permalink to this headline">¶</a></h2>
+<p>Here we use a OpenStack VM instance to start Juju.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you need to know how to create a VM instance on FutureSystems, see
+here: <a class="reference external" href="../iaas/openstack.html#launching-a-new-instance">Launching a New Instance</a></p>
+</div>
+<div class="section" id="installation-on-ubuntu">
+<h3>Installation on Ubuntu<a class="headerlink" href="#installation-on-ubuntu" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Start a VM instance with futuresystems/Ubuntu-14.04.</li>
+</ul>
+<p>Once you are in a VM instance, refresh the package lists with the following
+commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo add-apt-repository ppa:juju/stable -y
+sudo apt-get update
+</pre></div>
+</div>
+<p>Install Juju packages:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install juju-quickstart -y
+sudo apt-get install juju-core -y
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation-on-osx-optional">
+<h3>Installation on OSX (Optional)<a class="headerlink" href="#installation-on-osx-optional" title="Permalink to this headline">¶</a></h3>
+<p>Try to use Homebrew for installing Juju on OSX:</p>
+<div class="highlight-python"><div class="highlight"><pre>brew install juju-quickstart
+brew install juju
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation-on-windows-optional">
+<h3>Installation on Windows (Optional)<a class="headerlink" href="#installation-on-windows-optional" title="Permalink to this headline">¶</a></h3>
+<p>Download link for Windows 7, 8 (as of 03/31/2015):
+<a class="reference external" href="https://launchpad.net/juju-core/1.21/1.21.3/+download/juju-setup-1.21.3-signed.exe">https://launchpad.net/juju-core/1.21/1.21.3/+download/juju-setup-1.21.3-signed.exe</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The installation on Windows and OSX are not tested by our team.</p>
+</div>
+</div>
+</div>
+<div class="section" id="testing-your-setup">
+<h2>Testing your Setup<a class="headerlink" href="#testing-your-setup" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>juju-quickstart mediawiki-single
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuration-of-cloud-environment">
+<h2>Configuration of Cloud Environment<a class="headerlink" href="#configuration-of-cloud-environment" title="Permalink to this headline">¶</a></h2>
+<p>In this step, you choose your cloud provider. You can simply choose a local
+environment. Juju will deploy software inside of your VM instance.</p>
+</div>
+<div class="section" id="juju-gui">
+<h2>Juju GUI<a class="headerlink" href="#juju-gui" title="Permalink to this headline">¶</a></h2>
+<p>juju-quickstart contains Juju GUI. You can use a web browser to manage your
+services on Juju.</p>
+<div class="section" id="ip-tables-configuration">
+<h3>IP tables Configuration<a class="headerlink" href="#ip-tables-configuration" title="Permalink to this headline">¶</a></h3>
+<p>Since Juju GUI is running with a virtual network in your VM instance, you need
+to configure <code class="docutils literal"><span class="pre">iptables</span></code>. Your Juju GUI will be served on your floating IP
+address with the FORWARD rules.</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo iptables -t nat -A PREROUTING -p tcp -d 0.0.0.0 --dport 443 -j DNAT --to-destination [IP ADDRESS of Juju GUI]:443
+</pre></div>
+</div>
+<p>You can find a IP address of your Juju GUI with the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>juju status
+</pre></div>
+</div>
+<p>You may find <code class="docutils literal"><span class="pre">public-address</span></code> under <code class="docutils literal"><span class="pre">juju-gui</span></code> section:</p>
+<div class="highlight-python"><div class="highlight"><pre>...
+services:
+  juju-gui:
+  charm: cs:trusty/juju-gui-22
+  exposed: true
+  units:
+    juju-gui/0:
+      agent-state: started
+      agent-state-info: (started)
+      agent-version: 1.22.0.1
+      machine: &quot;1&quot;
+      open-ports:
+      - 80/tcp
+      - 443/tcp
+      public-address: [IP ADDRESS]
+...
+</pre></div>
+</div>
+</div>
+<div class="section" id="admin-password">
+<h3>Admin Password<a class="headerlink" href="#admin-password" title="Permalink to this headline">¶</a></h3>
+<p>To login Juju GUI, you need a username and a password.
+When you start a service with <code class="docutils literal"><span class="pre">juju-quickstart</span></code>, the username and the
+password will be printed out on your screen. Use them to login.</p>
+<p>An example of output:</p>
+<div class="highlight-python"><div class="highlight"><pre>...
+Juju GUI URL: https://10.0.3.1
+username: admin
+password: adm-b908bcba211a1234ac73e732b6e3315d
+...
+</pre></div>
+</div>
+</div>
+<div class="section" id="screenshot-of-juju-gui">
+<h3>Screenshot of Juju GUI<a class="headerlink" href="#screenshot-of-juju-gui" title="Permalink to this headline">¶</a></h3>
+<img alt="../../../_images/juju_gui.png" src="../../../_images/juju_gui.png" />
+</div>
+</div>
+<div class="section" id="exercises">
+<span id="ref-class-lesson-devops-juju-exercises"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-i">
+<h3>Exercise I<a class="headerlink" href="#exercise-i" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Try to deploy <code class="docutils literal"><span class="pre">wordpress</span></code> using Ubuntu Juju.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="reference-and-acknowledgement">
+<h2>Reference and Acknowledgement<a class="headerlink" href="#reference-and-acknowledgement" title="Permalink to this headline">¶</a></h2>
+<p>Basic instructions and lessons in this page are adapted from the <a class="reference external" href="https://jujucharms.com/docs/1.20/getting-started">Juju website</a></p>
+<ul class="simple">
+<li>Juju Charm Store: <a class="reference external" href="https://jujucharms.com/solutions">https://jujucharms.com/solutions</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="overview_vc.html" class="btn btn-neutral float-right" title="Overview Virtual Cluster (under preparation)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="openstack_heat.html" class="btn btn-neutral" title="OpenStack Heat" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

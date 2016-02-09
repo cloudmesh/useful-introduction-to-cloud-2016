@@ -1,0 +1,499 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Cloudmesh Overview &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../index.html"/>
+        <link rel="up" title="Cloudmesh" href="index.html"/>
+        <link rel="next" title="Cloudmesh Setup" href="setup/index.html"/>
+        <link rel="prev" title="Cloudmesh" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Cloudmesh</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Cloudmesh Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-main-components">Cloudmesh Main Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-install-management">Cloudmesh Install Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-service-management">Cloudmesh Service Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-use-mode">Cloudmesh Use Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-baremetal">Cloudmesh Baremetal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-hpc">Cloudmesh HPC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-iaas">Cloudmesh IaaS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-web">Cloudmesh Web</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-shell">Cloudmesh Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-api">Cloudmesh API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-state">Cloudmesh State</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tutorials">Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#development-and-transition-to-futuresystems">Development and Transition to FutureSystems</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="setup/index.html">Cloudmesh Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cm/index.html">Cloudmesh cm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/index.html">Cloudmesh API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell/index.html">Cloudmesh Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui/index.html">Cloudmesh GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">Cloudmesh FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Cloudmesh</a> &raquo;</li>
+      
+    <li>Cloudmesh Overview</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/cloudmesh/overview.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cloudmesh-overview">
+<span id="cloudmesh-overview-ref"></span><h1>Cloudmesh Overview<a class="headerlink" href="#cloudmesh-overview" title="Permalink to this headline">¶</a></h1>
+<p>We have provided some documentation about cloudmesh at
+<a class="reference external" href="http://cloudmesh.github.io/index.html">http://cloudmesh.github.io/index.html</a>.</p>
+<p>Cloudmesh is an important component to deliver a software-defined
+system – encompassing virtualized and bare-metal infrastructure,
+networks, application, systems and platform software – with a unifying
+goal of providing Cloud Testbeds as a Service (CTaaS). Cloudmesh
+federates a number of resources from academia and industry. This
+includes existing FutureSystems, Amazon Web Services, Azure, HP Cloud,
+Karlsruhe using various technologies.</p>
+<p>An high level architectural image is provided at</p>
+<div class="figure" id="id1">
+<a class="reference internal image-reference" href="../_images/cloudmesh-arch-2013.png"><img alt="../_images/cloudmesh-arch-2013.png" src="../_images/cloudmesh-arch-2013.png" style="width: 360.5px; height: 370.0px;" /></a>
+<p class="caption"><span class="caption-text"><strong>Figure:</strong> <em>High level architecture of Cloudmesh</em></span></p>
+</div>
+<p>The three layers of the Cloudmesh architecture include a Cloudmesh
+Management Framework for monitoring and operations, user and project
+management, experiment planning and deployment of services needed by
+an experiment, provisioning and execution environments to be deployed
+on resources to (or interfaced with) enable experiment management, and
+resources.</p>
+<p>Before continuing we recommend that you look at the following sections
+on the cloudmesh web page:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://cloudmesh.github.io/cloudmesh.html">http://cloudmesh.github.io/cloudmesh.html</a></li>
+<li><a class="reference external" href="http://cloudmesh.github.io/cloud.html">http://cloudmesh.github.io/cloud.html</a></li>
+<li><a class="reference external" href="http://cloudmesh.github.io/rain.html">http://cloudmesh.github.io/rain.html</a></li>
+<li><a class="reference external" href="http://cloudmesh.github.io/hpc.html">http://cloudmesh.github.io/hpc.html</a></li>
+</ul>
+<p>In this document we like to focus on the actual implementation of
+cloudmesh and how the various components are structured. For this
+purpose we have redrawn the Figure we pointed out earlier while
+focusing on a number of subcomponents that we will be looking more
+closely into.</p>
+<div class="figure" id="id2">
+<a class="reference internal image-reference" href="../_images/cm-arch-layers.pdf"><img alt="../_images/cm-arch-layers.pdf" src="../_images/cm-arch-layers.pdf" /></a>
+<p class="caption"><span class="caption-text"><strong>Figure:</strong> <em>High level architecture of Cloudmesh</em></span></p>
+</div>
+<p>Typo: there are two baremetal boxes in cloudmesh cor. one should be HPC</p>
+<p>This diagram highlights some important information which we describe next</p>
+<div class="section" id="cloudmesh-main-components">
+<h2>Cloudmesh Main Components<a class="headerlink" href="#cloudmesh-main-components" title="Permalink to this headline">¶</a></h2>
+<p>The main cloudmesh component include:</p>
+<ul class="simple">
+<li>Cloudmesh Install Management: which allows to easily
+install cloudmesh on a given operating system. This can also
+include a virtual machine.</li>
+<li>Cloudmesh Baremetal Management (currently part of core): which
+allows the deployment of an os via bare metal through cloudmesh.
+The important differentiation to other systems is that users can
+be authorized to conduct bare metal provision based on service
+policy descriptions. The user may not be the administrator of the
+machine.</li>
+<li>Cloudmesh Core: which contains the major components to interface
+with external subsystems to conduct bare matel provisioning,
+interact with IaaS such as virtual machines, HPC queues, or the
+bare metal provisioning services.</li>
+</ul>
+</div>
+<div class="section" id="cloudmesh-install-management">
+<h2>Cloudmesh Install Management<a class="headerlink" href="#cloudmesh-install-management" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Conducted in three phases</li>
+<li><strong>Phase 1:</strong> prepare the system. Te OS may have missing packages. the
+program will install all missing packages for cloudmesh. This step
+requires typically sudo permissions.</li>
+<li><strong>Phase 2:</strong> Install the python requirements. As cloudmesh is mostly
+developed in python, this step installs all necessary python
+libraries.</li>
+<li><strong>Phase 3:</strong> Install the cloudmesh programs. This Step installs the
+cloudmesh program in the python library. (We use virtual env for
+our development)</li>
+</ul>
+</div>
+<div class="section" id="cloudmesh-service-management">
+<h2>Cloudmesh Service Management<a class="headerlink" href="#cloudmesh-service-management" title="Permalink to this headline">¶</a></h2>
+<p>After all the software is installed, we can start up the various
+cloudmesh services. This includes</p>
+<ul class="simple">
+<li><strong>Cloudmesh Database</strong>: A NOSQL database in which we record which
+virtual machines run on which IaaS. This allows us to have a
+federated view of the heterogeneous clouds.</li>
+<li><strong>Cloudmesh Web Service</strong>: Provides a Graphical user interface to
+manage virtual machines and HPC tasks</li>
+<li><strong>Cloudmesh Task Service</strong>: As cloudmesh is a multi user systems
+many tasks need to be handles in parallel. To achieve this we are
+using an AMPQ queue and coordinate the execution of managing
+multiple virtual machines for multiple users.</li>
+</ul>
+</div>
+<div class="section" id="cloudmesh-use-mode">
+<h2>Cloudmesh Use Mode<a class="headerlink" href="#cloudmesh-use-mode" title="Permalink to this headline">¶</a></h2>
+<p>Base on the rich service model in Cloudmesh we are able to start
+cloudmesh either in a</p>
+<ul class="simple">
+<li>standalone mode or in a</li>
+<li>hosted mode for multiple users.</li>
+</ul>
+<p>For development purposes most users will want to run the cloudmesh
+services in standalone mode. This enables you to test out cloudmesh
+without interfering with other users. It also allows you to be
+completely responsible for your credentials without relaying them
+through a third party.</p>
+</div>
+<div class="section" id="cloudmesh-baremetal">
+<h2>Cloudmesh Baremetal<a class="headerlink" href="#cloudmesh-baremetal" title="Permalink to this headline">¶</a></h2>
+<p>Cloudmesh contains an interface to cobbler for its bare metal
+services. However the important feature is that it also contains a very
+small abstraction interface to bare metal provisioning. This will allow
+us to integrate with other bare metal provisioners and enable for
+example the use of OpenStack Ironic once it is deployed for example on
+FutureSystems.</p>
+</div>
+<div class="section" id="cloudmesh-hpc">
+<h2>Cloudmesh HPC<a class="headerlink" href="#cloudmesh-hpc" title="Permalink to this headline">¶</a></h2>
+<p>Cloudmesh provides an easy tou use API and GUI to HPC queues. It
+allows simple display of queues. As FutureSystems shares on some systems
+the queue manager it also seperates the queues appropriately and
+displays them accordingly. The API returns the job and queue
+information as python dicts.</p>
+</div>
+<div class="section" id="cloudmesh-iaas">
+<h2>Cloudmesh IaaS<a class="headerlink" href="#cloudmesh-iaas" title="Permalink to this headline">¶</a></h2>
+<p>Cloudmesh contains an abstration to interface with arbitrary IaaS
+farmeworks this includes</p>
+<ul class="simple">
+<li>Azure</li>
+<li>AWS</li>
+<li>OpenStack</li>
+<li>Eucalyptus</li>
+<li>clouds that can be accessed through libcloud</li>
+</ul>
+<p>The important differentiation to other frameworks is that it is not
+just capable of interfacing with libcloud to a remote cloud but it is
+possible to provide interfaces while using the native protocol. This
+has greatly helped in debugging real clouds as for example some
+features are not properly exposed through libcloud or EC2 compatible
+mechanisms. It also protected us from several changes that took place
+during the various versions of OpenStack. Our OpenSTack library
+interfaces directly with the OpenStack REST services</p>
+</div>
+<div class="section" id="cloudmesh-web">
+<h2>Cloudmesh Web<a class="headerlink" href="#cloudmesh-web" title="Permalink to this headline">¶</a></h2>
+<p>While other clouds focus on their own infrastructure, Cloudmesh
+provides a user interface with federation capabilities to display and
+interact with heterogeneous clouds. In addition information between
+these clouds is not hidden behind a compatibility library such as
+libcloud or a cloud standard, but uses instead the natively available
+information. This allows developers to interact and inspect information
+on a different level than just being able to start and stop virtual
+machines. Interfaces to HPC queues are also available. The Web
+services interfaces with the Task and Database Services.</p>
+<div class="figure" id="id3">
+<a class="reference internal image-reference" href="../_images/cm-splash.png"><img alt="../_images/cm-splash.png" src="../_images/cm-splash.png" style="width: 472.0px; height: 412.0px;" /></a>
+<p class="caption"><span class="caption-text"><strong>Figure:</strong> <em>The Cloudmesh Web Interface</em></span></p>
+</div>
+</div>
+<div class="section" id="cloudmesh-shell">
+<h2>Cloudmesh Shell<a class="headerlink" href="#cloudmesh-shell" title="Permalink to this headline">¶</a></h2>
+<p>For experiment management it os often not sufficient to just provide a
+GUI interface but to be able to script how virtual machines are
+coordinated. This can be done with our cloudmesh shell that similar to
+matlab has its own shell environment, but can also be simply be
+called as a command on a regular Linux terminal. The Cloudmesh Shell
+services interfaces with the Task and Database Services.</p>
+<div class="highlight-python"><div class="highlight"><pre>cm cloud list
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>+-------------------+--------+
+| cloud             | active |
++-------------------+--------+
+| alamo             | True   |
+| aws               |        |
+| azure             |        |
+| dreamhost         |        |
+| hp                |        |
+| hp_east           |        |
+| india             | True   |
+| india_eucalyptus  |        |
+| sierra            | True   |
+| sierra_eucalyptus |        |
++-------------------+--------+
+</pre></div>
+</div>
+</div>
+<div class="section" id="cloudmesh-api">
+<h2>Cloudmesh API<a class="headerlink" href="#cloudmesh-api" title="Permalink to this headline">¶</a></h2>
+<p>A convenient API is presented to interface to cloudmesh in python
+(shown here how to select an image on the cloud india):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1">#</span>
+<span class="c1"># IMPORTS</span>
+<span class="c1">#</span>
+<span class="kn">import</span> <span class="nn">cloudmesh</span>
+
+<span class="c1">#</span>
+<span class="c1"># INITIALIZATION</span>
+<span class="c1">#</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="s2">&quot;mongo&quot;</span><span class="p">)</span>
+<span class="n">username</span> <span class="o">=</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">load</span><span class="p">()</span><span class="o">.</span><span class="n">username</span><span class="p">()</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+
+<span class="c1">#</span>
+<span class="c1"># GETTING INFORMATION ABOUT THE IMAGE</span>
+<span class="c1">#</span>
+<span class="n">image</span><span class="o">=</span><span class="n">mesh</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="s1">&#39;india&#39;</span><span class="p">,</span><span class="s1">&#39;futuregrid/ubuntu-14.04&#39;</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="n">image</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cloudmesh-state">
+<h2>Cloudmesh State<a class="headerlink" href="#cloudmesh-state" title="Permalink to this headline">¶</a></h2>
+<p>As the Shell and the Web Service interact with the Database and the
+Task Services, the status after a refresh is synchronized between
+them. This means if I start a virtual machine with the command shell I
+can see it in the Web after a refresh and vice versa. Default values
+are shared and the interaction between Web and Shell is seamless.</p>
+<p>The emphasize is here on managing multiple machines and the start of a
+VM can be done with a single click in the Web or with a single command
+without parameters in the shell. This is in contrast to other
+frameworks that do not make use of extensive default management for
+repetitive interactive experiments.</p>
+</div>
+<div class="section" id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<p>We have provided a number of tutorials through IPython notebooks that
+you can follow. A setup guide is available that documents the
+installation of cloudmesh through a single curl call. The tutorials
+will show you each of the three different interfaces including:</p>
+<ul class="simple">
+<li>the Python API</li>
+<li>the Web GUI via the Web browser</li>
+<li>the command shell</li>
+</ul>
+<p>The examples focus on displaying information and managing virtual
+machines.</p>
+<p>A list of all <a class="reference external" href="../_index_notebooks.html">notebooks</a> is available. The list
+will be expanded, and we would be happy if you contribute to them with
+your own suggestions. If you think we need to show a particular
+feature, please let us know. We wil try to add it.</p>
+</div>
+<div class="section" id="development-and-transition-to-futuresystems">
+<h2>Development and Transition to FutureSystems<a class="headerlink" href="#development-and-transition-to-futuresystems" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Due to the transition of FutureGrid to FutureSystems, we have
+limited our tutorial activities in regards to baremetal provisioning</li>
+<li>We are focusing our current efforts on the development of our PaaS
+launcher that interfaces with chef and ssh to deploy platforms on
+other resources.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="setup/index.html" class="btn btn-neutral float-right" title="Cloudmesh Setup" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Cloudmesh" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

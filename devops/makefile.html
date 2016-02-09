@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Makefile &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../index.html"/>
+        <link rel="up" title="DevOps" href="index.html"/>
+        <link rel="next" title="Shell Scripts" href="shell.html"/>
+        <link rel="prev" title="Historical and Functionality Perspective" href="history.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">DevOps</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="history.html">Historical and Functionality Perspective</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Makefile</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#practical-other-applications-of-make">Practical Other Applications of Make</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="shell.html">Shell Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configure.html">Configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rpm.html">Package Managers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">DevOps</a> &raquo;</li>
+      
+    <li>Makefile</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/devops/makefile.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="makefile">
+<h1>Makefile<a class="headerlink" href="#makefile" title="Permalink to this headline">¶</a></h1>
+<p>To manage large software programs it is often necessary to recompile
+them and to just focus on the peaces of code that are new. Thus
+software developers have early on focussed on building software
+components and libraries that can be separately compiled and
+integrated in the overall program executable through for example
+libraries.</p>
+<p>Unfortunately, this comes also at a price that the management of such
+&#8220;assembled&#8221; software can be quite complex and involves the compilation
+of code ina particular order or the creation of artifacts during
+compile time.</p>
+<p>To coordinate such execution <cite>Makefiles</cite> have been popular as they
+provide the ability to integrate a simple structure in the compile
+process, while detecting changes to source code that itself invoke
+actions as part of the make process.</p>
+<p>The coordination of the process is specified in a <cite>makefile</cite> that
+contains targets that get invoked based on conditions such as that a
+source file has changed. The target has a body attached with it that
+will be executed when the precondition to the target is fulfilled.</p>
+<p>Through a series of targets relatively sophisticated compile workflows
+can be specified and often the developer has to just call the
+command:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">make</span>
+</pre></div>
+</div>
+<p>In addition make has also the ability to execute the programs in
+parallel while using the option <cite>-j</cite>. For large programs this can
+provide a significant speedup during the program assembly.</p>
+<p>A sample Makefile looks as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>all: ring
+
+ring: main.o message.o ring.o
+        g++ main.o message.o ring.o -o ring
+
+main.o: main.cpp
+        g++ -c main.cpp
+
+message.o: message.cpp
+        g++ -c message.cpp
+
+ring.o: ring.cpp
+        g++ -c ring.cpp
+
+clean:
+        rm -rf *o ring
+</pre></div>
+</div>
+<p>This example makefile creates a program with the name ring while
+integrating the <cite>ring.c</cite> and the <cite>message.c</cite> code into a single executable
+called <cite>ring</cite>.</p>
+<p>On Unix systems one can find out more about make when saying:</p>
+<div class="highlight-python"><div class="highlight"><pre>man make
+</pre></div>
+</div>
+<p>Much more detailed information is provided at</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.gnu.org/software/make/manual/make.html">http://www.gnu.org/software/make/manual/make.html</a></li>
+</ul>
+<div class="section" id="practical-other-applications-of-make">
+<h2>Practical Other Applications of Make<a class="headerlink" href="#practical-other-applications-of-make" title="Permalink to this headline">¶</a></h2>
+<p>If you look at the process on how we create the documentation of this
+Web page, you will also see a number of Makefiles. Although we do not
+create c, we do create a web pages based on Sphinx translating rst
+files to html pages. This indicates the versatility of make.</p>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Write a c++ program that prints &#8220;Hello Cloud&#8221;. Use a library
+cloud.o and create the program hello with a Makefile</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="shell.html" class="btn btn-neutral float-right" title="Shell Scripts" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="history.html" class="btn btn-neutral" title="Historical and Functionality Perspective" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

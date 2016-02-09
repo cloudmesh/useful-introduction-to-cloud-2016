@@ -1,0 +1,512 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Learning Objectives &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Learning Objectives</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/class/lesson/linux/shell-filedir.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="learning-objectives">
+<h1>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li>Explain the similarities and differences between a file and a
+directory.</li>
+<li>Translate an absolute path into a relative path and vice versa.</li>
+<li>Construct absolute and relative paths that identify specific
+files and directories.</li>
+<li>Explain the steps in the shell&#8217;s read-run-print cycle.</li>
+<li>Identify the actual command, flags, and filenames in a
+command-line call.</li>
+<li>Demonstrate the use of tab completion, and explain its
+advantages.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="the-filesystem">
+<h1>The Filesystem<a class="headerlink" href="#the-filesystem" title="Permalink to this headline">¶</a></h1>
+<p>The part of the operating system responsible for managing files and
+directories is called the <strong>file system</strong>. It organizes our data into
+files, which hold information, and directories (also called
+&#8220;folders&#8221;), which hold files or other directories.</p>
+<p>Next, let&#8217;s find out where we are by running a command called <code class="docutils literal"><span class="pre">pwd</span></code>
+(which stands for &#8220;print working directory&#8221;). At any moment, our
+<strong>current working directory</strong> is our current default directory, i.e.,
+the directory that the computer assumes we want to run commands in
+unless we explicitly specify something else. Here, the computer&#8217;s
+response is <code class="docutils literal"><span class="pre">/users/nelle</span></code>, which is Nelle&#8217;s <strong>home directory</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pwd
+/users/nelle
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">If the command to find out who we are is <code class="docutils literal"><span class="pre">whoami</span></code>, the command
+to find out where we are ought to be called <code class="docutils literal"><span class="pre">whereami</span></code>, so why
+is it <code class="docutils literal"><span class="pre">pwd</span></code> instead? The usual answer is that in the early
+1970s, when Unix was first being developed, every keystroke
+counted: the devices of the day were slow, and backspacing on a
+teletype was so painful that cutting the number of keystrokes in
+order to cut the number of typing mistakes was actually a win for
+usability. The reality is that commands were added to Unix one by
+one, without any master plan, by people who were immersed in its
+jargon. The result is as inconsistent as the roolz uv Inglish
+speling, but we&#8217;re stuck with it now.</p>
+</div>
+<p>To understand what a &#8220;home directory&#8221; is, let&#8217;s have a look at how the
+file system as a whole is organized. At the top is the <strong>root
+directory</strong> that holds everything else. We refer to it using a slash
+character <code class="docutils literal"><span class="pre">/</span></code> on its own; this is the leading slash in
+<code class="docutils literal"><span class="pre">/users/nelle</span></code>.</p>
+<p>Inside that directory are several other directories: <code class="docutils literal"><span class="pre">bin</span></code> (which is
+where some built-in programs are stored), <code class="docutils literal"><span class="pre">data</span></code> (for miscellaneous
+data files), <code class="docutils literal"><span class="pre">users</span></code> (where users&#8217; personal directories are
+located), <code class="docutils literal"><span class="pre">tmp</span></code> (for temporary files that don&#8217;t need to be stored
+long-term), and so on:</p>
+<div class="figure" id="id1">
+<img alt="The Filesystem" src="../../../_images/filesystem.svg" /><p class="caption"><span class="caption-text">The Filesystem</span></p>
+</div>
+<p>We know that our current working directory <code class="docutils literal"><span class="pre">/users/nelle</span></code> is stored
+inside <code class="docutils literal"><span class="pre">/users</span></code> because <code class="docutils literal"><span class="pre">/users</span></code> is the first part of its name.
+Similarly, we know that <code class="docutils literal"><span class="pre">/users</span></code> is stored inside the root directory
+<code class="docutils literal"><span class="pre">/</span></code> because its name begins with <code class="docutils literal"><span class="pre">/</span></code>.</p>
+<p>Underneath <code class="docutils literal"><span class="pre">/users</span></code>, we find one directory for each user with an
+account on this machine. The Mummy&#8217;s files are stored in
+<code class="docutils literal"><span class="pre">/users/imhotep</span></code>, Wolfman&#8217;s in <code class="docutils literal"><span class="pre">/users/larry</span></code>, and ours in
+<code class="docutils literal"><span class="pre">/users/nelle</span></code>, which is why <code class="docutils literal"><span class="pre">nelle</span></code> is the last part of the
+directory&#8217;s name.</p>
+<div class="figure" id="id2">
+<img alt="Home Directories" src="../../../_images/home-directories.svg" /><p class="caption"><span class="caption-text">Home Directories</span></p>
+<div class="legend">
+<blockquote>
+<div>Notice that there are two meanings for the <code class="docutils literal"><span class="pre">/</span></code> character. When
+it appears at the front of a file or directory name, it refers to
+the root directory. When it appears <em>inside</em> a name, it&#8217;s just a
+separator.</div></blockquote>
+</div>
+</div>
+<p>Let&#8217;s see what&#8217;s in Nelle&#8217;s home directory by running <code class="docutils literal"><span class="pre">ls</span></code>, which
+stands for &#8220;listing&#8221;:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls
+creatures  molecules           pizza.cfg
+data       north-pacific-gyre  solar.pdf
+Desktop    notes.txt           writing
+</pre></div>
+</div>
+<div class="figure" id="id3">
+<img alt="Nelle's Home Directory" src="../../../_images/homedir.svg" /><p class="caption"><span class="caption-text">Nelle&#8217;s Home Directory</span></p>
+</div>
+<p><code class="docutils literal"><span class="pre">ls</span></code> prints the names of the files and directories in the current
+directory in alphabetical order, arranged neatly into columns. We can
+make its output more comprehensible by using the <strong>flag</strong> <code class="docutils literal"><span class="pre">-F</span></code>,
+which tells <code class="docutils literal"><span class="pre">ls</span></code> to add a trailing <code class="docutils literal"><span class="pre">/</span></code> to the names of
+directories:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls -F
+creatures/  molecules/           pizza.cfg
+data/       north-pacific-gyre/  solar.pdf
+Desktop/    notes.txt            writing/
+</pre></div>
+</div>
+<p>Here, we can see that <code class="docutils literal"><span class="pre">/users/nelle</span></code> contains seven
+<strong>sub-directories</strong>. The names that don&#8217;t have trailing slashes, like
+<code class="docutils literal"><span class="pre">notes.txt</span></code>, <code class="docutils literal"><span class="pre">pizza.cfg</span></code>, and <code class="docutils literal"><span class="pre">solar.pdf</span></code>, are plain old files.
+And note that there is a space between <code class="docutils literal"><span class="pre">ls</span></code> and <code class="docutils literal"><span class="pre">-F</span></code>: without it,
+the shell thinks we&#8217;re trying to run a command called <code class="docutils literal"><span class="pre">ls-F</span></code>, which
+doesn&#8217;t exist.</p>
+</div>
+<div class="section" id="what-s-in-a-name">
+<h1>What&#8217;s In A Name?<a class="headerlink" href="#what-s-in-a-name" title="Permalink to this headline">¶</a></h1>
+<p>You may have noticed that all of Nelle&#8217;s files&#8217; names are &#8220;something
+dot something&#8221;. This is just a convention: we can call a file
+<code class="docutils literal"><span class="pre">mythesis</span></code> or almost anything else we want. However, most people use
+two-part names most of the time to help them (and their programs) tell
+different kinds of files apart. The second part of such a name is
+called the <strong>filename extension</strong>, and indicates what type of data the
+file holds: <code class="docutils literal"><span class="pre">.txt</span></code> signals a plain text file, <code class="docutils literal"><span class="pre">.pdf</span></code> indicates a
+PDF document, <code class="docutils literal"><span class="pre">.cfg</span></code> is a configuration file full of parameters for
+some program or other, and so on.</p>
+<p>This is just a convention, albeit an important one. Files contain
+bytes: it&#8217;s up to us and our programs to interpret those bytes
+according to the rules for PDF documents, images, and so on.</p>
+<p>Naming a PNG image of a whale as <code class="docutils literal"><span class="pre">whale.mp3</span></code> doesn&#8217;t somehow
+magically turn it into a recording of whale song, though it <em>might</em>
+cause the operating system to try to open it with a music player when
+someone double-clicks it.</p>
+</div>
+<div class="section" id="parameters-and-arguments">
+<h1>Parameters and Arguments<a class="headerlink" href="#parameters-and-arguments" title="Permalink to this headline">¶</a></h1>
+<p>Now let&#8217;s take a look at what&#8217;s in Nelle&#8217;s <code class="docutils literal"><span class="pre">data</span></code> directory by
+running <code class="docutils literal"><span class="pre">ls</span> <span class="pre">-F</span> <span class="pre">data</span></code>, i.e., the command <code class="docutils literal"><span class="pre">ls</span></code> with the
+<strong>arguments</strong> <code class="docutils literal"><span class="pre">-F</span></code> and <code class="docutils literal"><span class="pre">data</span></code>. The second argument &#8212; the one
+<em>without</em> a leading dash &#8212; tells <code class="docutils literal"><span class="pre">ls</span></code> that we want a listing of
+something other than our current working directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls -F data
+amino-acids.txt   elements/     morse.txt
+pdb/              planets.txt   sunspot.txt
+</pre></div>
+</div>
+<p>The output shows us that there are four text files and two
+sub-sub-directories. Organizing things hierarchically in this way
+helps us keep track of our work: it&#8217;s possible to put hundreds of
+files in our home directory, just as it&#8217;s possible to pile hundreds of
+printed papers on our desk, but it&#8217;s a self-defeating strategy.</p>
+<p>Notice, by the way that we spelled the directory name <code class="docutils literal"><span class="pre">data</span></code>. It
+doesn&#8217;t have a trailing slash: that&#8217;s added to directory names by
+<code class="docutils literal"><span class="pre">ls</span></code> when we use the <code class="docutils literal"><span class="pre">-F</span></code> flag to help us tell things apart. And
+it doesn&#8217;t begin with a slash because it&#8217;s a <strong>relative path</strong>, i.e.,
+it tells <code class="docutils literal"><span class="pre">ls</span></code> how to find something from where we are, rather than
+from the root of the file system.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Parameters vs. Arguments</dt>
+<dd>According to <a class="reference external" href="https://en.wikipedia.org/wiki/Parameter_(computer_programming)#Parameters_and_arguments">Wikipedia</a>,
+the terms <strong>argument</strong> and <strong>parameter</strong> mean slightly different
+things.  In practice, however, most people use them
+interchangeably or inconsistently, so we will too.</dd>
+</dl>
+</div>
+<p>If we run <code class="docutils literal"><span class="pre">ls</span> <span class="pre">-F</span> <span class="pre">/data</span></code> (<em>with</em> a leading slash) we get a different
+answer, because <code class="docutils literal"><span class="pre">/data</span></code> is an <strong>absolute path</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls -F /data
+access.log    backup/    hardware.cfg
+network.cfg
+</pre></div>
+</div>
+<p>The leading <code class="docutils literal"><span class="pre">/</span></code> tells the computer to follow the path from the root
+of the filesystem, so it always refers to exactly one directory, no
+matter where we are when we run the command.</p>
+</div>
+<div class="section" id="moving-around">
+<h1>Moving around<a class="headerlink" href="#moving-around" title="Permalink to this headline">¶</a></h1>
+<p>What if we want to change our current working directory? Before we do
+this, <code class="docutils literal"><span class="pre">pwd</span></code> shows us that we&#8217;re in <code class="docutils literal"><span class="pre">/users/nelle</span></code>, and <code class="docutils literal"><span class="pre">ls</span></code>
+without any arguments shows us that directory&#8217;s contents:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pwd
+/users/nelle
+$ ls
+creatures  molecules           pizza.cfg
+data       north-pacific-gyre  solar.pdf
+Desktop    notes.txt           writing
+</pre></div>
+</div>
+<p>We can use <code class="docutils literal"><span class="pre">cd</span></code> followed by a directory name to change our working
+directory. <code class="docutils literal"><span class="pre">cd</span></code> stands for &#8220;change directory&#8221;, which is a bit
+misleading: the command doesn&#8217;t change the directory, it changes the
+shell&#8217;s idea of what directory we are in.:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cd data
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">cd</span></code> doesn&#8217;t print anything, but if we run <code class="docutils literal"><span class="pre">pwd</span></code> after it, we can
+see that we are now in <code class="docutils literal"><span class="pre">/users/nelle/data</span></code>. If we run <code class="docutils literal"><span class="pre">ls</span></code> without
+arguments now, it lists the contents of <code class="docutils literal"><span class="pre">/users/nelle/data</span></code>, because
+that&#8217;s where we now are:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pwd
+/users/nelle/data
+$ ls -F
+amino-acids.txt   elements/     morse.txt
+pdb/              planets.txt   sunspot.txt
+</pre></div>
+</div>
+<p>We now know how to go down the directory tree: how do we go up? We
+could use an absolute path:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cd /users/nelle
+</pre></div>
+</div>
+<p>but it&#8217;s almost always simpler to use <code class="docutils literal"><span class="pre">cd</span> <span class="pre">..</span></code> to go up one level:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pwd
+/users/nelle/data
+$ cd ..
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">..</span></code> is a special directory name meaning &#8220;the directory containing
+this one&#8221;, or more succinctly, the <strong>parent</strong> of the current directory.
+Sure enough, if we run <code class="docutils literal"><span class="pre">pwd</span></code> after running <code class="docutils literal"><span class="pre">cd</span> <span class="pre">..</span></code>, we&#8217;re back in
+<code class="docutils literal"><span class="pre">/users/nelle</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pwd
+/users/nelle
+</pre></div>
+</div>
+<p>The special directory <code class="docutils literal"><span class="pre">..</span></code> doesn&#8217;t usually show up when we run <code class="docutils literal"><span class="pre">ls</span></code>.
+If we want to display it, we can give <code class="docutils literal"><span class="pre">ls</span></code> the <code class="docutils literal"><span class="pre">-a</span></code> flag:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls -F -a
+./                  creatures/          notes.txt
+../                 data/               pizza.cfg
+.bash_profile       molecules/          solar.pdf
+Desktop/            north-pacific-gyre/ writing/
+</pre></div>
+</div>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">-a</span></code> stands for &#8220;show all&#8221;; it forces <code class="docutils literal"><span class="pre">ls</span></code> to show us file and
+directory names that begin with <code class="docutils literal"><span class="pre">.</span></code>, such as <code class="docutils literal"><span class="pre">..</span></code> (which, if
+we&#8217;re in <code class="docutils literal"><span class="pre">/users/nelle</span></code>, refers to the <code class="docutils literal"><span class="pre">/users</span></code> directory). As
+you can see, it also displays another special directory that&#8217;s just
+called <code class="docutils literal"><span class="pre">.</span></code>, which means &#8220;the current working directory&#8221;. It may
+seem redundant to have a name for it, but we&#8217;ll see some uses for it
+soon.</li>
+<li>Finally, we also see a file called <code class="docutils literal"><span class="pre">.bash_profile</span></code>. This file
+usually contains settings to customize the shell (terminal). There
+may also be similar files called <code class="docutils literal"><span class="pre">.bashrc</span></code> or <code class="docutils literal"><span class="pre">.bash_login</span></code>. For
+this lesson material it does not contain any settings.</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Orthogonality</dt>
+<dd>The special names <code class="docutils literal"><span class="pre">.</span></code> and <code class="docutils literal"><span class="pre">..</span></code> don&#8217;t belong to <code class="docutils literal"><span class="pre">ls</span></code>; they are
+interpreted the same way by every program. For example, if we are in
+<code class="docutils literal"><span class="pre">/users/nelle/data</span></code>, the command <code class="docutils literal"><span class="pre">ls</span> <span class="pre">..</span></code> will give us a listing
+of <code class="docutils literal"><span class="pre">/users/nelle</span></code>. When the meanings of the parts are the same no
+matter how they&#8217;re combined, programmers say they are
+<strong>orthogonal</strong>: Orthogonal systems tend to be easier for people to
+learn because there are fewer special cases and exceptions to keep
+track of.</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="nelle-s-pipeline-organizing-files">
+<h1>Nelle&#8217;s Pipeline: Organizing Files<a class="headerlink" href="#nelle-s-pipeline-organizing-files" title="Permalink to this headline">¶</a></h1>
+<p>Knowing just this much about files and directories, Nelle is ready to
+organize the files that the protein assay machine will create. First,
+she creates a directory called <code class="docutils literal"><span class="pre">north-pacific-gyre</span></code> (to remind
+herself where the data came from). Inside that, she creates a
+directory called <code class="docutils literal"><span class="pre">2012-07-03</span></code>, which is the date she started
+processing the samples.  She used to use names like
+<code class="docutils literal"><span class="pre">conference-paper</span></code> and <code class="docutils literal"><span class="pre">revised-results</span></code>, but she found them hard
+to understand after a couple of years. (The final straw was when she
+found herself creating a directory called
+<code class="docutils literal"><span class="pre">revised-revised-results-3</span></code>.)</p>
+<p>Nelle names her directories &#8220;year-month-day&#8221;, with leading zeroes for
+months and days, because the shell displays file and directory names
+in alphabetical order. If she used month names, December would come
+before July; if she didn&#8217;t use leading zeroes, November (&#8216;11&#8217;) would
+come before July (&#8216;7&#8217;).</p>
+<p>Each of her physical samples is labeled according to her lab&#8217;s
+convention with a unique ten-character ID, such as &#8220;NENE01729A&#8221;. This
+is what she used in her collection log to record the location, time,
+depth, and other characteristics of the sample, so she decides to use
+it as part of each data file&#8217;s name. Since the assay machine&#8217;s output
+is plain text, she will call her files <code class="docutils literal"><span class="pre">NENE01729A.txt</span></code>,
+<code class="docutils literal"><span class="pre">NENE01812A.txt</span></code>, and so on. All 1520 files will go into the same
+directory.</p>
+<p>If she is in her home directory, Nelle can see what files she has
+using the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls north-pacific-gyre/2012-07-03/
+</pre></div>
+</div>
+<p>This is a lot to type, but she can let the shell do most of the
+work. If she types:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls nor
+</pre></div>
+</div>
+<p>and then presses tab, the shell automatically completes the directory
+name for her:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls north-pacific-gyre/
+</pre></div>
+</div>
+<p>If she presses tab again, Bash will add <code class="docutils literal"><span class="pre">2012-07-03/</span></code> to the
+command, since it&#8217;s the only possible completion. Pressing tab again
+does nothing, since there are 1520 possibilities; pressing tab twice
+brings up a list of all the files, and so on. This is called <strong>tab
+completion</strong>, and we will see it in many other tools as we go on.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

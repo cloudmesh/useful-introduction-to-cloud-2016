@@ -1,0 +1,571 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Spring 2015 - Big Data Open Source Software Project (BUEX-V 594) &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/>
+        <link rel="up" title="Cloudmesh in Classes" href="../index.html"/>
+        <link rel="next" title="Weekly Plan" href="week_plan.html"/>
+        <link rel="prev" title="Cloudmesh in Classes" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href=""> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#notice">Notice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#office-hours">Office Hours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#contact">Contact</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#weekly-plan">Weekly Plan</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="week_plan.html">Weekly Plan</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#support">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#meeting">Meeting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#for-the-participants">For the Participants</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#for-the-hosts">For the Hosts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#collaboration-tools">Collaboration Tools</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/collaboration/overview.html">Overview and Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/google.html">Google</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/shell-access.html">Shell Access</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/git.html">Using Git and GitHub for collaboration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#futuresystems-access">FutureSystems Access</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/hands_on_fg465.html">Getting Started with Hands-on Access</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/system/overview.html">Overview and Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/system/futuresystemsuse.html">Use of FutureSystems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/system/futuresystemsuse.html#lab-account-applications">Lab - Account Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#linux-basics">Linux Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/linux/overview.html">Overview and Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/linux/shell.html">Shell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/linux/editors.html">Editing Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/linux/python.html">Python Programming</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/linux/ipython.html">IPython</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/linux/packagemanagement.html">Package Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/linux/advancedssh.html">Advanced SSH</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/linux/modules.html">Software Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#basics-of-openstack">Basics of OpenStack</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/iaas/overview_openstack.html">Overview and Introduction to OpenStack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/iaas/openstack.html">OpenStack for Beginners</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/iaas/openstack_juno.html">OpenStack Juno</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/iaas/openstack_horizon.html">OpenStack Horizion Web Dashboard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/iaas/other_iaas.html">Other IaaS Cloud Platforms</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#basics-of-cloudmesh">Basics of Cloudmesh</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/iaas/cloudmesh.html">Cloudmesh for Beginners</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/iaas/cloudmesh_ipython.html">Cloudmesh IPython</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/iaas/cloudmesh_openstack.html">Cloudmesh OpenStack</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#advanced-cloudmesh">Advanced Cloudmesh</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/iaas/overview_advanced.html">Advanced Cloudmesh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/iaas/cloudmesh_vm.html">Cloudmesch Virtual Machine Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/iaas/cloudmesh_cluster.html">Cloudmesh Cluster</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#it-operations-automation-and-orchestration">IT Operations - Automation and Orchestration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/devops/overview.html">DevOps (under preparation)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/devops/ansible.html">Ansible</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/devops/saltstack.html">SaltStack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/devops/puppet.html">Puppet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/devops/chef.html">Chef</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/devops/openstack_heat.html">OpenStack Heat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/devops/juju.html">Ubuntu Juju</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#virtual-clusters">Virtual Clusters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/devops/overview_vc.html">Overview Virtual Cluster (under preparation)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/devops/deployment.html">Dynamic deployment of arbitrary X software on VC (under preparation)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/devops/hadoop.html">Hadoop Virtual CLuster (under preparation)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/devops/composite_cluster.html">Composite Clusters (under preparation)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/devops/openmpi_cluster.html">OpenMPI Virtual Cluster (Under Preparation)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/devops/mongodb_cluster.html">MongoDB Virtual Cluster (under preparation)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#other-technologies">Other Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#future">Future</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="future.html">What will the future Bring (under preparation)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="future.html#ge-industrial-internet-of-things-iiot-under-preparation">GE Industrial Internet of Things (IIoT) (under preparation)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#to-be-organized-into-the-above">To be Organized into the above</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/openmpi.html">Deploying Open MPI Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/ipynb.html">Deploying IPython Notebook Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/ansible.html">Ansible</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/ansible.html#tutorial-ansible-basic-commands">Tutorial: Ansible Basic commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/ansible_playbook.html">Ansible Playbooks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/docker.html">Docker Basics on FutureSystems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lesson/docker_cloudmesh.html">Deploying Cloudmesh using Docker on FutureSystems</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lessons.html">Lessons</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+    <li> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/class/bdossp_sp15/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="courseimg-spring-2015-big-data-open-source-software-project-buex-v-594">
+<h1><a class="reference internal" href="../../_images/course-image.png"><img alt="courseimg" src="../../_images/course-image.png" style="width: 30px;" /></a> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)<a class="headerlink" href="#courseimg-spring-2015-big-data-open-source-software-project-buex-v-594" title="Permalink to this headline">¶</a></h1>
+<p>Although this material is prepared for the classes IU <code class="docutils literal"><span class="pre">BUEX-V</span> <span class="pre">594</span></code>,
+they are of general interest to others. Please use
+them  to learn about BigData Software and Technologies.</p>
+<ul class="simple">
+<li>Course Page: <a class="reference external" href="http://bigdataopensourceprojects.soic.indiana.edu/">http://bigdataopensourceprojects.soic.indiana.edu/</a></li>
+<li>IU Canvas: <a class="reference external" href="https://iu.instructure.com/courses/1453783">https://iu.instructure.com/courses/1453783</a></li>
+<li>FutureSystems Project Page: <a class="reference external" href="https://portal.futuresystems.org/projects/465">https://portal.futuresystems.org/projects/465</a></li>
+</ul>
+<div class="section" id="notice">
+<h2>Notice<a class="headerlink" href="#notice" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../notice.html#ref-class-notice"><span>System Notice</span></a></p>
+</div>
+<div class="section" id="office-hours">
+<h2>Office Hours<a class="headerlink" href="#office-hours" title="Permalink to this headline">¶</a></h2>
+<p><strong>General Discussions</strong></p>
+<ul class="simple">
+<li>Wednesday 8 pm</li>
+<li>Thursday 9 am</li>
+</ul>
+<p><strong>Support Office Hours</strong></p>
+<p>Office hours are conducted on appointment onle during the times given
+bellow. Please send mail to <a class="reference external" href="mailto:coursehelp&#37;&#52;&#48;futuresystems&#46;org">coursehelp<span>&#64;</span>futuresystems<span>&#46;</span>org</a>.</p>
+<ul class="simple">
+<li>Tuesdays 9-10 am</li>
+<li>Wednesday 7-8 pm</li>
+<li>Thursday 10-11 am</li>
+</ul>
+</div>
+<div class="section" id="contact">
+<h2>Contact<a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h2>
+<p>We have <a class="reference external" href="mailto:coursehelp&#37;&#52;&#48;futuresystems&#46;org">coursehelp<span>&#64;</span>futuresystems<span>&#46;</span>org</a> to help students on course.
+Technical issues, course projects or web site will be supported.</p>
+<p>Please contact additional instructors for help:</p>
+<ul class="simple">
+<li><a class="reference external" href="mailto:badi&#37;&#52;&#48;iu&#46;edu">Badi' Abdul-Wahid</a></li>
+<li><a class="reference external" href="mailto:lee212&#37;&#52;&#48;iu&#46;edu">Hyungro Lee</a></li>
+<li><a class="reference external" href="mailto:laszewski&#37;&#52;&#48;gmail&#46;com">Gregor von Laszewski</a> (advanced concepts)</li>
+<li><a class="reference external" href="mailto:kevinwangfg&#37;&#52;&#48;gmail&#46;com">Fugang Wang</a> (advanced concepts)</li>
+</ul>
+<p>For problems with FutureSystems please email
+<a class="reference external" href="mailto:help&#37;&#52;&#48;futuresystems&#46;org">help<span>&#64;</span>futuresystems<span>&#46;</span>org</a>.
+Be aware that the instructors are not recipients of emails
+sent to <a class="reference external" href="mailto:help&#37;&#52;&#48;futuresystems&#46;org">help<span>&#64;</span>futuresystems<span>&#46;</span>org</a>
+so make sure to carbon copy then otherwise they will not be aware of
+your issue.
+Additionally, make sure that the instructors are carbon copied on your
+replies.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Please be aware that questions addressed to staff should be sent
+between 9am and 4pm on business days.
+Questions outside those hours may not be addressed until the
+following business day.
+Please keep this in mind and start working on your assignments early.</p>
+</div>
+<p>Technical issues, course projects or web site will be supported.</p>
+</div>
+<div class="section" id="weekly-plan">
+<h2>Weekly Plan<a class="headerlink" href="#weekly-plan" title="Permalink to this headline">¶</a></h2>
+<p>Besides this table of contents, we also have prepared a weekly plan to
+which we will add more content throughout the semester:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="week_plan.html">Weekly Plan</a></li>
+</ul>
+</div>
+<a href="week_plan.html" target="_blank"><img src="../../images/calendar.png" border="2" style="max-width:10%;" alt="Meeting" /></a></div>
+<div class="section" id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
+<p>Office hours will be held so that students may receive individual
+attention from instructors.  Additionally, hours will be made
+available for general discussions.</p>
+<p>Discussions will be done using Adobe Connect.
+Make sure you are prepared to join the meeting by click on the following links:</p>
+<ol class="arabic simple">
+<li>Adobe Connect Setup Instructions: <a class="reference external" href="https://ittraining.iu.edu/connectsetup/">https://ittraining.iu.edu/connectsetup/</a></li>
+<li>Installing Adobe Connect Plug-In: <a class="reference external" href="https://kb.iu.edu/d/bdoc">https://kb.iu.edu/d/bdoc</a></li>
+<li>Testing Connectivity: <a class="reference external" href="https://connect.iu.edu/common/help/en/support/meeting_test.htm">https://connect.iu.edu/common/help/en/support/meeting_test.htm</a></li>
+</ol>
+</div>
+<div class="section" id="meeting">
+<h2>Meeting<a class="headerlink" href="#meeting" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>You can join the meeting by clicking on <a class="reference external" href="https://connect.iu.edu/bdossp_sp15/">this link</a>.</p>
+<div class="last"><a href="https://connect.iu.edu/bdossp_sp15/" target="_blank">
+<img src="../../images/people.png" border="2" style="max-width:10%;" alt="Meeting" /></a></div></div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All times are in US Eastern Standard Time.</p>
+</div>
+<p>Additionally, there may be some technical issues when attempting to join a
+meeting, please see the following for guidance.</p>
+<div class="section" id="for-the-participants">
+<h3>For the Participants<a class="headerlink" href="#for-the-participants" title="Permalink to this headline">¶</a></h3>
+<p>In order to facilitate the use of Adobe Connect, please keep the
+following in mind:</p>
+<ul class="simple">
+<li>Make sure you have Flash and Cookies enabled in your web browser</li>
+<li>Install the Connect plugin and authorize it</li>
+<li>You will need authorization from the host in order to speak.  Do so
+by clicking the hand icon to notify them of your intent.</li>
+<li>If you need to share your screen you will need to be a presenter.</li>
+<li>During screen sharing, it is best to share a second
+monitor. Otherwise you will not be able to see the Connect page.</li>
+</ul>
+</div>
+<div class="section" id="for-the-hosts">
+<h3>For the Hosts<a class="headerlink" href="#for-the-hosts" title="Permalink to this headline">¶</a></h3>
+<p>When creating a meeting with Connect you may wish to ensure permissions allows access to the room and participants to speak.</p>
+<ul class="simple">
+<li>allow access: create the meeting with permissions set to allow
+anyone with the link to join.</li>
+<li>enabling microphone: the default setting requires participants to
+notify hosts that they wish to speak. The host then has to enable to
+microphone for all participants. Alternatively, upon creation of the
+meeting, a host can enter, go to <code class="docutils literal"><span class="pre">Meeting</span> <span class="pre">---&gt;</span> <span class="pre">Preferences</span> <span class="pre">---&gt;</span>
+<span class="pre">Audio</span> <span class="pre">Conference</span></code> and check the &#8220;Allow participants to use
+Microphones&#8221; box.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="collaboration-tools">
+<h2>Collaboration Tools<a class="headerlink" href="#collaboration-tools" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/collaboration/overview.html">Overview and Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/google.html">Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/shell-access.html">Shell Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/git.html">Using Git and GitHub for collaboration</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="futuresystems-access">
+<h2>FutureSystems Access<a class="headerlink" href="#futuresystems-access" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/hands_on_fg465.html">Getting Started with Hands-on Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/system/overview.html">Overview and Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/system/futuresystemsuse.html">Use of FutureSystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/system/futuresystemsuse.html#lab-account-applications">Lab - Account Applications</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="linux-basics">
+<h2>Linux Basics<a class="headerlink" href="#linux-basics" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/linux/overview.html">Overview and Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/linux/shell.html">Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/linux/editors.html">Editing Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/linux/python.html">Python Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/linux/ipython.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/linux/packagemanagement.html">Package Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/linux/advancedssh.html">Advanced SSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/linux/modules.html">Software Modules</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="basics-of-openstack">
+<h2>Basics of OpenStack<a class="headerlink" href="#basics-of-openstack" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/iaas/overview_openstack.html">Overview and Introduction to OpenStack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/iaas/openstack.html">OpenStack for Beginners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/iaas/openstack_juno.html">OpenStack Juno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/iaas/openstack_horizon.html">OpenStack Horizion Web Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/iaas/other_iaas.html">Other IaaS Cloud Platforms</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="basics-of-cloudmesh">
+<h2>Basics of Cloudmesh<a class="headerlink" href="#basics-of-cloudmesh" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/iaas/cloudmesh.html">Cloudmesh for Beginners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/iaas/cloudmesh_ipython.html">Cloudmesh IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/iaas/cloudmesh_openstack.html">Cloudmesh OpenStack</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="advanced-cloudmesh">
+<h2>Advanced Cloudmesh<a class="headerlink" href="#advanced-cloudmesh" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/iaas/overview_advanced.html">Advanced Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/iaas/cloudmesh_vm.html">Cloudmesch Virtual Machine Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/iaas/cloudmesh_cluster.html">Cloudmesh Cluster</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="it-operations-automation-and-orchestration">
+<h2>IT Operations - Automation and Orchestration<a class="headerlink" href="#it-operations-automation-and-orchestration" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/devops/overview.html">DevOps (under preparation)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/devops/ansible.html">Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/devops/saltstack.html">SaltStack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/devops/puppet.html">Puppet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/devops/chef.html">Chef</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/devops/openstack_heat.html">OpenStack Heat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/devops/juju.html">Ubuntu Juju</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="virtual-clusters">
+<h2>Virtual Clusters<a class="headerlink" href="#virtual-clusters" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/devops/overview_vc.html">Overview Virtual Cluster (under preparation)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/devops/deployment.html">Dynamic deployment of arbitrary X software on VC (under preparation)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/devops/hadoop.html">Hadoop Virtual CLuster (under preparation)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/devops/composite_cluster.html">Composite Clusters (under preparation)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/devops/openmpi_cluster.html">OpenMPI Virtual Cluster (Under Preparation)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/devops/mongodb_cluster.html">MongoDB Virtual Cluster (under preparation)</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="other-technologies">
+<h2>Other Technologies<a class="headerlink" href="#other-technologies" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="future">
+<h2>Future<a class="headerlink" href="#future" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="future.html">What will the future Bring (under preparation)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="future.html#ge-industrial-internet-of-things-iiot-under-preparation">GE Industrial Internet of Things (IIoT) (under preparation)</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="to-be-organized-into-the-above">
+<h2>To be Organized into the above<a class="headerlink" href="#to-be-organized-into-the-above" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/openmpi.html">Deploying Open MPI Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/ipynb.html">Deploying IPython Notebook Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/ansible.html">Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/ansible.html#tutorial-ansible-basic-commands">Tutorial: Ansible Basic commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/ansible_playbook.html">Ansible Playbooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/docker.html">Docker Basics on FutureSystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson/docker_cloudmesh.html">Deploying Cloudmesh using Docker on FutureSystems</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="week_plan.html" class="btn btn-neutral float-right" title="Weekly Plan" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Cloudmesh in Classes" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

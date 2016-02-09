@@ -1,0 +1,617 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Fall 2014 - Big Data Applications and Analytics (Info I590) &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../index.html"/>
+        <link rel="up" title="Cloudmesh in Classes" href="index.html"/>
+        <link rel="next" title="VM for Big Data Applications and Analytics" href="cm-mooc/index.html"/>
+        <link rel="prev" title="Virtualization Tools" href="lesson/virtualization/tools.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#video-syllabus">Video Syllabus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#account-application-for-futuresystems">Account Application for FutureSystems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-introduction">Cloudmesh Introduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#excersises">Excersises</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-setup">Cloudmesh Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id19">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-web-interface">Cloudmesh Web Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id20">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-ipython-learning-server">Cloudmesh IPython Learning Server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id23">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-command-shell-interface">Cloudmesh Command Shell Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id26">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-command-shell-api">Cloudmesh Command Shell API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id29">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-command-python-api">Cloudmesh Command Python API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id32">Exercises</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lessons.html">Lessons</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+    <li>Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/class/i590.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="fall-2014-big-data-applications-and-analytics-info-i590">
+<h1>Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)<a class="headerlink" href="#fall-2014-big-data-applications-and-analytics-info-i590" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Fall 2014</li>
+<li>Big Data Applications and Analytics</li>
+<li><a class="reference external" href="https://bigdatacoursefall2014.appspot.com/course">https://bigdatacoursefall2014.appspot.com/course</a></li>
+<li>Community Group:
+<a class="reference external" href="https://plus.google.com/communities/117322030211467950209">https://plus.google.com/communities/117322030211467950209</a></li>
+</ul>
+<div class="section" id="video-syllabus">
+<h2>Video Syllabus<a class="headerlink" href="#video-syllabus" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="account-application-for-futuresystems">
+<h2>Account Application for FutureSystems<a class="headerlink" href="#account-application-for-futuresystems" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="5%" />
+<col width="15%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Video</th>
+<th class="head">Length</th>
+<th class="head">Titles of the Lessons</th>
+<th class="head">Description of the Lessons</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a href="#id35"><span class="problematic" id="id36">|video-fs-account|</span></a></td>
+<td>16:33 min</td>
+<td>Alternative 1: Create a portal account in FutureSystems for
+class projects.</td>
+<td>This lesson explains you how to create a portal account which
+is the first step in getting access to FutureSystems. You can
+also view the following videos from FutureGrid as they still
+apply.  For written materials, see section
+<span class="xref std std-ref">s-account-create-account</span>. and
+<a class="reference internal" href="../accounts/accounts.html#s-screencast-accounts"><span>Creating FutureSystems Accounts and Projects</span></a> They are listed in Alternative 2.</td>
+</tr>
+<tr class="row-odd"><td><a href="#id37"><span class="problematic" id="id38">|video-portal-account|</span></a> <a href="#id39"><span class="problematic" id="id40">|video-portal-openid|</span></a>
+<a href="#id41"><span class="problematic" id="id42">|video-portal-sshkey|</span></a> <a href="#id43"><span class="problematic" id="id44">|video-portal-join-proj|</span></a></td>
+<td>5:10 min, 1:35 min, 2:39 min, 1:28 min</td>
+<td>Alternative 2: Create a portal account in FutureSystems for
+class projects with more details</td>
+<td>This lesson explains you how to create a portal account which
+is the first step in getting access to FutureSystems.  See
+Section <span class="xref std std-ref">s-account-create-account</span> and
+<a class="reference internal" href="../accounts/accounts.html#s-screencast-accounts"><span>Creating FutureSystems Accounts and Projects</span></a>.</td>
+</tr>
+</tbody>
+</table>
+<p>If you attend a class the above video clips are probably sufficient. If you
+like to know more, please see the videos at
+<a class="reference internal" href="../accounts/accounts.html#s-screencast-accounts"><span>Creating FutureSystems Accounts and Projects</span></a></p>
+<div class="section" id="exercises">
+<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Create a portal account on FutureSystems.</li>
+<li>Identify an interesting project that you can conduct on
+FutureSystems Cloud, HPC, or Grid resources.</li>
+<li>Apply for a FutureSystems project or join a project.
+See section <a class="reference internal" href="../accounts/details.html#s-account-join-project"><span>Join a Project</span></a>.</li>
+<li>Read up on what a ssh key is.
+See section <a class="reference internal" href="../accounts/ssh.html#s-using-ssh"><span>Using SSH Keys</span></a>.</li>
+<li>Upload a ssh key.
+Do this via <a class="reference external" href="https://portal.futuresystems.org/my/ssh-keys">https://portal.futuresystems.org/my/ssh-keys</a></li>
+<li>Register your OpenID in the portal (for example if you use google).</li>
+<li>Upload a 220x220 pixel portrait of yours to the portal.
+Do this via <a class="reference external" href="https://portal.futuresystems.org/my/edit">https://portal.futuresystems.org/my/edit</a></li>
+<li>Make sure you have uploaded a small Bio.
+Do this via <a class="reference external" href="https://portal.futuresystems.org/my/Contact">https://portal.futuresystems.org/my/Contact</a></li>
+</ol>
+</div>
+</div>
+<div class="section" id="cloudmesh-introduction">
+<h2>Cloudmesh Introduction<a class="headerlink" href="#cloudmesh-introduction" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="5%" />
+<col width="15%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Video</th>
+<th class="head">Length</th>
+<th class="head">Titles of the Lessons</th>
+<th class="head">Description of the Lessons</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a href="#id45"><span class="problematic" id="id46">|video-fs-gentle|</span></a></td>
+<td>28:42 min</td>
+<td>A Gentle Introduction to Cloudmesh</td>
+<td>This lesson introduces you to cloudmesh. It provides you with
+an overview, the motivation for cloudmesh and some
+functionality requirements that motivated the architecture.
+The lesson also includes pointers to future development of cloudmesh.</td>
+</tr>
+<tr class="row-odd"><td><a href="#id47"><span class="problematic" id="id48">|video-fs-learning|</span></a></td>
+<td>17:54 min</td>
+<td>An Overview about the Cloudmesh Learning Web Pages</td>
+<td>This lesson gives a short overview about the web site on which
+cloudmesh is hosted. It also talks a bit about the architecture.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="excersises">
+<h3>Excersises<a class="headerlink" href="#excersises" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>What is bare metal provisioning?</li>
+<li>Is there a difference between the terms raining and provisioning?</li>
+<li>Identify the different usage of the term provisioning in the
+community. Give various concrete definitions used in the
+community. With links.</li>
+<li>What is a hypervisor?</li>
+<li>What is IaaS, PaaS, BMaaS?</li>
+<li>What are prominent IaaS frameworks.</li>
+<li>What are Software tools you use to conduct Big Data Analysis?</li>
+<li>If you like to become a contributor to Cloudmesh, contact
+<a class="reference external" href="mailto:laszewski&#37;&#52;&#48;gmail&#46;com">laszewski<span>&#64;</span>gmail<span>&#46;</span>com</a>.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="cloudmesh-setup">
+<h2>Cloudmesh Setup<a class="headerlink" href="#cloudmesh-setup" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="5%" />
+<col width="15%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Video</th>
+<th class="head">Length</th>
+<th class="head">Titles of the Lessons</th>
+<th class="head">Description of the Lessons</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a href="#id49"><span class="problematic" id="id50">|video-cm-install|</span></a></td>
+<td>17:15 min</td>
+<td>Alternative 1: Setup Cloudmesh on a local desktop or laptop.</td>
+<td>This lesson explains you how to setup cloudmesh on a local
+desktop, it will require you to install certain programs on
+your system. If you do not want to do that, you can use
+Alternative 2. See Section <a class="reference internal" href="../cloudmesh/setup/quickstart.html#s-cloudmesh-quickstart"><span>Quickstart on your desktop</span></a> for
+more details.</td>
+</tr>
+<tr class="row-odd"><td><a href="#id51"><span class="problematic" id="id52">|video-cm-openstack-setup|</span></a></td>
+<td>32:18 min</td>
+<td>Alternative 2: Setup Cloudmesh on a virtual machine.</td>
+<td>This lesson explains you how to setup cloudmesh on a virtual
+machine in the IU cloud. In contrast to Alternative 1 no
+software needs to be installed on your computer. The video also
+contains a short introduction to the Web interface. See Section
+<a class="reference internal" href="../cloudmesh/setup/setup_openstack.html#s-cloudmesh-vm-quickstart"><span>Quickstart for an Openstack VM</span></a> for more details.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id19">
+<h3>Exercises<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p>Choose one of the deployment methods below.</p>
+<ol class="arabic simple">
+<li>Install Cloudmesh on your computer (only if you like to use it on
+your own machine and are aware that certain programs need to be
+installed). See Alternative 1.</li>
+<li>Install Cloudmesh on a virtual machine. See Alternative 2</li>
+</ol>
+</div>
+</div>
+<div class="section" id="cloudmesh-web-interface">
+<h2>Cloudmesh Web Interface<a class="headerlink" href="#cloudmesh-web-interface" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="5%" />
+<col width="15%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Video</th>
+<th class="head">Length</th>
+<th class="head">Titles of the Lessons</th>
+<th class="head">Description of the Lessons</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a href="#id53"><span class="problematic" id="id54">|video-cm-gui|</span></a></td>
+<td>15:30 min</td>
+<td>The Cloudmesh Web Interface</td>
+<td>A lesson on how to use the Cloudmesh Web Interface to manage
+resources on a Cloud. See Section <a class="reference internal" href="../cloudmesh/gui/screenshots.html#s-screenshots"><span>Screenshots</span></a> for more
+details.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id20">
+<h3>Exercises<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Register a cloud (india).</li>
+<li>Refresh images, flavors and servers</li>
+<li>Start and delete a vm on india</li>
+<li>Refresh servers</li>
+</ol>
+<p>Note that some features of Cloudmesh have not been activated or may not
+yet work. Cloudmesh is an evolving project and changes are expected.</p>
+</div>
+</div>
+<div class="section" id="cloudmesh-ipython-learning-server">
+<h2>Cloudmesh IPython Learning Server<a class="headerlink" href="#cloudmesh-ipython-learning-server" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="5%" />
+<col width="15%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Video</th>
+<th class="head">Length</th>
+<th class="head">Titles of the Lessons</th>
+<th class="head">Description of the Lessons</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a href="#id55"><span class="problematic" id="id56">|video-cm-ipython-learning|</span></a></td>
+<td>15:30 min</td>
+<td>The Cloudmesh IPython Lerning Server</td>
+<td>A lesson on how to IPython for directly executing the notebooks
+contained on on the Cloudmesh learning Web pages.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id23">
+<h3>Exercises<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Start the IPython server</li>
+<li>Print the version in IPython (locate the hello notebook)</li>
+<li>Find additinal notebooks and play with them.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="cloudmesh-command-shell-interface">
+<h2>Cloudmesh Command Shell Interface<a class="headerlink" href="#cloudmesh-command-shell-interface" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="5%" />
+<col width="15%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Video</th>
+<th class="head">Length</th>
+<th class="head">Titles of the Lessons</th>
+<th class="head">Description of the Lessons</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a href="#id57"><span class="problematic" id="id58">|video-cm-shell|</span></a></td>
+<td>11:58 min</td>
+<td>The Cloudmesh Command Shell Interface</td>
+<td>This video we will be introducing you to the cloudmesh
+command shell and demonstrate to you that it is very easy to start
+virtual machines and access them via a command terminal. The
+shell provides scripting or the execution of single files. It is
+fully integrated in a database framework leveraging mongodb.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id26">
+<h3>Exercises<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Start and delete a virtual machine by using Cloudmesh Command Shell Interface</li>
+</ol>
+</div>
+</div>
+<div class="section" id="cloudmesh-command-shell-api">
+<h2>Cloudmesh Command Shell API<a class="headerlink" href="#cloudmesh-command-shell-api" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="5%" />
+<col width="15%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Video</th>
+<th class="head">Length</th>
+<th class="head">Titles of the Lessons</th>
+<th class="head">Description of the Lessons</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a href="#id59"><span class="problematic" id="id60">|video-cm-shell-api|</span></a></td>
+<td>9:44 min</td>
+<td>The Cloudmesh Command Shell API</td>
+<td>In this video we will be introducing you to the cloudmesh
+command python API and demonstrate to you that it is very easy to start
+virtual machines and access them via ssh. However python
+programmer will want to use the Python API. Neverteless this
+isnterface is nice for quick prototyping.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id29">
+<h3>Exercises<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Start and delete a virtual machine by using Cloudmesh Command Shell API</li>
+</ol>
+</div>
+</div>
+<div class="section" id="cloudmesh-command-python-api">
+<h2>Cloudmesh Command Python API<a class="headerlink" href="#cloudmesh-command-python-api" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="5%" />
+<col width="15%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Video</th>
+<th class="head">Length</th>
+<th class="head">Titles of the Lessons</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a href="#id61"><span class="problematic" id="id62">|video-cm-python-api|</span></a></td>
+<td>14:23 min</td>
+<td>The Cloudmesh Command Python API</td>
+<td>In this video we will be introducing you to the cloudmesh
+python API and demonstrate to you that it is very easy to start
+virtual machines and access them via ssh. We will be using the
+keys you registered earlier and introduce you to the
+defaults. This makes it possible to start a VM with only two
+parameters. We will also teach you how to create public ips
+and assign them to the vm.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id32">
+<h3>Exercises<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Start and delete a virtual machine by using Cloudmesh Python API</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cm-mooc/index.html" class="btn btn-neutral float-right" title="VM for Big Data Applications and Analytics" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lesson/virtualization/tools.html" class="btn btn-neutral" title="Virtualization Tools" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Storage Services &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Storage Services</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/hpc/storage.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="storage-services">
+<span id="s-storage"></span><h1>Storage Services<a class="headerlink" href="#storage-services" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="using-indiana-university-s-storage-services-from-futuresystems">
+<h2>Using Indiana University&#8217;s Storage Services from FutureSystems<a class="headerlink" href="#using-indiana-university-s-storage-services-from-futuresystems" title="Permalink to this headline">¶</a></h2>
+<p>FutureSystems does not provide an HPSS server. However, if you have an IU
+account (available only for IU faculty, staff, affilates, and
+students), you can use the following services from india:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://rc.uits.iu.edu/storage/sda">SDA</a> service</li>
+<li><a class="reference external" href="http://rc.uits.iu.edu/storage/hsi">HSI</a>, the Hierarchical Storage</li>
+</ul>
+<p>Interface client is available in india.</p>
+<p>To use the HSI client on india:</p>
+<ul>
+<li><p class="first">First, activate your SDA account as descreibed in the <a class="reference external" href="http://rc.uits.iu.edu/storage/mdss-starter-kit">MDSS Service Starter
+Kit</a> documentation.</p>
+</li>
+<li><p class="first">Then, from india, load the HSI module as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ module load hsi
+hsi version 3.5.3 loaded
+</pre></div>
+</div>
+</li>
+<li><p class="first">Connect to the SDA:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ hsi -A combo
+Principal: your_iu_userid
+[youriuid]Password:
+Username: your_iu_userid  UID: 1122636  Acct: 1122636(1122636) Copies: 1 Firewall: off [hsi.3.5.3 Fri Nov 20 10:01:25 EST 2009]
+?
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Your principal is your IU Network ID, and your password is
+the IU passphrase.</p>
+<ul>
+<li><p class="first">Enable firewall mode; otherwise, you will receive this error:</p>
+<div class="highlight-python"><div class="highlight"><pre>put: Error -5 on transfer
+
+? firewall -on
+A: firewall mode set ON, I/O mode s&lt;et to extended (parallel=off), autoscheduling currently set to OFF
+</pre></div>
+</div>
+</li>
+<li><p class="first">List local folder:</p>
+<div class="highlight-python"><div class="highlight"><pre>? lls
+testfile.txt
+</pre></div>
+</div>
+</li>
+<li><p class="first">List the current directory in HPSS:</p>
+<div class="highlight-python"><div class="highlight"><pre>? pwd
+pwd0: /hpss/pathtoyouriuusername
+</pre></div>
+</div>
+</li>
+<li><p class="first">For transferring files (<em>put</em> and <em>get</em>), search the <a class="reference external" href="http://kb.iu.edu/?search=hsi">IU Knowledge
+Base</a>.</p>
+</li>
+<li><p class="first">To exit HSI:</p>
+<div class="highlight-python"><div class="highlight"><pre>? exit
+</pre></div>
+</div>
+</li>
+<li><p class="first">For a summary of available HSI commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>? help
+
+You can also type &quot;hsi -?&quot; to get just a command line summary
+
+HPSS File and Directory Commands
+--------------------------------
+get, cget, mget, recv            - Copy HPSS file to local directory
+put, cput, mput, replace, save, store, send - Copy a local file to HPSS
+cp, copy                         - Copy a file within HPSS
+delete, mdelete, erase, rm       - Remove a file from HPSS
+ls, list                         - List directory
+pwd                              - Print current directory
+find                             - Traverse a directory tree looking for a file
+ln                               - Create symbolic link in HPSS
+mv, move, rename                 - Rename an HPSS file
+mkdir, md, add                   - Create an HPSS directory
+rmdir, rd, remove                - Delete an HPSS directory
+cd, cdls                         - Change current directory
+touch                            - Update last access time
+
+Local File and Directory Commands
+---------------------------------
+lcd, lcdls  - Change local directory
+lls         - List local directory
+lpwd        - Print current local directory
+!&lt;command&gt;  - Issue shell command
+
+File Administrative Information
+-------------------------------
+chgrp  - Change group id of file or directory
+chmod  - Change permissions of file or directory
+chown  - Change owner of file or directory
+umask  - Set file creation permission mask
+
+Storage Hiearacy Commands
+-------------------------
+lscos   - List available Classes of Service
+
+Keywords
+--------
+set, default - Change keyword value
+COSLIST      - COS list name to use for subsequently created files
+DIRn         - Set working directory
+TALK         - Turns on/off verbose mode
+BACKUP       - Keep a copy of overwritten files
+
+Saved Keysets
+-------------
+adopt  - Load a keyset
+free   - Delete a keyset
+keep   - Save a keyset
+show   - Display a keyset
+
+HSI commands
+-----------
+help             - Display help file
+quit, exit, end  - Terminate HSI
+glob             - Toggle wildcard expansion
+hash             - Toggle file transfer hashmarks
+in               - Read commands from a local file
+out              - Write HSI output to a local file
+log              - Write all HSI commands and responses to a local log file
+bell             - Toggles terminal bell
+prompt           - Toggles HSI prompting for mget, mput, and mdelete
+
+
+HSI is a command driven interface to the HPSS Mass Storage System.
+
+HSI can accept input several different ways:
+  From a command line.     Example: hsi
+  Single line execution.   Example: hsi &quot;mkdir foo; cd foo; put data_file&quot;
+  From a command file.     Example: hsi &quot;in command_file&quot;
+
+HSI can read from standard input and write to standard output.
+Command line example:
+  tar cvf - . | hsi put - : data.tar
+  hsi get - : data.tar | tar xvf -
+Interactive example:
+  put &quot;|tar cvf - *.c&quot;  : data.tar
+  get &quot;|tar xvf -&quot; : data.tar
+
+WARNING: For &#39;get&#39; and &#39;put&#39; operations, HSI uses a different syntax
+ than FTP to identify the local file name.  The syntax uses a &#39;:&#39; to
+ identify the local file name.  See section 5.8 of the online documentation
+ for details.  Example:  put local_file : hpss_file
+
+Recursive operations are allowed for the following commands:
+ cget, chgrp, chmod, chown, cput, delete, get, ls, mdelete, mget,
+ migrate, mput, purge, put, rm, stage, touch
+
+Wildcards are supported.  See section 5.9 of the online documentation.
+
+The complete HSI manual is online at http://www.sdsc.edu/Storage/hsi
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,595 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Parallel Shell &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="index.html"/>
+        <link rel="next" title="reStructuredText" href="rst.html"/>
+        <link rel="prev" title="Resources from the Internet" href="resources.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Parallel Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#parallel-distributed-shell-pdsh">Parallel Distributed Shell (pdsh)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fabric">Fabric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cloudmesh-parallel-api">Cloudmesh Parallel API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Parallel Shell</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/parallel.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="parallel-shell">
+<h1>Parallel Shell<a class="headerlink" href="#parallel-shell" title="Permalink to this headline">¶</a></h1>
+<p>Traditionally system administrators and developers using parallel
+computing need tools to manage a significant number of machines. One
+of the requirements is to execute a command in parallel on many
+machines and gather its output. There are many tools that can achieve
+this task. We focus here on the introduction of the following tools:</p>
+<ol class="arabic simple">
+<li>pdsh - a parallel distributed shell</li>
+<li>fabric - python framework to execute commands on remote computers</li>
+<li>Cloudmesh Sequential and Parallel python functions for
+executing repeatedly commands with caching</li>
+</ol>
+<div class="section" id="parallel-distributed-shell-pdsh">
+<h2>Parallel Distributed Shell (pdsh)<a class="headerlink" href="#parallel-distributed-shell-pdsh" title="Permalink to this headline">¶</a></h2>
+<p>The parallel distributed shell (pdsh) is a shell command line program
+that allows the execution of commands not just on one computer but on
+a list of computers.</p>
+<p>An online version of the manual pages is located at</p>
+<ul class="simple">
+<li><a class="reference external" href="http://linux.die.net/man/1/pdsh">http://linux.die.net/man/1/pdsh</a></li>
+</ul>
+<p>An important feature is that the list of hosts can be specified in a
+convenient form that is also kwon as hostlists. This format allows you
+to define a list of hosts based on some abbreviation. For example the
+string:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">host</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>will create a host list containing the hosts:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">host0</span><span class="p">,</span> <span class="n">host1</span><span class="p">,</span> <span class="n">host2</span><span class="p">,</span> <span class="n">host3</span>
+</pre></div>
+</div>
+<p>Furthermore, substitutions for the user and the hostname to login to
+the remote machine while leveraging ssh config files make this tool
+real easy to use. One such example:</p>
+<div class="highlight-python"><div class="highlight"><pre>pdsh -R exec -w host[0-3] ssh -x -l %u %h hostname
+</pre></div>
+</div>
+<p>executes the command hostname on all specified machines.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Hyungro, check with allan and Koji if we have pdsh on
+india. At this time we are not aware that pdsh is installed by
+default on india. check with the systems group and have them
+provide a documentation on how we activate it.</p>
+</div>
+</div>
+<div class="section" id="fabric">
+<h2>Fabric<a class="headerlink" href="#fabric" title="Permalink to this headline">¶</a></h2>
+<p>Fabric is a Python command-line tool and library for assisting system
+administration tasks related to the execution of command via ssh. It
+includes the ability to execute commands on the local machine, but
+also on a remote machine. Due to the integration with Python function
+definitions, it has also somewhat the ability to write &#8220;target&#8221; like
+specifications that we may know from makefiles. However it is more
+sophisticated as we can use the full feature richness of python.</p>
+<p>The web page of Fabric which includes several examples and tutorials
+is located at:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.fabfile.org">http://www.fabfile.org</a></li>
+</ul>
+<p>Similar to the previous command we like to start the command hostname
+on a number of machines. To install fabric you simply say:</p>
+<div class="highlight-python"><div class="highlight"><pre>pip install fabric
+</pre></div>
+</div>
+<p>in your virtualenv. Next, we define a file called fabfile.py with the
+following contents:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span>
+
+<span class="k">def</span> <span class="nf">hostname</span><span class="p">():</span>
+    <span class="n">run</span><span class="p">(</span><span class="s1">&#39;hostname&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next let us run this command on the local computer and test it out:</p>
+<div class="highlight-python"><div class="highlight"><pre>fab -H localhost hostname
+</pre></div>
+</div>
+<p>This will execute the function defined with the name hostname and
+print it via the run command. To execute the command on multiple
+hosts, you can simply specify them as part of the -H argument:</p>
+<div class="highlight-python"><div class="highlight"><pre>fab -H host0,host1,host2,host3 hostname
+</pre></div>
+</div>
+</div>
+<div class="section" id="cloudmesh-parallel-api">
+<h2>Cloudmesh Parallel API<a class="headerlink" href="#cloudmesh-parallel-api" title="Permalink to this headline">¶</a></h2>
+<p>The previous commands are all developed with a single user in mind,
+i.e. a single user executes the command. However in the age of
+cloud computing what would happen if thousands of users were to execute
+the same task, or even when ten users execute the same task, but the
+task would take considerable compute time to calculate? The answer is
+obvious, we would waste valuable compute resources as we do not take
+into consideration that the same task may be run by multiple
+people. To overcome this challenge we have started a simple
+demonstration program in our cloudmesh repository to partially address
+this issue.</p>
+<p>To do so we are at this time we are only focussing on the consecutive
+execution of a command in a particular time period. Instead of
+executing the command over and over, we will simply return the result
+from a result cache. The cache has a specific time to life in which no
+new results are created but the result is read from the cache. New
+requests are cached.</p>
+<p>We recognize that the example we provide is not a complete solution to
+our problem, but a step in the right direction. I also has the
+advantage of being relatively simple and introducing you to a number
+of tools and concepts that will become important when dealing with
+parallelism in the cloud.</p>
+<div class="section" id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>A computer with python 2.7</li>
+<li>Using a python virtualenv</li>
+<li>Having downloaded the cloudmesh code with git clone as discussed
+elsewhere</li>
+<li>Having installed the cloudmesh code and libraries as discussed
+elsewhere</li>
+</ol>
+</div>
+<div class="section" id="code">
+<h3>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h3>
+<p>The code is located in the directory:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">cloudmesh_examples</span><span class="o">/</span><span class="n">example_mongo</span>
+</pre></div>
+</div>
+<p>within the cloudmesh code you have cloned from github. The code
+contains two python functions called Sequential and Parallel, that
+allow users to run commands either sequentially or in parallel on a
+number of hosts. The hosts can be specified in a yaml file located
+in:</p>
+<div class="highlight-python"><div class="highlight"><pre>~/.cloudmesh/cloudmesh_hpc.yaml
+</pre></div>
+</div>
+<p>An example would be:</p>
+<div class="highlight-python"><div class="highlight"><pre>meta:
+  yaml_version: 3.0
+  kind: hpc
+cloudmesh:
+    hpc:
+        alamo:
+            cm_host: alamo.futuregrid.org
+            cm_type: hpc
+            username: albert
+        india:
+            cm_host: india.futuregrid.org
+            cm_type: hpc
+            username: albert
+        sierra:
+            cm_host: sierra.futuregrid.org
+            cm_type: hpc
+            username: albert
+        bigred:
+            cm_host: bigred2.uits.iu.edu
+            cm_type: hpc
+            username: albert
+</pre></div>
+</div>
+<p>This file is used to specify the username for each host and define the
+host names. In case you want to run commands on the hosts you can do
+this with the following python program.</p>
+<p>The first command executes the task sequentially over the array given
+in the first parameter. The second one executes it in
+parallel. Instead of just presenting you with a bare bones program we
+present you with some additional features that are worth noting and
+may come in handy in future. This includes the availability of a named
+stopwatch and the ability to read configuration parameters easily from
+a yaml file. Sometimes it is also nice to have very visible debug
+messages that we create with a banner function. Results are often more
+readable when using the python pprint function instead of just the
+print function. This is especially true when we print data-structures
+such as arrays and dicts. Next we will present the program and explain
+a selected number of features by commenting them in the code. We
+assume you know by now elementary python.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">cloudmesh_task.tasks</span> <span class="kn">import</span> <span class="n">cm_ssh</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_task.parallel</span> <span class="kn">import</span> <span class="n">Parallel</span><span class="p">,</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.util.stopwatch</span> <span class="kn">import</span> <span class="n">StopWatch</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_common.util</span> <span class="kn">import</span> <span class="n">banner</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.config.cm_config</span> <span class="kn">import</span> <span class="n">cm_config</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.config.ConfigDict</span> <span class="kn">import</span> <span class="n">ConfigDict</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+
+<span class="c1"># read the information from the yaml file into a dict called config</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;~/.cloudmesh/cloudmesh_hpc.yaml&quot;</span><span class="p">)[</span><span class="s2">&quot;cloudmesh&quot;</span><span class="p">][</span><span class="s2">&quot;hpc&quot;</span><span class="p">]</span>
+
+<span class="c1"># a function to extract from the config file the username from all</span>
+<span class="c1"># hostnames in the array hosts</span>
+<span class="k">def</span>  <span class="nf">get_credentials</span><span class="p">(</span><span class="n">hosts</span><span class="p">):</span>
+    <span class="n">credential</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="n">hosts</span><span class="p">:</span>
+        <span class="n">credential</span><span class="p">[</span><span class="n">host</span><span class="p">]</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="n">host</span><span class="p">][</span><span class="s1">&#39;username&#39;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">credential</span>
+
+<span class="c1"># find all hostnames from the config file</span>
+<span class="n">hosts</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+
+<span class="c1"># find all credentials (username, hostname) from the hosts in the</span>
+<span class="c1">#  config file</span>
+<span class="n">credentials</span> <span class="o">=</span> <span class="n">get_credentials</span><span class="p">(</span><span class="n">hosts</span><span class="p">)</span>
+
+
+<span class="c1"># create a stop watch</span>
+<span class="n">watch</span> <span class="o">=</span> <span class="n">StopWatch</span><span class="p">()</span>
+
+<span class="c1"># execute is a python function. It is either Parallel or Sequential</span>
+<span class="c1"># * modify</span>
+<span class="c1">#    for execute in [Sequential]:</span>
+<span class="c1">#    for execute in [Parallel]:</span>
+
+<span class="k">for</span> <span class="n">execute</span> <span class="ow">in</span> <span class="p">[</span><span class="n">Sequential</span><span class="p">,</span> <span class="n">Parallel</span><span class="p">]:</span>
+
+    <span class="c1"># get the name of the function</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">execute</span><span class="o">.</span><span class="n">__name__</span>
+
+    <span class="c1"># print the name of the function and start the timer</span>
+    <span class="n">banner</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">watch</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="c1"># execute the function and return the result in a dict</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">execute</span><span class="p">(</span><span class="n">credentials</span><span class="p">,</span> <span class="n">cm_ssh</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s2">&quot;qstat&quot;</span><span class="p">)</span>
+
+    <span class="c1"># stop the timer and print the result dict</span>
+    <span class="n">watch</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">pprint</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+    <span class="c1"># only print the output from the command we executed</span>
+    <span class="n">banner</span><span class="p">(</span><span class="s2">&quot;PRINT&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">result</span><span class="p">[</span><span class="n">host</span><span class="p">][</span><span class="s2">&quot;output&quot;</span><span class="p">]</span>
+
+<span class="c1"># print the timers</span>
+<span class="k">for</span> <span class="n">timer</span> <span class="ow">in</span> <span class="n">watch</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">print</span> <span class="n">timer</span><span class="p">,</span> <span class="n">watch</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">timer</span><span class="p">),</span> <span class="s2">&quot;s&quot;</span>
+</pre></div>
+</div>
+<p>Bug: Before you start the command, you have to start a new window and
+say fab fab manage.mongo in the cloudmesh directory where your
+fabfiles are located. This will give something like:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ fab manage.mongo
+[localhost] local: make -f cloudmesh/management/Makefile mongo
+mongod --noauth --dbpath . --port 27777
+all output going to: /usr/local/var/log/mongodb/mongo.log
+</pre></div>
+</div>
+<p>To run the command you will need to start the caching backend
+services. to do so we created a simple program cm-task.py that will be
+used to start and stop the services:</p>
+<div class="highlight-python"><div class="highlight"><pre>./cm-tasks.py menu
+
+Queue Management
+================
+
+    1 - all start
+    2 - all stop
+    3 - rabbit start
+    4 - celery start
+    5 - rabbit stop
+    6 - celery stop
+    7 - mongo start
+    q - quit
+
+Select between 1 - 7:
+</pre></div>
+</div>
+<p>Now select the number:</p>
+<div class="highlight-python"><div class="highlight"><pre>1 - all start
+</pre></div>
+</div>
+<p>This will bring up the necessary services and look similar to:</p>
+<div class="highlight-python"><div class="highlight"><pre> -------------- celery@host.local v3.1.13 (Cipater)
+---- **** -----
+--- * ***  * -- Darwin-13.3.0-x86_64-i386-64bit
+-- * - **** ---
+- ** ---------- [config]
+- ** ---------- .&gt; app:         cloudmesh_task:0x10365bcd0
+- ** ---------- .&gt; transport:   amqp://guest:**@localhost:5672//
+- ** ---------- .&gt; results:     amqp
+- *** --- * --- .&gt; concurrency: 10 (prefork)
+-- ******* ----
+--- ***** ----- [queues]
+ -------------- .&gt; celery           exchange=celery(direct) key=celery
+
+
+[tasks]
+  . cloudmesh_task.tasks.cm_ssh
+
+[2014-08-19 15:46:24,060: INFO/MainProcess] Connected to amqp://guest:**@localhost:5672//
+[2014-08-19 15:46:24,071: INFO/MainProcess] mingle: searching for neighbors
+[2014-08-19 15:46:25,098: INFO/MainProcess] mingle: sync with 10 nodes
+[2014-08-19 15:46:25,099: INFO/MainProcess] mingle: sync complete
+[2014-08-19 15:46:25,109: WARNING/MainProcess] celery@host.local ready.
+[2014-08-19 15:46:28,352: INFO/MainProcess] Events of group {task} enabled by remote.
+</pre></div>
+</div>
+<p>After this you can start the program repeatedly with:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python prg.py
+</pre></div>
+</div>
+<p>We are committing some of the output but at the end ist should look
+something like:</p>
+<div class="highlight-python"><div class="highlight"><pre># ######################################################################
+# PRINT
+# ######################################################################
+Tue Aug 19 15:48:29 EDT 2014
+Job id                    Name             User            Time Use S Queue
+------------------------- ---------------- --------------- -------- - -----
+1589570.i136               sub18248.sub     aaaa                   0 Q delta
+1589589.i136               sub15366.sub     aaaa                   0 Q delta
+1589669.i136               sub12428.sub     aaaa                   0 Q delta
+1795838.i136               twisterJob       bbbbbb                 0 Q batch
+1872981.i136               sub9593.sub      aaaa                   0 Q delta
+1904453.i136               sub2114.sub      aaaa                   0 Q delta
+1904930.i136               dimer_in_sol_ph7 cccccccc        883:55:5 R batch
+1904931.i136               dimer_in_sol_ph5 cccccccc        902:18:4 R batch
+1904957.i136               suffix           dddddddd        360:36:1 R echo
+1904961.i136               dimer_in_sol_ph7 cccccccc               0 H batch
+1904963.i136               dimer_in_sol_ph5 cccccccc               0 H batch
+1904993.i136               blast            eeee            15:08:00 R bravo
+1904995.i136               blast            eeee            14:33:19 R bravo
+1905016.i136               papi-inca        aaaa                   0 Q bravo
+1905021.i136               vampir-inca      aaaa                   0 Q bravo
+1905044.i136               papi-inca        aaaa                   0 Q bravo
+1905057.i136               STDIN            ffffffff        00:10:17 R delta
+1905062.i136               ...Script.i21500 gggggg          00:00:11 R batch
+
+Sequential 12.12866169 s
+Parallel    0.00446796417236 s
+</pre></div>
+</div>
+<p>Please note that we have replaced the real usernames.</p>
+<p>When you execute this command you will notice That the parallel
+execution time is much faster. In this case it was within the TTL and
+thus read the cache value from the cache. Executing the command again
+within the TTL will give you also for the sequential time a real short
+value:</p>
+<div class="highlight-python"><div class="highlight"><pre>Sequential 0.00726103782654 s
+Parallel   0.000990867614746 s
+</pre></div>
+</div>
+<p>It is not surprising the parallel result is even faster than the
+sequential one as the information gathering even from reading it out
+from the cache is done in parallel and no resource congestion exists
+at the scale we use for our example.</p>
+<p>Let us now compare the true time between sequential and parallel
+execution. Simply modify the code in the * line and replace the loop accordingly:</p>
+<div class="highlight-python"><div class="highlight"><pre>Sequential 12.681866169 s
+Parallel    6.51530909538 s
+</pre></div>
+</div>
+<p>Thus we see two interesting performance improvements</p>
+<p>First, the performance improvement for running the queries in
+parallel. Second, the improvement of retrieving the results from a
+cache. The later is important if we have many user on the system
+executing the same command.</p>
+<p>The lesson we learn is that clouds must make use of execution
+parallelism as well as addressing reuse of repeated results.</p>
+</div>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Is pdsh installed? Where</li>
+<li>Return the hostname of the machines sierra, india and foxtrot via
+the fabric command</li>
+<li>Execute the command qstat with fabric on sierra and india. If you
+have an account on bigred2, please try it also there</li>
+<li>Run the cloudmesh Sequential and parallel program. Modify your
+cloudmesh file accordingly</li>
+<li>Advanced: compare the performance of the cache backend between
+Mongodb and the use of RabbitMQ while switching RabbitMQ out with
+Redis in the Celery code.</li>
+<li>Advanced: provide a documentation on how to run celery for this
+example  on Redis.</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="rst.html" class="btn btn-neutral float-right" title="reStructuredText" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="resources.html" class="btn btn-neutral" title="Resources from the Internet" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

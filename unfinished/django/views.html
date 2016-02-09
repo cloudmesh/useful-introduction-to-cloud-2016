@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Example: Views &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Example: Views</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/unfinished/django/views.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="example-views">
+<h1>Example: Views<a class="headerlink" href="#example-views" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This example demonstrates how to setup a View in django with the bootstrapped
+theme.</p>
+<p>In order to write a view in Django do the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd exampleapp
+texteditor views.py
+</pre></div>
+</div>
+<p>In views.py in your app, write your view:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&quot;You got it!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now go to your individual project and configure your urls.py file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">url</span><span class="p">(</span><span class="s1">r&#39;^exampleapp/$&#39;</span><span class="p">,</span> <span class="s1">&#39;exampleapp.views.index&#39;</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;index&#39;</span><span class="p">),</span>
+</pre></div>
+</div>
+<p>Now do a <code class="docutils literal"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">syncdb</span></code> and then do a <code class="docutils literal"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span></code>
+and you should be able to type in <code class="docutils literal"><span class="pre">/exampleapp</span></code> behind the local Host address and
+receive the message above.</p>
+</div>
+<div class="section" id="ready-made-example">
+<h2>Ready Made Example<a class="headerlink" href="#ready-made-example" title="Permalink to this headline">¶</a></h2>
+<p>A ready made example for you is contained in the directory
+<code class="docutils literal"><span class="pre">management/django/views</span></code>. Please cd into the directory.</p>
+<p>In this directory you will also find a Makefile that you can use to
+execute the above steps. To start the server, you can say:</p>
+<div class="highlight-python"><div class="highlight"><pre>make start
+</pre></div>
+</div>
+<p>To view the web pages, say:</p>
+<div class="highlight-python"><div class="highlight"><pre>make view
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">After clicking on <a class="reference external" href="http://127.0.0.1.8000/">http://127.0.0.1.8000/</a>, go to <a class="reference external" href="http://127.0.0.1.8000/admin">http://127.0.0.1.8000/admin</a>
+then type ../index in the URL</p>
+</div>
+<p>In case you need to recreate the server please say:</p>
+<div class="highlight-python"><div class="highlight"><pre>make create
+</pre></div>
+</div>
+<p>To cleanup you say:</p>
+<div class="highlight-python"><div class="highlight"><pre>make clean
+</pre></div>
+</div>
+<p>To stop the server please say:</p>
+<div class="highlight-python"><div class="highlight"><pre>make stop
+</pre></div>
+</div>
+<p>The steps are implicitly included in the makefile</p>
+</div>
+<div class="section" id="tips">
+<h2>Tips:<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
+<p>If you don&#8217;t want to display the plain view and
+want the bootstrapped theme (further explained in Templates example), uncomment
+<code class="docutils literal"><span class="pre">return</span> <span class="pre">render(request,</span> <span class="pre">'views_html',)</span></code> and comment out
+<code class="docutils literal"><span class="pre">return</span> <span class="pre">HttpResponse</span> <span class="pre">(&quot;You</span> <span class="pre">got</span> <span class="pre">it!&quot;)</span></code> in the <code class="docutils literal"><span class="pre">views.py</span></code> file. In the
+<code class="docutils literal"><span class="pre">views_app</span></code>, uncomment <code class="docutils literal"><span class="pre">STATIC_ROOT</span></code> in the <code class="docutils literal"><span class="pre">settings.py</span></code> file
+in <code class="docutils literal"><span class="pre">../views/views</span></code>. Then run:</p>
+<div class="highlight-python"><div class="highlight"><pre>make start
+make static
+make view
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

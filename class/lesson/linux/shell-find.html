@@ -1,0 +1,592 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Learning Objectives &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Learning Objectives</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/class/lesson/linux/shell-find.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="learning-objectives">
+<h1>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li>Use <code class="docutils literal"><span class="pre">grep</span></code> to select lines from text files that match simple
+patterns.</li>
+<li>Use <code class="docutils literal"><span class="pre">find</span></code> to find files whose names match simple patterns.</li>
+<li>Use the output of one command as the command-line parameters to
+another command.</li>
+<li>Explain what is meant by &#8220;text&#8221; and &#8220;binary&#8221; files, and why many
+common tools don&#8217;t handle the latter well.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="searching-file-contents">
+<h1>Searching File Contents<a class="headerlink" href="#searching-file-contents" title="Permalink to this headline">¶</a></h1>
+<p>You can guess someone&#8217;s age by how they talk about search: young
+people use &#8220;Google&#8221; as a verb, while crusty old Unix programmers use
+&#8220;grep&#8221;.  The word is a contraction of &#8220;global/regular
+expression/print&#8221;, a common sequence of operations in early Unix text
+editors. It is also the name of a very useful command-line program.</p>
+<p><code class="docutils literal"><span class="pre">grep</span></code> finds and prints lines in files that match a pattern. For our
+examples, we will use a file that contains three haiku taken from a
+1998 competition in <em>Salon</em> magazine. For this set of examples we&#8217;re
+going to be working in the writing subdirectory:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cd
+$ cd writing
+$ cat haiku.txt
+The Tao that is seen
+Is not the true Tao, until
+You bring fresh toner.
+
+With searching comes loss
+and the presence of absence:
+&quot;My Thesis&quot; not found.
+
+Yesterday it worked
+Today it is not working
+Software is like that.
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Forever, or Five Years</dt>
+<dd>We haven&#8217;t linked to the original haiku because they don&#8217;t appear
+to be on <em>Salon</em>&#8216;s site any longer. As <a class="reference external" href="http://www.clir.org/pubs/archives/ensuring.pdf">Jeff Rothenberg said</a>, &#8220;Digital
+information lasts forever &#8212; or five years, whichever comes
+first.&#8221;</dd>
+</dl>
+</div>
+<p>Let&#8217;s find lines that contain the word &#8220;not&#8221;:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ grep not haiku.txt
+Is not the true Tao, until
+&quot;My Thesis&quot; not found
+Today it is not working
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal"><span class="pre">not</span></code> is the pattern we&#8217;re searching for. It&#8217;s pretty simple:
+every alphanumeric character matches against itself. After the pattern
+comes the name or names of the files we&#8217;re searching in. The output is
+the three lines in the file that contain the letters &#8220;not&#8221;.</p>
+<p>Let&#8217;s try a different pattern: &#8220;day&#8221;.:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ grep day haiku.txt
+Yesterday it worked
+Today it is not working
+</pre></div>
+</div>
+<p>This time, two lines that include the letters &#8220;day&#8221; are outputted.
+However, these letters are contained within larger words. To restrict
+matches to lines containing the word &#8220;day&#8221; on its own, we can give
+<code class="docutils literal"><span class="pre">grep</span></code> with the <code class="docutils literal"><span class="pre">-w</span></code> flag. This will limit matches to word
+boundaries.:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ grep -w day haiku.txt
+</pre></div>
+</div>
+<p>In this case, there aren&#8217;t any, so <code class="docutils literal"><span class="pre">grep</span></code>&#8216;s output is empty.</p>
+<p>Another useful option is <code class="docutils literal"><span class="pre">-n</span></code>, which numbers the lines that match:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ grep -n it haiku.txt
+5:With searching comes loss
+9:Yesterday it worked
+10:Today it is not working
+</pre></div>
+</div>
+<p>Here, we can see that lines 5, 9, and 10 contain the letters &#8220;it&#8221;.</p>
+<p>We can combine flags as we do with other Unix commands. For example,
+since <code class="docutils literal"><span class="pre">-i</span></code> makes matching case-insensitive and <code class="docutils literal"><span class="pre">-v</span></code> inverts the
+match, using them both only prints lines that <em>don&#8217;t</em> match the
+pattern in any mix of upper and lower case:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ grep -i -v the haiku.txt
+You bring fresh toner.
+
+With searching comes loss
+
+Yesterday it worked
+Today it is not working
+Software is like that.
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">grep</span></code> has lots of other options. To find out what they are, we can
+type <code class="docutils literal"><span class="pre">man</span> <span class="pre">grep</span></code>. <code class="docutils literal"><span class="pre">man</span></code> is the Unix &#8220;manual&#8221; command: it prints a
+description of a command and its options, and (if you&#8217;re lucky)
+provides a few examples of how to use it.</p>
+<p>To navigate through the <code class="docutils literal"><span class="pre">man</span></code> pages, you may use the up and down
+arrow keys to move line-by-line, or try the &#8220;b&#8221; and spacebar keys to
+skip up and down by full page. Quit the <code class="docutils literal"><span class="pre">man</span></code> pages by typing &#8220;q&#8221;.:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ man grep
+GREP(1)                                                                                              GREP(1)
+
+NAME
+grep, egrep, fgrep - print lines matching a pattern
+
+SYNOPSIS
+grep [OPTIONS] PATTERN [FILE...]
+grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...]
+
+DESCRIPTION
+grep  searches the named input FILEs (or standard input if no files are named, or if a single hyphen-
+minus (-) is given as file name) for lines containing a match to the given PATTERN.  By default, grep
+prints the matching lines.
+...        ...        ...
+
+OPTIONS
+Generic Program Information
+--help Print  a  usage  message  briefly summarizing these command-line options and the bug-reporting
+address, then exit.
+
+-V, --version
+Print the version number of grep to the standard output stream.  This version number should be
+included in all bug reports (see below).
+
+Matcher Selection
+-E, --extended-regexp
+Interpret  PATTERN  as  an  extended regular expression (ERE, see below).  (-E is specified by
+POSIX.)
+
+-F, --fixed-strings
+Interpret PATTERN as a list of fixed strings, separated by newlines, any of  which  is  to  be
+matched.  (-F is specified by POSIX.)
+...        ...        ...
+</pre></div>
+</div>
+</div>
+<div class="section" id="searching-for-patterns-in-files">
+<h1>Searching for Patterns in Files<a class="headerlink" href="#searching-for-patterns-in-files" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal"><span class="pre">grep</span></code>&#8216;s real power doesn&#8217;t come from its options, though; it comes
+from the fact that patterns can include wildcards. (The technical name
+for these is <strong>regular expressions</strong>, which is what the &#8220;re&#8221; in &#8220;grep&#8221;
+stands for.) Regular expressions are both complex and powerful; if you
+want to do complex searches, please look at the lesson on <a class="reference external" href="http://software-carpentry.org">our website</a>. As a taster, we can find lines
+that have an &#8216;o&#8217; in the second position like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ grep -E &#39;^.o&#39; haiku.txt
+You bring fresh toner.
+Today it is not working
+Software is like that.
+</pre></div>
+</div>
+<p>We use the <code class="docutils literal"><span class="pre">-E</span></code> flag and put the pattern in quotes to prevent the
+shell from trying to interpret it. (If the pattern contained a &#8216;*&#8217;,
+for example, the shell would try to expand it before running
+<code class="docutils literal"><span class="pre">grep</span></code>.) The &#8216;^&#8217; in the pattern anchors the match to the start of
+the line. The &#8216;.&#8217; matches a single character (just like &#8216;?&#8217; in the
+shell), while the &#8216;o&#8217; matches an actual &#8216;o&#8217;.</p>
+</div>
+<div class="section" id="searching-for-files">
+<h1>Searching for Files<a class="headerlink" href="#searching-for-files" title="Permalink to this headline">¶</a></h1>
+<p>While <code class="docutils literal"><span class="pre">grep</span></code> finds lines in files, the <code class="docutils literal"><span class="pre">find</span></code> command finds files
+themselves. Again, it has a lot of options; to show how the simplest
+ones work, we&#8217;ll use the directory tree shown below.</p>
+<div class="figure" id="id1">
+<img alt="File Tree for Find Example" src="../../../_images/find-file-tree.svg" /><p class="caption"><span class="caption-text">File Tree for Find Example</span></p>
+</div>
+<p>Nelle&#8217;s <code class="docutils literal"><span class="pre">writing</span></code> directory contains one file called <code class="docutils literal"><span class="pre">haiku.txt</span></code>
+and four subdirectories: <code class="docutils literal"><span class="pre">thesis</span></code> (which is sadly empty), <code class="docutils literal"><span class="pre">data</span></code>
+(which contains two files <code class="docutils literal"><span class="pre">one.txt</span></code> and <code class="docutils literal"><span class="pre">two.txt</span></code>), a <code class="docutils literal"><span class="pre">tools</span></code>
+directory that contains the programs <code class="docutils literal"><span class="pre">format</span></code> and <code class="docutils literal"><span class="pre">stats</span></code>, and an
+empty subdirectory called <code class="docutils literal"><span class="pre">old</span></code>.</p>
+<p>For our first command, let&#8217;s run <code class="docutils literal"><span class="pre">find</span> <span class="pre">.</span> <span class="pre">-type</span> <span class="pre">d</span></code>. As always, the
+<code class="docutils literal"><span class="pre">.</span></code> on its own means the current working directory, which is where
+we want our search to start; <code class="docutils literal"><span class="pre">-type</span> <span class="pre">d</span></code> means &#8220;things that are
+directories&#8221;. Sure enough, <code class="docutils literal"><span class="pre">find</span></code>&#8216;s output is the names of the five
+directories in our little tree (including <code class="docutils literal"><span class="pre">.</span></code>):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ find . -type d
+./
+./data
+./thesis
+./tools
+./tools/old
+</pre></div>
+</div>
+<p>If we change <code class="docutils literal"><span class="pre">-type</span> <span class="pre">d</span></code> to <code class="docutils literal"><span class="pre">-type</span> <span class="pre">f</span></code>, we get a listing of all the
+files instead:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ find . -type f
+./haiku.txt
+./tools/stats
+./tools/old/oldtool
+./tools/format
+./thesis/empty-draft.md
+./data/one.txt
+./data/two.txt
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">find</span></code> automatically goes into subdirectories, their subdirectories,
+and so on to find everything that matches the pattern we&#8217;ve given
+it. If we don&#8217;t want it to, we can use <code class="docutils literal"><span class="pre">-maxdepth</span></code> to restrict the
+depth of search:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ find . -maxdepth 1 -type f
+./haiku.txt
+</pre></div>
+</div>
+<p>The opposite of <code class="docutils literal"><span class="pre">-maxdepth</span></code> is <code class="docutils literal"><span class="pre">-mindepth</span></code>, which tells <code class="docutils literal"><span class="pre">find</span></code> to
+only report things that are at or below a certain depth. <code class="docutils literal"><span class="pre">-mindepth</span> <span class="pre">2</span></code>
+therefore finds all the files that are two or more levels below us:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ find . -mindepth 2 -type f
+./data/one.txt
+./data/two.txt
+./tools/format
+./tools/stats
+</pre></div>
+</div>
+</div>
+<div class="section" id="searching-for-files-matching-a-pattern">
+<h1>Searching for Files Matching a Pattern<a class="headerlink" href="#searching-for-files-matching-a-pattern" title="Permalink to this headline">¶</a></h1>
+<p>Now let&#8217;s try matching by name:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ find . -name *.txt
+./haiku.txt
+</pre></div>
+</div>
+<p>We expected it to find all the text files, but it only prints out
+<code class="docutils literal"><span class="pre">./haiku.txt</span></code>. The problem is that the shell expands wildcard
+characters like <code class="docutils literal"><span class="pre">*</span></code> <em>before</em> commands run. Since <code class="docutils literal"><span class="pre">*.txt</span></code> in the
+current directory expands to <code class="docutils literal"><span class="pre">haiku.txt</span></code>, the command we actually
+ran was:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ find . -name haiku.txt
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">find</span></code> did what we asked; we just asked for the wrong thing.</p>
+<p>To get what we want, let&#8217;s do what we did with <code class="docutils literal"><span class="pre">grep</span></code>: put <code class="docutils literal"><span class="pre">*.txt</span></code>
+in single quotes to prevent the shell from expanding the <code class="docutils literal"><span class="pre">*</span></code>
+wildcard.  This way, <code class="docutils literal"><span class="pre">find</span></code> actually gets the pattern <code class="docutils literal"><span class="pre">*.txt</span></code>, not
+the expanded filename <code class="docutils literal"><span class="pre">haiku.txt</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ find . -name &#39;*.txt&#39;
+./data/one.txt
+./data/two.txt
+./haiku.txt
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Listing vs. Finding</dt>
+<dd><code class="docutils literal"><span class="pre">ls</span></code> and <code class="docutils literal"><span class="pre">find</span></code> can be made to do similar things given the
+right options, but under normal circumstances, <code class="docutils literal"><span class="pre">ls</span></code> lists
+everything it can, while <code class="docutils literal"><span class="pre">find</span></code> searches for things with certain
+properties and shows them.</dd>
+</dl>
+</div>
+<p>As we said earlier, the command line&#8217;s power lies in combining tools.
+We&#8217;ve seen how to do that with pipes; let&#8217;s look at another technique.
+As we just saw, <code class="docutils literal"><span class="pre">find</span> <span class="pre">.</span> <span class="pre">-name</span> <span class="pre">'*.txt'</span></code> gives us a list of all text
+files in or below the current directory. How can we combine that with
+<code class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span></code> to count the lines in all those files?</p>
+</div>
+<div class="section" id="subshell">
+<h1>Subshell<a class="headerlink" href="#subshell" title="Permalink to this headline">¶</a></h1>
+<p>The simplest way is to put the <code class="docutils literal"><span class="pre">find</span></code> command inside <code class="docutils literal"><span class="pre">$()</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ wc -l $(find . -name &#39;*.txt&#39;)
+11 ./haiku.txt
+300 ./data/two.txt
+70 ./data/one.txt
+381 total
+</pre></div>
+</div>
+<p>When the shell executes this command, the first thing it does is run
+whatever is inside the <code class="docutils literal"><span class="pre">$()</span></code>. It then replaces the <code class="docutils literal"><span class="pre">$()</span></code>
+expression with that command&#8217;s output. Since the output of <code class="docutils literal"><span class="pre">find</span></code> is
+the three filenames <code class="docutils literal"><span class="pre">./data/one.txt</span></code>, <code class="docutils literal"><span class="pre">./data/two.txt</span></code>, and
+<code class="docutils literal"><span class="pre">./haiku.txt</span></code>, the shell constructs the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ wc -l ./data/one.txt ./data/two.txt ./haiku.txt
+</pre></div>
+</div>
+<p>which is what we wanted. This expansion is exactly what the shell does
+when it expands wildcards like <code class="docutils literal"><span class="pre">*</span></code> and <code class="docutils literal"><span class="pre">?</span></code>, but lets us use any
+command we want as our own &#8220;wildcard&#8221;.</p>
+<p>It&#8217;s very common to use <code class="docutils literal"><span class="pre">find</span></code> and <code class="docutils literal"><span class="pre">grep</span></code> together. The first
+finds files that match a pattern; the second looks for lines inside
+those files that match another pattern. Here, for example, we can find
+PDB files that contain iron atoms by looking for the string &#8220;FE&#8221; in
+all the <code class="docutils literal"><span class="pre">.pdb</span></code> files above the current directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ grep FE $(find .. -name &#39;*.pdb&#39;)
+../data/pdb/heme.pdb:ATOM     25 FE           1      -0.924   0.535  -0.518
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Binary Files</dt>
+<dd><p class="first">We have focused exclusively on finding things in text files. What
+if your data is stored as images, in databases, or in some other
+format? One option would be to extend tools like <code class="docutils literal"><span class="pre">grep</span></code> to
+handle those formats. This hasn&#8217;t happened, and probably won&#8217;t,
+because there are too many formats to support.</p>
+<p>The second option is to convert the data to text, or extract the
+text-ish bits from the data. This is probably the most common
+approach, since it only requires people to build one tool per data
+format (to extract information). On the one hand, it makes simple
+things easy to do. On the negative side, complex things are
+usually impossible. For example, it&#8217;s easy enough to write a
+program that will extract X and Y dimensions from image files for
+<code class="docutils literal"><span class="pre">grep</span></code> to play with, but how would you write something to find
+values in a spreadsheet whose cells contained formulas?</p>
+<p class="last">The third choice is to recognize that the shell and text
+processing have their limits, and to use a programming language
+such as Python instead. When the time comes to do this, don&#8217;t be
+too hard on the shell: many modern programming languages, Python
+included, have borrowed a lot of ideas from it, and imitation is
+also the sincerest form of praise.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="using-grep">
+<h2>Using grep<a class="headerlink" href="#using-grep" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>The Tao that is seen
+Is not the true Tao, until
+You bring fresh toner.
+
+With searching comes loss
+and the presence of absence:
+&quot;My Thesis&quot; not found.
+
+Yesterday it worked
+Today it is not working
+Software is like that.
+</pre></div>
+</div>
+<p>From the above text, contained in the file <code class="docutils literal"><span class="pre">haiku.txt</span></code>, which
+command would result in the following output:</p>
+<div class="highlight-python"><div class="highlight"><pre>and the presence of absence
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><code class="docutils literal"><span class="pre">grep</span> <span class="pre">of</span> <span class="pre">haiku.txt</span></code></li>
+<li><code class="docutils literal"><span class="pre">grep</span> <span class="pre">-E</span> <span class="pre">of</span> <span class="pre">haiku.txt</span></code></li>
+<li><code class="docutils literal"><span class="pre">grep</span> <span class="pre">-w</span> <span class="pre">of</span> <span class="pre">haiku.txt</span></code></li>
+<li><code class="docutils literal"><span class="pre">grep</span> <span class="pre">-i</span> <span class="pre">of</span> <span class="pre">haiku.txt</span></code></li>
+</ol>
+</div>
+<div class="section" id="find-pipeline-reading-comprehension">
+<h2><code class="docutils literal"><span class="pre">find</span></code> pipeline reading comprehension<a class="headerlink" href="#find-pipeline-reading-comprehension" title="Permalink to this headline">¶</a></h2>
+<p>Write a short explanatory comment for the following shell script:</p>
+<div class="highlight-python"><div class="highlight"><pre>find . -name &#39;*.dat&#39; | wc -l | sort -n
+</pre></div>
+</div>
+</div>
+<div class="section" id="matching-ose-dat-but-not-temp">
+<h2>Matching <code class="docutils literal"><span class="pre">ose.dat</span></code> but not <code class="docutils literal"><span class="pre">temp</span></code><a class="headerlink" href="#matching-ose-dat-but-not-temp" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">-v</span></code> flag to <code class="docutils literal"><span class="pre">grep</span></code> inverts pattern matching, so that only
+lines which do <em>not</em> match the pattern are printed. Given that,
+which of the following commands will find all files in <code class="docutils literal"><span class="pre">/data</span></code>
+whose names end in <code class="docutils literal"><span class="pre">ose.dat</span></code> (e.g., <code class="docutils literal"><span class="pre">sucrose.dat</span></code> or
+<code class="docutils literal"><span class="pre">maltose.dat</span></code>), but do <em>not</em> contain the word <code class="docutils literal"><span class="pre">temp</span></code>?</p>
+<ol class="arabic simple">
+<li><code class="docutils literal"><span class="pre">find</span> <span class="pre">/data</span> <span class="pre">-name</span> <span class="pre">'*.dat'</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">ose</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">temp</span></code></li>
+<li><code class="docutils literal"><span class="pre">find</span> <span class="pre">/data</span> <span class="pre">-name</span> <span class="pre">ose.dat</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">temp</span></code></li>
+<li><code class="docutils literal"><span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">temp</span> <span class="pre">$(find</span> <span class="pre">/data</span> <span class="pre">-name</span> <span class="pre">'*ose.dat')</span></code></li>
+<li>None of the above.</li>
+</ol>
+</div>
+<div class="section" id="little-women">
+<h2>Little Women<a class="headerlink" href="#little-women" title="Permalink to this headline">¶</a></h2>
+<p>You and your friend, having just finished reading <em>Little Women</em> by
+Louisa May Alcott, are in an argument. Of the four sisters in the
+book, Jo, Meg, Beth, and Amy, your friend thinks that Jo was the most
+mentioned. You, however, are certain it was Amy. Luckily, you have a
+file <code class="docutils literal"><span class="pre">LittleWomen.txt</span></code> containing the full text of the novel. Using
+a<code class="docutils literal"><span class="pre">for</span></code> loop, how would you tabulate the number of times each of
+the four sisters is mentioned? Hint: one solution might employ the
+commands <code class="docutils literal"><span class="pre">grep</span></code> and <code class="docutils literal"><span class="pre">wc</span></code> and a <code class="docutils literal"><span class="pre">|</span></code>, while another might utilize
+<code class="docutils literal"><span class="pre">grep</span></code> options.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

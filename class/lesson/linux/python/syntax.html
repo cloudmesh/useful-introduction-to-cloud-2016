@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Print Statements and Strings &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Print Statements and Strings</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/class/lesson/linux/python/syntax.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="print-statements-and-strings">
+<h1>Print Statements and Strings<a class="headerlink" href="#print-statements-and-strings" title="Permalink to this headline">¶</a></h1>
+<p>Let us explore the syntax of Python.
+Type into the interactive loop and press Enter:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s2">&quot;Hello world from Python!&quot;</span>
+</pre></div>
+</div>
+<p>The output will look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="s2">&quot;Hello world from Python!&quot;</span>
+<span class="go">Hello world from Python!</span>
+</pre></div>
+</div>
+<p>What happened: the <code class="docutils literal"><span class="pre">print</span></code> <strong>statement</strong> was given a <strong>string</strong> to
+process.  A <strong>statement</strong> in Python, like <code class="docutils literal"><span class="pre">print</span></code> tells the
+interpreter to do some primitive operation. In this case, <code class="docutils literal"><span class="pre">print</span></code>
+mean: write the following message to the standard output.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Standard output is discussed in the
+<a class="reference internal" href="../shell.html"><em>Shell</em></a> lesson.</p>
+</div>
+<p>The &#8220;thing&#8221; we are <code class="docutils literal"><span class="pre">print``ing</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">case</span> <span class="pre">the</span> <span class="pre">the</span> <span class="pre">**string**</span>
+<span class="pre">``Hello</span> <span class="pre">world</span> <span class="pre">from</span> <span class="pre">Python!</span></code>.  A <strong>string</strong> is a sequence of characters.  A
+<strong>character</strong> can be a alphabetic (A through Z, lower and upper case),
+numeric (any of the digits), white space (spaces, tabs, newlines,
+etc), syntactic directives (comma, colon, quotation, exclamation,
+etc), and so forth.  A string is just a sequence of the character and
+typically indicated by surrounding the characters in double quotes.</p>
+<p>So, what happened when you pressed Enter?  The interactive Python
+program read the line <code class="docutils literal"><span class="pre">print</span> <span class="pre">&quot;Hello</span> <span class="pre">world</span> <span class="pre">from</span> <span class="pre">Python!&quot;</span></code>, split it into
+the <code class="docutils literal"><span class="pre">print</span></code> statement and the <code class="docutils literal"><span class="pre">&quot;Hello</span> <span class="pre">world</span> <span class="pre">from</span> <span class="pre">Python!&quot;</span></code> string, and
+then executed the line, showing you the output.</p>
+</div>
+<div class="section" id="variables">
+<h1>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h1>
+<p>You can store data into a <strong>variable</strong> to access it later.
+For instance, instead of:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="s2">&quot;Hello world from Python!&quot;</span>
+</pre></div>
+</div>
+<p>which is a lot to type if you need to do it multiple times, you can
+store the string in a variable for convenient access:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hello</span> <span class="o">=</span> <span class="s2">&quot;Hello world from Python!&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">hello</span>
+<span class="go">Hello world from Python!</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="booleans">
+<h1>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">¶</a></h1>
+<p>A <strong>boolean</strong> is a value that indicates the &#8220;truthness&#8221; of something.
+You can think of it as a toggle: either &#8220;on&#8221; or &#8220;off&#8221;, &#8220;one&#8221; or &#8220;zero&#8221;, &#8220;true&#8221; or &#8220;false&#8221;.
+In fact, the only possible values of the <strong>boolean</strong> (or <code class="docutils literal"><span class="pre">bool</span></code>) type in Python are:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">True</span></code></li>
+<li><code class="docutils literal"><span class="pre">False</span></code></li>
+</ul>
+<p>You can combine booleans with <strong>boolean operators</strong>:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">and</span></code></li>
+<li><code class="docutils literal"><span class="pre">or</span></code></li>
+</ul>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="bp">True</span> <span class="ow">and</span> <span class="bp">True</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="bp">True</span> <span class="ow">and</span> <span class="bp">False</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="bp">False</span> <span class="ow">and</span> <span class="bp">False</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="bp">True</span> <span class="ow">or</span> <span class="bp">True</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="bp">True</span> <span class="ow">or</span> <span class="bp">False</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="bp">False</span> <span class="ow">or</span> <span class="bp">False</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="numbers-and-math">
+<h1>Numbers and Math<a class="headerlink" href="#numbers-and-math" title="Permalink to this headline">¶</a></h1>
+<p>The interactive interpreter can also be used as a calculator.
+For instance, say we wanted to compute a multiple of 21:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="mi">21</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="go">42</span>
+</pre></div>
+</div>
+<p>We saw here the <code class="docutils literal"><span class="pre">print</span></code> statement again. We passed in the result of
+the operation <code class="docutils literal"><span class="pre">21</span> <span class="pre">*</span> <span class="pre">2</span></code>.  An <strong>integer</strong> (or <strong>int</strong>) in Python is a numeric value
+without a fractional component (those are called <strong>floating point</strong>
+numbers, or <strong>float</strong> for short).</p>
+<p>The mathematical operators compute the related mathematical operation
+to the provided numbers.  Some operators are:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">*</span></code> &#8212; multiplication</li>
+<li><code class="docutils literal"><span class="pre">/</span></code> &#8212; division</li>
+<li><code class="docutils literal"><span class="pre">+</span></code> &#8212; addition</li>
+<li><code class="docutils literal"><span class="pre">-</span></code> &#8212; subtraction</li>
+<li><code class="docutils literal"><span class="pre">**</span></code> &#8212; exponent</li>
+</ul>
+<p>Exponentiation is read as <code class="docutils literal"><span class="pre">x**y</span></code> is <code class="docutils literal"><span class="pre">x</span></code> to the <code class="docutils literal"><span class="pre">y</span></code>th power:</p>
+<p>You can combine <strong>float</strong>s and <strong>int</strong>s:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="mf">3.14</span> <span class="o">*</span> <span class="mi">42</span> <span class="o">/</span> <span class="mi">11</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="go">13.9890909091</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="mi">2</span><span class="o">**</span><span class="mi">3</span>
+<span class="go">8</span>
+</pre></div>
+</div>
+<p>Note that <strong>operator precedence</strong> is important.  Using parenthesis to
+indicate affect the order of operations gives a difference results, as
+expected:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="mf">3.14</span> <span class="o">*</span> <span class="p">(</span><span class="mi">42</span> <span class="o">/</span> <span class="mi">11</span><span class="p">)</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="go">11.42</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">/</span> <span class="mf">5.0</span>
+<span class="go">6.2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">/</span> <span class="mf">5.0</span>
+<span class="go">-0.6</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="types-and-using-the-repl">
+<h1>Types and Using the REPL<a class="headerlink" href="#types-and-using-the-repl" title="Permalink to this headline">¶</a></h1>
+<p>We have so far seen a few examples of types: <strong>string</strong>s, <strong>bool</strong>s,
+<strong>int</strong>s, and <strong>float</strong>s.  A <strong>type</strong> indicates that values of that
+type support a certain set of operations. For instance, how would you
+exponentiate a string? If you ask the interpreter, this results in an
+error:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;hello&quot;</span><span class="o">**</span><span class="mi">3</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">unsupported operand type(s) for ** or pow(): &#39;str&#39; and &#39;int&#39;</span>
+</pre></div>
+</div>
+<p>There are many different types beyond what we have seen so far, such as <strong>dictionaries</strong>s, <strong>list</strong>s, <strong>set</strong>s. One handy way of using the interactive python is to get the type of a value using <code class="docutils literal"><span class="pre">type()</span></code>:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="go">&lt;type &#39;int&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">hello</span><span class="p">)</span>
+<span class="go">&lt;type &#39;str&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
+<span class="go">&lt;type &#39;float&#39;&gt;</span>
+</pre></div>
+</div>
+<p>You can also ask for help about something using <code class="docutils literal"><span class="pre">help()</span></code>:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Using <code class="docutils literal"><span class="pre">help()</span></code> opens up a pager. To navigate you can use the
+spacebar to go down a page <code class="docutils literal"><span class="pre">w</span></code> to go up a page, the arrow keys to
+go up/down line-by-line, or <code class="docutils literal"><span class="pre">q</span></code> to exit.</p>
+</div>
+</div>
+<div class="section" id="further-learning">
+<h1>Further Learning<a class="headerlink" href="#further-learning" title="Permalink to this headline">¶</a></h1>
+<p>There is much more to python than what we have covered here:</p>
+<ul class="simple">
+<li>conditional expression (<code class="docutils literal"><span class="pre">if</span></code>, <code class="docutils literal"><span class="pre">if...then</span></code>, <code class="docutils literal"><span class="pre">if..elif...then</span></code>)</li>
+<li>function definition (<code class="docutils literal"><span class="pre">def</span></code>)</li>
+<li>class definition (<code class="docutils literal"><span class="pre">class</span></code>)</li>
+<li>function positional arguments and keyword arguments</li>
+<li>lambda expression</li>
+<li>iterators</li>
+<li>generators</li>
+<li>loops</li>
+</ul>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">If you are not familiar with Python already it is recommended that
+you go through one of the many many freely available tutorials
+online. As an example, <a class="reference external" href="http://www.codecademy.com/tracks/python">Code Academy has several lessons</a> on
+Python.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

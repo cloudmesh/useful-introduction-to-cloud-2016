@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IPython on Cloudmesh &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>IPython on Cloudmesh</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/cloudmesh/ipython.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ipython-on-cloudmesh">
+<span id="cloudmesh-ipython-ref"></span><h1>IPython on Cloudmesh<a class="headerlink" href="#ipython-on-cloudmesh" title="Permalink to this headline">¶</a></h1>
+<p>IPython is an interactive shell of Python programming language with additional
+features such as tab completion, rich history, introspection, magic functions,
+and a web-based interface Notebook. bpython and DreamPie also provide enhanched
+Python shell compared to the default Python console. IPython Notebook offers
+web-based code development toolkit with plotting and media streaming libraries.</p>
+<p>Cloudmesh includes IPython shell and Notebook to offer interactive Python shell
+capabilities on a command-line and a web browser. Running IPython on Cloudmesh
+gives you a chance to try Python code development with convenient toolkits. The
+open-source scientific software SciPy runs with IPython for data processing and
+plotting analysis results. Additional modules are also included such as
+matplotlib and numpy to support scientific computing with Python.</p>
+<div class="section" id="start-ipython-console">
+<h2>Start IPython Console<a class="headerlink" href="#start-ipython-console" title="Permalink to this headline">¶</a></h2>
+<p>IPython console is installed with Cloudmesh. Try IPython console:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ipython
+Python 2.7.6 (default, Mar 22 2014, 22:59:56)
+Type &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+
+IPython 2.2.0 -- An enhanced Interactive Python.
+?         -&gt; Introduction and overview of IPython&#39;s features.
+%quickref -&gt; Quick reference.
+help      -&gt; Python&#39;s own help system.
+object?   -&gt; Details about &#39;object&#39;, use &#39;object??&#39; for extra details.
+
+In [1]:
+</pre></div>
+</div>
+<div class="section" id="hello-albert">
+<h3>Hello Albert!<a class="headerlink" href="#hello-albert" title="Permalink to this headline">¶</a></h3>
+<p>Try a simple example of Python:</p>
+<div class="highlight-python"><div class="highlight"><pre>In [1]: name=&quot;Albert&quot;
+
+In [2]: print (&quot;Hello &quot;+name+&quot;!&quot;)
+Hello Albert!
+</pre></div>
+</div>
+</div>
+<div class="section" id="system-command">
+<h3>System command<a class="headerlink" href="#system-command" title="Permalink to this headline">¶</a></h3>
+<p>Add <cite>!</cite> to your system command to run it on IPython console:</p>
+<div class="highlight-python"><div class="highlight"><pre>In [3]: !echo $name
+Albert
+</pre></div>
+</div>
+<p>You can mix with other system command, for example:</p>
+<div class="highlight-python"><div class="highlight"><pre>In [4]: !echo $name on `hostname`
+Albert on cloudmesh-dev1
+</pre></div>
+</div>
+</div>
+<div class="section" id="import-cloudmesh-api">
+<h3>Import Cloudmesh API<a class="headerlink" href="#import-cloudmesh-api" title="Permalink to this headline">¶</a></h3>
+<p>Like a standard Python shell, importing Cloudmesh is simple in IPython Console.</p>
+<div class="highlight-python"><div class="highlight"><pre>In [5]: import cloudmesh
+
+In [6]: cloudmesh.shell(&quot;help&quot;)
+Documented commands (type help &lt;topic&gt;):
+========================================
+EOF      dot2      info       loglevel  py              stack    version
+admin    edit      init       man       q               status   vm
+banner   exec      inventory  metric    quit            storm    volume
+clear    exp       key        notebook  quota           timer    web
+cloud    flavor    label      nova      rain            usage    yaml
+cluster  graphviz  launcher   open      register        use
+color    group     limits     pause     script          user
+debug    help      list       plugins   security_group  var
+default  image     load       project   ssh             verbose
+
+Ipython Commands
+================
+notebook
+
+Gui Commands
+============
+web
+
+Ssh Commands
+============
+ssh
+
+Cloud Commands
+==============
+admin    default  init       list      quota           stack   user    project
+cloud    flavor   inventory  loglevel  rain            status  vm
+cluster  group    launcher   metric    register        storm   volume
+debug    image    usage      nova      security_group  usage   keys
+</pre></div>
+</div>
+<p>Try listing clouds using the Cloudmesh module:</p>
+<div class="highlight-python"><div class="highlight"><pre>In [7]: cloudmesh.shell(&quot;cloud list&quot;)
++-----------+--------+
+| cloud     | active |
++-----------+--------+
+| aws       |        |
+| azure     |        |
+| devstack  |        |
+| dreamhost |        |
+| hp        |        |
+| hp_east   |        |
+| india     | True   |
++-----------+--------+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="starting-ipython-notebook">
+<h2>Starting IPython Notebook<a class="headerlink" href="#starting-ipython-notebook" title="Permalink to this headline">¶</a></h2>
+<p>We use a <cite>cm</cite> command to start IPython Notebook.</p>
+<p>On a Linux shell:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cm notebook start
+</pre></div>
+</div>
+<p>On a IPython console:</p>
+<div class="highlight-python"><div class="highlight"><pre>In [1]: import cloudmesh
+
+In [2]: cloudmesh.shell(&quot;notebook start&quot;)
+</pre></div>
+</div>
+</div>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>IPython: <a class="reference external" href="http://ipython.org/">http://ipython.org/</a></li>
+<li>bpython: <a class="reference external" href="http://www.bpython-interpreter.org/">http://www.bpython-interpreter.org/</a></li>
+<li>DreamPie: <a class="reference external" href="http://www.dreampie.org/">http://www.dreampie.org/</a></li>
+<li>SciPy: <a class="reference external" href="http://www.scipy.org/">http://www.scipy.org/</a></li>
+<li>NumPy: <a class="reference external" href="http://www.numpy.org/">http://www.numpy.org/</a></li>
+<li>matplotlib: <a class="reference external" href="http://matplotlib.org/">http://matplotlib.org/</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

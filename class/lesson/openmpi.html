@@ -1,0 +1,497 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Deploying Open MPI Cluster with Cloudmesh launcher &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/>
+        <link rel="up" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="../bdossp_sp15/index.html"/>
+        <link rel="next" title="Deploying IPython Notebook Cluster with Cloudmesh launcher" href="ipynb.html"/>
+        <link rel="prev" title="What will the future Bring (under preparation)" href="../bdossp_sp15/future.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">Lessons</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ansible.html">Ansible</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible.html#tutorial-ansible-basic-commands">Tutorial: Ansible Basic commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_playbook.html">Ansible Playbooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docker.html">Docker Basics on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docker_cloudmesh.html">Deploying Cloudmesh using Docker on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html">FAQ (Under Preparation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="git.html">Using Git and GitHub for collaboration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="google.html">Google</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hands_on_fg465.html">Getting Started with Hands-on Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ipynb.html">Deploying IPython Notebook Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="list_of_dataset.html">List of Dataset (Under preparation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="list_of_tech.html">List of Technologies (Under Preparation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lpbs.html">Local PBS Queuing System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html">Environment Modules (modules) on FutureSystems</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Deploying Open MPI Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tutorial-deploying-open-mpi-cluster-with-cm-launcher">Tutorial: Deploying Open MPI Cluster with <code class="docutils literal"><span class="pre">cm</span> <span class="pre">launcher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="preservation.html">Best Practices for Preservation of IaaS and Data in FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="project_examples.html">Sample Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html">Final Project Guidelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyton_matlab.html">Calling Python from matlab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="report.html">Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resource_use_restriction.html">Use of OpenStack Resources on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="restructuredtext.html">Restructured Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst2.html">Sphinx Quick Reference Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="shell-access.html">Shell Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="video.html"> (Video lectures) Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
+      
+    <li>Deploying Open MPI Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/class/lesson/openmpi.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="deploying-open-mpi-cluster-with-cloudmesh-launcher">
+<span id="ref-class-lesson-openmpi-with-cloudmesh"></span><h1>Deploying Open MPI Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code><a class="headerlink" href="#deploying-open-mpi-cluster-with-cloudmesh-launcher" title="Permalink to this headline">¶</a></h1>
+<p>To support Message Passing Interface (MPI) programs with a cluster, Cloudmesh
+provides a new command <code class="docutils literal"><span class="pre">launcher</span></code> to start, configure, manage or update
+compute nodes (VMs) with Open MPI. <code class="docutils literal"><span class="pre">launcher</span></code> command applies default settings
+to configure clusters with applications so users can avoid hassles of building
+clusters.</p>
+<p>Table of Contents</p>
+<ul class="simple">
+<li><a class="reference external" href="#start-cluster">Start Cluster with launcher</a></li>
+<li><a class="reference external" href="#check-status-of-cluster">Check Status</a></li>
+<li><a class="reference external" href="#id1">Login to Cluster</a></li>
+<li><a class="reference external" href="#id2">Terminate Cluster</a></li>
+</ul>
+<div class="section" id="tutorial-deploying-open-mpi-cluster-with-cm-launcher">
+<h2>Tutorial: Deploying Open MPI Cluster with <code class="docutils literal"><span class="pre">cm</span> <span class="pre">launcher</span></code><a class="headerlink" href="#tutorial-deploying-open-mpi-cluster-with-cm-launcher" title="Permalink to this headline">¶</a></h2>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">approximate time 10-15 minutes</p>
+</div>
+<p>In this tutorial, we are going to deploy a Open MPI cluster using Cloudmesh
+<code class="docutils literal"><span class="pre">launcher</span></code> command.</p>
+<div class="section" id="start-cluster">
+<h3>Start Cluster<a class="headerlink" href="#start-cluster" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">launcher</span> <span class="pre">start</span></code> command deploys a cluster with a selected application.</p>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher start openmpi
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-status-of-cluster">
+<h3>Check Status of Cluster<a class="headerlink" href="#check-status-of-cluster" title="Permalink to this headline">¶</a></h3>
+<p>Initializing a cluster requires some time for installing packages, configuring
+networks, etc.  While it is initiated, you can check the status of your cluster
+deployment.</p>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher list
+</pre></div>
+</div>
+<p>You expect the result similar to:</p>
+<div class="highlight-python"><div class="highlight"><pre>+--------------------------------------+--------------------------------+-------------------------------------+--------------------+----------------------+----------+
+| launcher_id                          | stack_name                     | description                         | stack_status       | creation_time        | cm_cloud |
++--------------------------------------+--------------------------------+-------------------------------------+--------------------+----------------------+----------+
+| 14ec7ceb-ce12-4b18-9c31-d398c6e76b78 | launcher-albert-openmpi-DB8JDK | Open MPI cluster with OpenStackHeat | CREATE_IN_PROGRESS | 2015-01-22T16:25:23Z | india    |
++--------------------------------------+--------------------------------+-------------------------------------+--------------------+----------------------+----------+
+</pre></div>
+</div>
+<ul class="simple">
+<li>CREATE_IN_PROGRESS: cluster is not available because creating the cluster is
+in progress.</li>
+<li>CREATE_COMPLETE: cluster has been created and it is ready to use.</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h3>Login to Cluster<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>We use <code class="docutils literal"><span class="pre">cm</span> <span class="pre">vm</span> <span class="pre">login</span></code> command to ssh to one of the nodes in the cluster.
+Issue <code class="docutils literal"><span class="pre">vm</span> <span class="pre">list</span></code> first to see the list of virtual instances.</p>
+<ul class="simple">
+<li>Checking a node name to login</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>cm vm list
+</pre></div>
+</div>
+<p>You expect the result similar to:</p>
+<pre class="literal-block">
++----------------------------+----------+----------------------------+----------+----------------------------+
+| name                      | status   | addresses                  | flavor   | image                      |
++============================+==========+============================+==========+============================+
+| <strong>openmpi1</strong>                   | ACTIVE   | 10.39.1.48, 149.165.159.02 | m1.small | futuresystems/ubuntu-14.04 |
++----------------------------+----------+----------------------------+----------+----------------------------+
+| openmpi2                   | ACTIVE   | 10.39.1.52                 | m1.small | futuresystems/ubuntu-14.04 |
++----------------------------+----------+----------------------------+----------+----------------------------+
+| openmpi3                   | ACTIVE   | 10.39.1.51                 | m1.small | futuresystems/ubuntu-14.04 |
++----------------------------+----------+----------------------------+----------+----------------------------+
+| openmpi4                   | ACTIVE   | 10.39.1.53                 | m1.small | futuresystems/ubuntu-14.04 |
++----------------------------+----------+----------------------------+----------+----------------------------+
+| openmpi5                   | ACTIVE   | 10.39.1.54                 | m1.small | futuresystems/ubuntu-14.04 |
++----------------------------+----------+----------------------------+----------+----------------------------+
+</pre>
+<p>We found that openmpi1 is a node to log in.</p>
+<ul class="simple">
+<li>SSH to a node</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>cm vm login [node name]
+</pre></div>
+</div>
+<p>In this example, we try to ssh to <code class="docutils literal"><span class="pre">openmpi1</span></code> with <code class="docutils literal"><span class="pre">ec2-user</span></code> user name.</p>
+<div class="highlight-python"><div class="highlight"><pre>cm vm login openmpi1 --ln=ec2-user
+</pre></div>
+</div>
+<p>You expect the result similar to:</p>
+<div class="highlight-python"><div class="highlight"><pre> Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.13.0-40-generic x86_64)
+
+  * Documentation:  https://help.ubuntu.com/
+
+    System information as of Thu Jan 22 19:28:05 UTC 2015
+
+    System load:  0.01              Processes:           72
+    Usage of /:   6.9% of 19.65GB   Users logged in:     0
+    Memory usage: 23%               IP address for eth0: 10.39.1.48
+    Swap usage:   0%
+
+    Graph this data and manage this system at:
+      https://landscape.canonical.com/
+
+    Get cloud support with Ubuntu Advantage Cloud Guest:
+      http://www.ubuntu.com/business/services/cloud
+
+
+$
+</pre></div>
+</div>
+<ul>
+<li><p class="first">Switch to <code class="docutils literal"><span class="pre">root</span></code> user</p>
+<p>You are expected to run openmpi commands as a root superuser.</p>
+</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>sudo su -
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-a-hello-world-mpi-program">
+<h3>Run a &#8220;Hello World&#8221; MPI program<a class="headerlink" href="#run-a-hello-world-mpi-program" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s try a simple example to try a MPI program. Here is hello.c:</p>
+<div class="highlight-python"><div class="highlight"><pre>#include &lt;stdio.h&gt;
+#include &lt;mpi.h&gt;
+
+int main(int argc, char *argv[]) {
+  int numprocs, rank, namelen;
+  char processor_name[MPI_MAX_PROCESSOR_NAME];
+
+  MPI_Init(&amp;argc, &amp;argv);
+  MPI_Comm_size(MPI_COMM_WORLD, &amp;numprocs);
+  MPI_Comm_rank(MPI_COMM_WORLD, &amp;rank);
+  MPI_Get_processor_name(processor_name, &amp;namelen);
+
+  printf(&quot;Process %d on %s out of %d\n&quot;, rank, processor_name, numprocs);
+
+  MPI_Finalize();
+}
+</pre></div>
+</div>
+<div class="section" id="compile-hello-c">
+<h4>Compile hello.c<a class="headerlink" href="#compile-hello-c" title="Permalink to this headline">¶</a></h4>
+<p>Since we are running Ubuntu 14.04 in this example, we complie with <code class="docutils literal"><span class="pre">mpicc</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>mpicc hello.c -o hello
+</pre></div>
+</div>
+</div>
+<div class="section" id="mpi-hostfile">
+<h4>MPI hostfile<a class="headerlink" href="#mpi-hostfile" title="Permalink to this headline">¶</a></h4>
+<p>We create a hostfile for MPI process which contains the hostnames (nodes) of
+the cluster.</p>
+<div class="highlight-python"><div class="highlight"><pre>echo -e &quot;mpi1\nmpi2\nmpi3\nmpi4\nmpi5&quot; &gt; my_mpi_hosts
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>[expected output]
+
+cat my_mpi_hosts
+mpi1
+mpi2
+mpi3
+mpi4
+mpi5
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">If you have more than a single CPU per node, use slots=N where N is a
+number of processors.
+e.g. mpi1 slots=2</p>
+</div>
+</div>
+<div class="section" id="copy-hello-program-to-each-node">
+<h4>Copy <code class="docutils literal"><span class="pre">hello</span></code> program to each node<a class="headerlink" href="#copy-hello-program-to-each-node" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal"><span class="pre">hello</span></code> program should to be found on each node. We propagate the binary using <code class="docutils literal"><span class="pre">scp</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>scp hello mpi1:
+scp hello mpi2:
+scp hello mpi3:
+scp hello mpi4:
+scp hello mpi5:
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-mpi-program">
+<h4>Run MPI program<a class="headerlink" href="#run-mpi-program" title="Permalink to this headline">¶</a></h4>
+<p>We now run <code class="docutils literal"><span class="pre">hello</span></code> program on the given nodes with <code class="docutils literal"><span class="pre">mpirun</span></code> program:</p>
+<div class="highlight-python"><div class="highlight"><pre>mpirun -np 5 --hostfile my_mpi_hosts hello
+</pre></div>
+</div>
+<p><em>-np option is used to tell how many copies of the program will be run. We have
+five nodes in this example.</em></p>
+<p>Expected result looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>Process 0 on mpi1 out of 5
+Process 1 on mpi2 out of 5
+Process 3 on mpi3 out of 5
+Process 2 on mpi4 out of 5
+Process 4 on mpi5 out of 5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Terminate Cluster<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Once you completed your task on the cluster, you can terminate the cluster with
+<code class="docutils literal"><span class="pre">cm</span> <span class="pre">launcher</span> <span class="pre">stop</span> <span class="pre">[name]</span></code> command.</p>
+<ul class="simple">
+<li>Check a cluster name to stop</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher list
+</pre></div>
+</div>
+<p>You expect the result similar to:</p>
+<pre class="literal-block">
++--------------------------------------+--------------------------------+-------------------------------------+-----------------+----------------------+----------+
+| launcher_id                          | stack_name                     | description                         | stack_status    | creation_time        | cm_cloud |
++--------------------------------------+--------------------------------+-------------------------------------+-----------------+----------------------+----------+
+| 14ec7ceb-ce12-4b18-9c31-d398c6e76b78 | <strong>launcher-albert-openmpi-DB8JDK</strong> | Open MPI cluster with OpenStackHeat | CREATE_COMPLETE | 2015-01-22T16:25:23Z | india    |
++--------------------------------------+--------------------------------+-------------------------------------+-----------------+----------------------+----------+
+</pre>
+<ul class="simple">
+<li>Terminate a cluster</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher stop [name]
+</pre></div>
+</div>
+<p>In this tutorial, we terminate <code class="docutils literal"><span class="pre">launcher-albert-openmpi-DB8JDK</span></code> like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher stop launcher-albert-openmpi-DB8JDK
+</pre></div>
+</div>
+<ul class="simple">
+<li>DELETE_IN_PROGRESS: shutting down instances is in progress.</li>
+<li>DELETE_COMPLETE: the lease of resources is ended, all resources are returned.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ipynb.html" class="btn btn-neutral float-right" title="Deploying IPython Notebook Cluster with Cloudmesh launcher" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../bdossp_sp15/future.html" class="btn btn-neutral" title="What will the future Bring (under preparation)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

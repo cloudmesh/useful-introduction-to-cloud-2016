@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Deploying Virtual Cluster with Cloudmesh cm &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/>
+        <link rel="up" title="Cloudmesh Preparation" href="cm_preparation.html"/>
+        <link rel="next" title="Deploying Hadoop Cluster" href="hadoop_cluster.html"/>
+        <link rel="prev" title="Cloudmesh Preparation" href="cm_preparation.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="overview.html">Cloud Computing on FutureSystems</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Tutorial 1: Deploying Virtual Cluster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hadoop_cluster.html">Tutorial 2: Deploying Hadoop Cluster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mongodb_cluster.html">Tutorial 3: Deploying MongoDB Shard Cluster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview.html#support">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview.html#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../lesson/collaboration/index.html">Collaboration Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lesson/deployment/index.html">Deployment Technologies (Under Preparation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lesson/virtualization/tools.html">Virtualization Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lesson/virtualization/tools.html#vagrant">Vagrant</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lessons.html">Lessons</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a> &raquo;</li>
+      
+          <li><a href="overview.html">Cloud Computing on FutureSystems</a> &raquo;</li>
+      
+          <li><a href="getting_started.html">Getting Started</a> &raquo;</li>
+      
+          <li><a href="cm_preparation.html">Cloudmesh Preparation</a> &raquo;</li>
+      
+    <li>Deploying Virtual Cluster with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/class/vc_sp15/virtual_cluster.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="deploying-virtual-cluster-with-cloudmesh-cm">
+<span id="ref-class-lesson-deploying-virtual-cluster-with-cloudmesh"></span><h1>Deploying Virtual Cluster with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code><a class="headerlink" href="#deploying-virtual-cluster-with-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
+<p>To support the creation of a virtual compute cluster on Cloudmesh, the command
+<code class="docutils literal"><span class="pre">cluster</span></code> can be used to start, configure, manage or update a number of
+virtual machines.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Don&#8217;t have Cloudmesh? see the <a class="reference external" href="cm_preparation.html">preparation</a></p>
+</div>
+<p><strong>Table of Contents</strong></p>
+<ul class="simple">
+<li><a class="reference external" href="#create-virtual-cluster-with-3-virtual-machines">Create Virtual Cluster</a></li>
+<li><a class="reference external" href="#id1">Login to Virtual Cluster</a></li>
+<li><a class="reference external" href="#id2">Terminate Virtual Cluster</a></li>
+</ul>
+<p><em>Navigation</em></p>
+<p><a class="reference external" href="hadoop_cluster.html">Next Page - Deploying Hadoop Cluster</a></p>
+<div class="section" id="tutorial-creating-virtual-cluster">
+<h2>Tutorial: Creating Virtual Cluster<a class="headerlink" href="#tutorial-creating-virtual-cluster" title="Permalink to this headline">¶</a></h2>
+<p>To perform distributed processing software, you may need to use clusters for
+better performance.  Cloudmesh allows users to choose different images, flavors
+or a node size of clusters, so that users use virtual instances efficiently for
+their analysis with less wasting resources.</p>
+<p>In this tutorial, we create Virtual Cluster with three virtual instances. Each
+virtual instance uses a m1.small flavor (1 vCPU, 2GB Memory, 20GB disk) and a
+Ubuntu 14.04 distribution.</p>
+<p>Each node is supposed to communicate with other nodes in the same cluster and
+public IP address is also assigned to the node using floating IPs.</p>
+<ul class="simple">
+<li>Cluster Name: virtual_cluster</li>
+<li>VMs: 3 virtual instances</li>
+<li>Flavor: m1.small</li>
+<li>Image: futuresystems/ubuntu-14.04</li>
+<li>Cloud: India</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Approximate time: 10 minutes</p>
+</div>
+<div class="section" id="create-virtual-cluster-with-3-virtual-machines">
+<h3>Create Virtual Cluster with 3 virtual machines<a class="headerlink" href="#create-virtual-cluster-with-3-virtual-machines" title="Permalink to this headline">¶</a></h3>
+<p>You can create a virtual cluster with a group name <em>test</em> and 3 virtual instances.</p>
+<div class="highlight-python"><div class="highlight"><pre>cm cluster create virtual_cluster --count=3
+</pre></div>
+</div>
+<p>You may also provide a cloud name, flavor or image as parameter in the
+command if you do not want to use the defaults. For example you can use
+the following do do so:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm cluster create virtual_cluster_ext --count=3 --ln=ubuntu --cloud=india --flavor=m1.small --image=futuresystems/ubuntu-14.04
+</pre></div>
+</div>
+<p>You can display the status of vms for the cluster with the <code class="docutils literal"><span class="pre">vm</span> <span class="pre">list</span></code>
+command:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm vm list --refresh --group=virtual_cluster
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Login to Virtual Cluster<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">vm</span> <span class="pre">login</span></code> command can be used to ssh one of the nodes in the cluster.</p>
+<div class="highlight-python"><div class="highlight"><pre>cm vm login albert_1 --ln=ubuntu
+</pre></div>
+</div>
+<p><em>albert_1 is a virtual instance name in the cluster.</em></p>
+</div>
+<div class="section" id="id2">
+<h3>Terminate Virtual Cluster<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>If you completed your task on the cluster, you may terminate the virtual cluster using Cloudmesh.</p>
+<p><code class="docutils literal"><span class="pre">cluster</span> <span class="pre">remove</span> <span class="pre">[name]</span></code> simply shuts down a node(s) of the cluster.</p>
+</div>
+</div>
+<div class="section" id="exercise">
+<span id="ref-class-lesson-deploying-virtual-cluster-with-cloudmesh-exercise"></span><h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Try to access a master node of your cluster. (Make a screenshot)</li>
+<li>Create a Virtual Cluster with 2 VMs. (Make a screenshot)</li>
+<li>Submit two screenshots</li>
+</ul>
+</div>
+<div class="section" id="cloudmesh-cluster-command">
+<h2>Cloudmesh <code class="docutils literal"><span class="pre">cluster</span></code> command<a class="headerlink" href="#cloudmesh-cluster-command" title="Permalink to this headline">¶</a></h2>
+<p>To create, list, or remove clusters, use <code class="docutils literal"><span class="pre">cm</span> <span class="pre">cluster</span></code> command.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">latest repository is required (dev1.3). Please <a class="reference external" href="cm_download.html">download latest cloudmesh</a></p>
+</div>
+<div class="section" id="create-cluster">
+<h3>Create Cluster<a class="headerlink" href="#create-cluster" title="Permalink to this headline">¶</a></h3>
+<p>Cloudmesh provides a simple command to create a virtual cluster.
+<code class="docutils literal"><span class="pre">cluster</span> <span class="pre">create</span></code> can be executed along with the following options:</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">--count</span></code></div>
+<div class="line-block">
+<div class="line">specify amount of VMs in the cluster</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">--cloud</span></code></div>
+<div class="line-block">
+<div class="line">specify a cloud name, e.g. india</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">--flavor</span></code></div>
+<div class="line-block">
+<div class="line">specify a flavor name among m1.tiny, m1.small, m1.medium, m1.large</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">--ln</span></code></div>
+<div class="line-block">
+<div class="line">login name for VMs, e.g. ubuntu</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">--image</span></code></div>
+<div class="line-block">
+<div class="line">specify an image name.  <code class="docutils literal"><span class="pre">list</span> <span class="pre">image</span></code> command allows you to find registered images.</div>
+</div>
+</div>
+</div>
+<div class="section" id="list-cluster">
+<h3>List Cluster<a class="headerlink" href="#list-cluster" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">cluster</span> <span class="pre">list</span> <span class="pre">[name]</span></code> shows running clusters with a number of nodes.</p>
+</div>
+<div class="section" id="remove-cluster">
+<h3>Remove Cluster<a class="headerlink" href="#remove-cluster" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">cluster</span> <span class="pre">remove</span> <span class="pre">[name]</span></code> automatically terminates all nodes of the cluster.</p>
+</div>
+</div>
+<div class="section" id="faq">
+<h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><ol class="first upperalpha" start="17">
+<li>How do I delete a Virtual Cluster?</li>
+</ol>
+</li>
+<li><ol class="first upperalpha">
+<li><code class="docutils literal"><span class="pre">cluster</span> <span class="pre">remove</span> <span class="pre">[name]</span></code></li>
+</ol>
+</li>
+<li><ol class="first upperalpha" start="17">
+<li>I cannot find <code class="docutils literal"><span class="pre">cluster</span></code> command on my cloudmesh.</li>
+</ol>
+</li>
+<li><ol class="first upperalpha">
+<li>You need to download latest cloudmesh on Github. Please see <a class="reference external" href="cm_download.html">the download page</a></li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="section" id="other-questions">
+<h2>Other questions?<a class="headerlink" href="#other-questions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Forum via Git Issues: <a class="reference external" href="https://github.com/CourseMaterial/introduction_to_cloud_computing/issues">Git Issues</a></li>
+<li>Email: <a class="reference external" href="contact.html">Contact Us</a></li>
+</ul>
+</div>
+<div class="section" id="next-step">
+<h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
+<p>In the next page, we deploy a Hadoop cluster on FutureSystems using Cloudmesh.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hadoop_cluster.html">Next Tutorial - Deploying Hadoop Cluster</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="hadoop_cluster.html" class="btn btn-neutral float-right" title="Deploying Hadoop Cluster" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cm_preparation.html" class="btn btn-neutral" title="Cloudmesh Preparation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

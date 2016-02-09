@@ -1,0 +1,587 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Quickstart on your desktop &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/>
+        <link rel="up" title="Cloudmesh Setup" href="index.html"/>
+        <link rel="next" title="Quickstart for an Openstack VM" href="setup_openstack.html"/>
+        <link rel="prev" title="Cloudmesh Setup" href="index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Cloudmesh Overview</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh Setup</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">Quickstart on your desktop</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#commands-without-description">Commands without description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#one-line-install-with-curl">One line install with curl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#one-line-configure-with-curl">One line configure with curl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#one-line-start-with-curl">One line start with curl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tips">Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html">Quickstart for an Openstack VM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_vagrant.html">Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html">Configuration with Yaml Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nosetests.html">Nosetests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cm/index.html">Cloudmesh cm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/index.html">Cloudmesh API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/index.html">Cloudmesh Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gui/index.html">Cloudmesh GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Cloudmesh FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh</a> &raquo;</li>
+      
+          <li><a href="index.html">Cloudmesh Setup</a> &raquo;</li>
+      
+    <li>Quickstart on your desktop</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/cloudmesh/setup/quickstart.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="quickstart-on-your-desktop">
+<span id="s-cloudmesh-quickstart"></span><h1>Quickstart on your desktop<a class="headerlink" href="#quickstart-on-your-desktop" title="Permalink to this headline">¶</a></h1>
+<p>A video bout the quickstart instalation is available on <a href="#id3"><span class="problematic" id="id4">|video-cm-install|</span></a></p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">This quickstart will guide you on installing Cloudmesh on your
+local workstation running Ubuntu 14.04 or OSX</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<dl class="docutils">
+<dt>FutureSystems Portalname and Project ID</dt>
+<dd><p class="first">For this example we assume you have set the shell variable
+PORTALNAME to your FutureSystems portal username. This can
+be done as follows. Let us assume your portal name is
+<cite>albert</cite>. Than you can set it with:</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span class="nb">export</span> <span class="nv">PORTALNAME</span><span class="o">=</span>albert
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>We also assume that you have a project id that you set to:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">export</span> <span class="nv">PROJECTID</span><span class="o">=</span>fg101
+</pre></div>
+</div>
+<p class="last">if it is the number 101.</p>
+</div>
+<p>We recommend that you use virtualenv to provide an isolated environment
+for cloudmesh. We assume you create one called ENV and activate it:</p>
+<div class="highlight-bash"><div class="highlight"><pre> $ virtualenv ~/ENV
+ $ <span class="nb">source</span> ~/ENV/bin/activate
+
+.. comment::
+
+ The easiset way <span class="k">for</span> users is install cloudmesh from pip with::
+
+ pip install cloudmesh
+
+ <span class="o">(</span>This is not yet fully supported, so you <span class="k">do</span> need the <span class="nb">source</span> code installation<span class="o">)</span>
+</pre></div>
+</div>
+<p>If you like to extend cloudmesh we recommend that you
+download the following repository into your local copy of github
+source code directories. We assume you have git installed:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ mkdir github
+$ <span class="nb">cd</span> github
+
+$ git clone https://github.com/cloudmesh/cloudmesh.git
+</pre></div>
+</div>
+<p>In some cases you may also want to download some other repositories
+that are either used by cloudmesh, or are extensions to
+cloudmesh. This includes:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ git clone https://github.com/cloudmesh/cloudmesh_base.git
+$ git clone https://github.com/cloudmesh/cloudmesh_pbs.git
+</pre></div>
+</div>
+<p>Next, you need to install a number of required packages with the
+following commands:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ <span class="nb">cd</span> cloudmesh
+$ sudo ./install system
+$ ./install requirements
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">on OSX you can omit the sudo.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>OSX installation of python-LDAP may be an issue. You can use
+the following woraround:</p>
+<div class="last highlight-bash"><div class="highlight"><pre>pip install python-ldap <span class="se">\</span>
+     --global-option<span class="o">=</span>build_ext <span class="se">\</span>
+     --global-option<span class="o">=</span><span class="s2">&quot;-I</span><span class="k">$(</span>xcrun --show-sdk-path<span class="k">)</span><span class="s2">/usr/include/sasl&quot;</span>
+</pre></div>
+</div>
+</div>
+<p>To get access to IaaS cloud platforms, you need to create locally a
+new user that has access to various clouds. This can be done with:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ ./install new
+</pre></div>
+</div>
+<p>The next steps will deploy the cloudmesh code into the virtualenv
+library path:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ ./install cloudmesh
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This step is optional but highly recommended for users.</p>
+<p>In case you have accounts on the IU machines you can also obtain
+pre-configured cloud rc files from them. To test if you have an account
+and have set it up correctly, please login to the machine india:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ ssh $PORTALNAME@india.futuresystems.org
+</pre></div>
+</div>
+<p>If this does not work, you may not have uploaded your public key to
+FutureSystems portal at</p>
+<ul class="simple">
+<li><a class="reference external" href="https://portal.futuresystems.org/my/ssh-keys">https://portal.futuresystems.org/my/ssh-keys</a></li>
+</ul>
+<p>Once this step is completed, you can
+create the configuration files as follows:</p>
+<div class="last highlight-bash"><div class="highlight"><pre>$ cm-iu user fetch
+$ cm-iu user create
+</pre></div>
+</div>
+</div>
+<p>At this time we like you to edit some information about yourself in
+the cloudmesh.yaml file. Choose your favorite editor:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ emacs ~/.cloudmesh/cloudmesh.yaml
+</pre></div>
+</div>
+<p>Change the values marked with TBD that you find here with values that describe
+you.</p>
+<p>As you will need at one point to login into virtual machines you will
+need a key that cloudmesh can use do to so. We assume you have a
+public key generated in your .ssh directory in the file:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ ~/.ssh/id_rsa.pub
+</pre></div>
+</div>
+<p>If you do not have such a key, you can generate it with:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ ssh-keygen -t rsa -C $PORTALNAME-key
+</pre></div>
+</div>
+<p>The next steps will deploy the cloudmesh database:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ fab mongo.reset
+</pre></div>
+</div>
+<p>We add the key to the database with:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ cm key add --keyname<span class="o">=</span>$PORTALNAME-key ~/.ssh/id_rsa.pub
+</pre></div>
+</div>
+<p>where <span class="pink">PORTALNAME</span> is your name for the FutuerSystems portal.</p>
+<p>You may next need to specify your default project if you have not yet
+done so:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ cm project default $PROJECTID
+</pre></div>
+</div>
+<p>where <span class="pink">PROJECTID</span> is your default project id from FutureSystems
+e.g. fg456 as an example.</p>
+<p>To start cloudmesh use:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ fab server.start
+</pre></div>
+</div>
+<p>Now you can test the service by visiting the web interface at
+<a class="reference external" href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>. We have a convenient shortcut for this by
+typing:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ fab server.view
+</pre></div>
+</div>
+<p>Alternatively you can use the cloudmesh shell by invoking the cm
+command via a terminal:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ <span class="nv">cm</span>
+
+<span class="o">======================================================</span>
+/ ___<span class="p">|</span> <span class="p">|</span> ___  _   _  __<span class="p">|</span> <span class="p">|</span>_ __ ___   ___  ___<span class="p">|</span> <span class="p">|</span>__
+<span class="p">|</span> <span class="p">|</span>   <span class="p">|</span> <span class="p">|</span>/ _ <span class="se">\|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span>/ _<span class="sb">`</span> <span class="p">|</span> <span class="s1">&#39;_ ` _ \ / _ \/ __| &#39;</span>_ <span class="se">\</span>
+<span class="p">|</span> <span class="p">|</span>___<span class="p">|</span> <span class="p">|</span> <span class="o">(</span>_<span class="o">)</span> <span class="p">|</span> <span class="p">|</span>_<span class="p">|</span> <span class="p">|</span> <span class="o">(</span>_<span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span>  __/<span class="se">\_</span>_ <span class="se">\ </span><span class="p">|</span> <span class="p">|</span> <span class="p">|</span>
+<span class="se">\_</span>___<span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>__/ <span class="se">\_</span>_,_<span class="p">|</span><span class="se">\_</span>_,_<span class="p">|</span>_<span class="p">|</span> <span class="p">|</span>_<span class="p">|</span> <span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>__<span class="o">||</span>___/_<span class="p">|</span> <span class="p">|</span>_<span class="p">|</span>
+<span class="o">======================================================</span>
+Cloudmesh Shell
+
+cm&gt; cloud
++--------------------------+----------+
+<span class="p">|</span> cloud                    <span class="p">|</span> active   <span class="p">|</span>
++<span class="o">==========================</span>+<span class="o">==========</span>+
+<span class="p">|</span> alamo                    <span class="p">|</span>          <span class="p">|</span>
++--------------------------+----------+
+<span class="p">|</span> aws                      <span class="p">|</span>          <span class="p">|</span>
++--------------------------+----------+
+<span class="p">|</span> azure                    <span class="p">|</span>          <span class="p">|</span>
++--------------------------+----------+
+<span class="p">|</span> dreamhost                <span class="p">|</span>          <span class="p">|</span>
++--------------------------+----------+
+<span class="p">|</span> hp                       <span class="p">|</span>          <span class="p">|</span>
++--------------------------+----------+
+<span class="p">|</span> hp_east                  <span class="p">|</span>          <span class="p">|</span>
++--------------------------+----------+
+<span class="p">|</span> india_eucalyptus         <span class="p">|</span>          <span class="p">|</span>
++--------------------------+----------+
+<span class="p">|</span> india                    <span class="p">|</span>          <span class="p">|</span>
++--------------------------+----------+
+<span class="p">|</span> sierra_eucalyptus        <span class="p">|</span>          <span class="p">|</span>
++--------------------------+----------+
+<span class="p">|</span> sierra                   <span class="p">|</span>          <span class="p">|</span>
++--------------------------+----------+
+
+cm&gt; cloud on india
+...
+cloud <span class="s1">&#39;india&#39;</span> activated.
+
+cm&gt; flavor india --refresh
+...
+Refresh time: 0.190665006638
+Store time: 0.0578060150146
++--------+------+--------------+---------+-------+--------+----------------------+
+<span class="p">|</span> CLOUD  <span class="p">|</span>   id <span class="p">|</span> name         <span class="p">|</span>   vcpus <span class="p">|</span>   ram <span class="p">|</span>   disk <span class="p">|</span> cm_refresh           <span class="p">|</span>
+<span class="p">|</span>--------+------+--------------+---------+-------+--------+----------------------<span class="p">|</span>
+<span class="p">|</span> india <span class="p">|</span>    <span class="m">1</span> <span class="p">|</span> m1.tiny      <span class="p">|</span>       <span class="m">1</span> <span class="p">|</span>   <span class="m">512</span> <span class="p">|</span>      <span class="m">0</span> <span class="p">|</span> 2014-08-26T01-15-20Z <span class="p">|</span>
+<span class="p">|</span> india <span class="p">|</span>    <span class="m">3</span> <span class="p">|</span> m1.medium    <span class="p">|</span>       <span class="m">2</span> <span class="p">|</span>  <span class="m">4096</span> <span class="p">|</span>     <span class="m">40</span> <span class="p">|</span> 2014-08-26T01-15-20Z <span class="p">|</span>
+<span class="p">|</span> india <span class="p">|</span>    <span class="m">2</span> <span class="p">|</span> m1.small     <span class="p">|</span>       <span class="m">1</span> <span class="p">|</span>  <span class="m">2048</span> <span class="p">|</span>     <span class="m">20</span> <span class="p">|</span> 2014-08-26T01-15-20Z <span class="p">|</span>
+<span class="p">|</span> india <span class="p">|</span>    <span class="m">4</span> <span class="p">|</span> m1.large     <span class="p">|</span>       <span class="m">4</span> <span class="p">|</span>  <span class="m">8192</span> <span class="p">|</span>     <span class="m">40</span> <span class="p">|</span> 2014-08-26T01-15-20Z <span class="p">|</span>
+<span class="p">|</span> india <span class="p">|</span>    <span class="m">7</span> <span class="p">|</span> m1.memmedium <span class="p">|</span>       <span class="m">1</span> <span class="p">|</span>  <span class="m">4096</span> <span class="p">|</span>     <span class="m">20</span> <span class="p">|</span> 2014-08-26T01-15-20Z <span class="p">|</span>
+<span class="p">|</span> india <span class="p">|</span>    <span class="m">6</span> <span class="p">|</span> m1.memlarge  <span class="p">|</span>       <span class="m">1</span> <span class="p">|</span>  <span class="m">8192</span> <span class="p">|</span>     <span class="m">20</span> <span class="p">|</span> 2014-08-26T01-15-20Z <span class="p">|</span>
++--------+------+--------------+---------+-------+--------+----------------------+
+</pre></div>
+</div>
+<div class="section" id="commands-without-description">
+<h2>Commands without description<a class="headerlink" href="#commands-without-description" title="Permalink to this headline">¶</a></h2>
+<p>This script assumes that you have a key in:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ ~/.ssh/id_rsa.pub
+</pre></div>
+</div>
+<p>Which will be used to log into the VMs and the machines. This key must
+be uploaded to the FutureSystems portal.</p>
+<div class="section" id="for-ubuntu-use">
+<h3>For ubuntu use<a class="headerlink" href="#for-ubuntu-use" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre>$ git clone https://github.com/cloudmesh/cloudmesh.git
+$ virtualenv ~/ENV
+$ <span class="nb">source</span> ~/ENV/bin/activate
+$ <span class="nb">cd</span> cloudmesh
+$ sudo ./install system
+<span class="c1">#</span>
+<span class="c1"># The command requires input</span>
+<span class="c1">#</span>
+$ ./install requirements
+$ ./install new
+$ ./install cloudmesh
+$ cm-iu user fetch --username<span class="o">=</span>$PORTALNAME
+$ cm-iu user create
+$ fab mongo.reset
+<span class="c1">#</span>
+<span class="c1"># The command requires input</span>
+<span class="c1">#</span>
+$ fab server.start
+$ cm project default $PROJECTID
+$ cm cloud list
+$ cm cloud on india
+$ cm flavor india --refresh
+</pre></div>
+</div>
+</div>
+<div class="section" id="for-osx-use">
+<h3>For OSX use<a class="headerlink" href="#for-osx-use" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c1">#</span>
+<span class="c1"># make sure you installed xcode and do xcode-select --install</span>
+<span class="c1">#</span>
+$ git clone https://github.com/cloudmesh/cloudmesh.git
+$ virtualenv ~/ENV
+$ <span class="nb">source</span> ~/ENV/bin/activate
+$ <span class="nb">cd</span> cloudmesh
+$ ./install system
+<span class="c1">#</span>
+<span class="c1"># The command requires input</span>
+<span class="c1">#</span>
+$ ./install requirements
+$ ./install new
+$ ./install cloudmesh
+$ cm-iu user fetch --username<span class="o">=</span>$PORTALNAME
+$ cm-iu user create
+$ fab mongo.reset
+<span class="c1">#</span>
+<span class="c1"># The command requires input</span>
+<span class="c1">#</span>
+$ fab server.start
+$ cm project default $PROJECTID
+$ cm cloud list
+$ cm cloud on india
+$ cm flavor india --refresh
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="one-line-install-with-curl">
+<span id="ref-cloudmesh-quickstart-system-install-curl"></span><h2>One line install with curl<a class="headerlink" href="#one-line-install-with-curl" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This method is experimental, please give us feedback.</p>
+</div>
+<p>This script can also be executed while getting it from our convenient
+installation script repository. For ubuntu you can use:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ curl https://raw.githubusercontent.com/cloudmesh/get/master/cloudmesh/ubuntu/14.04.sh <span class="p">|</span> bash
+</pre></div>
+</div>
+<p>This will do the following:</p>
+<ul class="simple">
+<li>update package listing</li>
+<li>install <a class="reference external" href="https://github.com/cloudmesh/get/blob/master/cloudmesh/system-dependencies.csv">systems dependencies</a></li>
+<li>create a virtual env in <code class="docutils literal"><span class="pre">$HOME/ENV</span></code> (specify <code class="docutils literal"><span class="pre">venv</span></code> to override
+default)</li>
+<li>installs cloudmesh and python dependencies via <code class="docutils literal"><span class="pre">pip</span></code></li>
+<li>clones the cloudmesh repository into a <code class="docutils literal"><span class="pre">./cloudmesh</span></code> directory
+(specify <code class="docutils literal"><span class="pre">cloudmeshdir</span></code> to override)</li>
+<li>populates <code class="docutils literal"><span class="pre">~/.cloudmesh</span></code></li>
+</ul>
+</div>
+<div class="section" id="one-line-configure-with-curl">
+<h2>One line configure with curl<a class="headerlink" href="#one-line-configure-with-curl" title="Permalink to this headline">¶</a></h2>
+<p>After cloudmesh and dependencies have been installed, use the
+following to do the initial configuration.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This only needs to be run once on each system</p>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>$ curl https://raw.githubusercontent.com/cloudmesh/get/master/cloudmesh/configure.sh <span class="p">|</span> <span class="nv">portalname</span><span class="o">=</span>albert <span class="nv">projectid</span><span class="o">=</span>fg101 bash
+</pre></div>
+</div>
+<p>This will:</p>
+<ul class="simple">
+<li>call <code class="docutils literal"><span class="pre">cm-iu</span> <span class="pre">user</span> <span class="pre">fetch</span></code></li>
+<li>call <code class="docutils literal"><span class="pre">cm-iu</span> <span class="pre">user</span> <span class="pre">create</span></code></li>
+<li>generate the database (<code class="docutils literal"><span class="pre">fab</span> <span class="pre">{mongo.boot,user.mongo,mongo.simple}</span></code>)</li>
+<li>set the default project id to <code class="docutils literal"><span class="pre">$projectid</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="one-line-start-with-curl">
+<h2>One line start with curl<a class="headerlink" href="#one-line-start-with-curl" title="Permalink to this headline">¶</a></h2>
+<p>At this point you will want to start the cloudmesh services:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ curl https://raw.githubusercontent.com/cloudmesh/get/dev/cloudmesh/start.sh <span class="p">|</span> bash
+</pre></div>
+</div>
+<p>This:</p>
+<ul class="simple">
+<li>assumes that cloudmesh repo is located in <code class="docutils literal"><span class="pre">./cloudmesh</span></code> (specify
+<code class="docutils literal"><span class="pre">cloudmeshdir=path/to/local/repo</span></code> to override)</li>
+<li>starts the cloudmesh server (<code class="docutils literal"><span class="pre">fab</span> <span class="pre">server.start</span></code>)</li>
+<li>updates the clouds from <code class="docutils literal"><span class="pre">india</span></code> (<code class="docutils literal"><span class="pre">cm</span> <span class="pre">{cloud,flavor}</span></code>)</li>
+</ul>
+</div>
+<div class="section" id="tips">
+<h2>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
+<p>If you lost the cursor on your terminal, you can use the command:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ reset
+</pre></div>
+</div>
+<p>to bring the terminal in its default settings.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="setup_openstack.html" class="btn btn-neutral float-right" title="Quickstart for an Openstack VM" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Cloudmesh Setup" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

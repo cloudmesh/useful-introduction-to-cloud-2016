@@ -1,0 +1,540 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>FutureGrid Hardware &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/>
+        <link rel="up" title="Archived" href="../../archived.html"/>
+        <link rel="next" title="ToDos" href="../../todo.html"/>
+        <link rel="prev" title="Archived" href="../../archived.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../archived.html">Archived</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">FutureGrid Hardware</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#compute-resources">Compute Resources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#networks">Networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#network-impairments-device-nid">Network Impairments Device (NID)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../archived.html">Archived</a> &raquo;</li>
+      
+    <li>FutureGrid Hardware</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/hardware/futuregrid/hardware.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="futuregrid-hardware">
+<span id="s-futuregrid-hardware"></span><h1>FutureGrid Hardware<a class="headerlink" href="#futuregrid-hardware" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This page is incomplete and images and links may not work.</p>
+</div>
+<div class="sidebar">
+<p class="first sidebar-title">Page Contents</p>
+<div class="contents local last topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#compute-resources" id="id5">Compute Resources</a></li>
+<li><a class="reference internal" href="#networks" id="id6">Networks</a></li>
+<li><a class="reference internal" href="#network-impairments-device-nid" id="id7">Network Impairments Device (NID)</a></li>
+</ul>
+</div>
+</div>
+<p>FutureGrid was built out of a number of clusters of different types and
+sizes that are interconnected with up to a 10GB Ethernet between its sites.</p>
+<p>The sites include Indiana University, University of Chicago, San Diego
+Supercomputing Center, Texas Advanced Computing Center, and University
+of Florida.</p>
+<div class="section" id="compute-resources">
+<h2><a class="toc-backref" href="#id5">Compute Resources</a><a class="headerlink" href="#compute-resources" title="Permalink to this headline">¶</a></h2>
+<p>The tables <span class="xref std std-ref">t-futuregrid-clusters</span> and <span class="xref std std-ref">t-futuregrid-clusters-details</span> show an
+overview of some imporatnt information about these clusters.</p>
+<p>FutureGrid systems team members are working on enhancements that could lead to increase in the number of cores, memory size, and scratch space.  We will keep you up to date on the developments.</p>
+<table border="1" class="docutils" id="id1">
+<caption><span class="caption-text">Storage Resources</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">System Type</th>
+<th class="head">Capacity (TB)</th>
+<th class="head">File System</th>
+<th class="head">Site</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>DDN 9550</td>
+<td>339 shared with IU +</td>
+<td>Luster</td>
+<td>IU</td>
+</tr>
+<tr class="row-odd"><td>Data Capacitor</td>
+<td>16 TB dedicated</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>DDN 6620</td>
+<td>120</td>
+<td>GPFS</td>
+<td>UC</td>
+</tr>
+<tr class="row-odd"><td>SunFire x4540</td>
+<td>96</td>
+<td>ZFS</td>
+<td>SDSC</td>
+</tr>
+<tr class="row-even"><td>Dell MD3000</td>
+<td>30</td>
+<td>NFS</td>
+<td>TACC</td>
+</tr>
+<tr class="row-odd"><td>IBM dx360 M3</td>
+<td>24</td>
+<td>NFS</td>
+<td>UF</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="networks">
+<h2><a class="toc-backref" href="#id6">Networks</a><a class="headerlink" href="#networks" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Resource Name</th>
+<th class="head">Network Devices</th>
+<th class="head">&nbsp;</th>
+<th class="head">&nbsp;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>IU Cray</td>
+<td>Cray 2D Torus SeaStar</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>IU iDataPlex</td>
+<td>DDR IB</td>
+<td>QLogic switch with Mellanox ConnectX adapters</td>
+<td>Blade Network Technologies &amp; Force10 Ethernet switches</td>
+</tr>
+<tr class="row-even"><td>SDSC</td>
+<td>DDR IB</td>
+<td>Cisco switch with Mellanox ConnectX adapters</td>
+<td>Juniper Ethernet switches</td>
+</tr>
+<tr class="row-odd"><td>TACC</td>
+<td>QDR IB</td>
+<td>Mellanox switches and adapters</td>
+<td>Dell Ethernet switches</td>
+</tr>
+<tr class="row-even"><td>UC</td>
+<td>DDR IB</td>
+<td>QLogic switch with Mellanox ConnectX adapters</td>
+<td>Blade Network Technologies &amp; Juniper switches</td>
+</tr>
+<tr class="row-odd"><td>UF</td>
+<td>Ethernet only (Blade Network Technologies &amp; Force10 switches)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>The FutureGrid network provides connectivity among FutureGrid
+participants, and network access to the Network Impairments Device
+(NID).  Five participants connect through a variety of network
+providers (see <a class="reference internal" href="#f-futuregrid-network-logical"><span>Figure: Logical Network Diagram</span></a>). Interconnects at the Indiana
+Gigapop, Internet2 and NLR extend access to FutureGrid resources to
+researchers nationally and internationally.</p>
+<div class="figure align-left" id="id2">
+<span id="f-futuregrid-network-logical"></span><a class="reference internal image-reference" href="hardware/futuregrid/images/FutureGrid-Logocal-v3.png"><img alt="hardware/futuregrid/images/FutureGrid-Logocal-v3.png" src="hardware/futuregrid/images/FutureGrid-Logocal-v3.png" style="width: 400px; height: 300px;" /></a>
+<p class="caption"><span class="caption-text">Figure: Logical Network Diagram</span></p>
+</div>
+<div class="figure align-right" id="id3">
+<span id="f-futuregrid-network-juniper"></span><a class="reference internal image-reference" href="hardware/futuregrid/images/Juniper-EX8208-140x184.png"><img alt="hardware/futuregrid/images/Juniper-EX8208-140x184.png" src="hardware/futuregrid/images/Juniper-EX8208-140x184.png" style="width: 100px; height: 100px;" /></a>
+<p class="caption"><span class="caption-text">Figure: Juniper EX8208</span></p>
+</div>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">inaccurate atlas diagram, can not change as network group has no
+info, however wil lead to confusion, needs to be stated</p>
+</div>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">proxy router is mentioned, but we seem only to have
+dosabled commands, which commands can users do?</p>
+</div>
+<p>FutureGrid deployed a Juniper EX8208 at the Core in Chicago’s
+StarLight facility. The Juniper EX series provides for Layer2 and
+Layer3 connectivity.  FutureGrid uses the EX to fulfill the network
+services (i.e., interconnectivity and external connectivity). The EX
+provides a special feature labeled ‘firewall based forwarding’,
+allowing seamless integration with network impairments.
+The GlobalNOC at Indiana University provides network engineering
+services, and email and phone support. GlobalNOC resources for public
+WAN information can be found at <a class="reference external" href="http://noc.futuregrid.org/">http://noc.futuregrid.org/</a>. Available tools include:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Image</th>
+<th class="head">Tool</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="hardware/futuregrid/images/gnoc-traffic.png"><img alt="image-gnoc-traffic" src="hardware/futuregrid/images/gnoc-traffic.png" style="width: 100px;" /></a></td>
+<td><a class="reference external" href="http://noc.futuregrid.org/futuregrid/live-network-status/maps--graphs/futuregrid-atlas.html">FutureGrid Atlas</a></td>
+<td>View the current level of FutureGrid Network traffic as displayed on a
+geographical map.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="hardware/futuregrid/images/gnoc-snap.png"><img alt="image-gnoc-snap" src="hardware/futuregrid/images/gnoc-snap.png" style="width: 100px;" /></a></td>
+<td><a class="reference external" href="http://noc.futuregrid.org/futuregrid/live-network-status/traffic-statistics/futuregrid-snapp-trafic-graphs2.html">SNAPP Traffic Graphs</a></td>
+<td>View high-speed traffic graphs collected at one-minute samples using the
+Indiana University-developed SNAPP tool. Create custom views of the
+FutureGrid network and view historic utilization with greater data
+resolution.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="hardware/futuregrid/images/gnoc-proxy.png"><img alt="image-gnoc-proxy" src="hardware/futuregrid/images/gnoc-proxy.png" style="width: 100px;" /></a></td>
+<td><a class="reference external" href="http://noc.futuregrid.org/futuregrid/live-network-status/traffic-statistics/router-proxy3.html">FutureGrid NOC Router Proxy</a></td>
+<td>Submit show commands to the FutureGrid router.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="hardware/futuregrid/images/futuregrid-physical.png"><img alt="image8" src="hardware/futuregrid/images/futuregrid-physical.png" style="width: 100px;" /></a></td>
+<td><a class="reference external" href="http://noc.futuregrid.org/futuregrid/maps--documentation/maps.html#FutureGrid%20Physical%20Map">FutureGrid Physical Map</a></td>
+<td>TBD</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="hardware/futuregrid/images/futuregrid-topology.png"><img alt="image9" src="hardware/futuregrid/images/futuregrid-topology.png" style="width: 100px;" /></a></td>
+<td><a class="reference external" href="http://noc.futuregrid.org/futuregrid/maps--documentation/maps.html#FutureGrid%20Topology%20Map">FutureGrid Topology Map</a></td>
+<td>TBD</td>
+</tr>
+</tbody>
+</table>
+<p>As IPv6 test beds are not available at all FutureGrid partner sites,
+early implementation of iPv6 would slow important software development
+work. As a result, current plans call for FutureGrid to continue using
+IPv4.</p>
+<p>Below is further information about networking:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Resource</th>
+<th class="head">Network Switch</th>
+<th class="head">Link</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>FutureGrid Core</td>
+<td>Juniper EX8200</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>India</td>
+<td>Force10 C-150</td>
+<td><a class="reference external" href="https://www.juniper.net/us/en/products-services/switching/ex-series/Force10">Juniper/Dell EX series Force 10</a></td>
+</tr>
+<tr class="row-even"><td>Bravo</td>
+<td>Force10 S60</td>
+<td><a class="reference external" href="http://www.dell.com/us/enterprise/p/force10-s60/pd">force10-s60</a></td>
+</tr>
+<tr class="row-odd"><td>Delta</td>
+<td>Force10 S60</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Echo</td>
+<td>Force10 S60</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Sierra</td>
+<td>Juniper EX4200</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Hotel</td>
+<td>Juniper EX4200</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Alamo</td>
+<td>Dell PowerConnect 6000 Series</td>
+<td><a class="reference external" href="http://www.dell.com/us/enterprise/p/switch-powerconnect">Dell, PowerConnect</a></td>
+</tr>
+<tr class="row-even"><td>Alamo</td>
+<td>Dell PowerConnect 6224</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Xray</td>
+<td>Force10, C-150</td>
+<td><a class="reference external" href="http://www.dell.com/us/enterprise/p/force10-c150/pd">Force10-c150</a></td>
+</tr>
+<tr class="row-even"><td>foxtrot</td>
+<td>internal network switch: IBM/BLADE Rack Switch G8000 and public
+network switch: Force10 S50</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Node NICs</td>
+<td>built-in (IBM iDataPlex DX360 M2) dual Intel 82575EB Gigabit Network Connection
+10Gbps, Myricom Myri-10G Dual-Protocol NIC (available on login
+node)</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-todo admonition" id="index-2">
+<p class="first admonition-title">Todo</p>
+<p class="last">network swithes inside india not corerct</p>
+</div>
+<div class="admonition-todo admonition" id="index-3">
+<p class="first admonition-title">Todo</p>
+<p class="last">unkown switch, hotel india, foxtrot?
+<a class="reference external" href="http://www-03.ibm.com/systems/networking/switches/rack.html">IBM rack switches (formerly BNT)</a></p>
+</div>
+</div>
+<div class="section" id="network-impairments-device-nid">
+<h2><a class="toc-backref" href="#id7">Network Impairments Device (NID)</a><a class="headerlink" href="#network-impairments-device-nid" title="Permalink to this headline">¶</a></h2>
+<p>Researchers on FutureGrid may periodically employ the use of a Spirent
+XGEM, a Network Impairments Emulator.  The XGEM allows users to
+accurately create the delays and impairments that occur over live
+production networks for validating and evaluating new products and
+technologies.  The XGEM supports a variety of impairments with the most
+common being delay, packet loss, jitter and re-ordering.</p>
+<div class="figure align-right" id="id4">
+<a class="reference internal image-reference" href="hardware/futuregrid/images/Spirent-XGEM.png"><img alt="hardware/futuregrid/images/Spirent-XGEM.png" src="hardware/futuregrid/images/Spirent-XGEM.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">Figure: Spirent XGEM</span></p>
+</div>
+<p>The XGEM contains two blades, each with a 10GE interface.  Traffic
+received on one blade is automatically transmitted on the other blade,
+and vice-versa.  This allows the XGEM to be deployed as a pass-through
+device.  Impairments are applied unidirectionally.  An identical or
+different impairment can be applied in either direction, or
+simultaneously in both directions.</p>
+<p>FutureGrid also utilizes a Juniper EX8208 as the primary network
+element between all of the FutureGrid participants.  Juniper’s EX
+platform contains firewall-based forwarding, which allows us to insert
+the XGEM between FutureGrid participants with only software changes (see
+Figure 1).</p>
+<p>The firewall-based forwarding feature can be configured to forward
+traffic unidirectionally or bidirectionally through the XGEM using a
+single IP address or any size subnet.  Only traffic defined by the
+Juniper EX8208 will be impaired, leaving all other traffic between
+FutureGrid participants unaffected.</p>
+<p>This implementation requires traffic to traverse the FutureGrid Core
+in order to be impaired.  Additional configuration might be required at
+the participants&#8217; individual sites for impairments to occur locally.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../todo.html" class="btn btn-neutral float-right" title="ToDos" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../archived.html" class="btn btn-neutral" title="Archived" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

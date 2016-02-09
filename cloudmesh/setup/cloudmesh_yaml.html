@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Account Information of Cloudmesh &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Account Information of Cloudmesh</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/cloudmesh/setup/cloudmesh_yaml.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="account-information-of-cloudmesh">
+<h1>Account Information of Cloudmesh<a class="headerlink" href="#account-information-of-cloudmesh" title="Permalink to this headline">¶</a></h1>
+<p>Cloudmesh manages account information which is stored in a file named
+<code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code>. In OpenStack, for example, access information such as
+OS_USERNAME, OS_PASSWORD, OS_TENANT_NAME, OS_AUTH_URL, and OS_CACERT is
+required to interact with a OpenStack service. Cloudmesh stores the access
+information in the <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code> file under a user home directory and
+MongoDB open-source document database. If you&#8217;d like to add more cloud
+platforms, you may need to update this YAML data file. Windows Azure, Amazon
+EC2, HP Cloud, Eucalyptus, and other OpenStack clouds are supported.</p>
+<div class="section" id="this-page-covers">
+<h2>This page covers:<a class="headerlink" href="#this-page-covers" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Basic structure of <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code></li>
+<li>Basic use of <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code></li>
+<li>An example of adding a new cloud account</li>
+</ul>
+</div>
+<div class="section" id="basic-structure-of-cloudmesh-yaml">
+<h2>Basic structure of <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code><a class="headerlink" href="#basic-structure-of-cloudmesh-yaml" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code> configuration file mainly contains the following
+information:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>profile (user profile data)</dt>
+<dd><ul class="first last simple">
+<li>address</li>
+<li>email</li>
+<li>firstname</li>
+<li>gid</li>
+<li>uid</li>
+<li>lastname</li>
+<li>phone</li>
+<li>username</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>active (cloud activation)</dt>
+<dd><ul class="first last simple">
+<li>[cloud name]</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>clouds (cloud access information)</dt>
+<dd><ul class="first last simple">
+<li>[cloud name]</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>projects (project information)</dt>
+<dd><ul class="first last simple">
+<li>active</li>
+<li>completed</li>
+<li>default</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">security (security group information)</p>
+</li>
+<li><p class="first">keys (key pairs)</p>
+</li>
+</ul>
+<div class="section" id="cloud-access-information">
+<h3>Cloud Access Information<a class="headerlink" href="#cloud-access-information" title="Permalink to this headline">¶</a></h3>
+<p>Each cloud has common key=value:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm_heading: [Description]
+cm_host: [Host address e.g. india.futuregrid.org]
+cm_label: [Unique label]
+cm_service_url_type: publicURL (OpenStack Onl)
+cm_type: [aws|openstack|ec2|eucalyptus|azure]
+cm_type_version: [Version e.g. juno or havana]
+default:
+  flavor: [Instance type e.g. m1.small]
+  image: [Virtual image name]
+  location: [Region]
+</pre></div>
+</div>
+<p>The following sections are credentials for clouds:</p>
+<ul class="simple">
+<li>OpenStack has:</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>credentials:
+  OS_AUTH_URL: [Address of OpenStack Authentication]
+  OS_CACERT: [File path of CA Cert]
+  OS_PASSWORD: [Password]
+  OS_TENANT_NAME: [Project Name]
+  OS_USERNAME: [User ID]
+  OS_VERSION: juno
+</pre></div>
+</div>
+<p>These credentials are adopted from OpenStack Credential variables. For more
+details, see here: <a class="reference external" href="http://docs.openstack.org/developer/devstack/openrc.html">http://docs.openstack.org/developer/devstack/openrc.html</a></p>
+<ul class="simple">
+<li>Amazon Cloud (AWS) has:</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>credentials:
+  EC2_ACCESS_KEY: [ACCESS KEY string]
+  EC2_SECRET_KEY: [SECRET KEY string]
+  keyname: [SSH Key Pair name]
+  userid: [AWS ID]
+  EC2_PRIVATE_KEY: [File path of a private key]
+</pre></div>
+</div>
+<ul class="simple">
+<li>Microsoft Azure has:</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>credentials:
+  subscriptionid: [Subscription ID]
+  managementcertfile: [File path of a management certificate e.g. *.pem]
+  thumbprint: [File path of a fingerprint]
+  servicecertfile: [File path of service certificate e.g. *.pfx]
+</pre></div>
+</div>
+<ul class="simple">
+<li>Eucalyptus has:</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>credentials:
+  EUCALYPTUS_CERT: [File path of a server certificate]
+  EC2_CERT: [File path of a certificate]
+  EC2_URL: [Address of Eucalyptus Authentication]
+  EC2_ACCESS_KEY: [ACCESS KEY string]
+  EC2_SECRET_KEY: [SECRET KEY string]
+  EC2_PRIVATE_KEY: [File path of a private key]
+</pre></div>
+</div>
+</div>
+<div class="section" id="file-location">
+<h3>File Location<a class="headerlink" href="#file-location" title="Permalink to this headline">¶</a></h3>
+<p>Once you&#8217;ve installed Cloudmesh, you can find the configuration
+<code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code> file in the following location:</p>
+<ul class="simple">
+<li>$HOME/.cloudmesh/cloudmesh.yaml</li>
+</ul>
+</div>
+<div class="section" id="basic-template">
+<h3>Basic Template<a class="headerlink" href="#basic-template" title="Permalink to this headline">¶</a></h3>
+<p>We maintain a default template under:
+<a class="reference external" href="https://github.com/cloudmesh/cloudmesh/blob/master/etc/cloudmesh.yaml">https://github.com/cloudmesh/cloudmesh/blob/master/etc/cloudmesh.yaml</a></p>
+</div>
+</div>
+<div class="section" id="india-openstack-on-futuresystems">
+<h2>India OpenStack on FutureSystems<a class="headerlink" href="#india-openstack-on-futuresystems" title="Permalink to this headline">¶</a></h2>
+<p>If you&#8217;ve successfully installed Cloudmesh, you expect to have India OpenStack configured with your account.</p>
+<p>An example of India account information in <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code> looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>clouds:
+  india:
+    cm_heading: India OpenStack, Juno
+    cm_host: india.futuregrid.org
+    cm_label: india_juno
+    cm_service_url_type: publicURL
+    cm_type: openstack
+    cm_type_version: juno
+    credentials:
+      OS_AUTH_URL: https://i5r.idp.iu.futuregrid.org:5000/v2.0
+      OS_CACERT: /home/albert/.cloudmesh/india-juno-cacert.pem
+      OS_PASSWORD: 1234567890123
+      OS_TENANT_NAME: fg999
+      OS_USERNAME: albert
+      OS_VERSION: juno
+    default:
+      flavor: m1.small
+      image: futuresystems/ubuntu-14.04
+</pre></div>
+</div>
+<p>You may find an identical information about credentials on india login node.
+Try to compare with <code class="docutils literal"><span class="pre">$HOME/.cloudmesh/clouds/india/juno/openrc.sh</span></code> on india.</p>
+</div>
+<div class="section" id="aws-example-of-cloudmesh-yaml">
+<h2>AWS example of <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code><a class="headerlink" href="#aws-example-of-cloudmesh-yaml" title="Permalink to this headline">¶</a></h2>
+<p>to use Amazon cloud, you may have AWS access information in <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code>.</p>
+<div class="highlight-python"><div class="highlight"><pre>clouds:
+  aws:
+    cm_host: aws.amazon.com
+    cm_label: aws
+    cm_type: aws
+    credentials:
+      EC2_ACCESS_KEY: 2UWLRAD5QABCDEFBC
+      EC2_SECRET_KEY: jaHdMoasdv+Xk+k1dV8KI2/o/untirwqEzi/Fnl2
+      EC2_PRIVATE_KEY: /home/albert/.cloudmesh/aws-pk.pem
+    keyname: cloudmesh-aws
+    userid: albert
+    default:
+      flavor: m1.small
+      image: ami-fbb2fc92
+      location: us-east-1
+</pre></div>
+</div>
+</div>
+<div class="section" id="cloud-activation-on-cloudmesh">
+<h2>Cloud Activation on Cloudmesh<a class="headerlink" href="#cloud-activation-on-cloudmesh" title="Permalink to this headline">¶</a></h2>
+<p>If you added a new cloud access information in your <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code>, you
+need to activate your cloud on <code class="docutils literal"><span class="pre">cm</span></code> interactive shell or a web interface.</p>
+<p>In <code class="docutils literal"><span class="pre">cm</span></code> shell, try to add it first. Example command looks like:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm&gt; cloud add /home/albert/.cloudmesh/cloudmesh.yaml
+</pre></div>
+</div>
+<p>And activate your new cloud:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm&gt; cloud on [cloud name]
+</pre></div>
+</div>
+<p>If you added AWS, try like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm&gt; cloud on aws
+</pre></div>
+</div>
+<p>You may have different name (label) for your cloud. Use your name, if it has a
+different name.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Find <code class="docutils literal"><span class="pre">Profile</span></code> page on the Cloudmesh web GUI. It supports cloud
+activation on the web.</p>
+</div>
+</div>
+<div class="section" id="additional-information">
+<h2>Additional Information<a class="headerlink" href="#additional-information" title="Permalink to this headline">¶</a></h2>
+<p>For more information of using a <code class="docutils literal"><span class="pre">yaml</span></code> file in Cloudmesh, please see here:</p>
+<p><a class="reference external" href="yaml.html">YAML</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,1352 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Weekly Plan &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/>
+        <link rel="up" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="index.html"/>
+        <link rel="next" title="Overview and Introduction" href="../lesson/collaboration/overview.html"/>
+        <link rel="prev" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#notice">Notice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#office-hours">Office Hours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#contact">Contact</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#weekly-plan">Weekly Plan</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">Weekly Plan</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#support">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#meeting">Meeting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#collaboration-tools">Collaboration Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#futuresystems-access">FutureSystems Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#linux-basics">Linux Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#basics-of-openstack">Basics of OpenStack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#basics-of-cloudmesh">Basics of Cloudmesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#advanced-cloudmesh">Advanced Cloudmesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#it-operations-automation-and-orchestration">IT Operations - Automation and Orchestration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#virtual-clusters">Virtual Clusters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#other-technologies">Other Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#future">Future</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#to-be-organized-into-the-above">To be Organized into the above</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lessons.html">Lessons</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
+      
+    <li>Weekly Plan</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/class/bdossp_sp15/week_plan.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="weekly-plan">
+<h1>Weekly Plan<a class="headerlink" href="#weekly-plan" title="Permalink to this headline">¶</a></h1>
+<div class="sidebar">
+<p class="first sidebar-title">Page Contents</p>
+<div class="contents local last topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#notice" id="id108">Notice</a><ul>
+<li><a class="reference internal" href="#week-1" id="id109">Week 1</a><ul>
+<li><a class="reference internal" href="#gaining-access-to-futuresystems-and-core-technologies" id="id110">Gaining Access to FutureSystems and Core Technologies</a><ul>
+<li><a class="reference internal" href="#length-of-the-lessons-in-week-1" id="id111">Length of the lessons in Week 1</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#week-2" id="id112">Week 2</a><ul>
+<li><a class="reference internal" href="#introduction-to-openstack-and-public-clouds" id="id113">Introduction to OpenStack and Public Clouds</a><ul>
+<li><a class="reference internal" href="#length-of-the-lessons-in-week-2" id="id114">Length of the lessons in Week 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#week-3" id="id115">Week 3</a><ul>
+<li><a class="reference internal" href="#cloudmesh-cloud-management-software" id="id116">Cloudmesh - Cloud Management Software</a><ul>
+<li><a class="reference internal" href="#length-of-the-lessons-in-week-3" id="id117">Length of the lessons in Week 3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#week-4" id="id118">Week 4</a><ul>
+<li><a class="reference internal" href="#it-operations-automation-and-orchestration" id="id119">IT Operations - Automation and Orchestration</a><ul>
+<li><a class="reference internal" href="#length-of-the-lessons-in-week-4" id="id120">Length of the lessons in Week 4</a><ul>
+<li><a class="reference internal" href="#additional-optional-lessons" id="id121">Additional (optional) Lessons</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#week-5" id="id122">Week 5</a><ul>
+<li><a class="reference internal" href="#virtual-clusters-i" id="id123">Virtual Clusters I</a><ul>
+<li><a class="reference internal" href="#length-of-the-lessons-in-week-5" id="id124">Length of the lessons in Week 5</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#week-6" id="id125">Week 6</a><ul>
+<li><a class="reference internal" href="#virtual-cluster-ii-composite-cluster-with-sub-clusters" id="id126">Virtual Cluster II: Composite Cluster with Sub-Clusters</a><ul>
+<li><a class="reference internal" href="#length-of-the-lessons-in-week-6" id="id127">Length of the lessons in Week 6</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#week-7" id="id128">Week 7</a><ul>
+<li><a class="reference internal" href="#other-technologies-under-preparation" id="id129">Other Technologies (under preparation)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>Overview of the schedule</p>
+<table border="1" class="docutils" id="id94">
+<caption><span class="caption-text">Schedule Section 2 (HPC-ABDS Technologies)</span><a class="headerlink" href="#id94" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="20%" />
+<col width="60%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Week</th>
+<th class="head">Topic</th>
+<th class="head">Due</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Week 1</td>
+<td><strong>Gaining Access to FutureSystems and Core Technologies</strong></td>
+<td>03/20</td>
+</tr>
+<tr class="row-odd"><td>Week 2</td>
+<td><strong>The Basics of OpenStack</strong></td>
+<td>03/27</td>
+</tr>
+<tr class="row-even"><td>Week 3</td>
+<td><strong>Cloudmesh - Cloud Management Software</strong></td>
+<td>04/03</td>
+</tr>
+<tr class="row-odd"><td>Week 4</td>
+<td><strong>IT Operations - Automation and Orchestration</strong></td>
+<td>04/20</td>
+</tr>
+<tr class="row-even"><td>Week 5</td>
+<td><strong>Virtual Clusters I (First Appearance of Hadoop)</strong></td>
+<td>04/29</td>
+</tr>
+<tr class="row-odd"><td>Week 6</td>
+<td><strong>Virtual Clusters II (Composite Cluster with Sub-Clusters)</strong></td>
+<td>05/14</td>
+</tr>
+<tr class="row-even"><td>Week 7</td>
+<td><strong>Other Technologies</strong></td>
+<td>05/13</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="notice">
+<h2><a class="toc-backref" href="#id108">Notice</a><a class="headerlink" href="#notice" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../notice.html#ref-class-notice"><span>System Notice</span></a></p>
+<div class="section" id="week-1">
+<h3><a class="toc-backref" href="#id109">Week 1</a><a class="headerlink" href="#week-1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="gaining-access-to-futuresystems-and-core-technologies">
+<h4><a class="toc-backref" href="#id110">Gaining Access to FutureSystems and Core Technologies</a><a class="headerlink" href="#gaining-access-to-futuresystems-and-core-technologies" title="Permalink to this headline">¶</a></h4>
+<p>In this week, you will learn how to gain access to the FutureSystems resources.
+Some of the lessons have been prepared for the beginners to help understand the
+basics of Linux operating systems and the collaboration tools i.e. GitHub,
+Google hangout and remote desktop. Please watch video lessons and read online
+materials on this page. It also covers Unix shell scripting, SSH and other
+utilities with various exercises.</p>
+<table border="1" class="docutils" id="id95">
+<caption><span class="caption-text">Collaboration Tools</span><a class="headerlink" href="#id95" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="38%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Topic</th>
+<th class="head">Video</th>
+<th class="head">Text</th>
+<th class="head">Lab sessions</th>
+<th class="head">Study Material By</th>
+<th class="head">Lab Session Homework</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Overview and Introduction</strong></td>
+<td><a class="reference external" href="https://www.youtube.com/watch?v=ZWzYGwnbZK4&amp;list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&amp;index=1">2 mins</a></td>
+<td><a class="reference external" href="../lesson/collaboration/overview.html">10 mins</a></td>
+<td>&nbsp;</td>
+<td>03/23</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt><strong>Google</strong></dt>
+<dd><ul class="first last simple">
+<li>Google+, Hangout, Remote Desktop</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><a class="reference external" href="https://www.youtube.com/watch?v=kOrWm830vxQ&amp;list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&amp;index=2">4 mins</a></td>
+<td><a class="reference external" href="../lesson/google.html">15 mins</a></td>
+<td>&nbsp;</td>
+<td>03/23</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td><strong>Shell Access</strong></td>
+<td><a class="reference external" href="https://www.youtube.com/watch?v=aJDXfvOrzRE&amp;index=3&amp;list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx">3 mins</a></td>
+<td><a class="reference external" href="../lesson/shell-access.html">10 mins</a></td>
+<td>&nbsp;</td>
+<td>03/23</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td><strong>GitHub</strong></td>
+<td><a class="reference external" href="https://www.youtube.com/watch?v=KrAjal1a30w&amp;list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&amp;index=4">18 mins</a></td>
+<td><a class="reference external" href="../lesson/git.html">30 mins</a></td>
+<td><a class="reference external" href="../lesson/git.html#exercise">10 mins</a></td>
+<td>03/23</td>
+<td>04/03</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="id96">
+<caption><span class="caption-text">System Access to FutureSystems</span><a class="headerlink" href="#id96" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="38%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Topic</th>
+<th class="head">Video</th>
+<th class="head">Text</th>
+<th class="head">Lab sessions</th>
+<th class="head">Study Material By</th>
+<th class="head">Lab Session Homework</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>ssh-keygen</strong></td>
+<td><a class="reference external" href="https://www.youtube.com/watch?v=pQb2VV1zNIc&amp;feature=em-upload_owner">4 mins</a></td>
+<td><a class="reference external" href="../../accounts/ssh.html#s-using-ssh">10 mins</a></td>
+<td>see (a) below</td>
+<td>03/23</td>
+<td>04/03 see (a) below</td>
+</tr>
+<tr class="row-odd"><td><strong>Account Creation</strong></td>
+<td><a class="reference external" href="https://www.youtube.com/watch?v=X6zeVEALzTk">12 mins</a></td>
+<td><a class="reference external" href="../../accounts/accounts.html">10 mins</a></td>
+<td>see (a) below</td>
+<td>03/23</td>
+<td>04/03 see (a) below</td>
+</tr>
+<tr class="row-even"><td><strong>Remote Login</strong></td>
+<td><a class="reference external" href="https://mix.office.com/watch/eddgjmovoty0">6 mins</a></td>
+<td><a class="reference external" href="../lesson/system/futuresystemsuse.html#remote-login">10 mins</a></td>
+<td>see (a) below</td>
+<td>03/23</td>
+<td>04/03 see (a) below</td>
+</tr>
+<tr class="row-odd"><td><strong>Putty for Windows</strong></td>
+<td><a class="reference external" href="https://mix.office.com/watch/9z30n7rs67x0">11 mins</a></td>
+<td><a class="reference external" href="../lesson/system/futuresystemsuse.html#putty-under-preparation">10 mins</a></td>
+<td>see (a) below</td>
+<td>03/23</td>
+<td>04/03 see (a) below</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>(a) Create an account on the FutureSystems Portal, upload your ssh
+key and log into india. Dependent on your OS you may or may not need
+to use putty. Please identify a location from where you can login
+via ssh. Maybe such a location exists outside of your office.</li>
+</ul>
+<table border="1" class="docutils" id="id97">
+<caption><span class="caption-text">Linux Basics</span><a class="headerlink" href="#id97" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="38%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Topic</th>
+<th class="head">Video</th>
+<th class="head">Text</th>
+<th class="head">Lab sessions</th>
+<th class="head">Study Material By</th>
+<th class="head">Lab Session Homework</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Overview and Introduction</strong></td>
+<td><a class="reference external" href="https://www.youtube.com/watch?v=2uVZrGPCNcY&amp;list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&amp;index=1">4 mins</a></td>
+<td><a class="reference external" href="../lesson/linux/overview.html">5 mins</a></td>
+<td>&nbsp;</td>
+<td>03/23</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><strong>Shell Scripting</strong></td>
+<td><a class="reference external" href="https://www.youtube.com/watch?v=TBOG3wmU8ZA&amp;list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&amp;index=2">15 mins</a></td>
+<td><a class="reference external" href="../lesson/linux/shell.html">30 mins</a></td>
+<td><a class="reference external" href="../lesson/linux/shell.html#exercises">5 mins</a>,
+<a class="reference external" href="../lesson/linux/shell.html#id7">5 mins</a>,
+<a class="reference external" href="../lesson/linux/shell.html#id11">10 mins</a>,
+<a class="reference external" href="../lesson/linux/shell.html#id14">10 mins</a></td>
+<td>03/23</td>
+<td>04/03 all 4 Labs</td>
+</tr>
+<tr class="row-even"><td><dl class="first last docutils">
+<dt><strong>Editors</strong></dt>
+<dd><ul class="first last simple">
+<li>Emacs, vi, and nano</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><a class="reference external" href="https://www.youtube.com/watch?v=yHW_qzOzPa0&amp;list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&amp;index=3">5 mins</a></td>
+<td><a class="reference external" href="../lesson/linux/editors.html">30 mins</a></td>
+<td>see (b) below</td>
+<td>03/23</td>
+<td>04/03 see (b) below</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt><strong>Python</strong></dt>
+<dd><ul class="first last simple">
+<li>virtualenv, Pypi</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><a class="reference external" href="https://www.youtube.com/watch?v=e_RuGr1dL0c&amp;index=7&amp;list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp">27 mins</a></td>
+<td><a class="reference external" href="../lesson/linux/python.html">1 hour</a></td>
+<td><a class="reference external" href="../lesson/linux/python.html#exercises">30 mins</a></td>
+<td>03/23</td>
+<td>04/03</td>
+</tr>
+<tr class="row-even"><td><dl class="first last docutils">
+<dt><strong>Package Managers</strong></dt>
+<dd><ul class="first last simple">
+<li>yum, apt-get, and brew</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><a class="reference external" href="https://www.youtube.com/watch?v=Onn9SKdUDUc&amp;list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&amp;index=4">3 mins</a></td>
+<td><a class="reference external" href="../lesson/linux/packagemanagement.html">10 mins</a></td>
+<td>see (c) below</td>
+<td>03/23</td>
+<td>04/03 see (c) below</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt><strong>Advanced SSH</strong></dt>
+<dd><ul class="first last simple">
+<li>SSH Config and Tunnel</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><a class="reference external" href="https://www.youtube.com/watch?v=eYanElmtqMo&amp;index=6&amp;list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp">3 mins</a></td>
+<td><a class="reference external" href="../lesson/linux/advancedssh.html">20 mins</a></td>
+<td><a class="reference external" href="../lesson/linux/advancedssh.html#exercise-i">5 mins</a>,
+<a class="reference external" href="../lesson/linux/advancedssh.html#exercise-ii">5 mins</a></td>
+<td>03/23</td>
+<td>04/03 both Labs</td>
+</tr>
+<tr class="row-even"><td><strong>Modules</strong></td>
+<td><a class="reference external" href="https://www.youtube.com/watch?v=0mBERd57pZ8&amp;list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&amp;index=6">3 mins</a></td>
+<td><a class="reference external" href="../lesson/linux/modules.html">10 mins</a></td>
+<td><a class="reference external" href="../lesson/linux/modules.html#exercises">5 mins</a></td>
+<td>03/23</td>
+<td>04/03</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>(b) Find an editor that you will be useing to do your programming
+with. For advanced Python programming we recommend PyCharm. However
+you can probably only use this on your local computer. The way you
+could use it is to edit python locally, check the code into github
+and check it out into your vm or your login on
+india.futuresystems.org. This is how many of us work.</li>
+<li>(c) locate a package that you install on your VM that you started
+with Openstack. Provide a verification that the package was
+installed (log). Do not forget to delete the VM after you are
+done. Which package manager is used on ubuntu?</li>
+</ul>
+<div class="section" id="length-of-the-lessons-in-week-1">
+<h5><a class="toc-backref" href="#id111">Length of the lessons in Week 1</a><a class="headerlink" href="#length-of-the-lessons-in-week-1" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Total of video lessons: 2 hours</li>
+<li>Total of study materials: 4 hours and 30 minutes</li>
+<li>Total of lab sessions: 1 hour and 30 minutes</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="week-2">
+<h3><a class="toc-backref" href="#id112">Week 2</a><a class="headerlink" href="#week-2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="introduction-to-openstack-and-public-clouds">
+<h4><a class="toc-backref" href="#id113">Introduction to OpenStack and Public Clouds</a><a class="headerlink" href="#introduction-to-openstack-and-public-clouds" title="Permalink to this headline">¶</a></h4>
+<p>OpenStack is a open-source cloud computing software platform and a
+community-driven project. You can use OpenStack to build a cloud infrastructure
+in your public or private network, or you can simply use cloud software for
+your services. The lessons in this week are specifically prepared to try
+OpenStack Software and give you the confidence and understanding of using IaaS
+cloud platforms. There are tutorial lessons to explore OpenStack web dashboard
+(Horizon) and compute engine (Nova) including Public Clouds e.g. Amazon EC2 or
+Microsoft Azure.</p>
+<table border="1" class="docutils" id="id98">
+<caption><span class="caption-text">Basics of OpenStack</span><a class="headerlink" href="#id98" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="38%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Topic</th>
+<th class="head">Video</th>
+<th class="head">Text</th>
+<th class="head">Lab sessions</th>
+<th class="head">Study Material By</th>
+<th class="head">Lab Session Homework</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Introduction and Overview</strong></td>
+<td><a class="reference external" href="https://mix.office.com/watch/u7uovy9i06jo">12 mins</a></td>
+<td><a class="reference external" href="../lesson/iaas/overview_openstack.html">10 mins</a></td>
+<td>&nbsp;</td>
+<td>03/30</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><strong>OpenStack for Beginners</strong></td>
+<td><a class="reference external" href="https://mix.office.com/watch/1r7zifdtjoa6j">27 mins</a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>03/30</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>&#8211; Compute Engine (Nova)</td>
+<td>&nbsp;</td>
+<td><a class="reference external" href="../lesson/iaas/openstack.html">1 hour</a></td>
+<td><a class="reference external" href="../lesson/iaas/openstack.html#exercises">30 mins</a></td>
+<td>03/30</td>
+<td>04/10</td>
+</tr>
+<tr class="row-odd"><td>&#8211; Web Dashboard (Horizon)</td>
+<td>&nbsp;</td>
+<td><a class="reference external" href="../lesson/iaas/openstack_horizon.html">15 mins</a></td>
+<td><a class="reference external" href="../lesson/iaas/openstack_horizon.html#exercises">15 mins</a></td>
+<td>03/30</td>
+<td>04/10</td>
+</tr>
+<tr class="row-even"><td><strong>Storage (Swift)</strong></td>
+<td><a class="reference external" href="https://mix.office.com/watch/w3rko4itecgc">3 mins</a></td>
+<td><a class="reference external" href="../lesson/iaas/openstack.html#swift-storage">10 mins</a></td>
+<td>&nbsp;</td>
+<td>03/30</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><strong>Network (Neutron)</strong></td>
+<td><a class="reference external" href="https://mix.office.com/watch/1dt5hp0e2grov">3 mins</a></td>
+<td><a class="reference external" href="../lesson/iaas/openstack.html#neutron-network">10 mins</a></td>
+<td>&nbsp;</td>
+<td>03/30</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><strong>Introduction to OpenStack Juno Release</strong></td>
+<td><a class="reference external" href="https://mix.office.com/watch/cz6xehrs9xor">2 mins</a></td>
+<td><a class="reference external" href="../lesson/iaas/openstack_juno.html">10 mins</a></td>
+<td>&nbsp;</td>
+<td>03/30</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="id99">
+<caption><span class="caption-text">Other IaaS Platforms - Public Commercial Clouds</span><a class="headerlink" href="#id99" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="38%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Topic</th>
+<th class="head">Video</th>
+<th class="head">Text</th>
+<th class="head">Lab sessions</th>
+<th class="head">Study Material By</th>
+<th class="head">Lab Session Homework</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Amazon Web Services (AWS)</strong></td>
+<td><a class="reference external" href="https://mix.office.com/watch/1351hz8j187i7">16 mins</a></td>
+<td><a class="reference external" href="../lesson/iaas/aws_tutorial.html">30 mins</a></td>
+<td><a class="reference external" href="../lesson/iaas/aws_tutorial.html#exercises">45 mins</a>
+(optional, not required)</td>
+<td>03/30</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><strong>Microsoft Azure</strong></td>
+<td><a class="reference external" href="https://mix.office.com/watch/kzh0nwvdw6tm">29 mins</a></td>
+<td><a class="reference external" href="../lesson/iaas/azure_tutorial.html">50 mins</a></td>
+<td><a class="reference external" href="../lesson/iaas/azure_tutorial.html#exercise1">10 mins</a>
+(optional, not required)</td>
+<td>03/30</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="id100">
+<caption><span class="caption-text">Additional (optional) Further Study Materials</span><a class="headerlink" href="#id100" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="38%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Topic</th>
+<th class="head">Video</th>
+<th class="head">Text</th>
+<th class="head">Lab sessions</th>
+<th class="head">Study Material By</th>
+<th class="head">Lab Session Homework</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><dl class="first last docutils">
+<dt><strong>OpenStack for Beginners</strong></dt>
+<dd><ul class="first last simple">
+<li>Compute Engine (Nova)</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td>&nbsp;</td>
+<td><a class="reference external" href="../../iaas/index.html">2 hours</a></td>
+<td><a class="reference external" href="../../iaas/openstack.html#exercises">50 mins</a></td>
+<td>Not due</td>
+<td>Not due</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt><strong>Other IaaS Platforms</strong></dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Public Commercial Clouds</dt>
+<dd><ul class="first last simple">
+<li>Microsoft Azure</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference external" href="../lesson/iaas/azure_tutorial.html#exercise2">50 mins</a></td>
+<td>Not due</td>
+<td>Not due</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="length-of-the-lessons-in-week-2">
+<h5><a class="toc-backref" href="#id114">Length of the lessons in Week 2</a><a class="headerlink" href="#length-of-the-lessons-in-week-2" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Total of video lessons: 1 hour and 30 minutes</li>
+<li>Total of study materials: 3 hours and 15 minutes</li>
+<li>Total of lab sessions: 1 hours 40 minutes</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="week-3">
+<h3><a class="toc-backref" href="#id115">Week 3</a><a class="headerlink" href="#week-3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="cloudmesh-cloud-management-software">
+<h4><a class="toc-backref" href="#id116">Cloudmesh - Cloud Management Software</a><a class="headerlink" href="#cloudmesh-cloud-management-software" title="Permalink to this headline">¶</a></h4>
+<p>Cloudmesh is a cloud resource management software written in Python. It
+automates launching multiple VM instances across different cloud platforms
+including Amazon EC2, Microsoft Azure Virtual Machine, HP Cloud, OpenStack, and
+Eucalyptus. The web interface of Cloudmesh helps users and administrators
+manage entire cloud resources with the most cutting-edge technologies such as
+Apache LibCloud, Celery, IPython, Flask, Fabric, Docopt, YAML, MongoDB, and
+Sphinx. Command Line Tools and Rest APIs are also supported.</p>
+<table border="1" class="docutils" id="id101">
+<caption><span class="caption-text">Basics of Cloudmesh</span><a class="headerlink" href="#id101" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="38%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Topic</th>
+<th class="head">Video</th>
+<th class="head">Text</th>
+<th class="head">Lab sessions</th>
+<th class="head">Study Material By</th>
+<th class="head">Lab Session Homework</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Introduction and Overview</strong></td>
+<td><a class="reference external" href="http://www.youtube.com/watch?v=njHHjRMb7V8">29 mins</a></td>
+<td><a class="reference external" href="../../cloudmesh/overview.html">30 mins</a></td>
+<td>&nbsp;</td>
+<td>04/06</td>
+<td>Not due</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="id102">
+<caption><span class="caption-text">Cloudmesh for Beginners</span><a class="headerlink" href="#id102" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="38%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Topic</th>
+<th class="head">Video</th>
+<th class="head">Text</th>
+<th class="head">Lab sessions</th>
+<th class="head">Study Material By</th>
+<th class="head">Lab Session Homework</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Installation on a local machine</strong> (optional)</td>
+<td><a class="reference external" href="http://www.youtube.com/watch?v=lGiJifD0VgU">18 mins</a></td>
+<td><a class="reference external" href="../../cloudmesh/setup/quickstart.html">30 mins</a></td>
+<td>(not required, only read the text and watch the video)</td>
+<td>04/06</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td><strong>Installation on a virtual machine OpenStack</strong></td>
+<td><a class="reference external" href="http://www.youtube.com/watch?v=rcecpgm-47g">33 mins</a></td>
+<td><a class="reference external" href="../../cloudmesh/setup/setup_openstack.html">30 mins</a></td>
+<td>follow the text and video</td>
+<td>04/06</td>
+<td>04/17</td>
+</tr>
+<tr class="row-even"><td><strong>Command Line Tools (CLI)</strong></td>
+<td><a class="reference external" href="http://www.youtube.com/watch?v=hdq-t-ggkXA">12 mins</a></td>
+<td><a class="reference external" href="../../cloudmesh/shell/index.html">30 mins</a></td>
+<td>use the previously created VM and follow text and video
+use <cite>cm help</cite> and review man pages</td>
+<td>04/06</td>
+<td>04/17</td>
+</tr>
+<tr class="row-odd"><td><strong>Web Interface (GUI)</strong></td>
+<td><a class="reference external" href="http://www.youtube.com/watch?v=l_P4G85rysA">16 mins</a></td>
+<td><a class="reference external" href="../../cloudmesh/gui/index.html">30 mins</a></td>
+<td><a class="reference external" href="../../cloudmesh/api/exercises.html#exercise-4">Excersise 4: 20 mins</a> (optional)</td>
+<td>04/06</td>
+<td>04/17</td>
+</tr>
+<tr class="row-even"><td><strong>Python APIs</strong></td>
+<td><a class="reference external" href="http://www.youtube.com/watch?v=xOL_-Sfh9MA">15 mins</a></td>
+<td><a class="reference external" href="../../cloudmesh/api/index.html">30 mins</a></td>
+<td><a class="reference external" href="../../cloudmesh/api/exercises.html#exercise-1">Excersise 1 (10 mins)</a>, <a class="reference external" href="../../cloudmesh/api/exercises.html#exercise-2">Excersise 2 (10 mins)</a></td>
+<td>04/06</td>
+<td>04/17</td>
+</tr>
+<tr class="row-odd"><td><strong>IPython on Cloudmesh</strong> (optional)</td>
+<td><a class="reference external" href="http://www.youtube.com/watch?v=1dn_av-zC00">15 mins</a></td>
+<td><a class="reference external" href="../../cloudmesh/ipython.html">20 mins</a></td>
+<td>(not required, only read text and watch video)</td>
+<td>04/06</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="id103">
+<caption><span class="caption-text">Advanced Cloudmesh</span><a class="headerlink" href="#id103" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="38%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Topic</th>
+<th class="head">Video</th>
+<th class="head">Text</th>
+<th class="head">Lab sessions</th>
+<th class="head">Study Material By</th>
+<th class="head">Lab Session Homework</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Adding new Commands via a Python Package</strong></td>
+<td><a class="reference external" href="https://www.youtube.com/watch?v=UFLyCVpDhgI&amp;feature=em-upload_owner">5 mins</a></td>
+<td><a class="reference external" href="http://cloudmesh.github.io/cmd3/manual.html#generating-independent-packages">5 mins</a></td>
+<td><a class="reference external" href="../../cloudmesh/cm/cmd3.html#exercise-1">1 hour</a></td>
+<td>04/06</td>
+<td>04/17</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt><strong>Virtual Clusters with Cloudmesh</strong></dt>
+<dd><ul class="first last simple">
+<li>SSH Connections between nodes, Host Configuration</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><a class="reference external" href="https://mix.office.com/watch/lk39mr08k0ox">5 mins</a></td>
+<td><a class="reference external" href="../../cloudmesh/cm/_cm-cluster.html">20 mins</a></td>
+<td>see text and video</td>
+<td>04/06</td>
+<td>04/17</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="length-of-the-lessons-in-week-3">
+<h5><a class="toc-backref" href="#id117">Length of the lessons in Week 3</a><a class="headerlink" href="#length-of-the-lessons-in-week-3" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Total of video lessons: 2 hours and 33 minutes</li>
+<li>Total of study materials: 4 hours and 15 minutes</li>
+<li>Total of lab sessions: 1 hour and 30 minutes</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="week-4">
+<h3><a class="toc-backref" href="#id118">Week 4</a><a class="headerlink" href="#week-4" title="Permalink to this headline">¶</a></h3>
+<p>In this week, you will learn open-source configuration management (CM)
+software as part of IT automation and orchestration. We focus on Ansible and
+OpenStack Heat to review the system configuration and management but Salt,
+Puppet, Chef, and Juju are introduced to explore other tools as well. With
+different features of these software, you will see which tool is ideal for your
+system environment and understand basic CM techniques. We have a few lab
+sessions to provide hands-on experience about deploying and configuring
+applications on IT infrastructure.</p>
+<div class="section" id="it-operations-automation-and-orchestration">
+<h4><a class="toc-backref" href="#id119">IT Operations - Automation and Orchestration</a><a class="headerlink" href="#it-operations-automation-and-orchestration" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils" id="id104">
+<caption><span class="caption-text">DevOps Tools</span><a class="headerlink" href="#id104" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="38%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Topic</th>
+<th class="head">Video</th>
+<th class="head">Text</th>
+<th class="head">Lab sessions</th>
+<th class="head">Study Material By</th>
+<th class="head">Lab Session Homework</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Ansible</td>
+<td><a class="reference external" href="https://www.youtube.com/watch?v=JTv1QWjTWS8&amp;index=1&amp;list=PLLO4AVszo1SOkNPAv4E824AFScdduO9NF">17 mins</a></td>
+<td><a class="reference internal" href="../lesson/devops/ansible.html#ref-class-lesson-devops-ansible"><span>1.5 hours</span></a></td>
+<td><a class="reference internal" href="../lesson/devops/ansible.html#ref-class-lesson-devops-ansible-lab"><span>30 mins</span></a></td>
+<td>04/21</td>
+<td>04/24</td>
+</tr>
+<tr class="row-odd"><td>SaltStack</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="../lesson/devops/saltstack.html#ref-class-lesson-devops-saltstack"><span>1.5 hours</span></a></td>
+<td><a class="reference internal" href="../lesson/devops/saltstack.html#ref-class-lesson-devops-saltstack-exercises"><span>10 mins</span></a> (optional)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Puppet</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="../lesson/devops/puppet.html#ref-class-lesson-devops-puppet"><span>1 hour</span></a></td>
+<td><a class="reference internal" href="../lesson/devops/puppet.html#ref-class-lesson-devops-puppet-exercises"><span>20 mins</span></a> (optional)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Chef</td>
+<td><a class="reference external" href="https://mix.office.com/watch/1g90jbv8llv0j">35 mins</a></td>
+<td><a class="reference internal" href="../lesson/devops/chef.html#ref-class-lesson-devops-chef"><span>1 hour</span></a></td>
+<td><a class="reference internal" href="../lesson/devops/chef.html#ref-class-lesson-devops-chef-exercises"><span>30 mins</span></a> (optional)</td>
+<td>04/21</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>OpenStack Heat</td>
+<td><a class="reference external" href="https://mix.office.com/watch/1ry7jrkuvkfwh">20 mins</a></td>
+<td><a class="reference internal" href="../lesson/devops/openstack_heat.html#ref-class-lesson-devops-openstack-heat"><span>1 hour</span></a></td>
+<td><a class="reference internal" href="../lesson/devops/openstack_heat.html#ref-class-lesson-devops-openstack-heat-exercises"><span>1 hour</span></a></td>
+<td>04/21</td>
+<td>04/24</td>
+</tr>
+<tr class="row-odd"><td>Ubuntu Juju</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="../lesson/devops/juju.html#ref-class-lesson-devops-juju"><span>30 mins</span></a></td>
+<td><a class="reference internal" href="../lesson/devops/juju.html#ref-class-lesson-devops-juju-exercises"><span>10 mins</span></a> (optional)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="length-of-the-lessons-in-week-4">
+<h5><a class="toc-backref" href="#id120">Length of the lessons in Week 4</a><a class="headerlink" href="#length-of-the-lessons-in-week-4" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Total of video lessons: 1 hour and 12 minutes</li>
+<li>Total of study materials: 2.5 hours</li>
+<li>Total of lab sessions: 1 hour and 30 minutes</li>
+</ul>
+<div class="section" id="additional-optional-lessons">
+<h6><a class="toc-backref" href="#id121">Additional (optional) Lessons</a><a class="headerlink" href="#additional-optional-lessons" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li>Total of optional study materials: 4 hours</li>
+<li>Total of optional lab sessions: 1 hour and 10 minutes</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="week-5">
+<h3><a class="toc-backref" href="#id122">Week 5</a><a class="headerlink" href="#week-5" title="Permalink to this headline">¶</a></h3>
+<p>This week, you will learn basics of virtual clusters. Typically, analyzing
+large data sets containing unstructured data types requires distributed
+computing resources for data processing with high performance, scalability, and
+availability. With virtualization technology, cluster computing can be more
+flexible, effective and cost-efficient in terms of resource utilization. There
+are three basic tutorials about deploying a virtual cluster, Hadoop cluster and
+MongoDB Sharded cluster which give you a chance to gain some experience of how
+to setup virtual clusters manually and configure software with Cloudmesh. In
+Week 6, advanced topics of virtual clusters will be discussed.</p>
+<div class="section" id="virtual-clusters-i">
+<h4><a class="toc-backref" href="#id123">Virtual Clusters I</a><a class="headerlink" href="#virtual-clusters-i" title="Permalink to this headline">¶</a></h4>
+<p><strong>First Appearance of Hadoop</strong></p>
+<table border="1" class="docutils" id="id105">
+<caption><span class="caption-text">Virtual Clusters I</span><a class="headerlink" href="#id105" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="38%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Topic</th>
+<th class="head">Video</th>
+<th class="head">Text</th>
+<th class="head">Lab sessions</th>
+<th class="head">Study Material By</th>
+<th class="head">Lab Session Homework</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Introduction and Overview</strong></td>
+<td><a class="reference external" href="https://mix.office.com/watch/eap9zdqfifgp">4 mins</a></td>
+<td>&nbsp;</td>
+<td>see video</td>
+<td>04/29</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><strong>Dynamic Deployment of Arbitrary X Software on Virtual Cluster</strong></td>
+<td><a class="reference external" href="https://mix.office.com/watch/zukoz9wswe7z">4 mins</a></td>
+<td>&nbsp;</td>
+<td>see video</td>
+<td>04/29</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><strong>Deploying Virtual Cluster with Cloudmesh</strong></td>
+<td><a class="reference external" href="https://www.youtube.com/watch?v=oSlq0287m1Q">22 mins</a></td>
+<td><a class="reference internal" href="../vc_sp15/virtual_cluster.html#ref-class-lesson-deploying-virtual-cluster-with-cloudmesh"><span>30 mins</span></a></td>
+<td><a class="reference internal" href="../vc_sp15/virtual_cluster.html#ref-class-lesson-deploying-virtual-cluster-with-cloudmesh-exercise"><span>10 mins</span></a> (optional)</td>
+<td>04/29</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><strong>Deploying Hadoop Cluster</strong></td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="../vc_sp15/hadoop_cluster_manual.html#ref-class-lesson-deploying-hadoop-cluster-manual"><span>45 mins</span></a></td>
+<td><a class="reference internal" href="../vc_sp15/hadoop_cluster_manual.html#ref-class-lesson-deploying-hadoop-cluster-manual-exercise"><span>20 mins</span></a> (optional)</td>
+<td>04/29</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><strong>Deploying Hadoop Cluster with Cloudmesh</strong></td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="../vc_sp15/hadoop_cluster_cm.html#ref-class-lesson-deploying-hadoop-cluster-with-cloudmesh"><span>30 mins</span></a></td>
+<td>see text</td>
+<td>04/29</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><strong>Hadoop Example: Word Count</strong></td>
+<td><a class="reference external" href="https://mix.office.com/watch/1on4q8t1vcjfh">33 mins</a></td>
+<td><a class="reference internal" href="../lesson/cluster/wordcount.html#ref-class-lesson-hadoop-word-count"><span>1 hour</span></a></td>
+<td>see video and text</td>
+<td>04/29</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><strong>Deploying MongoDB Sharded Cluster</strong></td>
+<td><a class="reference external" href="https://mix.office.com/watch/1rx90yz48fqpn">4 mins</a></td>
+<td><a class="reference internal" href="../vc_sp15/mongodb_cluster.html#ref-class-lesson-mongodb-sharded-cluster"><span>1 hour</span></a></td>
+<td>see video and text</td>
+<td>04/29</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt><strong>``cluster`` Cloudmesh Command for Virtual Clusters</strong></dt>
+<dd><ul class="first last simple">
+<li>SSH Connections between nodes, Host Configuration</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><a class="reference external" href="https://mix.office.com/watch/lk39mr08k0ox">5 mins</a></td>
+<td><a class="reference external" href="../../cloudmesh/cm/_cm-cluster.html">20 mins</a> (repeated practice)</td>
+<td><a class="reference external" href="../../cloudmesh/cm/_cm-cluster.html#exercise">20 mins</a></td>
+<td>04/29</td>
+<td>05/01</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="length-of-the-lessons-in-week-5">
+<h5><a class="toc-backref" href="#id124">Length of the lessons in Week 5</a><a class="headerlink" href="#length-of-the-lessons-in-week-5" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Total of video lessons: 1 hour and 12 minutes</li>
+<li>Total of study materials: 4 hours and 05 minutes</li>
+<li>Total of lab sessions:  50 minutes</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="week-6">
+<h3><a class="toc-backref" href="#id125">Week 6</a><a class="headerlink" href="#week-6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="virtual-cluster-ii-composite-cluster-with-sub-clusters">
+<h4><a class="toc-backref" href="#id126">Virtual Cluster II: Composite Cluster with Sub-Clusters</a><a class="headerlink" href="#virtual-cluster-ii-composite-cluster-with-sub-clusters" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils" id="id106">
+<caption><span class="caption-text">Virtual Cluster II</span><a class="headerlink" href="#id106" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="38%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Topic</th>
+<th class="head">Video</th>
+<th class="head">Text</th>
+<th class="head">Lab sessions</th>
+<th class="head">Study Material By</th>
+<th class="head">Lab Session Homework</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><dl class="first last docutils">
+<dt><strong>Composite Cluster with Sub-Clusters</strong> (Not taught in this class)</dt>
+<dd><ul class="first last simple">
+<li>Introduction and Overview</li>
+<li>Creating a Cross Resource Virtual Cluster</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td>Not taught in this class</td>
+<td>Not taught in this class</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><strong>Apache Hadoop YARN</strong></td>
+<td><a class="reference external" href="https://mix.office.com/watch/1eopy3tfq6kim">34 mins</a></td>
+<td><a class="reference internal" href="../lesson/cluster/yarn.html#ref-class-lesson-hadoop-yarn"><span>1 hour</span></a></td>
+<td>&nbsp;</td>
+<td>05/14</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><strong>Apache ZooKeeper</strong></td>
+<td><a class="reference external" href="https://mix.office.com/watch/1ptxm2uj2s7y3">40 mins</a></td>
+<td><a class="reference internal" href="../lesson/cluster/zookeeper.html#ref-class-lesson-zookeeper"><span>1 hour</span></a></td>
+<td>&nbsp;</td>
+<td>05/14</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt><strong>Open MPI Virtual Cluster</strong></dt>
+<dd><ul class="first last simple">
+<li>Introduction and Overview</li>
+<li>HPC Stack - MPI</li>
+<li>Cloudmesh HPC (Not taught in this class)</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="../lesson/openmpi.html#ref-class-lesson-openmpi-with-cloudmesh"><span>1 hour</span></a></td>
+<td>&nbsp;</td>
+<td>05/14</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><strong>HPC Queuing System</strong> (optional)</td>
+<td><a class="reference external" href="https://www.youtube.com/watch?v=6oUsMyDt7gU">8 mins</a> (optional)</td>
+<td><a class="reference internal" href="../../hpc/hpc.html#s-hpc"><span>1 hour</span></a> (optional)</td>
+<td>&nbsp;</td>
+<td>05/14</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt><strong>MongoDB Virtual Cluster</strong> (repeated lesson)</dt>
+<dd><ul class="first last simple">
+<li>Introduction and Overview</li>
+<li>Sharded MongoDB</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><a class="reference external" href="https://mix.office.com/watch/1rx90yz48fqpn">4 mins</a></td>
+<td><a class="reference internal" href="../vc_sp15/mongodb_cluster.html#ref-class-lesson-mongodb-sharded-cluster"><span>1 hour</span></a></td>
+<td>&nbsp;</td>
+<td>05/14</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="length-of-the-lessons-in-week-6">
+<h5><a class="toc-backref" href="#id127">Length of the lessons in Week 6</a><a class="headerlink" href="#length-of-the-lessons-in-week-6" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Total of video lessons: 1 hour and 26 minutes</li>
+<li>Total of study materials: 5 hours</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="week-7">
+<h3><a class="toc-backref" href="#id128">Week 7</a><a class="headerlink" href="#week-7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="other-technologies-under-preparation">
+<h4><a class="toc-backref" href="#id129">Other Technologies (under preparation)</a><a class="headerlink" href="#other-technologies-under-preparation" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils" id="id107">
+<caption><span class="caption-text">Other Technologies</span><a class="headerlink" href="#id107" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="38%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Topic</th>
+<th class="head">Video</th>
+<th class="head">Text</th>
+<th class="head">Lab sessions</th>
+<th class="head">Study Material By</th>
+<th class="head">Lab Session Homework</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Docker Basics</strong></td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="../lesson/docker.html#ref-class-lesson-docker"><span>1 hour</span></a></td>
+<td>&nbsp;</td>
+<td>05/21</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><strong>VM Software - Vagrant</strong></td>
+<td>Not yet available</td>
+<td><a class="reference internal" href="../lesson/virtualization/tools.html#ref-virtualization-tools"><span>30 min</span></a></td>
+<td>&nbsp;</td>
+<td>05/13</td>
+<td>05/15</td>
+</tr>
+<tr class="row-even"><td><strong>Hadoop MRv2</strong></td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="../lesson/cluster/hadoop2.html#ref-class-lesson-hadoop2"><span>1 hour</span></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><strong>Hadoop MRv2 with Cloudmesh ``launcher``</strong></td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="../lesson/cluster/hadoop2-launcher.html#ref-class-lesson-hadoop2-launcher"><span>30 mins</span></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><strong>Apache ZooKeeper</strong> (repeated lesson)</td>
+<td><a class="reference external" href="https://mix.office.com/watch/1ptxm2uj2s7y3">40 mins</a></td>
+<td><a class="reference internal" href="../lesson/cluster/zookeeper.html#ref-class-lesson-zookeeper"><span>1 hour</span></a></td>
+<td>&nbsp;</td>
+<td>05/21</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt><strong>Apache Big Data Stack (ABDS)</strong></dt>
+<dd><ul class="first last simple">
+<li>Apache Zookeeper</li>
+<li>Apache Storm</li>
+<li>Apache Mesos</li>
+<li>Apache HBase</li>
+<li>Apache Spark</li>
+<li>Apache Pig</li>
+<li>Apache Hive</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td>Not yet available</td>
+<td>Not yet available</td>
+<td>&nbsp;</td>
+<td>05/13</td>
+<td>05/15</td>
+</tr>
+<tr class="row-even"><td><strong>Glossary</strong></td>
+<td>Not yet available</td>
+<td>Not yet available</td>
+<td>&nbsp;</td>
+<td>05/13</td>
+<td>05/15</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../lesson/collaboration/overview.html" class="btn btn-neutral float-right" title="Overview and Introduction" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

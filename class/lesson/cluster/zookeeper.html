@@ -1,0 +1,405 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Apache ZooKeeper &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Apache ZooKeeper</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/class/lesson/cluster/zookeeper.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="apache-zookeeper">
+<span id="ref-class-lesson-zookeeper"></span><h1>Apache ZooKeeper<a class="headerlink" href="#apache-zookeeper" title="Permalink to this headline">¶</a></h1>
+<p>ZooKeeper is a open source project to provide a configuration and
+synchronization service for cluster computing. With ZooKeeper, Hadoop YARN
+ResourceManager (RM) is supported with high availability. HBase, Storm and
+other software use ZooKeeper for coordinating the cluster.</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>ZooKeeper is a distributed, open-source coordination service for distributed
+applications. It exposes a simple set of primitives that distributed
+applications can build upon to implement higher level services for
+synchronization, configuration maintenance, and groups and naming. It is
+designed to be easy to program to, and uses a data model styled after the
+familiar directory tree structure of file systems. It runs in Java and has
+bindings for both Java and C. (as quoted in ZooKeeper overview:
+<a class="reference external" href="http://zookeeper.apache.org/doc/trunk/zookeeperOver.html">http://zookeeper.apache.org/doc/trunk/zookeeperOver.html</a>)</p>
+<div class="figure" id="id8">
+<img alt="../../../_images/zkservice.jpg" src="../../../_images/zkservice.jpg" />
+<p class="caption"><span class="caption-text">Figure 1. ZooKeeper Service</span></p>
+</div>
+<div class="section" id="key-points">
+<h3>Key points<a class="headerlink" href="#key-points" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Data replication</li>
+<li>Ensemble is a group of ZooKeeper servers to use replication to achieve high
+availability and performance</li>
+<li>Odd number of servers due to simple majority voting</li>
+<li>Single (Standalone) installation is not for a production model</li>
+<li>Leader election</li>
+<li>Configuration, Name Service, Group Membership</li>
+<li>Wait-free for fault tolerance, performance (compared to Chubby)</li>
+<li>Started by Yahoo</li>
+</ul>
+<p>Chubby is a locking service with strong synchronization guarantees.</p>
+</div>
+<div class="section" id="zab">
+<h3>Zab<a class="headerlink" href="#zab" title="Permalink to this headline">¶</a></h3>
+<p>Zab is a leader-based atomic broadcast protocol used in ZooKeeper to guarantee
+that update operations satisfy linearizability.</p>
+</div>
+</div>
+<div class="section" id="implementation">
+<h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this headline">¶</a></h2>
+<p>ZooKeeper synchronizes every changes to the tree of znodes across the ZooKeeper
+servers, ensemble. This way prevents inconsistency of the data by sharing the
+information. If one of the servers fails, the rest of them will replicate state
+and trees.</p>
+<ul class="simple">
+<li>Leader election</li>
+<li>Atomic broadcast</li>
+</ul>
+<div class="section" id="znodes">
+<h3>Znodes<a class="headerlink" href="#znodes" title="Permalink to this headline">¶</a></h3>
+<p>Znodes is a hierarchical name space of data registers and each znode has a path
+with a delimeter &#8220;/&#8221; like a directory structure. There are parent and child
+znodes.</p>
+</div>
+</div>
+<div class="section" id="apache-qurator">
+<h2>Apache Qurator<a class="headerlink" href="#apache-qurator" title="Permalink to this headline">¶</a></h2>
+<p>Apache Qurator is a set of Java libraries for automatic ZooKeeper connection
+management with retries and easy development of new ZooKeeper recipes.</p>
+<p>Github: <a class="reference external" href="https://github.com/apache/curator">https://github.com/apache/curator</a></p>
+</div>
+<div class="section" id="zookeeper-installation">
+<h2>ZooKeeper Installation<a class="headerlink" href="#zookeeper-installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="required-packages">
+<h3>Required Packages<a class="headerlink" href="#required-packages" title="Permalink to this headline">¶</a></h3>
+<p>ZooKeeper runs in Java, release 1.6 or greater (JDK 6 or greater).</p>
+<p>Java JDK</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get update
+sudo apt-get install openjdk-7-jdk
+</pre></div>
+</div>
+<p>You can find other installation packages here:
+<a class="reference external" href="http://java.sun.com/javase/downloads/index.jsp">http://java.sun.com/javase/downloads/index.jsp</a></p>
+</div>
+<div class="section" id="zookeeper-server-package">
+<h3>ZooKeeper Server Package<a class="headerlink" href="#zookeeper-server-package" title="Permalink to this headline">¶</a></h3>
+<p>Download latest here: <a class="reference external" href="http://www.apache.org/dyn/closer.cgi/zookeeper/">http://www.apache.org/dyn/closer.cgi/zookeeper/</a></p>
+<p>Download 3.4.6</p>
+<div class="highlight-python"><div class="highlight"><pre>wget http://supergsego.com/apache/zookeeper/stable/zookeeper-3.4.6.tar.gz
+tar xzf zookeeper*.tar.gz
+ln -s zookeeper-3.4.6 zookeeper
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuration-zoo-cfg">
+<h3>Configuration <code class="docutils literal"><span class="pre">zoo.cfg</span></code><a class="headerlink" href="#configuration-zoo-cfg" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>cp zookeeper/conf/zoo_sample.cfg zookeeper/conf/zoo.cfg
+nano zookeeper/conf/zoo.cfg
+</pre></div>
+</div>
+<p>Confirm the settings and update with:</p>
+<div class="highlight-python"><div class="highlight"><pre>tickTime=2000
+dataDir=/var/lib/zookeeper
+clientPort=2181
+</pre></div>
+</div>
+<ul class="simple">
+<li>tickTime: the basic time unit in milliseconds used by ZooKeeper. It is used
+to do heartbeats and the minimum session timeout will be twice the tickTime.</li>
+<li>dataDir: the location to store the in-memory database snapshots and, unless
+specified otherwise, the transaction log of updates to the database.</li>
+<li>clientPort: the port to listen for client connections</li>
+</ul>
+<p>If you have multiple severs, <code class="docutils literal"><span class="pre">zoo.cfg</span></code> has more values, for example:</p>
+<div class="highlight-python"><div class="highlight"><pre>server.1=10.0.0.2:2888:3888
+server.2=10.0.0.3:2888:3888
+server.3=10.0.0.4:2888:3888
+</pre></div>
+</div>
+<p>It is <code class="docutils literal"><span class="pre">server.id=host:port:port</span></code></p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Ensemble setup (multi-server)
+<a class="reference external" href="http://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html#sc_zkMulitServerSetup">http://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html#sc_zkMulitServerSetup</a></p>
+</div>
+</div>
+<div class="section" id="myid-in-var-lib-zookeeper-for-multi-server">
+<h3>myid in <code class="docutils literal"><span class="pre">var/lib/zookeeper</span></code> (For multi-server)<a class="headerlink" href="#myid-in-var-lib-zookeeper-for-multi-server" title="Permalink to this headline">¶</a></h3>
+<p>The myid file which stays in <code class="docutils literal"><span class="pre">dataDir</span></code> contains a machine&#8217;s id. If you have 3
+servers, first server has 1 in the myid, and second one has 2.  The id must be
+unique within the ensemble and should have a value between 1 and 255.</p>
+<p>node 1</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir -r /var/lib/zookeeper
+echo &quot;1&quot; &gt; /var/lib/zookeeper/myid
+</pre></div>
+</div>
+<p>node 2</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir -r /var/lib/zookeeper
+echo &quot;2&quot; &gt; /var/lib/zookeeper/myid
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-zookeeper-server">
+<h3>Start ZooKeeper Server<a class="headerlink" href="#start-zookeeper-server" title="Permalink to this headline">¶</a></h3>
+<p>Now that you created the configuration file, you can start ZooKeeper:</p>
+<div class="highlight-python"><div class="highlight"><pre>zookeeper/bin/zkServer.sh start
+</pre></div>
+</div>
+</div>
+<div class="section" id="zookeeper-client">
+<h3>ZooKeeper Client<a class="headerlink" href="#zookeeper-client" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>zookeeper/bin/zkCli.sh
+...
+[zk: localhost:2181(CONNECTED) 0]
+</pre></div>
+</div>
+<p>If you get access to other nodes:</p>
+<div class="highlight-python"><div class="highlight"><pre>zookeeper/bin/zkCli.sh -server [node ip address]:2181
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
+<p>Hunt, Patrick, et al. &#8220;ZooKeeper: Wait-free Coordination for Internet-scale
+Systems.&#8221; USENIX Annual Technical Conference. Vol. 8. 2010. <a class="reference external" href="https://www.usenix.org/event/usenix10/tech/full_papers/Hunt.pdf">[pdf]</a></p>
+</div>
+<div class="section" id="reading-list">
+<h2>Reading List<a class="headerlink" href="#reading-list" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Reed, Benjamin, and Flavio P. Junqueira. &#8220;A simple totally ordered broadcast
+protocol.&#8221; proceedings of the 2nd Workshop on Large-Scale Distributed Systems
+and Middleware. ACM, 2008. <a class="reference external" href="http://diyhpl.us/~bryan/papers2/distributed/distributed-systems/zab.totally-ordered-broadcast-protocol.2008.pdf">[pdf]</a></li>
+<li>Junqueira, Flavio Paiva, Benjamin C. Reed, and Marco Serafini. &#8220;Zab:
+High-performance broadcast for primary-backup systems.&#8221; Dependable Systems &amp;
+Networks (DSN), 2011 IEEE/IFIP 41st International Conference on. IEEE, 2011.
+<a class="reference external" href="http://web.stanford.edu/class/cs347/reading/zab.pdf">[pdf]</a></li>
+<li>Design Paper for Hadoop and Zookeeper <a class="reference external" href="https://issues.apache.org/jira/secure/attachment/12486023/MapReduce_NextGen_Architecture.pdf">[pdf]</a></li>
+<li>Chapter 14: ZooKeeper in Hadoop: The Definitive Guide By Tom White</li>
+</ul>
+</div>
+<div class="section" id="additional-readling-list">
+<h2>Additional Readling List<a class="headerlink" href="#additional-readling-list" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Kirsch, Jonathan, and Yair Amir. &#8220;Paxos for system builders.&#8221; Dept. of CS,
+Johns Hopkins University, Tech. Rep (2008). <a class="reference external" href="http://www.cnds.jhu.edu/pub/papers/psb_ladis_08.pdf">[pdf]</a></li>
+<li>Baker, Jason, et al. &#8220;Megastore: Providing Scalable, Highly Available Storage
+for Interactive Services.&#8221; CIDR. Vol. 11. 2011.  <a class="reference external" href="http://pdos.csail.mit.edu/6.824-2012/papers/jbaker-megastore.pdf">[pdf]</a></li>
+<li>Kadambi, Sudarshan, et al. &#8220;Where in the world is my data.&#8221; Proceedings
+International Conference on Very Large Data Bases (VLDB). 2011. <a class="reference external" href="http://www.vldb.org/pvldb/vol4/p1040-kadambi.pdf">[pdf]</a></li>
+<li>Burrows, Mike. &#8220;The Chubby lock service for loosely-coupled distributed
+systems.&#8221; Proceedings of the 7th symposium on Operating systems design and
+implementation. USENIX Association, 2006.  <a class="reference external" href="http://static.usenix.org/events/osdi06/tech/full_papers/burrows/burrows_html/">[html]</a></li>
+<li>Taylor, Ronald C. &#8220;An overview of the Hadoop/MapReduce/HBase framework and
+its current applications in bioinformatics.&#8221; BMC bioinformatics 11.Suppl 12
+(2010): S1. <a class="reference external" href="http://www.biomedcentral.com/1471-2105/11/S12/S1">[html]</a></li>
+</ul>
+</div>
+<div class="section" id="acknowledgement">
+<h2>Acknowledgement<a class="headerlink" href="#acknowledgement" title="Permalink to this headline">¶</a></h2>
+<p>This lesson is adopted from Apache ZooKeeper Documentation:
+<a class="reference external" href="http://zookeeper.apache.org/doc/trunk/zookeeperOver.html">http://zookeeper.apache.org/doc/trunk/zookeeperOver.html</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

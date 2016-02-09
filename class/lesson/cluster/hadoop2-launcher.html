@@ -1,0 +1,658 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hadoop v2 with Cloudmesh Launcher (Under Development) &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Hadoop v2 with Cloudmesh Launcher (Under Development)</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/class/lesson/cluster/hadoop2-launcher.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hadoop-v2-with-cloudmesh-launcher-under-development">
+<span id="ref-class-lesson-hadoop2-launcher"></span><h1>Hadoop v2 with Cloudmesh Launcher (Under Development)<a class="headerlink" href="#hadoop-v2-with-cloudmesh-launcher-under-development" title="Permalink to this headline">¶</a></h1>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Approximate time: 30 minutes</p>
+</div>
+<div class="section" id="quick-guide">
+<h2>Quick Guide<a class="headerlink" href="#quick-guide" title="Permalink to this headline">¶</a></h2>
+<p>There are a few things to keep in mind during this tutorial.</p>
+<ul class="simple">
+<li>REPLACE <code class="docutils literal"><span class="pre">albert</span></code> with your portal id.</li>
+<li>Cloudmesh installation is required.</li>
+<li><code class="docutils literal"><span class="pre">dev2.0</span></code> branch is a main repository for Cloudmesh</li>
+<li>One Hadoop cluster per user <strong>TERMINATE AFTER USE</strong></li>
+</ul>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This tutorial explains how to deploy Hadoop V2 Cluster with Cloudmesh software.
+Four VM instances are used to deploy Hadoop V2 Cluster, one master node  and
+three slave nodes. <code class="docutils literal"><span class="pre">launcher</span></code> command deploys software stacks on Cloudmesh
+using OpenStack Heat and customized templates. Hadoop v2 cluster will be
+deployed with the <code class="docutils literal"><span class="pre">launcher</span></code> command in the development Cloudmesh.</p>
+<p>You will use:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Four VMs (one master, three slaves)</dt>
+<dd><ul class="first last simple">
+<li>master name: $USER-hc-master</li>
+<li>slave names: $USER-hc-slave1, $USER-hc-slave2, $USER-hc-slave3</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">launcher</span></code> command</dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">launcher</span> <span class="pre">start</span> <span class="pre">hadoop-2.7-image</span></code> will deploy Hadoop v2 Cluster using
+Cloudmesh.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<p>If you have installed Cloudmesh, skip this section and follow <cite>dev2.0</cite>
+installation.</p>
+<p>Have you not created a VM instance and installed Cloudmesh?:</p>
+<p><a class="reference internal" href="../../../cloudmesh/setup/setup_openstack.html#s-cloudmesh-vm-quickstart"><span>Cloudmesh Installation on a virtual machine OpenStack</span></a></p>
+<div class="section" id="development-dev2-0-installation">
+<h3>Development (<cite>dev2.0</cite>) Installation<a class="headerlink" href="#development-dev2-0-installation" title="Permalink to this headline">¶</a></h3>
+<p>Hadoop V2 cluster deployment is available in the <code class="docutils literal"><span class="pre">dev2.0</span></code> development branch.</p>
+<p>Download <cite>dev2.0</cite> branch on your cloudmesh.</p>
+<div class="highlight-python"><div class="highlight"><pre>cd ~/cloudmesh
+git checkout dev2.0
+git pull
+python setup.py install
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This should be done on your VM instance, Cloudmesh installed. Do
+not try to run on india.futuresystems.org which is a login node of OpenStack
+of FutureSystems.</p>
+</div>
+<p>It looks like this, for example:</p>
+<div class="highlight-python"><div class="highlight"><pre> (ENV)ubuntu@albert-cloudmesh:~$ cd ~/cloudmesh
+ (ENV)ubuntu@albert-cloudmesh:~/cloudmesh$ git checkout dev2.0
+ Already up-to-date. (or updating messages)
+ (ENV)ubuntu@albert-cloudmesh:~/cloudmesh$ python setup.py install
+ # ######################################################################
+ # Generate and Install Version
+ # ######################################################################
+ running install
+ running bdist_egg
+ ...
+ ...
+ ...
+ Using /home/ubuntu/ENV/lib/python2.7/site-packages
+ Finished processing dependencies for cloudmesh==2.3.0
+ (ENV)ubuntu@albert-cloudmesh:~/cloudmesh$
+
+``launcher`` New Templates
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>If you installed <code class="docutils literal"><span class="pre">dev2.0</span></code>, the new <code class="docutils literal"><span class="pre">launcher</span></code> template needs to be applied
+to <code class="docutils literal"><span class="pre">~/.cloudmesh</span></code>, the Cloudmesh configuration directory. Otherwise, your
+<code class="docutils literal"><span class="pre">launcher</span></code> command won&#8217;t recognize a new template e.g. <code class="docutils literal"><span class="pre">launcher</span> <span class="pre">start</span>
+<span class="pre">hadoop2.7-image</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal"><span class="pre">launcher</span></code> command deploys software stacks on Cloudmesh using
+OpenStack Heat and customized templates. Hadoop v2 cluster can be deployed
+with the <code class="docutils literal"><span class="pre">launcher</span></code> command in the development Cloudmesh.</p>
+</div>
+<p>Copy the new template to your <code class="docutils literal"><span class="pre">.cloudmesh</span></code> directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>cp ~/cloudmesh/etc/cloudmesh_launcher.yaml ~/.cloudmesh
+</pre></div>
+</div>
+<p>Confirm that you have metadata for <code class="docutils literal"><span class="pre">hadoop</span></code> software packages in your new
+yaml.:</p>
+<div class="highlight-python"><div class="highlight"><pre>grep hadoop ~/.cloudmesh/cloudmesh_launcher.yaml
+</pre></div>
+</div>
+<p>You expect to see like so:</p>
+<div class="highlight-python"><div class="highlight"><pre>hadoop:
+    label: hadoop
+    shortdescription: Deploys a hadoop cluster on the VMs specified.
+            Deploys a hadoop cluster on the VMs specified
+    template: https://raw.githubusercontent.com/cloudmesh/cloudmesh/master/heat-templates/ubuntu-14.04/hadoop-cluster/hadoop-cluster.yaml
+    image: /static/img/launcher/hadoop.jpg
+hadoop2.7:
+    image: /static/img/launcher/hadoop.jpg
+    template: https://raw.githubusercontent.com/cloudmesh/cloudmesh/dev2.0/heat-templates/ubuntu-14.04/hadoop-cluster/hadoop2.7-cluster.yaml
+hadoop2.7-image:
+    image: /static/img/launcher/hadoop.jpg
+    template: https://raw.githubusercontent.com/cloudmesh/cloudmesh/dev2.0/heat-templates/hadoop-v2/hadoop-cluster/hadoop2.7-with-hadoop-v2-image.yaml
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="deploying-hadoop-v2">
+<h2>Deploying Hadoop V2<a class="headerlink" href="#deploying-hadoop-v2" title="Permalink to this headline">¶</a></h2>
+<p>Now, we are ready to deploy Hadoop V2 using Cloudmesh development. Let&#8217;s open a
+Cloudmesh Shell:</p>
+<div class="highlight-python"><div class="highlight"><pre>source ~/ENV/bin/activate
+cm
+</pre></div>
+</div>
+<p>You will see welcome message:</p>
+<div class="highlight-python"><div class="highlight"><pre>======================================================
+ ____ _                 _                     _
+ / ___| | ___  _   _  __| |_ __ ___   ___  ___| |__
+ | |   | |/ _ \| | | |/ _` | &#39;_ ` _ \ / _ \/ __| &#39;_ \
+ | |___| | (_) | |_| | (_| | | | | | |  __/\__ \ | | |
+ \____|_|\___/ \__,_|\__,_|_| |_| |_|\___||___/_| |_|
+ ======================================================
+                   Cloudmesh Shell
+
+ cm&gt;
+</pre></div>
+</div>
+<p>Simple command is <code class="docutils literal"><span class="pre">launcher</span> <span class="pre">start</span> <span class="pre">hadoop2.7-image</span></code>. Try it on Cloudmesh
+Shell:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm&gt; launcher start hadoop2.7-image
+CM /cloudmesh-2.3.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_launcher.pyc... site:78:   INFO - {&#39;--column&#39;: None,
+ &#39;--force&#39;: False,
+ ...
+ ...
+ ...
+CM /cloudmesh-2.3.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc... site:518:  DEBUG - 518:POST PARAMS {&#39;stack_name&#39;: &#39;launcher-albert-hadoop2.7-image-NOAO5A&#39;, &#39;template_url&#39;: &#39;https://raw.githubusercontent.com/cloudmesh/cloudmesh/dev2.0/heat-templates/hadoop-v2/hadoop-cluster/hadoop2.7-with-hadoop-v2-image.yaml&#39;, &#39;parameters&#39;: {&#39;UserName&#39;: &#39;albert&#39;, &#39;PrivateKeyString&#39;: &#39;...&#39;, &#39;KeyName&#39;: u&#39;albert_ubuntu-key&#39;, &#39;PublicKeyString&#39;: &#39;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCiqKmihZWU3q6GhTnBVZh4Ry4B5vjuJsSefpfT8nU+VkljRPhClWo3kj8hdkSfcxUUa/1fq9UCqA+c7SoAgXzB2G/ThFgI5nTLbkbyuNDire92natl43vu0jRcnW87zLwM/YDonBMHHZ4/LOquET6h0cJGp22V3JYvmLHLujiy1une26wlBZ7sb+8dOGmpeiqbKdJuh1dItAJEfwf+DkuolBCT///KD8olqmuYsNoLcHUPvkgqveAGIBSX8KaVc70bGTiC/d0DcY/rX0V3Pjm0qvgGVsR/Q0AFRlx6Z3hCNcccSDQflXhvTOpZV1Sq/7zCrXFUUwP1/cc2Mbsos7hN&#39;}, &#39;timeout_mins&#39;: &#39;60&#39;}
+CM /cloudmesh-2.3.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_launcher.pyc... site:228:  DEBUG - {u&#39;stack&#39;: {u&#39;id&#39;: u&#39;7881c97f-5ce8-4c25-9a80-a6bec9299869&#39;, u&#39;links&#39;: [{u&#39;href&#39;: u&#39;http://i5r.idp.iu.futuregrid.org:8004/v1/c713809dee494dccac34fcd02e012acb/stacks/launcher-albert-hadoop2.7-image-NOAO5A/7881c97f-5ce8-4c25-9a80-a6bec9299869&#39;, u&#39;rel&#39;: u&#39;self&#39;}]}}
+</pre></div>
+</div>
+<div class="section" id="list-launcher">
+<h3>List Launcher<a class="headerlink" href="#list-launcher" title="Permalink to this headline">¶</a></h3>
+<p>Check launcher to see your Hadoop2.7 stack.</p>
+<div class="highlight-python"><div class="highlight"><pre>launcher list
+</pre></div>
+</div>
+<p>You expect to see:</p>
+<div class="highlight-python"><div class="highlight"><pre>+--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
+| launcher_id                          | stack_name                             | description                        | stack_status    | creation_time        | cm_cloud |
++--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
+| 7881c97f-5ce8-4c25-9a80-a6bec9299869 | launcher-albert-hadoop2.7-image-NOAO5A | Hadoop cluster with OpenStack Heat | CREATE_COMPLETE | 2015-01-25T14:16:34Z | india    |
++--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-nodes">
+<h3>List Nodes<a class="headerlink" href="#list-nodes" title="Permalink to this headline">¶</a></h3>
+<p>Your Hadoop2.7 stack uses four vm instances as cluster nodes. You can find them
+in <code class="docutils literal"><span class="pre">vm</span> <span class="pre">list</span></code> command.</p>
+<div class="highlight-python"><div class="highlight"><pre>vm list
+</pre></div>
+</div>
+<p>You exepct see like so:</p>
+<div class="highlight-python"><div class="highlight"><pre>+----------------------------------------------------------+----------+------------------------------+-------------+-------------+
+| name                                                     | status   | addresses                    | flavor      | image       |
++==========================================================+==========+==============================+=============+=============+
+...
++----------------------------------------------------------+----------+------------------------------+-------------+-------------+
+| albert-hc-slave2                                         | ACTIVE   | 10.23.1.26                   | unavailable | unavailable |
++----------------------------------------------------------+----------+------------------------------+-------------+-------------+
+| albert-hc-master                                         | ACTIVE   | 10.23.1.28, 149.165.159.48   | unavailable | unavailable |
++----------------------------------------------------------+----------+------------------------------+-------------+-------------+
+| albert-hc-slave1                                         | ACTIVE   | 10.23.1.27                   | unavailable | unavailable |
++----------------------------------------------------------+----------+------------------------------+-------------+-------------+
+| albert-hc-slave3                                         | ACTIVE   | 10.23.1.25                   | unavailable | unavailable |
++----------------------------------------------------------+----------+------------------------------+-------------+-------------+
+</pre></div>
+</div>
+</div>
+<div class="section" id="login-to-master-node">
+<h3>Login to Master Node<a class="headerlink" href="#login-to-master-node" title="Permalink to this headline">¶</a></h3>
+<p>You can get access to the master node using <code class="docutils literal"><span class="pre">vm</span> <span class="pre">login</span></code> command. Note that,
+<code class="docutils literal"><span class="pre">ec2-user</span></code> is a login name, not <code class="docutils literal"><span class="pre">ubuntu</span></code>.</p>
+<div class="highlight-python"><div class="highlight"><pre>vm login albert-hc-master --ln=ec2-user
+</pre></div>
+</div>
+<p>You expect to see:</p>
+<div class="highlight-python"><div class="highlight"><pre>Warning: Permanently added &#39;149.165.159.48&#39; (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 14.04.2 LTS (GNU/Linux 3.13.0-46-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information as of Mon Jan 25 14:21:50 UTC 2015
+
+ System load:  0.63              Processes:           81
+ Usage of /:   8.5% of 19.65GB   Users logged in:     0
+ Memory usage: 9%                IP address for eth0: 10.23.1.28
+ Swap usage:   0%
+
+ Graph this data and manage this system at:
+ https://landscape.canonical.com/
+
+ Get cloud support with Ubuntu Advantage Cloud Guest:
+ http://www.ubuntu.com/business/services/cloud
+
+57 packages can be updated.
+27 updates are security updates.
+
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+$
+</pre></div>
+</div>
+</div>
+<div class="section" id="switch-to-root-account">
+<h3>Switch to <code class="docutils literal"><span class="pre">root</span></code> Account<a class="headerlink" href="#switch-to-root-account" title="Permalink to this headline">¶</a></h3>
+<p>Hadoop package installed on <code class="docutils literal"><span class="pre">root</span></code> account. Let&#8217;s switch to <code class="docutils literal"><span class="pre">root</span></code>
+account:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ sudo su -
+</pre></div>
+</div>
+</div>
+<div class="section" id="status-check">
+<h3>Status Check<a class="headerlink" href="#status-check" title="Permalink to this headline">¶</a></h3>
+<p>check HDFS datanodes and YARN nodemanager.</p>
+<ul class="simple">
+<li>HDFS: <code class="docutils literal"><span class="pre">hdfs</span> <span class="pre">dfsadmin</span> <span class="pre">-report</span></code></li>
+<li>YARN: <code class="docutils literal"><span class="pre">yarn</span> <span class="pre">node</span> <span class="pre">-list</span></code></li>
+</ul>
+<p>Check hdfs nodes:</p>
+<div class="highlight-python"><div class="highlight"><pre>root@hc-master:~# hdfs dfsadmin -report
+</pre></div>
+</div>
+<p>Example of <code class="docutils literal"><span class="pre">hdfs</span></code> report:</p>
+<div class="highlight-python"><div class="highlight"><pre>::
+
+     root@hc-master:~# hdfs dfsadmin -report
+     Configured Capacity: 63309729792 (58.96 GB)
+     Present Capacity: 55276732416 (51.48 GB)
+     DFS Remaining: 55276658688 (51.48 GB)
+     DFS Used: 73728 (72 KB)
+     DFS Used%: 0.00%
+     Under replicated blocks: 0
+     Blocks with corrupt replicas: 0
+     Missing blocks: 0
+     Missing blocks (with replication factor 1): 0
+
+     -------------------------------------------------
+     Live datanodes (3):
+
+     Name: 10.23.1.25:50010 (hc-slave3)
+     Hostname: hc-slave3
+     Decommission Status : Normal
+     Configured Capacity: 21103243264 (19.65 GB)
+     DFS Used: 24576 (24 KB)
+     Non DFS Used: 2677665792 (2.49 GB)
+     DFS Remaining: 18425552896 (17.16 GB)
+     DFS Used%: 0.00%
+     DFS Remaining%: 87.31%
+     Configured Cache Capacity: 0 (0 B)
+     Cache Used: 0 (0 B)
+     Cache Remaining: 0 (0 B)
+     Cache Used%: 100.00%
+     Cache Remaining%: 0.00%
+     Xceivers: 1
+     Last contact: Mon Jan 25 14:46:49 UTC 2015
+
+
+     Name: 10.23.1.27:50010 (hc-slave1)
+     Hostname: hc-slave1
+     Decommission Status : Normal
+     Configured Capacity: 21103243264 (19.65 GB)
+     DFS Used: 24576 (24 KB)
+     Non DFS Used: 2677665792 (2.49 GB)
+     DFS Remaining: 18425552896 (17.16 GB)
+     DFS Used%: 0.00%
+     DFS Remaining%: 87.31%
+     Configured Cache Capacity: 0 (0 B)
+     Cache Used: 0 (0 B)
+     Cache Remaining: 0 (0 B)
+     Cache Used%: 100.00%
+     Cache Remaining%: 0.00%
+     Xceivers: 1
+     Last contact: Mon Jan 25 14:46:49 UTC 2015
+
+
+     Name: 10.23.1.26:50010 (hc-slave2)
+     Hostname: hc-slave2
+     Decommission Status : Normal
+     Configured Capacity: 21103243264 (19.65 GB)
+     DFS Used: 24576 (24 KB)
+     Non DFS Used: 2677665792 (2.49 GB)
+     DFS Remaining: 18425552896 (17.16 GB)
+     DFS Used%: 0.00%
+     DFS Remaining%: 87.31%
+     Configured Cache Capacity: 0 (0 B)
+     Cache Used: 0 (0 B)
+     Cache Remaining: 0 (0 B)
+     Cache Used%: 100.00%
+     Cache Remaining%: 0.00%
+     Xceivers: 1
+     Last contact: Mon Jan 25 14:46:48 UTC 2015
+</pre></div>
+</div>
+<p>Remember, we have 4 VMs with:</p>
+<ul class="simple">
+<li>Hostname <code class="docutils literal"><span class="pre">hc-master</span></code></li>
+<li>Hostname <code class="docutils literal"><span class="pre">hc-slave1</span></code></li>
+<li>Hostname <code class="docutils literal"><span class="pre">hc-slave2</span></code></li>
+<li>Hostname <code class="docutils literal"><span class="pre">hc-slave3</span></code></li>
+</ul>
+<p>Check YARN nodes:</p>
+<div class="highlight-python"><div class="highlight"><pre>root@hc-master:~# yarn node -list
+</pre></div>
+</div>
+<p>Example of <code class="docutils literal"><span class="pre">yarn</span></code> list:</p>
+<div class="highlight-python"><div class="highlight"><pre>15/01/25 14:50:00 INFO client.RMProxy: Connecting to ResourceManager at hc-master/10.23.1.28:8032
+Total Nodes:3
+Node-Id             Node-State Node-Http-Address       Number-of-Running-Containers
+hc-slave2:51545                RUNNING    hc-slave2:8042                                  0
+hc-slave3:53114                RUNNING    hc-slave3:8042                                  0
+hc-slave1:43613                RUNNING    hc-slave1:8042                                  0
+</pre></div>
+</div>
+<p>Remember, <code class="docutils literal"><span class="pre">Master</span></code> has</p>
+<ul class="simple">
+<li>HDFS NameNode</li>
+<li>YARN ResourceManager</li>
+</ul>
+<p>And <code class="docutils literal"><span class="pre">Slaves</span></code> have</p>
+<ul class="simple">
+<li>HDFS DataNode</li>
+<li>YARN NodeManager</li>
+</ul>
+<p>We will start these applications.</p>
+</div>
+<div class="section" id="hdfs-namenode">
+<h3>HDFS NameNode<a class="headerlink" href="#hdfs-namenode" title="Permalink to this headline">¶</a></h3>
+<p>If NameNode is started on Master, you will see:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ps -ef|grep namenode
+root    8443     1  0 05:07 ?        00:00:25 /usr/lib/jvm/default-java//bin/java -Dproc_namenode -Xmx1000m -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=/root/hadoop-2.7.0/logs ...
+...  org.apache.hadoop.hdfs.server.namenode.NameNode
+</pre></div>
+</div>
+</div>
+<div class="section" id="yarn-resourcemanager">
+<h3>YARN ResourceManager<a class="headerlink" href="#yarn-resourcemanager" title="Permalink to this headline">¶</a></h3>
+<p>If ResourceManager is started on Master, you will see:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ps -ef|grep resourcemanager
+root    8675     1  0 05:07 ?        00:01:07 /usr/lib/jvm/default-java//bin/java -Dproc_resourcemanager -Xmx1000m -Dhadoop.log.dir=/root/hadoop-2.7.0/logs ...
+... org.apache.hadoop.yarn.server.resourcemanager.ResourceManager
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mapreduce-example-word-count">
+<h2>MapReduce Example: Word Count<a class="headerlink" href="#mapreduce-example-word-count" title="Permalink to this headline">¶</a></h2>
+<p>Once you installed a Hadoop cluster, you may want to run a program using the
+cluster. One of the popular examples of Hadoop is a Word Count MapReduce
+program which counts how often words occur from the input text file. We have a
+separate page for this program here.</p>
+<p><a class="reference internal" href="wordcount.html#ref-class-lesson-hadoop-word-count"><span>Word Count Program</span></a></p>
+</div>
+<div class="section" id="launcher-termination">
+<h2>Launcher Termination<a class="headerlink" href="#launcher-termination" title="Permalink to this headline">¶</a></h2>
+<p>If you&#8217;ve completed your tasks or jobs on Hadoop 2.7.0 cluster, you need to
+terminate your hadoop stack on launcher.</p>
+<p>Check your existing launcher stack.</p>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher list
+</pre></div>
+</div>
+<p>My example is:</p>
+<div class="highlight-python"><div class="highlight"><pre>+--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
+| launcher_id                          | stack_name                             | description                        | stack_status    | creation_time        | cm_cloud |
++--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
+| 7881c97f-5ce8-4c25-9a80-a6bec9299869 | launcher-albert-hadoop2.7-image-NOAO5A | Hadoop cluster with OpenStack Heat | CREATE_COMPLETE | 2015-01-25T14:16:34Z | india    |
++--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
+</pre></div>
+</div>
+<p>Terminate it with the stack_name:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher stop launcher-albert-hadoop2.7-image-NOAO5A
+</pre></div>
+</div>
+<p>You expect to see like so:</p>
+<div class="highlight-python"><div class="highlight"><pre>...
+CM /cloudmesh-2.3.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc... site:684:  DEBUG - 684: AUTH URL http://i5r.idp.iu.futuregrid.org:8004/v1/c713809dee494dccac34fcd02e012acb/stacks/launcher-hrlee-hadoop2.7-image-NOAO5A
+CM /cloudmesh-2.3.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc... site:690:  DEBUG - 690: Response &lt;Response [200]&gt;
+CM /cloudmesh-2.3.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_launcher.pyc... site:241:  DEBUG - {&#39;msg&#39;: &#39;success&#39;}
+</pre></div>
+</div>
+<p>Confirm that your launcher stack is deleted:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher list
++--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
+| launcher_id                          | stack_name                             | description                        | stack_status    | creation_time        | cm_cloud |
++--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
++--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
+</pre></div>
+</div>
+</div>
+<div class="section" id="faqs">
+<h2>FAQs<a class="headerlink" href="#faqs" title="Permalink to this headline">¶</a></h2>
+<p>Q. How to stop Masters or Slaves?
+A. Use the commands below:</p>
+<div class="highlight-python"><div class="highlight"><pre>(On Master)
+yarn-daemon.sh stop resourcemanager
+hadoop-daemon.sh --script hdfs stop namenode
+
+(On Slaves)
+yarn-daemon.sh stop nodemanager
+hadoop-daemon.sh --script hdfs stop datanode
+</pre></div>
+</div>
+<p>Q. Where can I see log files?
+A. <code class="docutils literal"><span class="pre">~/hadoop/logs/</span></code> contains log files.</p>
+<blockquote>
+<div>See files with <code class="docutils literal"><span class="pre">.log</span></code> extention. e.g.
+<code class="docutils literal"><span class="pre">hadoop-ubuntu-namenode-hc-master.log</span></code></div></blockquote>
+<p>Q. DataNode won&#8217;t start. If I remove data storage, would it help?
+A. Probably, yes. Stop datanode and remove the storage. If you used default
+configuration, the HDFS storage is located under <code class="docutils literal"><span class="pre">/tmp</span></code>.</p>
+<div class="highlight-python"><div class="highlight"><pre>hadoop-daemon.sh --script hdfs stop datanode
+rm -rf /tmp/hadoop-*
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

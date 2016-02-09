@@ -1,0 +1,302 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Batch Jobs including Hadoop on FutureSystems &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Batch Jobs including Hadoop  on FutureSystems</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/hpc/screencasts.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="batch-jobs-including-hadoop-on-futuresystems">
+<h1>Batch Jobs including Hadoop  on FutureSystems<a class="headerlink" href="#batch-jobs-including-hadoop-on-futuresystems" title="Permalink to this headline">¶</a></h1>
+<p>This series of screencasts will walk you through the various ways on
+how you can use batch jobs on FutureSystems. This includes the following:</p>
+<ul class="simple">
+<li>using OpenMPI batch jobs including
+* start, stop a job
+* monitoring a job</li>
+<li>using Hadoop as part of a batch job</li>
+<li>using ssh add and ssh-agent to conveniently log into machines.</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="5%" />
+<col width="15%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Video</th>
+<th class="head">Length</th>
+<th class="head">Titles of the Lessons</th>
+<th class="head">Description of the Lessons</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a href="#id8"><span class="problematic" id="id9">|video-batch|</span></a></td>
+<td>7:41 min</td>
+<td>Using Batch Jobs on FutureSystems</td>
+<td>This lesson explains you to use batch jobs on FutureSystems.
+For written material, see section <a class="reference internal" href="hpc.html#s-hpc"><span>HPC</span></a>.</td>
+</tr>
+<tr class="row-odd"><td><a href="#id10"><span class="problematic" id="id11">|video-hadoop|</span></a></td>
+<td>7:23 min</td>
+<td>Using MyHadoop on FutureSystems</td>
+<td>This lesson explains you to use MyHadoop on FutureSystems.
+For written material, see section <a class="reference internal" href="../paas/hadoop.html#s-hadoop"><span>Using Hadoop in FutureSystems</span></a>.</td>
+</tr>
+<tr class="row-even"><td><a href="#id12"><span class="problematic" id="id13">|video-sshadd|</span></a></td>
+<td>3:03 min</td>
+<td>Using SSH add and agent</td>
+<td>This lesson explains you to use ssh add and agent.
+For written material, see section <a class="reference internal" href="hpc.html#s-sshadd"><span>SSH Add</span></a>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id1">
+<h1>Batch Jobs including Hadoop  on FutureSystems<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>This series of screencasts will walk you through the various ways on
+how you can use batch jobs on FutureSystems. This includes the following:</p>
+<ul class="simple">
+<li>using OpenMPI batch jobs including
+* start, stop a job
+* monitoring a job</li>
+<li>using Hadoop as part of a batch job</li>
+<li>using ssh add and ssh-agent to conveniently log into machines.</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="5%" />
+<col width="15%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Video</th>
+<th class="head">Length</th>
+<th class="head">Titles of the Lessons</th>
+<th class="head">Description of the Lessons</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a href="#id14"><span class="problematic" id="id15">|video-batch|</span></a></td>
+<td>7:41 min</td>
+<td>Using Batch Jobs on FutureSystems</td>
+<td>This lesson explains you to use batch jobs on FutureSystems.
+For written material, see section <a class="reference internal" href="hpc.html#s-hpc"><span>HPC</span></a>.</td>
+</tr>
+<tr class="row-odd"><td><a href="#id16"><span class="problematic" id="id17">|video-hadoop|</span></a></td>
+<td>7:23 min</td>
+<td>Using MyHadoop on FutureSystems</td>
+<td>This lesson explains you to use MyHadoop on FutureSystems.
+For written material, see section <a class="reference internal" href="../paas/hadoop.html#s-hadoop"><span>Using Hadoop in FutureSystems</span></a>.</td>
+</tr>
+<tr class="row-even"><td><a href="#id18"><span class="problematic" id="id19">|video-sshadd|</span></a></td>
+<td>3:03 min</td>
+<td>Using SSH add and agent</td>
+<td>This lesson explains you to use ssh add and agent.
+For written material, see section <a class="reference internal" href="hpc.html#s-sshadd"><span>SSH Add</span></a>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

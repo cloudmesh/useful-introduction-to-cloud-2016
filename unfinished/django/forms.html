@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Example: Forms &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Example: Forms</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/unfinished/django/forms.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="example-forms">
+<h1>Example: Forms<a class="headerlink" href="#example-forms" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This example demonstrates how to make a simple form in a bootstrapped theme template django application.</p>
+<p>Create an Django application first by doing a:</p>
+<div class="highlight-python"><div class="highlight"><pre>django-admin.py startproject projectname
+cd projectname
+python manage.py startapp appname
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This example can be seen <a class="reference external" href="http://www.pythoncentral.io/how-to-use-python-django-forms/">http://www.pythoncentral.io/how-to-use-python-django-forms/</a></p>
+</div>
+<p>In your application, create a <code class="docutils literal"><span class="pre">forms.py</span></code> file in your appname directory. In your forms file, do the following:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+
+<span class="k">class</span> <span class="nc">PostForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
+    <span class="n">content</span>  <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span>
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Now in your <code class="docutils literal"><span class="pre">views.py</span></code> file, do the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>from myblog.forms import PostForm
+
+def post_form_upload(request):
+    if request.method == &#39;GET&#39;:
+        form = PostForm()
+    else:
+        # A POST request: Handle Form Upload
+        form = PostForm(request.POST) # Bind data from request.POST into a PostForm
+
+        # If data is valid, proceeds to create a new post and redirect the user if form.is_valid():
+            content = form.cleaned_data[&#39;content&#39;]
+            created_at = form.cleaned_data[&#39;created_at&#39;]
+            post = m.Post.objects.create(content = content,
+                                         created_at = created_at)
+            return HttpResponseRedirect(reverse(&#39;post_detail&#39;,
+                                                kwargs = {&#39;post_id&#39;: post.id}))
+
+       return render(request, &#39;post/post_form_upload.html&#39;, {&#39;form&#39;: form,})
+</pre></div>
+</div>
+<p>Now in your templates directory, create a template for the form to posted on the server:</p>
+<div class="highlight-python"><div class="highlight"><pre>{% extends &quot;base.html&quot; %}
+
+{% block content %}
+&lt;form action=&#39;/post/form_upload.html&#39; method=&#39;post&#39;&gt;{% csrf_token %}
+{{ form.as_p }}
+&lt;input type=&#39;submit&#39; value=&#39;Submit&#39; /&gt;
+&lt;/form&gt;
+{% endblock %}
+</pre></div>
+</div>
+<p>Then in your project directory, access the <code class="docutils literal"><span class="pre">urls.py</span></code> file, and attached this url pattern to it:</p>
+<div class="highlight-python"><div class="highlight"><pre>urlpatterns = patterns(&#39;&#39;,
+    ...
+    url(r&#39;^post/form_upload.html$&#39;, &#39;appname.views.post_form_upload&#39;, name= &#39;post_form_upload&#39;),
+    ...
+)
+</pre></div>
+</div>
+<p>Now, when starting up your server, type after the server number <code class="docutils literal"><span class="pre">/post/form_upload.html</span></code> and you should then see your form up and running</p>
+</div>
+<div class="section" id="ready-made-example">
+<h2>Ready Made Example<a class="headerlink" href="#ready-made-example" title="Permalink to this headline">¶</a></h2>
+<p>A ready made example for you is contained in the directory <code class="docutils literal"><span class="pre">management/django/forms1</span></code>. Please cd into the directory.</p>
+<p>In this directory you will find a Makefile that you can use to execute the
+above steps. To start the server you can say:</p>
+<div class="highlight-python"><div class="highlight"><pre>make start
+</pre></div>
+</div>
+<p>To view the web pages, say:</p>
+<div class="highlight-python"><div class="highlight"><pre>make view
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">After clicking on <a class="reference external" href="http://127.0.0.1.8000/">http://127.0.0.1.8000/</a>, go to <a class="reference external" href="http://127.0.0.1.8000/admin">http://127.0.0.1.8000/admin</a>
+then type ../index in the URL.</p>
+</div>
+<p>In case you need to recreate the server please say:</p>
+<div class="highlight-python"><div class="highlight"><pre>make create
+</pre></div>
+</div>
+<p>To cleanup you say:</p>
+<div class="highlight-python"><div class="highlight"><pre>make clean
+</pre></div>
+</div>
+<p>To stop the server please say:</p>
+<div class="highlight-python"><div class="highlight"><pre>make stop
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

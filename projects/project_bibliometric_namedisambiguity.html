@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Author Name Disambiguation for Bibliometric Data &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../index.html"/>
+        <link rel="up" title="Possible Projects" href="index.html"/>
+        <link rel="next" title="A Paper on Container Technologies for BigData" href="project_bigdata_containers.html"/>
+        <link rel="prev" title="Possible Projects" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Possible Projects</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Author Name Disambiguation for Bibliometric Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task">Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-of-possible-useful-technologies-for-this-project">Example of possible useful Technologies for this Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#artifacts">Artifacts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optional-artifacts">Optional Artifacts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="project_bigdata_containers.html">A Paper on Container Technologies for BigData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_cloudmesh.html">Cloudmesh Dirstributed Virtual Cluster Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_docker.html">Cloudmesh Docker Clusetr Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_survey_devops.html">A Survey of DevOps Frameworks in support of Big Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_survey_paas.html">A Survey of Online PaaS Frameworks and Clouds in support of Big Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#from-nist-big-data-public-working-group">From NIST Big Data Public Working Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#links-that-may-inspire-projects">Links that may inspire projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#from-other-sources">From Other Sources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Possible Projects</a> &raquo;</li>
+      
+    <li>Author Name Disambiguation for Bibliometric Data</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/projects/project_bibliometric_namedisambiguity.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="author-name-disambiguation-for-bibliometric-data">
+<span id="project-namedisambugiuty"></span><h1>Author Name Disambiguation for Bibliometric Data<a class="headerlink" href="#author-name-disambiguation-for-bibliometric-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<p>It is common to evaluate authorsship with common metrics such as
+h-index, g-index, i-index and other similar metrics. However, these
+metrics assume that an author can be identified without
+ambiguity. Hence, it is importamt that bibliometric databases contain
+correct information and distinguish between various authors. However,
+this may be a difficult problem in practice as different databases use
+different auther identifieres. Furthermore authors may even have same
+names and same institutions. In other cases we find that authors have
+changed their lastnames. Even if the databases are currated by
+authors, those that do not participate in the curration step will
+presenta challange in leading to an accurate database. All this
+contributes to a situation in which it is challanging to gurantee
+accuracy.</p>
+</div>
+<div class="section" id="task">
+<h2>Task<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h2>
+<p>Develop a framework that addresses issues in the author disambiguity
+problem. First start with a brief literature review and identify
+various solutions conducted for example by IEEE, Google, Microsoft,
+Research Gate, cite seer, and others. Find a literature review that
+may even use full text analysis.</p>
+<p>Identify a solution that you chose whch could be a combination of
+approaches. Demonstarte your solution and identify the issue based on
+data you obtain from the XSEDE database (provided under limitetd
+distribution rights to you) and other data sources that are freely
+available such as from IEEE, and others.</p>
+<p>Develop a statistical method that provides a confidence interval
+showing the likelyhood of papers written by an outhor with the same
+name (note the name could be incomplete or even misspelled) are the
+same. Do the same if you find an author that has actually changed its
+name.  Test your algorithm on a large database of users and provide a
+histogram about how good your algorithm performs. Identify potential
+categories of good and bad performing entries and discuss the result.</p>
+<p>Prior work:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/scienceimpact/bibliometric.git">https://github.com/scienceimpact/bibliometric.git</a></li>
+</ul>
+<p>Screenshots:</p>
+<blockquote>
+<div><img alt="../_images/Relationship_Authors_Publications.png" src="../_images/Relationship_Authors_Publications.png" />
+</div></blockquote>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/scienceimpact/bibliometric/blob/master/Project%20Screenshots/Relationship_Authors_Publications.PNG?raw=true">https://github.com/scienceimpact/bibliometric/blob/master/Project%20Screenshots/Relationship_Authors_Publications.PNG?raw=true</a></li>
+<li><a class="reference external" href="https://github.com/scienceimpact/bibliometric/blob/master/Project%20Screenshots/Relationship_Authors_Publications2_Clusters.PNG?raw=true">https://github.com/scienceimpact/bibliometric/blob/master/Project%20Screenshots/Relationship_Authors_Publications2_Clusters.PNG?raw=true</a></li>
+</ul>
+</div>
+<div class="section" id="example-of-possible-useful-technologies-for-this-project">
+<h2>Example of possible useful Technologies for this Project<a class="headerlink" href="#example-of-possible-useful-technologies-for-this-project" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>graphdb</li>
+<li>neo4j</li>
+<li>Apache Giraph</li>
+<li>mongodb</li>
+<li>d3.js</li>
+<li>sql</li>
+<li>REST</li>
+</ul>
+</div>
+<div class="section" id="artifacts">
+<h2>Artifacts<a class="headerlink" href="#artifacts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Working program</li>
+<li>Detailed instalation instructions</li>
+<li>Easy to use install program using DevOps</li>
+<li>Integration of the instalation into a cloudmesh command</li>
+<li>Report written in IEEE format in LaTeX or Word</li>
+<li>Original images used in the report</li>
+<li>To make citation of scholarly work easier we recommend that you use
+a bibliography management tool such as endnote for word or bibtex
+for LaTex. In case of MS Word, if you do not have access to endnote,
+please use the build in citation manager from Word.</li>
+</ul>
+<p>Note that the reference of previous work is neither a statement for
+good or bad work of that project. There is always something one can
+improve.</p>
+</div>
+<div class="section" id="optional-artifacts">
+<h2>Optional Artifacts<a class="headerlink" href="#optional-artifacts" title="Permalink to this headline">¶</a></h2>
+<p>Develop a rest service that given two publications and an authorname,
+that returns if the authors are identical. Return also the likelyhood.</p>
+<p>This is a minor modification to the above and provides just a rest
+interface to your work.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="project_bigdata_containers.html" class="btn btn-neutral float-right" title="A Paper on Container Technologies for BigData" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Possible Projects" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

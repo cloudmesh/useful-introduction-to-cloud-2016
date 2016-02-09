@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>JavaFiles &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../index.html"/>
+        <link rel="up" title="VM for Big Data Applications and Analytics" href="index.html"/>
+        <link rel="next" title="Lessons" href="../lessons.html"/>
+        <link rel="prev" title="Big Data Applications and Analytics Shell Overview" href="cm-mooc.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">VM for Big Data Applications and Analytics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="cm-mooc.html">Big Data Applications and Analytics Shell Overview</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">JavaFiles</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cm-mooc-virtual-machine-on-india"><cite>cm-mooc</cite> virtual machine on India</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-programs">Run Programs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-programs-on-a-local-machine">Run Programs on a local machine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#list-of-programs">List of Programs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../lessons.html">Lessons</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="index.html">VM for Big Data Applications and Analytics</a> &raquo;</li>
+      
+    <li>JavaFiles</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/class/cm-mooc/javafiles.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="javafiles">
+<h1>JavaFiles<a class="headerlink" href="#javafiles" title="Permalink to this headline">¶</a></h1>
+<p>The course provides some examples to run the course Programs in Java. You can run the programs locally or on the cloud with the cm-mooc virtual machine.
+In this documentation, we focus on how to run the Java programs on the virtual machine.</p>
+<div class="section" id="cm-mooc-virtual-machine-on-india">
+<h2><cite>cm-mooc</cite> virtual machine on India<a class="headerlink" href="#cm-mooc-virtual-machine-on-india" title="Permalink to this headline">¶</a></h2>
+<p>If you don&#8217;t know the running <cite>cm-mooc</cite> on India Futuresystems, please refer <a class="reference external" href="/introduction_to_cloud_computing/class/cm-mooc.html">cm-mooc</a>.
+We assume that you have launched the virtual machine and you are staying in $HOME directory on the virtual machine.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>To remind you how to use the virtual machine, please see the
+following commands:</p>
+<div class="last highlight-python"><div class="highlight"><pre>localhost$ ssh -X $PORTALNAME@india.futuresystems.org
+india$ module load fg455
+india$ cm-mooc login
+vm$ cd JavaFiles
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="run-programs">
+<h2>Run Programs<a class="headerlink" href="#run-programs" title="Permalink to this headline">¶</a></h2>
+<p>X Window System (X11) should be enabled on your desktop to view plotting data. Java and other libraries are pre-installed on the VM.</p>
+<div class="section" id="programs-location">
+<h3>Programs Location<a class="headerlink" href="#programs-location" title="Permalink to this headline">¶</a></h3>
+<p>On the VM, <cite>JavaFiles</cite> directory contains course programs:</p>
+<div class="highlight-python"><div class="highlight"><pre>vm$ cd ~/JavaFiles
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-each-program">
+<h3>Run Each Program<a class="headerlink" href="#run-each-program" title="Permalink to this headline">¶</a></h3>
+<p>Makefile allows you to compile java programs easily, and to run.</p>
+<p>In each directory, please execute:</p>
+<div class="highlight-python"><div class="highlight"><pre>vm$ make      # compile
+vm$ make run  # run Java Program
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-elusive-mr-higgs">
+<h3>The Elusive Mr. Higgs<a class="headerlink" href="#the-elusive-mr-higgs" title="Permalink to this headline">¶</a></h3>
+<p>This course program is for the unit 9 in the section 4.:</p>
+<div class="highlight-python"><div class="highlight"><pre>vm$ cd ~/JavaFiles/Section-4_Physica-Units-9-10-11/Unit-9_The-Elusive-Mr.Higgs/
+vm$ make
+vm$ make run
+</pre></div>
+</div>
+<p>Example of the plotting data is:</p>
+<img alt="../../_images/higgs1.png" src="../../_images/higgs1.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Other programs have same templates to compile and run.</p>
+</div>
+</div>
+</div>
+<div class="section" id="run-programs-on-a-local-machine">
+<h2>Run Programs on a local machine<a class="headerlink" href="#run-programs-on-a-local-machine" title="Permalink to this headline">¶</a></h2>
+<p>Download programs and dependencies.:</p>
+<ul>
+<li><p class="first">Programs:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git clone https://github.com/cglmoocs/JavaFiles.git
+</pre></div>
+</div>
+</li>
+<li><p class="first">Dependencies:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git clone https://github.com/cglmoocs/Dependencies.git
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Make sure that the dependencies are included in CLASSPATH for your Java.</p>
+</div>
+</div>
+<div class="section" id="list-of-programs">
+<h2>List of Programs<a class="headerlink" href="#list-of-programs" title="Permalink to this headline">¶</a></h2>
+<p>There are 5 programs under ~/JavaFiles directory on the virtual machine.</p>
+<ul class="simple">
+<li>In Section 4, Unit 9, <a class="reference external" href="https://github.com/cglmoocs/JavaFiles/tree/master/Section-4_Physics-Units-9-10-11/Unit-9_The-Elusive-Mr.Higgs">The Elusive Mr. Higgs</a></li>
+<li>In Section 4, Unit 11, A Calculated Dice Roll.</li>
+<li>In Section 7, Unit 19, K&#8217;th Nearest Neighbor Algorithms.</li>
+<li>In Unit 27, PageRank.</li>
+<li>In Unit 28, K Means Clustering.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../lessons.html" class="btn btn-neutral float-right" title="Lessons" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cm-mooc.html" class="btn btn-neutral" title="Big Data Applications and Analytics Shell Overview" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

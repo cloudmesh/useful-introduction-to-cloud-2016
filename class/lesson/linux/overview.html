@@ -1,0 +1,422 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Overview and Introduction &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../index.html"/>
+        <link rel="up" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="../../bdossp_sp15/index.html"/>
+        <link rel="next" title="Shell" href="cheatsheet-shell.html"/>
+        <link rel="prev" title="Use of FutureSystems" href="../system/futuresystemsuse.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#notice">Notice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#office-hours">Office Hours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#contact">Contact</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#weekly-plan">Weekly Plan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#support">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#meeting">Meeting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#collaboration-tools">Collaboration Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#futuresystems-access">FutureSystems Access</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../bdossp_sp15/index.html#linux-basics">Linux Basics</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">Overview and Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="shell.html">Shell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="editors.html">Editing Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python.html">Python Programming</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ipython.html">IPython</a></li>
+<li class="toctree-l4"><a class="reference internal" href="packagemanagement.html">Package Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advancedssh.html">Advanced SSH</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html">Software Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#basics-of-openstack">Basics of OpenStack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#basics-of-cloudmesh">Basics of Cloudmesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#advanced-cloudmesh">Advanced Cloudmesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#it-operations-automation-and-orchestration">IT Operations - Automation and Orchestration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#virtual-clusters">Virtual Clusters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#other-technologies">Other Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#future">Future</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#to-be-organized-into-the-above">To be Organized into the above</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
+      
+    <li>Overview and Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/class/lesson/linux/overview.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="overview-and-introduction">
+<h1>Overview and Introduction<a class="headerlink" href="#overview-and-introduction" title="Permalink to this headline">¶</a></h1>
+<div class="sidebar">
+<p class="first sidebar-title">Page Contents</p>
+<div class="contents local last topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#overview" id="id1">Overview</a></li>
+<li><a class="reference internal" href="#prerequisite" id="id2">Prerequisite</a></li>
+<li><a class="reference internal" href="#description" id="id3">Description</a><ul>
+<li><a class="reference internal" href="#shell" id="id4">Shell</a></li>
+<li><a class="reference internal" href="#editing-files" id="id5">Editing Files</a></li>
+<li><a class="reference internal" href="#python-programming" id="id6">Python Programming</a></li>
+<li><a class="reference internal" href="#package-management" id="id7">Package Management</a></li>
+<li><a class="reference internal" href="#advanced-ssh" id="id8">Advanced SSH</a></li>
+<li><a class="reference internal" href="#software-modules" id="id9">Software Modules</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cheatsheet" id="id10">Cheatsheet</a></li>
+<li><a class="reference internal" href="#next-step" id="id11">Next Step</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="overview">
+<h2><a class="toc-backref" href="#id1">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This lesson will introduce you to the basics of Linux usage.
+The topics covered will be :</p>
+<ul class="simple">
+<li><a class="reference internal" href="shell.html"><em>Shell</em></a></li>
+<li><a class="reference internal" href="editors.html"><em>Editing Files</em></a></li>
+<li><a class="reference internal" href="python.html"><em>Python Programming</em></a></li>
+<li><a class="reference internal" href="packagemanagement.html"><em>Package Management</em></a></li>
+<li><a class="reference internal" href="advancedssh.html"><em>Advanced SSH</em></a></li>
+<li><a class="reference internal" href="modules.html"><em>Software Modules</em></a></li>
+</ul>
+</div>
+<div class="section" id="prerequisite">
+<h2><a class="toc-backref" href="#id2">Prerequisite</a><a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
+<p>In order to conduct this lesson you should have an account on
+FutureSystems, as described in <a class="reference internal" href="../system/futuresystemsuse.html"><em>Use of FutureSystems</em></a>.
+You should start by logging into you FutureSystems account.</p>
+</div>
+<div class="section" id="description">
+<h2><a class="toc-backref" href="#id3">Description</a><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="shell">
+<h3><a class="toc-backref" href="#id4">Shell</a><a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h3>
+<p>A &#8220;shell&#8221; is a program that facilitates interaction between human and
+computer.
+By providing this level of abstraction certain tasks which may be
+otherwise cumbersome of time-consuming are relatively simple to
+accomplish.
+There are numerous types of shells.
+If you have ever used a computer you have used a shell.
+For instance, Windows and Mac OS X use a shell based on graphical
+representations with a mouse and keyboard for interaction.
+Touch-screen phones and tables also use another type of shell whose
+mode of interaction is through touch.
+In addition to these which you might be familiar with, we will be using
+a command shell to interact with the computer primarily through the
+keyboard.</p>
+</div>
+<div class="section" id="editing-files">
+<h3><a class="toc-backref" href="#id5">Editing Files</a><a class="headerlink" href="#editing-files" title="Permalink to this headline">¶</a></h3>
+<p>Programming and scripting requires the use of a text editor, which is
+different than a word processor such as Microsoft Word. Common editors
+used on Linux include nano, vi, or emacs. There are many others, but
+most examples will use nano and interested students can investigate vi
+or emacs as they wish. The principal difference between a text editor
+like nano and a word processor like MS Word is how text is saved to
+disk. A text editor saves its contents as plain text (&#8220;what you type
+is what you save&#8221;). A word processor supports formatting, such as
+bold- or italicized-face and different fonts. A text editor is
+appropriate for writing Python code, shell scripts, or
+reStructuredText documents but a word processor should not be used.</p>
+</div>
+<div class="section" id="python-programming">
+<h3><a class="toc-backref" href="#id6">Python Programming</a><a class="headerlink" href="#python-programming" title="Permalink to this headline">¶</a></h3>
+<p>Python is an interpreted, dynamic, high-level programming language and
+is suitable for a wide range of applications.</p>
+<p>The ideals of Python are expressed in <a class="reference external" href="https://www.python.org/dev/peps/pep-0020/">The Zen of Python</a>, of which
+several statements are:</p>
+<ul class="simple">
+<li>Explicit is better than implicit</li>
+<li>Simple is better than complex</li>
+<li>Complex is better than complicated</li>
+<li>Readability counts</li>
+</ul>
+<p>The main features of Python are:</p>
+<ul class="simple">
+<li>Use of indentation whitespace to indicate blocks</li>
+<li>Object orient paradigm</li>
+<li>Dynamic typing</li>
+<li>Interpreted runtime</li>
+<li>Garbage collected memory management</li>
+<li>a large standard library</li>
+<li>a large repository of third-party libraries</li>
+</ul>
+<p>Python is used by many companies (such as Google, Yahoo!, CERN, NASA)
+and is applied for web development, scientific computing, embedded
+applications, artificial intelligence, software development, and
+information security, to name a few.</p>
+</div>
+<div class="section" id="package-management">
+<h3><a class="toc-backref" href="#id7">Package Management</a><a class="headerlink" href="#package-management" title="Permalink to this headline">¶</a></h3>
+<p>Package Manager: is a tool to install, update or remove software on
+the system. A pre-defined set of files also called a package will be
+used to setup software. It also manages dependencies such as a certain
+library or an other required program to be installed. If program A
+requires program B and library C, installing B and C should be done
+prior to program. The package manager easily handles packages which
+are compiled sets of software. With different types of Linux
+distributions, there are several package managers i.e. yum, apt-get or
+brew.</p>
+</div>
+<div class="section" id="advanced-ssh">
+<h3><a class="toc-backref" href="#id8">Advanced SSH</a><a class="headerlink" href="#advanced-ssh" title="Permalink to this headline">¶</a></h3>
+<p>This lesson will introduce you to advanced SSH configuration and
+tunneling. You can have a shortcut to your SSH connection with a
+<code class="docutils literal"><span class="pre">ssh</span></code> configuration file or you can create a secure connection
+between local and remote machines using SSH tunneling. You will find
+out as how to define ssh options in the <code class="docutils literal"><span class="pre">ssh</span></code> config and what
+commands you need to establish SSH tunneling with a few examples.</p>
+</div>
+<div class="section" id="software-modules">
+<h3><a class="toc-backref" href="#id9">Software Modules</a><a class="headerlink" href="#software-modules" title="Permalink to this headline">¶</a></h3>
+<p>Modules (Software Environment Management): is a dynamic shell
+management tool. Environment variable settings can be loaded, unloaded
+or switched on the fly while users are using the shell. Working on
+different versions of software is possible using the Module package
+while it manages environment variables i.e. PATH, MANPATH, etc by
+reading modulefiles.</p>
+</div>
+</div>
+<div class="section" id="cheatsheet">
+<h2><a class="toc-backref" href="#id10">Cheatsheet</a><a class="headerlink" href="#cheatsheet" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cheatsheet-shell.html">Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet-shell.html#information">Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet-shell.html#directory-operations">Directory Operations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cheatsheet-shell.html#ls-options"><code class="docutils literal"><span class="pre">ls</span></code> Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet-shell.html#searching">Searching</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cheatsheet-shell.html#grep-options"><code class="docutils literal"><span class="pre">grep</span></code> Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet-shell.html#file-operations">File Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet-shell.html#process-management">Process Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cheatsheet-editor.html">Editor (Under preparation)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheatsheet-python.html">Python (Under preparation)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheatsheet-ssh.html">SSH (Under preparation)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheatsheet-modules.html">Modules (Under preparation)</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="next-step">
+<h2><a class="toc-backref" href="#id11">Next Step</a><a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
+<p>Next: <a class="reference internal" href="shell.html"><em>Shell</em></a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cheatsheet-shell.html" class="btn btn-neutral float-right" title="Shell" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../system/futuresystemsuse.html" class="btn btn-neutral" title="Use of FutureSystems" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

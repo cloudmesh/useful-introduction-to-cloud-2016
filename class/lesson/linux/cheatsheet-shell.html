@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Shell &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../index.html"/>
+        <link rel="up" title="Overview and Introduction" href="overview.html"/>
+        <link rel="next" title="Editor (Under preparation)" href="cheatsheet-editor.html"/>
+        <link rel="prev" title="Overview and Introduction" href="overview.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#notice">Notice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#office-hours">Office Hours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#contact">Contact</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#weekly-plan">Weekly Plan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#support">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#meeting">Meeting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#collaboration-tools">Collaboration Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#futuresystems-access">FutureSystems Access</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../bdossp_sp15/index.html#linux-basics">Linux Basics</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="overview.html">Overview and Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="shell.html">Shell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="editors.html">Editing Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python.html">Python Programming</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ipython.html">IPython</a></li>
+<li class="toctree-l4"><a class="reference internal" href="packagemanagement.html">Package Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advancedssh.html">Advanced SSH</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html">Software Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#basics-of-openstack">Basics of OpenStack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#basics-of-cloudmesh">Basics of Cloudmesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#advanced-cloudmesh">Advanced Cloudmesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#it-operations-automation-and-orchestration">IT Operations - Automation and Orchestration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#virtual-clusters">Virtual Clusters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#other-technologies">Other Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#future">Future</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#to-be-organized-into-the-above">To be Organized into the above</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
+      
+          <li><a href="overview.html">Overview and Introduction</a> &raquo;</li>
+      
+    <li>Shell</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/class/lesson/linux/cheatsheet-shell.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="shell">
+<h1>Shell<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h1>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>You can loop up information about commands by executing:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ man &lt;name&gt;
+</pre></div>
+</div>
+<p>For example, to lookup <code class="docutils literal"><span class="pre">ls</span></code> execute:</p>
+<div class="last highlight-python"><div class="highlight"><pre>$ man ls
+</pre></div>
+</div>
+</div>
+<div class="section" id="information">
+<h2>Information<a class="headerlink" href="#information" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">uname</span></code> display operating system name</li>
+<li><code class="docutils literal"><span class="pre">date</span></code> display the date</li>
+<li><code class="docutils literal"><span class="pre">uptime</span></code> show how long the operating system has been running</li>
+<li><code class="docutils literal"><span class="pre">whoami</span></code> show the current user id</li>
+<li><code class="docutils literal"><span class="pre">man</span></code> display the manual page for a command</li>
+</ul>
+</div>
+<div class="section" id="directory-operations">
+<h2>Directory Operations<a class="headerlink" href="#directory-operations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">pwd</span></code> display working directory</li>
+<li><code class="docutils literal"><span class="pre">mkdir</span></code> make a directory</li>
+<li><code class="docutils literal"><span class="pre">cd</span></code> change directory</li>
+<li><code class="docutils literal"><span class="pre">ls</span></code> list directory contents</li>
+</ul>
+<div class="section" id="ls-options">
+<h3><code class="docutils literal"><span class="pre">ls</span></code> Options<a class="headerlink" href="#ls-options" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">-a</span></code> include directory entries whose name begins with a <code class="docutils literal"><span class="pre">.</span></code></li>
+<li><code class="docutils literal"><span class="pre">-R</span></code> recuresively list subdirectories encountered</li>
+<li><code class="docutils literal"><span class="pre">-r</span></code> reverse the order of the sort</li>
+<li><code class="docutils literal"><span class="pre">-t</span></code> sort by time modified</li>
+<li><code class="docutils literal"><span class="pre">-S</span></code> sort files by size</li>
+<li><code class="docutils literal"><span class="pre">-l</span></code> list in log format</li>
+<li><code class="docutils literal"><span class="pre">-1</span></code> output one entry per line</li>
+<li><code class="docutils literal"><span class="pre">-m</span></code> list files accross the page separated by commas</li>
+<li><code class="docutils literal"><span class="pre">-Q</span></code> enclose entry names in double quotes</li>
+</ul>
+</div>
+</div>
+<div class="section" id="searching">
+<h2>Searching<a class="headerlink" href="#searching" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">grep</span></code> print lines matching a pattern</li>
+<li><code class="docutils literal"><span class="pre">find</span> <span class="pre">dir</span> <span class="pre">-name</span> <span class="pre">&quot;pattern&quot;</span></code> search <code class="docutils literal"><span class="pre">dir</span></code> for files matching <code class="docutils literal"><span class="pre">pattern</span></code></li>
+<li><code class="docutils literal"><span class="pre">find</span> <span class="pre">dir</span> <span class="pre">-iname</span> <span class="pre">&quot;pattern&quot;</span></code> the above but ignore case</li>
+<li><code class="docutils literal"><span class="pre">whereis</span></code> locate the binary, source, manual page files for a command</li>
+<li><code class="docutils literal"><span class="pre">locate</span></code> find files by name</li>
+</ul>
+<div class="section" id="grep-options">
+<h3><code class="docutils literal"><span class="pre">grep</span></code> Options<a class="headerlink" href="#grep-options" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">-i</span></code> ignore case</li>
+<li><code class="docutils literal"><span class="pre">-r</span></code> recursive</li>
+<li><code class="docutils literal"><span class="pre">-v</span></code> select non-matching lines</li>
+<li><code class="docutils literal"><span class="pre">-o</span></code> show only the matching part of matching lines</li>
+</ul>
+</div>
+</div>
+<div class="section" id="file-operations">
+<h2>File Operations<a class="headerlink" href="#file-operations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">touch</span></code> change file timestamps</li>
+<li><code class="docutils literal"><span class="pre">cat</span></code> concatenate files and print to <code class="docutils literal"><span class="pre">stdout</span></code></li>
+<li><code class="docutils literal"><span class="pre">more</span></code> file perusal filter for viewing</li>
+<li><code class="docutils literal"><span class="pre">less</span></code> like <code class="docutils literal"><span class="pre">more</span></code> but supports backward movement</li>
+<li><code class="docutils literal"><span class="pre">file</span></code> determine file type</li>
+<li><code class="docutils literal"><span class="pre">cp</span></code> copy files and directories</li>
+<li><code class="docutils literal"><span class="pre">mv</span></code> move (rename) files</li>
+<li><code class="docutils literal"><span class="pre">rm</span></code> remove files or directories</li>
+<li><code class="docutils literal"><span class="pre">head</span></code> display the first lines of files</li>
+<li><code class="docutils literal"><span class="pre">tail</span></code> display the last lines of files</li>
+<li><code class="docutils literal"><span class="pre">chmod</span></code> change file access permissions</li>
+</ul>
+</div>
+<div class="section" id="process-management">
+<h2>Process Management<a class="headerlink" href="#process-management" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">ps</span></code> report a snapshot of current processes</li>
+<li><code class="docutils literal"><span class="pre">top</span></code> display linux process table</li>
+<li><code class="docutils literal"><span class="pre">kill</span></code> terminate a process using process id</li>
+<li><code class="docutils literal"><span class="pre">pgrep</span></code> lookup process based on name</li>
+<li><code class="docutils literal"><span class="pre">pkill</span></code> kill process based on name</li>
+<li><code class="docutils literal"><span class="pre">killall</span></code> kill processes by name</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cheatsheet-editor.html" class="btn btn-neutral float-right" title="Editor (Under preparation)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="overview.html" class="btn btn-neutral" title="Overview and Introduction" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

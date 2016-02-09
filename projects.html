@@ -1,0 +1,208 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Title: Unsupervised Name Disambiguation Based on Clustering &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Title: Unsupervised Name Disambiguation Based on Clustering</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/projects.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="title-unsupervised-name-disambiguation-based-on-clustering">
+<h1>Title: Unsupervised Name Disambiguation Based on Clustering<a class="headerlink" href="#title-unsupervised-name-disambiguation-based-on-clustering" title="Permalink to this headline">¶</a></h1>
+<p><strong>Technologies:</strong></p>
+<p><strong>Description:</strong></p>
+<p>Name ambiguity is a common problem exists in scientific literature due to two facts. One of them is that so often the author full name information is not available, e.g., Joan Smith and John Smith will both appear as J. Smith in author list of some paper. Another less common reason is that multiple authors share totally identical name.</p>
+<p>There are plenty of related research in this area trying to attacking this problem. One quite common one is based on clustering technique. E.g., based on other available information such as co-authorship, research interests/fields, etc.</p>
+<p>We now have a database with about 140K publications involving about 20k authors (author names) we are interested in. Currently the data is in MySQL database. Each publication has a title, and possible authors associated with it. Most of publications also have publication venue information. Co-authorship mapping is also available.</p>
+<p>Your desired task is to grab the data, and put it into some NoSQL format such as MongoDB, or some other graph based database, e.g., neo4j. Then construct social networking alike graphs based on the data for the visualization. And then conduct clustering based approach to attack the name ambiguity problem, based on the co-authorship data, as well as other semantic information derived e.g. from the title and publication venue.</p>
+<p>The desired development tool/framework is Python + Flask/Django + Ajax. Statistics and machine learning background would be necessary as well.</p>
+<p><strong>Deliverables:</strong></p>
+<p><strong>Extensions:</strong></p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

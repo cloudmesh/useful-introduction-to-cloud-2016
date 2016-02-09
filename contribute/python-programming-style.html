@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to write good Python codes for Cloudmesh &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../index.html"/>
+        <link rel="up" title="Contribute to Cloudmesh" href="index.html"/>
+        <link rel="next" title="Archived" href="../archived.html"/>
+        <link rel="prev" title="Contribute to Cloudmesh" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Contribute to Cloudmesh</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">How to write good Python codes for Cloudmesh</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#code-in-python">Code in Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction-to-python-code-quality-checkers">Introduction to Python code quality checkers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-python-code-quality-checkers-in-editors">Using Python code quality checkers in editors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Contribute to Cloudmesh</a> &raquo;</li>
+      
+    <li>How to write good Python codes for Cloudmesh</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/contribute/python-programming-style.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-write-good-python-codes-for-cloudmesh">
+<h1>How to write good Python codes for Cloudmesh<a class="headerlink" href="#how-to-write-good-python-codes-for-cloudmesh" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="code-in-python">
+<h2>Code in Python<a class="headerlink" href="#code-in-python" title="Permalink to this headline">¶</a></h2>
+<p>We use Python to develop Cloudmesh and we follow the Python coding style. In order to contribute to  Cloudmesh project, you need to have basic understanding of Python coding style. If you are new to Python, the following article will be a good start point:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.python-guide.org/en/latest/writing/style/">http://docs.python-guide.org/en/latest/writing/style/</a></li>
+</ul>
+<p>PEP8 gives coding conventions for the Python code comprising the standard library in the main Python distribution, it is a Style Guide for Python Code and suggested to read:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://legacy.python.org/dev/peps/pep-0008/">http://legacy.python.org/dev/peps/pep-0008/</a></li>
+</ul>
+<div class="section" id="introduction-to-python-code-quality-checkers">
+<h3>Introduction to Python code quality checkers<a class="headerlink" href="#introduction-to-python-code-quality-checkers" title="Permalink to this headline">¶</a></h3>
+<p>There are some very good tools to help you check your Python code quality, such as pep8, Pylint and autopep8</p>
+<div class="section" id="pep8">
+<h4>pep8<a class="headerlink" href="#pep8" title="Permalink to this headline">¶</a></h4>
+<p>pep8 is a tool to check your Python code against some of the style conventions in PEP 8 (refer to: <a class="reference external" href="https://pypi.python.org/pypi/pep8">https://pypi.python.org/pypi/pep8</a>).</p>
+<p>install:</p>
+<div class="highlight-python"><div class="highlight"><pre>pip install pep8
+</pre></div>
+</div>
+<p>have a try:</p>
+<div class="highlight-python"><div class="highlight"><pre>pep8 your_file.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="pylint">
+<h4>Pylint<a class="headerlink" href="#pylint" title="Permalink to this headline">¶</a></h4>
+<p>Pylint is a source code bug and quality checker for the Python programming language. It follows the style recommended by PEP 8 (refer ro: <a class="reference external" href="http://www.pylint.org/">http://www.pylint.org/</a>).</p>
+<p>install:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install pylint
+</pre></div>
+</div>
+<p>have a try:</p>
+<div class="highlight-python"><div class="highlight"><pre>pylint your_file.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="autopep8">
+<h4>autopep8<a class="headerlink" href="#autopep8" title="Permalink to this headline">¶</a></h4>
+<p>autopep8 automatically formats Python code to conform to the PEP 8 style guide. It uses the pep8 utility to determine what parts of the code needs to be formatted. autopep8 is capable of fixing most of the formatting issues that can be reported by pep8 (refer to: <a class="reference external" href="https://pypi.python.org/pypi/autopep8/">https://pypi.python.org/pypi/autopep8/</a>).</p>
+<p>install:</p>
+<div class="highlight-python"><div class="highlight"><pre>pip install --upgrade autopep8
+</pre></div>
+</div>
+<p>have a try:</p>
+<div class="highlight-python"><div class="highlight"><pre>autopep8 your_file.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="using-python-code-quality-checkers-in-editors">
+<h3>Using Python code quality checkers in editors<a class="headerlink" href="#using-python-code-quality-checkers-in-editors" title="Permalink to this headline">¶</a></h3>
+<p>TBD...</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../archived.html" class="btn btn-neutral float-right" title="Archived" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Contribute to Cloudmesh" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

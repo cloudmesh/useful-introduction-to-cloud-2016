@@ -1,0 +1,652 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Learning Objectives &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Learning Objectives</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/class/lesson/linux/shell-loop.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="learning-objectives">
+<h1>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li>Write a loop that applies one or more commands separately to each
+file in a set of files.</li>
+<li>Trace the values taken on by a loop variable during execution of
+the loop.</li>
+<li>Explain the difference between a variable&#8217;s name and its value.</li>
+<li>Explain why spaces and some punctuation characters shouldn&#8217;t be
+used in files&#8217; names.</li>
+<li>Demonstrate how to see what commands have recently been executed.</li>
+<li>Re-run recently executed commands without retyping them.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="loops">
+<h1>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h1>
+<p>Wildcards and tab completion are two ways to reduce typing (and typing
+mistakes). Another is to tell the shell to do something over and over
+again. Suppose we have several hundred genome data files named
+<code class="docutils literal"><span class="pre">basilisk.dat</span></code>, <code class="docutils literal"><span class="pre">unicorn.dat</span></code>, and so on. In this example, we&#8217;ll
+use the <code class="docutils literal"><span class="pre">creatures</span></code> directory which only has two example files, but
+the principles can be applied to many many more files at once. We
+would like to modify these files, but also save a version of the
+original files and rename them as <code class="docutils literal"><span class="pre">original-basilisk.dat</span></code> and
+<code class="docutils literal"><span class="pre">original-unicorn.dat</span></code>.  We can&#8217;t use:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ mv *.dat original-*.dat
+</pre></div>
+</div>
+<p>because that would expand to:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ mv basilisk.dat unicorn.dat original-*.dat
+</pre></div>
+</div>
+<p>This wouldn&#8217;t back up our files, instead we get an error:</p>
+<div class="highlight-python"><div class="highlight"><pre>mv: target `original-*.dat&#39; is not a directory
+</pre></div>
+</div>
+<p>This a problem arises when <code class="docutils literal"><span class="pre">mv</span></code> receives more than two inputs. When
+this happens, it expects the last input to be a directory where it can
+move all the files it was passed to. Since there is no directory named
+<code class="docutils literal"><span class="pre">original-*.dat</span></code> in the <code class="docutils literal"><span class="pre">creatures</span></code> directory we get an error.</p>
+<p>Instead, we can use a <strong>loop</strong> to do some operation once for each
+thing in a list. Here&#8217;s a simple example that displays the first three
+lines of each file in turn:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ for filename in basilisk.dat unicorn.dat
+&gt; do
+&gt;    head -3 $filename
+&gt; done
+COMMON NAME: basilisk
+CLASSIFICATION: basiliscus vulgaris
+UPDATED: 1745-05-02
+COMMON NAME: unicorn
+CLASSIFICATION: equus monoceros
+UPDATED: 1738-11-24
+</pre></div>
+</div>
+<p>When the shell sees the keyword <code class="docutils literal"><span class="pre">for</span></code>, it knows it is supposed to
+repeat a command (or group of commands) once for each thing in a list.
+In this case, the list is the two filenames. Each time through the
+loop, the name of the thing currently being operated on is assigned to
+the <strong>variable</strong> called <code class="docutils literal"><span class="pre">filename</span></code>. Inside the loop, we get the
+variable&#8217;s value by putting <code class="docutils literal"><span class="pre">$</span></code> in front of it: <code class="docutils literal"><span class="pre">$filename</span></code> is
+<code class="docutils literal"><span class="pre">basilisk.dat</span></code> the first time through the loop, <code class="docutils literal"><span class="pre">unicorn.dat</span></code> the
+second, and so on.</p>
+</div>
+<div class="section" id="variables">
+<h1>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h1>
+<p>By using the dollar sign we are telling the shell interpreter to treat
+<code class="docutils literal"><span class="pre">filename</span></code> as a variable name and substitute its value on its place,
+but not as some text or external command. When using variables it is
+also possible to put the names into curly braces to clearly delimit
+the variable name: <code class="docutils literal"><span class="pre">$filename</span></code> is equivalent to <code class="docutils literal"><span class="pre">${filename}</span></code>, but
+is different from <code class="docutils literal"><span class="pre">${file}name</span></code>. You may find this notation in other
+people&#8217;s programs.</p>
+<p>Finally, the command that&#8217;s actually being run is our old friend
+<code class="docutils literal"><span class="pre">head</span></code>, so this loop prints out the first three lines of each data
+file in turn.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>The Prompt Changes</dt>
+<dd>The shell prompt changes from <code class="docutils literal"><span class="pre">$</span></code> to <code class="docutils literal"><span class="pre">&gt;</span></code> and back again as we
+were typing in our loop. The second prompt, <code class="docutils literal"><span class="pre">&gt;</span></code>, is different to
+remind us that we haven&#8217;t finished typing a complete command yet.</dd>
+</dl>
+</div>
+<p>We have called the variable in this loop <code class="docutils literal"><span class="pre">filename</span></code> in order to make
+its purpose clearer to human readers. The shell itself doesn&#8217;t care
+what the variable is called; if we wrote this loop as:</p>
+<div class="highlight-python"><div class="highlight"><pre>for x in basilisk.dat unicorn.dat
+do
+    head -3 $x
+done
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-python"><div class="highlight"><pre>for temperature in basilisk.dat unicorn.dat
+do
+    head -3 $temperature
+done
+</pre></div>
+</div>
+<p>it would work exactly the same way. <em>Don&#8217;t do this.</em> Programs are only
+useful if people can understand them, so meaningless names (like
+<code class="docutils literal"><span class="pre">x</span></code>) or misleading names (like <code class="docutils literal"><span class="pre">temperature</span></code> in this case)
+increase the odds that the program won&#8217;t do what its readers think it
+does.</p>
+</div>
+<div class="section" id="informative-loops">
+<h1>Informative Loops<a class="headerlink" href="#informative-loops" title="Permalink to this headline">¶</a></h1>
+<p>Here&#8217;s a slightly more complicated loop:</p>
+<div class="highlight-python"><div class="highlight"><pre>for filename in *.dat
+do
+    echo $filename
+    head -100 $filename | tail -20
+done
+</pre></div>
+</div>
+<p>The shell starts by expanding <code class="docutils literal"><span class="pre">*.dat</span></code> to create the list of files it
+will process. The <strong>loop body</strong> then executes two commands for each of
+those files. The first, <code class="docutils literal"><span class="pre">echo</span></code>, just prints its command-line
+parameters to standard output. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ echo hello there
+</pre></div>
+</div>
+<p>prints:</p>
+<div class="highlight-python"><div class="highlight"><pre>hello there
+</pre></div>
+</div>
+<p>In this case, since the shell expands <code class="docutils literal"><span class="pre">$filename</span></code> to be the name of
+a file, <code class="docutils literal"><span class="pre">echo</span> <span class="pre">$filename</span></code> just prints the name of the file. Note that
+we can&#8217;t write this as:</p>
+<div class="highlight-python"><div class="highlight"><pre>for filename in *.dat
+do
+    $filename
+    head -100 $filename | tail -20
+done
+</pre></div>
+</div>
+<p>because then the first time through the loop, when <code class="docutils literal"><span class="pre">$filename</span></code>
+expanded to <code class="docutils literal"><span class="pre">basilisk.dat</span></code>, the shell would try to run
+<code class="docutils literal"><span class="pre">basilisk.dat</span></code> as a program. Finally, the <code class="docutils literal"><span class="pre">head</span></code> and <code class="docutils literal"><span class="pre">tail</span></code>
+combination selects lines 81-100 from whatever file is being
+processed.</p>
+</div>
+<div class="section" id="spaces-in-names">
+<h1>Spaces in Names<a class="headerlink" href="#spaces-in-names" title="Permalink to this headline">¶</a></h1>
+<p>Filename expansion in loops is another reason you should not use
+spaces in filenames. Suppose our data files are named:</p>
+<div class="highlight-python"><div class="highlight"><pre>basilisk.dat
+red dragon.dat
+unicorn.dat
+</pre></div>
+</div>
+<p>If we try to process them using:</p>
+<div class="highlight-python"><div class="highlight"><pre>for filename in *.dat
+do
+    head -100 $filename | tail -20
+done
+</pre></div>
+</div>
+<p>then the shell will expand <code class="docutils literal"><span class="pre">*.dat</span></code> to create:</p>
+<div class="highlight-python"><div class="highlight"><pre>basilisk.dat red dragon.dat unicorn.dat
+</pre></div>
+</div>
+<p>With older versions of Bash, or most other shells, <code class="docutils literal"><span class="pre">filename</span></code> will
+then be assigned the following values in turn:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">basilisk</span><span class="o">.</span><span class="n">dat</span>
+<span class="n">red</span>
+<span class="n">dragon</span><span class="o">.</span><span class="n">dat</span>
+<span class="n">unicorn</span><span class="o">.</span><span class="n">dat</span>
+</pre></div>
+</div>
+<p>That&#8217;s a problem: <code class="docutils literal"><span class="pre">head</span></code> can&#8217;t read files called <code class="docutils literal"><span class="pre">red</span></code> and
+<code class="docutils literal"><span class="pre">dragon.dat</span></code> because they don&#8217;t exist, and won&#8217;t be asked to read
+the file <code class="docutils literal"><span class="pre">red</span> <span class="pre">dragon.dat</span></code>.</p>
+<p>We can make our script a little bit more robust by <strong>quoting</strong> our use
+of the variable:</p>
+<div class="highlight-python"><div class="highlight"><pre>for filename in *.dat
+do
+    head -100 &quot;$filename&quot; | tail -20
+done
+</pre></div>
+</div>
+<p>but it&#8217;s simpler just to avoid using spaces (or other special
+characters) in filenames.</p>
+<p>Going back to our original file renaming problem, we can solve it
+using this loop:</p>
+<div class="highlight-python"><div class="highlight"><pre>for filename in *.dat
+do
+    mv $filename original-$filename
+done
+</pre></div>
+</div>
+<p>This loop runs the <code class="docutils literal"><span class="pre">mv</span></code> command once for each filename. The first
+time, when <code class="docutils literal"><span class="pre">$filename</span></code> expands to <code class="docutils literal"><span class="pre">basilisk.dat</span></code>, the shell
+executes:</p>
+<div class="highlight-python"><div class="highlight"><pre>mv basilisk.dat original-basilisk.dat
+</pre></div>
+</div>
+<p>The second time, the command is:</p>
+<div class="highlight-python"><div class="highlight"><pre>mv unicorn.dat original-unicorn.dat
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Measure Twice, Run Once</dt>
+<dd><p class="first">A loop is a way to do many things at once &#8212; or to make many
+mistakes at once if it does the wrong thing. One way to check what
+a loop <em>would</em> do is to echo the commands it would run instead of
+actually running them. For example, we could write our file
+renaming loop like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>for filename in *.dat
+do
+    echo mv $filename original-$filename
+done
+</pre></div>
+</div>
+<p>Instead of running <code class="docutils literal"><span class="pre">mv</span></code>, this loop runs <code class="docutils literal"><span class="pre">echo</span></code>, which prints
+out:</p>
+<div class="highlight-python"><div class="highlight"><pre>mv basilisk.dat original-basilisk.dat
+mv unicorn.dat original-unicorn.dat
+</pre></div>
+</div>
+<p class="last"><em>without</em> actually running those commands. We can then use
+up-arrow to redisplay the loop, back-arrow to get to the word
+<code class="docutils literal"><span class="pre">echo</span></code>, delete it, and then press &#8220;enter&#8221; to run the loop with
+the actual <code class="docutils literal"><span class="pre">mv</span></code> commands. This isn&#8217;t foolproof, but it&#8217;s a handy
+way to see what&#8217;s going to happen when you&#8217;re still learning how
+loops work.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="nelle-s-pipeline-processing-files">
+<h1>Nelle&#8217;s Pipeline: Processing Files<a class="headerlink" href="#nelle-s-pipeline-processing-files" title="Permalink to this headline">¶</a></h1>
+<p>Nelle is now ready to process her data files. Since she&#8217;s still
+learning how to use the shell, she decides to build up the required
+commands in stages. Her first step is to make sure that she can select
+the right files &#8212; remember, these are ones whose names end in &#8216;A&#8217; or
+&#8216;B&#8217;, rather than &#8216;Z&#8217;:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cd north-pacific-gyre/2012-07-03
+$ for datafile in *[AB].txt
+&gt; do
+&gt;     echo $datafile
+&gt; done
+NENE01729A.txt
+NENE01729B.txt
+NENE01736A.txt
+...
+NENE02043A.txt
+NENE02043B.txt
+</pre></div>
+</div>
+<p>Her next step is to decide what to call the files that the
+<code class="docutils literal"><span class="pre">goostats</span></code> analysis program will create. Prefixing each input file&#8217;s
+name with &#8220;stats&#8221; seems simple, so she modifies her loop to do that:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ for datafile in *[AB].txt
+&gt; do
+&gt;     echo $datafile stats-$datafile
+&gt; done
+NENE01729A.txt stats-NENE01729A.txt
+NENE01729B.txt stats-NENE01729B.txt
+NENE01736A.txt stats-NENE01736A.txt
+...
+NENE02043A.txt stats-NENE02043A.txt
+NENE02043B.txt stats-NENE02043B.txt
+</pre></div>
+</div>
+<p>She hasn&#8217;t actually run <code class="docutils literal"><span class="pre">goostats</span></code> yet, but now she&#8217;s sure she can
+select the right files and generate the right output filenames.</p>
+<p>Typing in commands over and over again is becoming tedious, though,
+and Nelle is worried about making mistakes, so instead of re-entering
+her loop, she presses the up arrow. In response, the shell redisplays
+the whole loop on one line (using semi-colons to separate the pieces):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ for datafile in *[AB].txt; do echo $datafile stats-$datafile; done
+</pre></div>
+</div>
+<p>Using the left arrow key, Nelle backs up and changes the command
+<code class="docutils literal"><span class="pre">echo</span></code> to <code class="docutils literal"><span class="pre">goostats</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ for datafile in *[AB].txt; do bash goostats $datafile stats-$datafile; done
+</pre></div>
+</div>
+<p>When she presses enter, the shell runs the modified command. However,
+nothing appears to happen &#8212; there is no output. After a moment,
+Nelle realizes that since her script doesn&#8217;t print anything to the
+screen any longer, she has no idea whether it is running, much less
+how quickly.  She kills the job by typing Control-C, uses up-arrow to
+repeat the command, and edits it to read:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ for datafile in *[AB].txt; do echo $datafile; bash goostats $datafile stats-$datafile; done
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Moving to the Beginning and End</dt>
+<dd>We can move to the beginning of a line in the shell by typing
+<code class="docutils literal"><span class="pre">^A</span></code> (which means Control-A) and to the end using <code class="docutils literal"><span class="pre">^E</span></code>.</dd>
+</dl>
+</div>
+<p>When she runs her program now, it produces one line of output every
+five seconds or so:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">NENE01729A</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">NENE01729B</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">NENE01736A</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>1518 times 5 seconds, divided by 60, tells her that her script will
+take about two hours to run. As a final check, she opens another
+terminal window, goes into <code class="docutils literal"><span class="pre">north-pacific-gyre/2012-07-03</span></code>, and uses
+<code class="docutils literal"><span class="pre">cat</span> <span class="pre">stats-NENE01729B.txt</span></code> to examine one of the output files. It
+looks good, so she decides to get some coffee and catch up on her
+reading.</p>
+</div>
+<div class="section" id="history">
+<h1>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h1>
+<p>(Those who know history can choose to repeat it)</p>
+<p>Another way to repeat previous work is to use the <code class="docutils literal"><span class="pre">history</span></code>
+command to get a list of the last few hundred commands that have
+been executed, and then to use <code class="docutils literal"><span class="pre">!123</span></code> (where &#8220;123&#8221; is replaced
+by the command number) to repeat one of those commands. For
+example, if Nelle types this:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ history | tail -5
+  456  ls -l NENE0*.txt
+  457  rm stats-NENE01729B.txt.txt
+  458  bash goostats NENE01729B.txt stats-NENE01729B.txt
+  459  ls -l NENE0*.txt
+  460  history
+</pre></div>
+</div>
+<p>then she can re-run <code class="docutils literal"><span class="pre">goostats</span></code> on <code class="docutils literal"><span class="pre">NENE01729B.txt</span></code> simply by
+typing <code class="docutils literal"><span class="pre">!458</span></code>.</p>
+</div>
+<div class="section" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="variables-in-loops">
+<h2>Variables in loops<a class="headerlink" href="#variables-in-loops" title="Permalink to this headline">¶</a></h2>
+<p>Suppose that <code class="docutils literal"><span class="pre">ls</span></code> initially displays:</p>
+<div class="highlight-python"><div class="highlight"><pre>fructose.dat    glucose.dat   sucrose.dat
+</pre></div>
+</div>
+<p>What is the output of:</p>
+<div class="highlight-python"><div class="highlight"><pre>for datafile in *.dat
+do
+    ls *.dat
+done
+</pre></div>
+</div>
+<p>Now, what is the output of:</p>
+<div class="highlight-python"><div class="highlight"><pre>for datafile in *.dat
+do
+  ls $datafile
+done
+</pre></div>
+</div>
+<p>Why do these two loops give you different outputs?</p>
+</div>
+<div class="section" id="saving-to-a-file-in-a-loop-part-one">
+<h2>Saving to a file in a loop - part one<a class="headerlink" href="#saving-to-a-file-in-a-loop-part-one" title="Permalink to this headline">¶</a></h2>
+<p>In the same directory, what is the effect of this loop?</p>
+<div class="highlight-python"><div class="highlight"><pre>for sugar in *.dat
+do
+    echo $sugar
+    cat $sugar &gt; xylose.dat
+done
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li>Prints <code class="docutils literal"><span class="pre">fructose.dat</span></code>, <code class="docutils literal"><span class="pre">glucose.dat</span></code>, and <code class="docutils literal"><span class="pre">sucrose.dat</span></code>,
+and copies <code class="docutils literal"><span class="pre">sucrose.dat</span></code> to create <code class="docutils literal"><span class="pre">xylose.dat</span></code>.</li>
+<li>Prints <code class="docutils literal"><span class="pre">fructose.dat</span></code>, <code class="docutils literal"><span class="pre">glucose.dat</span></code>, and <code class="docutils literal"><span class="pre">sucrose.dat</span></code>,
+and concatenates all three files to create <code class="docutils literal"><span class="pre">xylose.dat</span></code>.</li>
+<li>Prints <code class="docutils literal"><span class="pre">fructose.dat</span></code>, <code class="docutils literal"><span class="pre">glucose.dat</span></code>, <code class="docutils literal"><span class="pre">sucrose.dat</span></code>, and
+<code class="docutils literal"><span class="pre">xylose.dat</span></code>, and copies <code class="docutils literal"><span class="pre">sucrose.dat</span></code> to create
+<code class="docutils literal"><span class="pre">xylose.dat</span></code>.</li>
+<li>None of the above.</li>
+</ol>
+</div>
+<div class="section" id="saving-to-a-file-in-a-loop-part-two">
+<h2>Saving to a file in a loop - part two<a class="headerlink" href="#saving-to-a-file-in-a-loop-part-two" title="Permalink to this headline">¶</a></h2>
+<p>In another directory, where <code class="docutils literal"><span class="pre">ls</span></code> returns:</p>
+<div class="highlight-python"><div class="highlight"><pre>fructose.dat    glucose.dat   sucrose.dat   maltose.txt
+</pre></div>
+</div>
+<p>What would be the output of the following loop?</p>
+<div class="highlight-python"><div class="highlight"><pre>for datafile in *.dat
+do
+    cat $datafile &gt;&gt; sugar.dat
+done
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li>All of the text from <code class="docutils literal"><span class="pre">fructose.dat</span></code>, <code class="docutils literal"><span class="pre">glucose.dat</span></code> and
+<code class="docutils literal"><span class="pre">sucrose.dat</span></code> would be concatenated and saved to a file
+called <code class="docutils literal"><span class="pre">sugar.dat</span></code>.</li>
+<li>The text from <code class="docutils literal"><span class="pre">sucrose.dat</span></code> will be saved to a file called
+<code class="docutils literal"><span class="pre">sugar.dat</span></code>.</li>
+<li>All of the text from <code class="docutils literal"><span class="pre">fructose.dat</span></code>, <code class="docutils literal"><span class="pre">glucose.dat</span></code>,
+<code class="docutils literal"><span class="pre">sucrose.dat</span></code> and <code class="docutils literal"><span class="pre">maltose.txt</span></code> would be concatenated and
+saved to a file called <code class="docutils literal"><span class="pre">sugar.dat</span></code>.</li>
+<li>All of the text from <code class="docutils literal"><span class="pre">fructose.dat</span></code>, <code class="docutils literal"><span class="pre">glucose.dat</span></code> and
+<code class="docutils literal"><span class="pre">sucrose.dat</span></code> would be printed to the screen and saved to a
+file called <code class="docutils literal"><span class="pre">sugar.dat</span></code></li>
+</ol>
+</div>
+<div class="section" id="doing-a-dry-run">
+<h2>Doing a Dry Run<a class="headerlink" href="#doing-a-dry-run" title="Permalink to this headline">¶</a></h2>
+<p>Suppose we want to preview the commands the following loop will
+execute without actually running those commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>for file in *.dat
+do
+  analyze $file &gt; analyzed-$file
+done
+</pre></div>
+</div>
+<p>What is the difference between the the two loops below, and which
+one would we want to run?:</p>
+<div class="highlight-python"><div class="highlight"><pre># Version 1
+for file in *.dat
+do
+  echo analyze $file &gt; analyzed-$file
+done
+# Version 2
+for file in *.dat
+do
+  echo &quot;analyze $file &gt; analyzed-$file&quot;
+done
+</pre></div>
+</div>
+</div>
+<div class="section" id="variable-commands">
+<h2>Variable Commands<a class="headerlink" href="#variable-commands" title="Permalink to this headline">¶</a></h2>
+<p>Describe in words what the following loop does.</p>
+<div class="highlight-python"><div class="highlight"><pre>for how in frog11 prcb redig
+do
+    $how -limit 0.01 NENE01729B.txt
+done
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

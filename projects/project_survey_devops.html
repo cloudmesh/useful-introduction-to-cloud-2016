@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>A Survey of DevOps Frameworks in support of Big Data &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../index.html"/>
+        <link rel="up" title="Possible Projects" href="index.html"/>
+        <link rel="next" title="A Survey of Online PaaS Frameworks and Clouds in support of Big Data" href="project_survey_paas.html"/>
+        <link rel="prev" title="Cloudmesh Docker Clusetr Manager" href="project_docker.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Possible Projects</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="project_bibliometric_namedisambiguity.html">Author Name Disambiguation for Bibliometric Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_bigdata_containers.html">A Paper on Container Technologies for BigData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_cloudmesh.html">Cloudmesh Dirstributed Virtual Cluster Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_docker.html">Cloudmesh Docker Clusetr Manager</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">A Survey of DevOps Frameworks in support of Big Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task">Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-of-possible-useful-technologies-for-this-project">Example of possible useful Technologies for this Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#links">Links</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#artifacts">Artifacts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optional-artifacts">Optional Artifacts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="project_survey_paas.html">A Survey of Online PaaS Frameworks and Clouds in support of Big Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#from-nist-big-data-public-working-group">From NIST Big Data Public Working Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#links-that-may-inspire-projects">Links that may inspire projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#from-other-sources">From Other Sources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Possible Projects</a> &raquo;</li>
+      
+    <li>A Survey of DevOps Frameworks in support of Big Data</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/projects/project_survey_devops.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="a-survey-of-devops-frameworks-in-support-of-big-data">
+<span id="project-namedisambugiuty3"></span><h1>A Survey of DevOps Frameworks in support of Big Data<a class="headerlink" href="#a-survey-of-devops-frameworks-in-support-of-big-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<p>DevOps frameworks have recently changed the way many coorporations and
+reserach projects conduct deployments and softwaredevelopment.</p>
+</div>
+<div class="section" id="task">
+<h2>Task<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h2>
+<p>In this project wuou will be providing a {bf extensive} and {em high
+quality scholarly survey and review of various DevOps frameworks.
+This project will be conducted in co-authorship with Gregor von
+Laszewski. The document will be using Word. References must be
+maintained in endnote or Mendeley. If possible Microsoft Live will be
+used to share the document. Alternatively the paper can be written in
+LaTeX.</p>
+<p>THis project is not an easy project as we expect more than just a
+summary, but an evaluation or guidance section that identifies
+advantages and disadvantages of the various approaches. It may be
+necessary to test some of the systems out. This may include hosting
+companies that offer DevOps support services.</p>
+<p>Details will be discussed in our meetings in this project. Multiple
+students can participate in the project, but responsibilities will be
+clearly identified.</p>
+<p>The authors will not plagearuise. There will be a kick of meeting with
+the students that select this project. We anticipate the maximum
+number of students will be three. If more students sign up we may
+identify a or additional topics to write an additional paper.</p>
+</div>
+<div class="section" id="example-of-possible-useful-technologies-for-this-project">
+<h2>Example of possible useful Technologies for this Project<a class="headerlink" href="#example-of-possible-useful-technologies-for-this-project" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Any DevOps framework</li>
+<li>Any PaaS using DevOps</li>
+<li>Supporting services such as code reporsitories</li>
+</ul>
+</div>
+<div class="section" id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>IEEE templates: <a class="reference external" href="https://www.ieee.org/conferences_events/conferences/publishing/templates.html">https://www.ieee.org/conferences_events/conferences/publishing/templates.html</a></li>
+<li>Endnote:</li>
+</ul>
+<p><a class="reference external" href="http://endnote.com/?utm_source=google&amp;utm_medium=cpc&amp;utm_term=%7Bkeyword%7D&amp;utm_campaign=endnote%20brand%20exact&amp;gclid=CIOJ9bGw7sQCFQsJaQoduVUAow">http://endnote.com/?utm_source=google&amp;utm_medium=cpc&amp;utm_term=%7Bkeyword%7D&amp;utm_campaign=endnote%20brand%20exact&amp;gclid=CIOJ9bGw7sQCFQsJaQoduVUAow</a>
+As you are a student at IU I assume you qualify for the iuware version
+of endnote for the duration of your course on your private PC.</p>
+<ul class="simple">
+<li>Mendeley: <a class="reference external" href="https://www.mendeley.com">https://www.mendeley.com</a></li>
+<li>Microsoft Live: <a class="reference external" href="https://login.live.com">https://login.live.com</a></li>
+</ul>
+</div>
+<div class="section" id="artifacts">
+<h2>Artifacts<a class="headerlink" href="#artifacts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Scholarly paper</li>
+<li>Report written in IEEE format in LaTeX or Word</li>
+<li>Original images used in the report</li>
+<li>To make citation of scholarly work easier we not only recommend but
+require that you use a bibliography management tool such as endnote,
+Mandaley for word or bibtex for LaTex. In case of MS Word, if you do
+not have access to endnote, please use the build in citation manager
+from Word. In case of bibtex, you can also use jabref.</li>
+</ul>
+</div>
+<div class="section" id="optional-artifacts">
+<h2>Optional Artifacts<a class="headerlink" href="#optional-artifacts" title="Permalink to this headline">¶</a></h2>
+<p>Samples of using the DevOps Framework.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="project_survey_paas.html" class="btn btn-neutral float-right" title="A Survey of Online PaaS Frameworks and Clouds in support of Big Data" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="project_docker.html" class="btn btn-neutral" title="Cloudmesh Docker Clusetr Manager" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

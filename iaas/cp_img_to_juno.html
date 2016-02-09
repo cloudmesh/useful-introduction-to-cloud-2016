@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to copy your image from Havana to Juno &mdash; Introduction to Cloud Computing 1.1.5 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 1.1.5 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>How to copy your image from Havana to Juno</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/iaas/cp_img_to_juno.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-copy-your-image-from-havana-to-juno">
+<h1>How to copy your image from Havana to Juno<a class="headerlink" href="#how-to-copy-your-image-from-havana-to-juno" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The steps to copy your image from Havana to Juno goes like this;</p>
+<ul class="simple">
+<li><strong>Step 1.</strong> Setup OpenStack Havana environment</li>
+<li><strong>Step 2.</strong> Download image</li>
+<li><strong>Step 3.</strong> Setup OpenStack Juno environment</li>
+<li><strong>Step 4.</strong> Upload image</li>
+</ul>
+</div>
+<div class="section" id="step-1-setup-openstack-havana-environment">
+<h2>Step 1. Setup OpenStack Havana environment<a class="headerlink" href="#step-1-setup-openstack-havana-environment" title="Permalink to this headline">¶</a></h2>
+<p>Load <code class="docutils literal"><span class="pre">openstack-havana</span></code> module:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ module load openstack-havana
+</pre></div>
+</div>
+<p>Set environment variables for OpenStack Havana:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ source ~/.futuregrid/openstack_havana/novarc
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-2-download-image">
+<h2>Step 2. Download image<a class="headerlink" href="#step-2-download-image" title="Permalink to this headline">¶</a></h2>
+<p>Check the list of images by the following command, and find the name or id of
+the image you want to copy to Juno.:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova image-list
++--------------------------------------+-------------------------------------+--------+--------------+
+| ID                                   | Name                                | Status | Server       |
++--------------------------------------+-------------------------------------+--------+--------------+
+| aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee | normanrockwell/custom-ubuntu-14.04  | ACTIVE | xxxxxxx-.... |
+| ffffffff-gggg-eeee-hhhh-iiiiiiiiiiii | normanrockwell/custom-centos-6.5    | ACTIVE | yyyyyyy-.... |
++--------------------------------------+-------------------------------------+--------+--------------+
+</pre></div>
+</div>
+<p>I&#8217;ll pick <code class="docutils literal"><span class="pre">normanrockwell/custom-ubuntu-14.04</span></code> as an example, so the command to
+download the image is like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ glance download-image normanrockwell/custom-ubuntu-14.04 \
+    --file custom-ubuntu-14.04.img
+</pre></div>
+</div>
+<p>Make sure your image is downloaded successfully:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls -lh custom-ubuntu-14.04.img
+-rw-r--r-- 1 nrockwell users 1.5G Apr  3 11:45 custom-ubuntu-14.04.img
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-3-setup-openstack-juno-environment">
+<h2>Step 3. Setup OpenStack Juno environment<a class="headerlink" href="#step-3-setup-openstack-juno-environment" title="Permalink to this headline">¶</a></h2>
+<p>Load <code class="docutils literal"><span class="pre">openstack</span></code> (Juno) module:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ module load openstack
+</pre></div>
+</div>
+<p>Setup environment variables for OpenStack Juno:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ source ~/.cloudmesh/clouds/india/juno/openrc.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-4-upload-image">
+<h2>Step 4. Upload image<a class="headerlink" href="#step-4-upload-image" title="Permalink to this headline">¶</a></h2>
+<p>Upload the image with this:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ glance image-create \
+    --name=&quot;normanrockwell/custom-ubuntu-14.04&quot; \
+    --disk-format qcow2 \
+    --container-format bare \
+    --file custom-ubuntu-14.04.img
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>+------------------+--------------------------------------+
+| Property         | Value                                |
++------------------+--------------------------------------+
+| checksum         | 7287f3cee8be2f153bda74eb01185ccb     |
+| container_format | bare                                 |
+| created_at       | 2015-04-03T17:24:21                  |
+| deleted          | False                                |
+| deleted_at       | None                                 |
+| disk_format      | qcow2                                |
+| id               | c22a81a1-5476-41a6-843f-7eebd33614ed |
+| is_public        | False                                |
+| min_disk         | 0                                    |
+| min_ram          | 0                                    |
+| name             | normanrockwell/custom-ubuntu-14.04   |
+| owner            | 8c251fab06b84ba3a62607194f4abff9     |
+| protected        | False                                |
+| size             | 1609629696                           |
+| status           | active                               |
+| updated_at       | 2015-04-03T17:24:35                  |
++------------------+--------------------------------------+
+</pre></div>
+</div>
+<p>Make sure the image is on the list:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova image-list|grep normanrockwell/custom-ubuntu-14.04
+| xxxxxxxx-yyyy-zzzz-wwww-zzzzzzzzzzzz | normanrockwell/custom-ubuntu-14.04 | ACTIVE |       |
+</pre></div>
+</div>
+<p>You should <a class="reference external" href="http://cloudmesh.github.io/introduction_to_cloud_computing/iaas/openstack.html#booting-an-image">try the image</a>,
+and if everything looks good, then delete the image file:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ rm custom-ubuntu-14.04.img
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
