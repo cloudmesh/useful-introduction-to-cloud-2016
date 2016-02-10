@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>OpenStack Kilo FutureSystems &mdash; Introduction to Cloud Computing 2.0.2 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Introduction to Cloud Computing 2.0.2 documentation" href="../index.html"/>
+        <link rel="up" title="IaaS" href="index.html"/>
+        <link rel="next" title="OpenStack on FutureSystems" href="openstack.html"/>
+        <link rel="prev" title="IaaS" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Introduction to Cloud Computing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Classes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Cloudmesh Client (Current)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh_client.html">Cloudmesh Client</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Cloudmesh (Old)</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">IaaS</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#openstack-clouds">OpenStack Clouds</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">OpenStack Kilo FutureSystems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#nova-client-on-india">Nova Client on India</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#start-a-new-instance">Start a New Instance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#horizon-web-interface">Horizon Web Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#termination-of-vm-instance">Termination of VM Instance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#faq">FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="openstack.html">OpenStack on FutureSystems</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FutureSystems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to Cloudmesh</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Introduction to Cloud Computing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">IaaS</a> &raquo;</li>
+      
+    <li>OpenStack Kilo FutureSystems</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/iaas/openstack-kilo-quickstart.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="openstack-kilo-futuresystems">
+<span id="openstack-kilo"></span><h1>OpenStack Kilo FutureSystems<a class="headerlink" href="#openstack-kilo-futuresystems" title="Permalink to this headline">¶</a></h1>
+<p>OpenStack Kilo is the current cloud offerring from FutureSystems. Here are the quickstart guide on using the kilo cloud.</p>
+<div class="section" id="nova-client-on-india">
+<h2>Nova Client on India<a class="headerlink" href="#nova-client-on-india" title="Permalink to this headline">¶</a></h2>
+<p>Load the nova client by:</p>
+<div class="code highlight-python"><div class="highlight"><pre>module load openstack
+</pre></div>
+</div>
+<p>Then load your account information for Kilo. The Kilo account information is enabled by:</p>
+<div class="code highlight-python"><div class="highlight"><pre>source ~/.cloudmesh/clouds/india/kilo/openrc.sh
+</pre></div>
+</div>
+<p>You will see instances or images on Kilo now by nova client tools, e.g. nova list.</p>
+</div>
+<div class="section" id="start-a-new-instance">
+<h2>Start a New Instance<a class="headerlink" href="#start-a-new-instance" title="Permalink to this headline">¶</a></h2>
+<p>Starting a new instance is not difficult but requres a few steps like keypair registration and floating ip association. The simple instructions will be provided in this page.</p>
+<div class="section" id="ssh-key-pair-registraion">
+<h3>SSH Key Pair Registraion<a class="headerlink" href="#ssh-key-pair-registraion" title="Permalink to this headline">¶</a></h3>
+<p>If this is a first time to run a instance, the keypair registration is required. We assume you have a key registered on India Juno which is a previous release of OpenStack. Let&#8217;s register your key on OpenStack Kilo. Juno and Kilo are separated clouds so we need to register your key on both side.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you don&#8217;t have one, don&#8217;t worry. It is easy to create a new one. Please follow the instructions here.</p>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre>nova keypair-add --pub-key $HOME/ssh/id_rsa.pub $USER-india-key
+</pre></div>
+</div>
+<p>Once you register your key, you can confirm the registration by:</p>
+<div class="highlight-python"><div class="highlight"><pre>nova keypair-list
+</pre></div>
+</div>
+<p>Let&#8217;s continue to start a VM in the next section.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>The following commands will create a new SSH key pair. Provide passphrase when prompts appear.</p>
+<p class="last">ssh-keygen -t rsa -C $USER-india-key</p>
+</div>
+</div>
+<div class="section" id="start-a-vm-instance">
+<h3>Start a VM Instance<a class="headerlink" href="#start-a-vm-instance" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">nova</span> <span class="pre">boot</span></code> simple command will start a VM instance. Note that <code class="docutils literal"><span class="pre">NETID</span></code> is required on OpenStack Kilo which is different from OpenStack Juno.</p>
+<div class="code highlight-python"><div class="highlight"><pre>NETID=`nova network-list | grep $OS_TENANT_NAME-net | awk {&#39;print $2&#39;}`
+nova boot --image Ubuntu-14.04-64 --key-name $USER-india-key --flavor m1.small $USER-first-instance --nic net-id=$NETID
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">replace $USER-india-key if you have a different name for your registered key. Replace other options e.g. image or flavor as you wish.</p>
+</div>
+</div>
+<div class="section" id="floating-ip-address">
+<h3>Floating IP Address<a class="headerlink" href="#floating-ip-address" title="Permalink to this headline">¶</a></h3>
+<p>Now your VM instance is up and running but can&#8217;t be accessible because it only has an internal IP address. We will associate a floating IP address here to get SSH access to a VM instance.</p>
+<div class="code highlight-python"><div class="highlight"><pre>nova floating-ip-create ext-net
++--------------------------------------+-----------------+-----------+----------+---------+
+| Id                                   | IP              | Server Id | Fixed IP | Pool    |
++--------------------------------------+-----------------+-----------+----------+---------+
+| 030bf69d-88a4-41b6-90c5-9c6e7d5be442 | 149.165.159.112 | -         | -        | ext-net |
++--------------------------------------+-----------------+-----------+----------+---------+
+</pre></div>
+</div>
+<p>Now we have a IP address to assign to a VM instance. In this example, we will associate <code class="docutils literal"><span class="pre">149.165.159.112</span></code> to our <code class="docutils literal"><span class="pre">$USER-first-instance</span></code> VM instance by.</p>
+<div class="code highlight-python"><div class="highlight"><pre>nova floating-ip-associate $USER-first-instance 149.165.159.112
+</pre></div>
+</div>
+<p>Once you completed this step, you are now able to SSH into your VM instance.</p>
+<div class="code highlight-python"><div class="highlight"><pre>ssh ubuntu@149.165.159.112
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal"><span class="pre">ubuntu</span></code> is login name your your VM if you start a VM with Ubuntu image. Try other names if you used other distributions like CentOS or CoreOS. For example, <code class="docutils literal"><span class="pre">centos</span></code> is for <code class="docutils literal"><span class="pre">CentOS</span></code> and <code class="docutils literal"><span class="pre">core</span></code> is for <code class="docutils literal"><span class="pre">CoreOS</span></code> image.</p>
+</div>
+</div>
+</div>
+<div class="section" id="horizon-web-interface">
+<h2>Horizon Web Interface<a class="headerlink" href="#horizon-web-interface" title="Permalink to this headline">¶</a></h2>
+<p>Openstack provides a web interface to manage cloud resources easily. Usage reports, current quota or Heat stacks are visible on the web.</p>
+<ul class="simple">
+<li>Use your OS_USERNAME and OS_PASSWORD to login.  <code class="docutils literal"><span class="pre">~/.cloudmesh/clouds/india/kilo/openrc.sh</span></code> contains your <code class="docutils literal"><span class="pre">OS_</span></code> variables.</li>
+<li><a class="reference external" href="https://openstack.futuresystems.org/horizon/">https://openstack.futuresystems.org/horizon/</a></li>
+</ul>
+</div>
+<div class="section" id="termination-of-vm-instance">
+<h2>Termination of VM Instance<a class="headerlink" href="#termination-of-vm-instance" title="Permalink to this headline">¶</a></h2>
+<p>If you completed your work on your VM instance, you may terminate your VM and release a floating IP address associated with. For example, we terminate our first instance and the IP address by:</p>
+<div class="code highlight-python"><div class="highlight"><pre>nova delete $USER-first-intance
+nova floating-ip-delete 149.165.159.112
+</pre></div>
+</div>
+</div>
+<div class="section" id="faq">
+<h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
+<ol class="upperalpha simple" start="17">
+<li>My ssh connection was denied with the message like below. What should I do?</li>
+</ol>
+<div class="code highlight-python"><div class="highlight"><pre>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</pre></div>
+</div>
+<ol class="upperalpha simple">
+<li>SSH checks ssh server&#8217;s fingerprint to verify the identity of the machine that you connect to. You will see the message above if the fingerprint doesn&#8217;t match with one saved on your local machine (~/.ssh/known_hosts) when you ssh into the machine first time. In the cloud computing, however, you may encounter this message very often wihtout a real vulnerability. It is because that you use a same ip address with a newly deployed virtual machine which has a new fingerprint. We can ignore the host key checking or remove the fingerprint saved on a local machine by:</li>
+</ol>
+<ul class="simple">
+<li>Add the following options to <code class="docutils literal"><span class="pre">ssh</span></code> command</li>
+</ul>
+<div class="code highlight-python"><div class="highlight"><pre>-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
+</pre></div>
+</div>
+<p>OR</p>
+<ul class="simple">
+<li>Remove the fingerprint in your <code class="docutils literal"><span class="pre">~/.ssh/known_hosts</span></code> file</li>
+</ul>
+<div class="code highlight-python"><div class="highlight"><pre>ssh-keygen -f $HOME/.ssh/known_hosts -R HOSTNAME_OR_IPADDRESS
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Replace HOSTNAME_OR_IPADDRESS with your destination</p>
+</div>
+<ol class="upperalpha simple" start="17">
+<li>I am seeing the following error when I run <code class="docutils literal"><span class="pre">nova</span></code> command:</li>
+</ol>
+<div class="code highlight-python"><div class="highlight"><pre>You must provide a username or user id via --os-username, --os-user-id, env[OS_USERNAME] or env[OS_USER_ID]
+</pre></div>
+</div>
+<ol class="upperalpha">
+<li><p class="first">You see the error because the nova client does not recognize you. Import your credential on india by:</p>
+<blockquote>
+<div><p>source ~/.cloudmesh/clouds/india/kilo/openrc.sh</p>
+</div></blockquote>
+</li>
+</ol>
+<p>This file contains your os-username, etc. regarding your account and the <code class="docutils literal"><span class="pre">source</span></code> command imports and keeps these information while your ssh session alive.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="openstack.html" class="btn btn-neutral float-right" title="OpenStack on FutureSystems" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="IaaS" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Gregor von Laszewski.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.0.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

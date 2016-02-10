@@ -32,10 +32,7 @@
   
         <link rel="author" title="About these documents"
               href="../about.html"/>
-    <link rel="top" title="Introduction to Cloud Computing 2.0.2 documentation" href="../index.html"/>
-        <link rel="up" title="IaaS" href="index.html"/>
-        <link rel="next" title="PaaS" href="../paas/index.html"/>
-        <link rel="prev" title="OpenStack Kilo FutureSystems" href="openstack-kilo-quickstart.html"/> 
+    <link rel="top" title="Introduction to Cloud Computing 2.0.2 documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -101,35 +98,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../cloudmesh_client.html">Cloudmesh Client</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Cloudmesh (Old)</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cloudmesh/index.html">Cloudmesh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">IaaS</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#openstack-clouds">OpenStack Clouds</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="openstack-kilo-quickstart.html">OpenStack Kilo FutureSystems</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">OpenStack on FutureSystems</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#login">Login</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#setup-openstack-environment">Setup OpenStack Environment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#creating-the-openrc-sh-file">Creating the openrc.sh file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#list-flavors">List flavors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#list-images">List images</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#key-management">Key management</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#managing-security-groups">Managing security groups</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#booting-an-image">Booting an image</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#list-running-images">List running images</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#add-floating-ip-address">Add floating IP address</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#releasing-floating-ip-address">Releasing Floating IP Address</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#delete-your-instance">Delete your instance</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#make-a-snapshot-of-an-instance">Make a snapshot of an instance</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#what-to-do-if-you-forgot-your-password">What to do if you forgot your password</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#horizon-gui">Horizon GUI</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">IaaS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
 </ul>
@@ -179,13 +152,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="index.html">IaaS</a> &raquo;</li>
-      
     <li>OpenStack on FutureSystems</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/iaas/openstack.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/iaas/openstack-juno.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -232,7 +203,7 @@ login name is the portalname, thus you can do:</p>
 </div>
 <div class="section" id="login">
 <h2>Login<a class="headerlink" href="#login" title="Permalink to this headline">¶</a></h2>
-<p>Currently FutureSystems has OpenStack Kilo installed on India. To use
+<p>Currently FutureSystems has OpenStack Juno installed on India. To use
 it you need to first log into india and prepare your Openstack
 credentials:</p>
 <div class="highlight-bash"><div class="highlight"><pre>$ ssh $PORTALNAME@india.futuresystems.org
@@ -251,7 +222,7 @@ with</p>
 <h2>Creating the openrc.sh file<a class="headerlink" href="#creating-the-openrc-sh-file" title="Permalink to this headline">¶</a></h2>
 <p>An initial openrc file is currently created for you automatically and
 can be activated wih</p>
-<div class="highlight-bash"><div class="highlight"><pre>$ <span class="nb">source</span> ~/.cloudmesh/clouds/india/kilo/openrc.sh
+<div class="highlight-bash"><div class="highlight"><pre>$ <span class="nb">source</span> ~/.cloudmesh/clouds/india/juno/openrc.sh
 </pre></div>
 </div>
 <p>In future this file will be created with the help of cloudmesh
@@ -364,12 +335,12 @@ the errors and move on.</p>
 <div class="section" id="booting-an-image">
 <h2>Booting an image<a class="headerlink" href="#booting-an-image" title="Permalink to this headline">¶</a></h2>
 <p>To boot an instance you will need first to identify the <cite>$NET_ID</cite>:</p>
-<div class="highlight-bash"><div class="highlight"><pre>$ <span class="nv">NET_ID</span><span class="o">=</span><span class="k">$(</span>nova net-list<span class="p">|</span> awk <span class="s1">&#39;/ $OS_TENANT_NAME-net / {print $2}&#39;</span><span class="k">)</span>
+<div class="highlight-bash"><div class="highlight"><pre>$ <span class="nv">NET_ID</span><span class="o">=</span><span class="k">$(</span>nova net-list<span class="p">|</span> awk <span class="s1">&#39;/ int-net / {print $2}&#39;</span><span class="k">)</span>
 </pre></div>
 </div>
 <p>Now you can use the command:</p>
 <div class="highlight-bash"><div class="highlight"><pre>$ nova boot --flavor m1.small <span class="se">\</span>
-          --image <span class="s2">&quot;ubuntu-14.04-64&quot;</span> <span class="se">\</span>
+          --image <span class="s2">&quot;futuresystems/ubuntu-14.04&quot;</span> <span class="se">\</span>
           --nic net-id<span class="o">=</span>$NET_ID <span class="se">\</span>
           --key_name $PORTALNAME-key $PORTALNAME-001
 </pre></div>
@@ -384,7 +355,7 @@ you will see an output similar to:</p>
 <span class="p">|</span> updated                     <span class="p">|</span> 2013-05-15T20:32:03Z                 <span class="p">|</span>
 <span class="p">|</span> OS-EXT-STS:task_state       <span class="p">|</span> scheduling                           <span class="p">|</span>
 <span class="p">|</span> key_name                    <span class="p">|</span> $PORTALNAME-key                      <span class="p">|</span>
-<span class="p">|</span> image                       <span class="p">|</span> ubuntu-14.04-64                      <span class="p">|</span>
+<span class="p">|</span> image                       <span class="p">|</span> futuresystems/ubuntu-14.04           <span class="p">|</span>
 <span class="p">|</span> hostId                      <span class="p">|</span>                                      <span class="p">|</span>
 <span class="p">|</span> OS-EXT-STS:vm_state         <span class="p">|</span> building                             <span class="p">|</span>
 <span class="p">|</span> flavor                      <span class="p">|</span> m1.small                             <span class="p">|</span>
@@ -422,7 +393,7 @@ command and monitor the Status field in the table:</p>
 </div>
 <p>Once it has changed from for example BUILD to ACTIVE, you can log
 in. Pleas use the IP address provided under networks. Note that the
-first address is private and may only be reached from india</p>
+first address is private and can not be reached from outside india:</p>
 <div class="highlight-bash"><div class="highlight"><pre>$ ssh -l ubuntu -i ~/.ssh/$PORTALNAME-key 10.23.0.87
 </pre></div>
 </div>
@@ -537,6 +508,68 @@ and <cite>nova floating-ip-list</cite> should show the output like this:</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="using-block-storage">
+<h2>Using block storage<a class="headerlink" href="#using-block-storage" title="Permalink to this headline">¶</a></h2>
+<p>You can create a block storage with the volume-create command. A
+volume is useful as you can store data in it and associate that
+particular volumen to a VM. Hence, if you delete the VM, your volume
+and the data on it is still there to be reused. To create one 1G volume
+you can do</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ nova volume-create <span class="m">1</span> --display-name $PORTALNAME-vol-001
+</pre></div>
+</div>
+<p>To more conveniently identify the image we also specified a
+displayname. Please chose a uinque name so you can identify the volume
+more easily.</p>
+<p>To list the volumes you can use:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ nova volume-list
++--------------+-----------+---------------------+------+-------------+-------------+
+<span class="p">|</span> ID           <span class="p">|</span> Status    <span class="p">|</span> Display Name        <span class="p">|</span> Size <span class="p">|</span> Volume Type <span class="p">|</span> Attached to <span class="p">|</span>
++--------------+-----------+---------------------+------+-------------+-------------+
+<span class="p">|</span> 6d0d ... abc <span class="p">|</span> available <span class="p">|</span> $PORTALNAME-vol-001 <span class="p">|</span>  <span class="m">1</span>   <span class="p">|</span> None        <span class="p">|</span>             <span class="p">|</span>
++--------------+-----------+---------------------+------+-------------+-------------+
+</pre></div>
+</div>
+<p>To attach the volume to your instance you can use the volume-attach
+subcommand. Let us assume we like to attache it as &#8220;/dev/vdb&#8221;, than
+you can use the command::</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ nova volume-attach $PORTALNAME-001 6d0d8285-xxxx-xxxx-xxxx-xxxxxxxxxabc <span class="s2">&quot;/dev/vdb&quot;</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>Hint</p>
+<p class="last">$PORTALNAME-001 refers to the name of the VM that we have
+created earlier with the boot command.</p>
+</div>
+<p>Next, let us login to your instance, make filesystem and mount it.
+Here&#8217;s an example, mounting on /mnt:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ ssh -l ubuntu -i ~/.ssh/$PORTALNAME-key 10.35.23.18
+ubuntu@$PORTALNAME-001:~$ sudo su -
+root@$PORTALNAME-001:~# mkfs.ext4 /dev/vdb
+root@$PORTALNAME-001:~# mount /dev/vdb /mnt
+root@$PORTALNAME-001:~# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vda1        20G  2.1G   17G  11% /
+none            4.0K     <span class="m">0</span>  4.0K   0% /sys/fs/cgroup
+udev            998M  8.0K  998M   1% /dev
+tmpfs           201M  236K  201M   1% /run
+none            5.0M     <span class="m">0</span>  5.0M   0% /run/lock
+none           1002M     <span class="m">0</span> 1002M   0% /run/shm
+none            100M     <span class="m">0</span>  100M   0% /run/user
+/dev/vdb        4.8G   23M  0.8G   1% /mnt
+</pre></div>
+</div>
+<p>When you want to detach it, unmount /mnt first, go back to indias&#8217;s
+login node and execute volume-detach:</p>
+<div class="highlight-bash"><div class="highlight"><pre>root@$PORTALNAME-001:~# umount /mnt
+root@$PORTALNAME-001:~# <span class="nb">exit</span>
+ubuntu@$PORTALNAME-001:~$ <span class="nb">exit</span>
+
+$ nova volume-detach $PORTALNAME-001 6d0d8285-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+</pre></div>
+</div>
+</div>
 <div class="section" id="make-a-snapshot-of-an-instance">
 <h2>Make a snapshot of an instance<a class="headerlink" href="#make-a-snapshot-of-an-instance" title="Permalink to this headline">¶</a></h2>
 <p>To allow snapshots, you must use the following convention:</p>
@@ -572,6 +605,88 @@ be deleted without warning. Also ifyou do no longer need an image,
 please remove it.</p>
 </div>
 </div>
+<div class="section" id="automate-some-initial-configuration">
+<h2>Automate some initial configuration<a class="headerlink" href="#automate-some-initial-configuration" title="Permalink to this headline">¶</a></h2>
+<p>You may want to install some packages into the image, enable root, and
+add ssh authorized_keys. With the OpenStack cloud-init such steps can
+be simplified.</p>
+<p>Create a file(mycloudinit.txt) containing these lines:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c1">#cloud-config</span>
+
+<span class="c1"># Enable root login.</span>
+disable_root: <span class="nb">false</span>
+
+<span class="c1"># Install packages.</span>
+packages:
+- apt-show-versions
+- wget
+- build-essential
+
+<span class="c1"># Add some more ssh public keys.</span>
+ssh_authorized_keys:
+- ssh-rsa AAAfkdfeiekf....fES7060rb myuser@s1
+- ssh-rsa AAAAAAkgeig78...skdfjeigi myuser@myhost
+</pre></div>
+</div>
+<p>Now boot your instance with &#8211;user-data mycloudinit.txt like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ nova boot --flavor m1.small <span class="se">\</span>
+            --image <span class="s2">&quot;futuresystems/ubuntu-14.04&quot;</span> <span class="se">\</span>
+            --key_name $PORTALNAME-key <span class="se">\</span>
+            --user-data mycloudinit.txt $PORTALNAME-002
+</pre></div>
+</div>
+<p>You should be able to login to $PORTALNAME-002 as root, and the added packages are installed.</p>
+</div>
+<div class="section" id="get-the-latest-version-of-ubuntu-cloud-image-and-upload-it-to-the-openstack">
+<h2>Get the latest version of Ubuntu Cloud Image and upload it to the OpenStack<a class="headerlink" href="#get-the-latest-version-of-ubuntu-cloud-image-and-upload-it-to-the-openstack" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We will try to provide the latest images. E.g., currently in india openstack</p>
+</div>
+<p>the ubuntu 14.04 image is officially available under name: futuresystems/ubuntu-14.04. So
+usually you can skip this section to simply use the one provided officially.</p>
+<p>Several versions of Ubuntu cloud images are available at
+<a class="reference external" href="http://cloud-images.ubuntu.com/">http://cloud-images.ubuntu.com/</a>. Choose the version you want and
+download the file name with ******-cloudimg-amd64-disk1.img. For
+example, downloading Ubuntu-14.04 is done like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ wget https://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img
+</pre></div>
+</div>
+<p>If you need a different version, please adapt the link accordingly.
+You can upload the image with the glance client like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ glance image-create <span class="se">\</span>
+       --name fg101/$PORTALNAME/myimages/ubuntu-14.04 <span class="se">\</span>
+       --disk-format qcow2 <span class="se">\</span>
+       --container-format bare <span class="se">\</span>
+       --file trusty-server-cloudimg-amd64-disk1.img
+</pre></div>
+</div>
+<p>Now your new image is listed on <code class="docutils literal"><span class="pre">nova</span> <span class="pre">image-list</span></code> and will be
+available when the status become &#8220;ACTIVE&#8221;.</p>
+</div>
+<div class="section" id="how-to-change-your-password">
+<h2>How to change your password<a class="headerlink" href="#how-to-change-your-password" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Sometimes, users accidentally send password to a collaborator/support
+for debugging, and then regret. When you put yourself in the
+situation by mistake, don&#8217;t worry. Just use keystone client and reset
+your password with:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ keystone password-update
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Remember, you also have to <strong>UPDATE</strong> your new password in your openrc.sh file.
+This can be achieved by either editing your openrc.sh file directly
+(~/.cloudmesh/clouds/india/juno/openrc.sh), or recreating your openrc.sh file.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">In order to reset your password your openrc.sh must be valid or you
+must know your current password. If you loose your password or your
+openrc.sh file becomes invalid you need to send an email to support
+requesting help.</p>
+</div>
+</div>
 <div class="section" id="what-to-do-if-you-forgot-your-password">
 <h2>What to do if you forgot your password<a class="headerlink" href="#what-to-do-if-you-forgot-your-password" title="Permalink to this headline">¶</a></h2>
 <p>In order to reset your password or you need to recreate your openrc.sh
@@ -585,7 +700,7 @@ Name: Firstname, Lastname
 username: &lt;username&gt;
 e-mail registered in the portal: &lt;portale-mail you used&gt;
 
-Please reset my openrc file <span class="k">for</span> the Kilo cloud. By mistake I have modified it and can not remember the password.
+Please seset my openrc file <span class="k">for</span> the Juno cloud. By mistake I have modified it and can not remember the password.
 
 Thanks
 
@@ -598,11 +713,11 @@ your email here
 <p>If you want to make a change in your rc file (openrc.sh), follow the
 instructions below.</p>
 <ul>
-<li><p class="first">Open a <code class="docutils literal"><span class="pre">~/.cloudmesh/clouds/india/kilo/openrc.sh</span></code> file</p>
+<li><p class="first">Open a <code class="docutils literal"><span class="pre">~/.cloudmesh/clouds/india/juno/openrc.sh</span></code> file</p>
 </li>
 <li><p class="first">Replace your old password to a new password in a <code class="docutils literal"><span class="pre">OS_PASSWORD</span></code> key.</p>
 </li>
-<li><p class="first">Load your rc file <code class="docutils literal"><span class="pre">source</span> <span class="pre">~/.cloudmesh/clouds/india/kilo/openrc.sh</span></code></p>
+<li><p class="first">Load your rc file <code class="docutils literal"><span class="pre">source</span> <span class="pre">~/.cloudmesh/clouds/india/juno/openrc.sh</span></code></p>
 </li>
 <li><p class="first">Try nova command line e.g. <code class="docutils literal"><span class="pre">nova</span> <span class="pre">list</span></code></p>
 </li>
@@ -612,11 +727,71 @@ instructions below.</p>
 </ul>
 </div>
 </div>
+<div class="section" id="things-to-do-when-you-need-euca2ools-or-ec2-interfaces">
+<h2>Things to do when you need Euca2ools or EC2 interfaces<a class="headerlink" href="#things-to-do-when-you-need-euca2ools-or-ec2-interfaces" title="Permalink to this headline">¶</a></h2>
+<p>Even though the nova client and protocols will provide you with more
+advanced features, some users still want to access OpenStack with EC2
+compatible tools. We recommend against this and recommend instead that
+you use <cite>nova</cite>. One such tool using eucarc files is euca2tools. We
+explain briefly how you can access them.</p>
+<ol class="arabic">
+<li><p class="first">Create a directory for putting eucarc, and create pk.pem, cert.pem
+and cacert.pem:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd</span> ~/.futuregrid/openstack_havana
+nova x509-create-cert
+nova x509-get-root-cert
+ls -la
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create EC2_ACCESS_KEY and EC2_SECRET_KEY:</p>
+<div class="highlight-bash"><div class="highlight"><pre>keystone ec2-credentials-create
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create the file calle <cite>~/.futuregrid/openstack_havana/eucarc</cite> and put your EC2_ACCESS_KEY and
+EC2_SECRET_KEY that you obtained from the previous command into
+this file:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">export</span> <span class="nv">NOVA_KEY_DIR</span><span class="o">=</span><span class="k">$(</span><span class="nb">cd</span> <span class="k">$(</span>dirname <span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="si">}</span><span class="k">)</span> <span class="o">&amp;&amp;</span> <span class="nb">pwd</span><span class="k">)</span>
+<span class="nb">export</span> <span class="nv">EC2_ACCESS_KEY</span><span class="o">=</span><span class="s2">&quot;Your EC2_ACCESS_KEY&quot;</span>
+<span class="nb">export</span> <span class="nv">EC2_SECRET_KEY</span><span class="o">=</span><span class="s2">&quot;Your EC2_SECRET_KEY&quot;</span>
+<span class="nb">export</span> <span class="nv">EC2_URL</span><span class="o">=</span><span class="s2">&quot;http://i5r.idp.iu.futuregrid.org:8773/services/Cloud&quot;</span>
+<span class="nb">export</span> <span class="nv">S3_URL</span><span class="o">=</span><span class="s2">&quot;http://i5r.idp.iu.futuregrid.org:3333&quot;</span>
+<span class="nb">export</span> <span class="nv">EC2_USER_ID</span><span class="o">=</span>11
+<span class="nb">export</span> <span class="nv">EC2_PRIVATE_KEY</span><span class="o">=</span><span class="si">${</span><span class="nv">NOVA_KEY_DIR</span><span class="si">}</span>/pk.pem
+<span class="nb">export</span> <span class="nv">EC2_CERT</span><span class="o">=</span><span class="si">${</span><span class="nv">NOVA_KEY_DIR</span><span class="si">}</span>/cert.pem
+<span class="nb">export</span> <span class="nv">NOVA_CERT</span><span class="o">=</span><span class="si">${</span><span class="nv">NOVA_KEY_DIR</span><span class="si">}</span>/cacert.pem
+<span class="nb">export</span> <span class="nv">EUCALYPTUS_CERT</span><span class="o">=</span><span class="si">${</span><span class="nv">NOVA_CERT</span><span class="si">}</span>
+<span class="nb">alias</span> ec2-bundle-image<span class="o">=</span><span class="s2">&quot;ec2-bundle-image --cert </span><span class="si">${</span><span class="nv">EC2_CERT</span><span class="si">}</span><span class="s2"> --privatekey </span><span class="si">${</span><span class="nv">EC2_PRIVATE_KEY</span><span class="si">}</span><span class="s2"> --user 42 --ec2cert </span><span class="si">${</span><span class="nv">NOVA_CERT</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">alias</span> ec2-upload-bundle<span class="o">=</span><span class="s2">&quot;ec2-upload-bundle -a </span><span class="si">${</span><span class="nv">EC2_ACCESS_KEY</span><span class="si">}</span><span class="s2"> -s </span><span class="si">${</span><span class="nv">EC2_SECRET_KEY</span><span class="si">}</span><span class="s2"> --url </span><span class="si">${</span><span class="nv">S3_URL</span><span class="si">}</span><span class="s2"> --ec2cert </span><span class="si">${</span><span class="nv">NOVA_CERT</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Confirm if euca2ools works:</p>
+<div class="highlight-bash"><div class="highlight"><pre>module load euca2ools/3.1.0
+<span class="nb">source</span> ~/.futuregrid/openstack_havana/eucarc
+euca-describe-images
+euca-describe-instances
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Here&#8217;s our known issues on using euca2ools or ec2 interface.</p>
+<ul class="last simple">
+<li>euca-upload-bundle with Boto 2.25.0 fails with &#8220;S3ResponseError: 404 Not Found&#8221;.</li>
+<li>tagging function such as euca-create-tags, euca-describe-tags fail with &#8220;InvalidRequest: The request is invalid.&#8221;</li>
+</ul>
+</div>
+</div>
 <div class="section" id="horizon-gui">
 <span id="s-openstack-horizon"></span><h2>Horizon GUI<a class="headerlink" href="#horizon-gui" title="Permalink to this headline">¶</a></h2>
 <p>Horizon is a graphical user interface/dashbooard for OpenStack. For
 starting up VMs and stoping them by hand horizon may be a good
-mechanism to manage your Virtual machines. The Kilo Horizon url is: <a class="reference external" href="https://openstack.futuresystems.org/horizon">https://openstack.futuresystems.org/horizon</a></p>
+mechanism to manage your Virtual machines.  We have currently the
+following horizon deployments available. For more detail, see Section
+<a class="reference internal" href="../class/lesson/iaas/openstack_horizon.html#openstack-horizion-lesson"><span>OpenStack Horizion Web Dashboard</span></a>.</p>
 <p>The passphrase for horizion is on purpose not the same as the portal
 password to introduce an additional layer of security.</p>
 <p>You can locate the passphrase while looking at the openrc file for the
@@ -627,9 +802,105 @@ the openstack module with:</p>
 </div>
 <p>Look at</p>
 <blockquote>
-<div>$ cat ~/.cloudmesh/clouds/india/kilo/openrc.sh</div></blockquote>
+<div>$ cat ~/.cloudmesh/clouds/india/juno/openrc.sh</div></blockquote>
 <p>and use the password included here. If you reset your password in Horizon you may
 have to update it in this file after you changed it.</p>
+<table border="1" class="docutils" id="id7">
+<caption><span class="caption-text">Horizon endpoints</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="43%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Image</th>
+<th class="head">Version</th>
+<th class="head">Machine</th>
+<th class="head">Protocol</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="../_images/fg-horizon.png"><img alt="image-horizon" src="../_images/fg-horizon.png" style="width: 100px;" /></a></td>
+<td>Juno</td>
+<td><a class="reference external" href="https://openstack-j.india.futuresystems.org/horizon">India</a></td>
+<td>Native OpenStack</td>
+<td>India offers a Graphical user interface to access
+OpenStack. For those interested in only managing a few images
+this may be a good way to start. The link to the GUI is
+<a class="reference external" href="https://openstack-j.india.futuresystems.org/horizon">https://openstack-j.india.futuresystems.org/horizon</a> . The password
+can be found by following the method discussed above.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="screencasts">
+<h2>Screencasts<a class="headerlink" href="#screencasts" title="Permalink to this headline">¶</a></h2>
+<p>This series of screencasts will walk you through the various ways on
+how you can use OpenStack on FutureSystems. This includes the following:</p>
+<ul class="simple">
+<li>using openstack client command line tools to<ul>
+<li>start, stop, assign ips, and query virtual machines</li>
+<li>list images and flavors</li>
+<li>to create security groups for login</li>
+<li>to log in to your virtual machine while using a key</li>
+</ul>
+</li>
+<li>using the openstack horizon interface</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="5%" />
+<col width="15%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Video</th>
+<th class="head">Length</th>
+<th class="head">Titles of the Lessons</th>
+<th class="head">Description of the Lessons</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a href="#id8"><span class="problematic" id="id9">|video-openstack|</span></a></td>
+<td>11:55 min</td>
+<td>Using OpenStack command line tools</td>
+<td><p class="first">This lesson explains you how to use the OpenStack Commandline
+tools on the FutureSystems cluster called sierra.futuregrid.org.
+For written material, see section <a class="reference internal" href="#s-openstack"><span>OpenStack on FutureSystems</span></a>.</p>
+<div class="last admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">please replace sierra with india.</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a href="#id10"><span class="problematic" id="id11">|video-horizon|</span></a></td>
+<td>8:30 min</td>
+<td>Using OpenStack horizon GUI</td>
+<td><p class="first">This lesson explains you how to use the OpenStack Horizon to
+access the FutureSystems OpenStack IaaS framework on sierra.futuregrid.org.
+For written material, see section <a class="reference internal" href="#s-openstack-horizon"><span>Horizon GUI</span></a>.</p>
+<div class="last admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">please replace sierra with india.</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Create a VM on india and login</li>
+<li>Create a volume and attach it to the vm</li>
+<li>Read up on the openstack web page what vilumes are for.</li>
+<li>Log into horizon and explore the interface. Start up a VM, create a
+volume and attach it to the VM. Assign a public ip and log in.</li>
+</ol>
 </div>
 </div>
 
@@ -637,15 +908,6 @@ have to update it in this file after you changed it.</p>
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../paas/index.html" class="btn btn-neutral float-right" title="PaaS" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="openstack-kilo-quickstart.html" class="btn btn-neutral" title="OpenStack Kilo FutureSystems" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
