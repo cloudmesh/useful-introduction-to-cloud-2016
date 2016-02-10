@@ -20,6 +20,7 @@ commercial services.
 .. toctree::
    :maxdepth: 2
 
+   openstack-kilo-quickstart
    openstack
 
    
