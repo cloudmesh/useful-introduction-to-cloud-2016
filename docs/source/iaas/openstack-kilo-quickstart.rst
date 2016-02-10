@@ -1,6 +1,6 @@
 .. _openstack_kilo:
 
-OpenStack Kilo FutureSystems
+FutureSystems OpenStack Kilo - Quickstart Guide
 ==============================
 
 OpenStack Kilo is the current cloud offerring from FutureSystems. Here are the quickstart guide on using the kilo cloud.
